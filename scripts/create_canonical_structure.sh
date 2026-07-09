@@ -1,28 +1,33 @@
 #!/usr/bin/env bash
 # This script only creates missing directories. It does not delete, overwrite, move, rename, or modify existing files.
 #
-# Creates the canonical Engineering Documentation Framework folder layout.
+# Creates the canonical Engineering Documentation Framework folder layout inside an
+# existing software project's root directory.
 # Safe to run repeatedly — existing directories are left unchanged.
 #
 # Usage:
-#   ./scripts/create_canonical_structure.sh
-#   ./scripts/create_canonical_structure.sh /path/to/target/repo
+#   ./scripts/create_canonical_structure.sh "/path/to/project root"
+#
+# Example:
+#   ./scripts/create_canonical_structure.sh "/Users/ed/Projects/The Recipe Vault"
 
 set -euo pipefail
 
-# Resolve repository root: optional first argument, otherwise parent of scripts/
-if [[ $# -gt 0 ]]; then
-  ROOT="$1"
-else
-  ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-fi
-
-if [[ ! -d "$ROOT" ]]; then
-  echo "Error: target path does not exist: $ROOT" >&2
+if [[ $# -ne 1 ]]; then
+  echo "Error: project root path is required." >&2
+  echo "Usage: $(basename "$0") <project-root>" >&2
+  echo "Example: $(basename "$0") \"/Users/ed/Projects/The Recipe Vault\"" >&2
   exit 1
 fi
 
-# Canonical folder structure (relative to repository root)
+PROJECT_ROOT="$1"
+
+if [[ ! -d "$PROJECT_ROOT" ]]; then
+  echo "Error: project root does not exist or is not a directory: $PROJECT_ROOT" >&2
+  exit 1
+fi
+
+# Canonical folder structure (relative to project root)
 DIRS=(
   "docs/Architecture"
   "docs/Architecture/ADRs"
@@ -42,7 +47,7 @@ DIRS=(
 
 create_dir_if_missing() {
   local relative_path="$1"
-  local full_path="${ROOT}/${relative_path}"
+  local full_path="${PROJECT_ROOT}/${relative_path}"
 
   if [[ -d "$full_path" ]]; then
     echo "Exists:  ${relative_path}"
@@ -50,12 +55,12 @@ create_dir_if_missing() {
     echo "Skipped: ${relative_path} (path exists but is not a directory)" >&2
     return 1
   else
-    mkdir -p "$full_path"
+    mkdir -p -- "$full_path"
     echo "Created: ${relative_path}"
   fi
 }
 
-echo "Ensuring canonical folder structure under: ${ROOT}"
+echo "Ensuring canonical folder structure under: ${PROJECT_ROOT}"
 echo
 
 errors=0

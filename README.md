@@ -70,16 +70,16 @@ This framework solves that by defining **where** information belongs, **how** it
 
 ### Bootstrap folder structure
 
-Run the canonical layout scripts to create missing directories in a new or existing repository. They are **idempotent** — only folders that do not already exist are created; no files are modified.
+Run the canonical layout scripts against an **existing software project's root** to add the framework folder layout. Pass the target project root explicitly — the scripts do not assume they are run from that directory.
 
-- **Unix / macOS / Linux:** `./scripts/create_canonical_structure.sh`
-- **Windows (PowerShell):** `.\scripts\create_canonical_structure.ps1`
+- **Unix / macOS / Linux:** `./scripts/create_canonical_structure.sh "/path/to/project root"`
+- **Windows (PowerShell):** `.\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"`
 
-Pass a target repository path as an argument to scaffold a project other than the current one.
+These scripts only create missing directories. They do not delete, overwrite, move, rename, or modify existing files.
 
 ### For a new project
 
-1. **Copy or fork** this repository (or use it as a Git submodule at `docs/`), then run a structure script above if needed.
+1. **Copy or fork** this repository (or use it as a Git submodule at `docs/`), then run a structure script above against your project root.
 2. **Rename** the repository to your project name; keep the internal folder layout.
 3. **Fill in** `PROJECT_CHARTER.md` with your project's mission, scope, and stakeholders.
 4. **Update** `PROJECT_INDEX.md` with current status, owners, and links to live documents.

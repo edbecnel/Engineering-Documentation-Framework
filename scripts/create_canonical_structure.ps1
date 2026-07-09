@@ -1,30 +1,28 @@
 # This script only creates missing directories. It does not delete, overwrite, move, rename, or modify existing files.
 #
-# Creates the canonical Engineering Documentation Framework folder layout.
+# Creates the canonical Engineering Documentation Framework folder layout inside an
+# existing software project's root directory.
 # Safe to run repeatedly — existing directories are left unchanged.
 #
 # Usage:
-#   .\scripts\create_canonical_structure.ps1
-#   .\scripts\create_canonical_structure.ps1 -Root "C:\path\to\target\repo"
+#   .\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"
+#
+# Example:
+#   .\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"
 
 [CmdletBinding()]
 param(
-    [Parameter(Position = 0)]
-    [string] $Root
+    [Parameter(Mandatory = $true, Position = 0)]
+    [string] $ProjectRoot
 )
 
 $ErrorActionPreference = "Stop"
 
-# Resolve repository root: -Root parameter, otherwise parent of scripts/
-if ([string]::IsNullOrWhiteSpace($Root)) {
-    $Root = Split-Path -Parent $PSScriptRoot
+if (-not (Test-Path -LiteralPath $ProjectRoot -PathType Container)) {
+    Write-Error "Project root does not exist or is not a directory: $ProjectRoot"
 }
 
-if (-not (Test-Path -LiteralPath $Root -PathType Container)) {
-    Write-Error "Target path does not exist or is not a directory: $Root"
-}
-
-# Canonical folder structure (relative to repository root)
+# Canonical folder structure (relative to project root)
 $dirs = @(
     "docs/Architecture",
     "docs/Architecture/ADRs",
@@ -47,7 +45,7 @@ function New-DirectoryIfMissing {
         [string] $RelativePath
     )
 
-    $fullPath = Join-Path -Path $Root -ChildPath $RelativePath
+    $fullPath = Join-Path -Path $ProjectRoot -ChildPath $RelativePath
 
     if (Test-Path -LiteralPath $fullPath -PathType Container) {
         Write-Host "Exists:  $RelativePath"
@@ -57,14 +55,14 @@ function New-DirectoryIfMissing {
         return $false
     }
     else {
-        New-Item -ItemType Directory -Path $fullPath | Out-Null
+        New-Item -ItemType Directory -LiteralPath $fullPath | Out-Null
         Write-Host "Created: $RelativePath"
     }
 
     return $true
 }
 
-Write-Host "Ensuring canonical folder structure under: $Root"
+Write-Host "Ensuring canonical folder structure under: $ProjectRoot"
 Write-Host ""
 
 $errors = 0

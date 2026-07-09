@@ -47,12 +47,14 @@ This file is intentionally maintained as a **dashboard**, not a dump of detailed
 
 ## Bootstrap scripts
 
-To create the canonical folder layout in a new or existing repository, run:
+To add the canonical folder layout inside an **existing software project**, pass that project's root directory to the structure script:
 
-- `./scripts/create_canonical_structure.sh` (Unix / macOS / Linux)
-- `.\scripts\create_canonical_structure.ps1` (Windows)
+- **Unix / macOS / Linux:** `./scripts/create_canonical_structure.sh "/Users/ed/Projects/The Recipe Vault"`
+- **Windows (PowerShell):** `.\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"`
 
-These scripts only add **missing directories** and are safe to run repeatedly. They do not create, modify, or remove files.
+The scripts do not assume they are run from the project root. Quote paths that contain spaces.
+
+These scripts only create missing directories. They do not delete, overwrite, move, rename, or modify existing files.
 
 ## Folder Structure
 

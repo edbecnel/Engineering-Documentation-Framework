@@ -89,12 +89,136 @@ These scripts only create missing directories and the optional framework guide f
 6. **Record** your first ADR in `ARCHITECTURE_DECISIONS.md` when you make a significant technical choice.
 7. **Add** project-specific content under each `docs/` subdirectory as the system grows.
 
-### For an existing project
+---
 
-1. **Audit** existing documentation and map each artifact to the closest framework folder.
-2. **Migrate** content incrementally; link old locations in `archive/` with a short migration note.
-3. **Adopt** templates for new documents only at first; refactor legacy docs over time.
-4. **Point** your root `README.md` to `PROJECT_INDEX.md` as the documentation hub.
+## Adopting the Framework in an Existing Project
+
+The Engineering Documentation Framework is designed to be adopted by both new and existing software projects.
+
+For existing projects, the framework can be introduced incrementally without disrupting the current project structure or development workflow.
+
+Two adoption approaches are supported:
+
+- **Script-Assisted Adoption (Recommended)** – Quickly create the canonical folder structure while preserving the existing project.
+- **Manual Adoption** – Create the structure manually and migrate documentation at your own pace.
+
+Regardless of the approach used, documentation should be migrated incrementally into the canonical framework.
+
+---
+
+## Option 1 — Script-Assisted Adoption (Recommended)
+
+The recommended workflow is:
+
+1. Clone the Engineering Documentation Framework repository locally.
+2. Review the framework documentation to understand its organization and philosophy.
+3. Run the canonical structure script against the root folder of the existing project.
+4. Review the generated folder structure.
+5. Audit and migrate existing documentation into the framework over time.
+
+### Safety Guarantee
+
+The setup scripts are intentionally conservative.
+
+They **only** create missing framework directories and, if it does not already exist, a single project guide file:
+
+`ENGINEERING_DOCUMENTATION_FRAMEWORK.md`
+
+The scripts **never**:
+
+- Delete files
+- Overwrite files
+- Rename files
+- Move files
+- Modify existing documentation
+- Modify an existing `documents/` folder
+
+The canonical documentation root used by the Engineering Documentation Framework is always:
+
+```text
+docs/
+```
+
+If an existing project already contains a `documents/` folder, it is treated as legacy or project-specific content and is left completely untouched.
+
+### PowerShell (Windows)
+
+From the cloned Engineering Documentation Framework repository:
+
+```powershell
+.\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\Existing Project"
+```
+
+### Bash (macOS / Linux)
+
+From the cloned Engineering Documentation Framework repository:
+
+```bash
+./scripts/create_canonical_structure.sh "/Users/ed/Projects/Existing Project"
+```
+
+### Result
+
+After running the script, the target project will contain the canonical documentation structure:
+
+```text
+project-root/
+├── docs/
+│   ├── Architecture/
+│   │   └── ADRs/
+│   ├── AI/
+│   ├── Development/
+│   ├── Specifications/
+│   ├── API/
+│   ├── Database/
+│   ├── Deployment/
+│   ├── User_Guides/
+│   ├── Reference/
+│   └── Templates/
+├── tasks/
+├── archive/
+├── scripts/
+└── ENGINEERING_DOCUMENTATION_FRAMEWORK.md
+```
+
+The generated `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` file serves as the local adoption guide for the project. It explains the purpose of each canonical folder, identifies the authoritative documentation locations, and provides guidance for organizing project documentation according to the Engineering Documentation Framework.
+
+---
+
+## Option 2 — Manual Adoption
+
+If you prefer not to use the setup scripts, you can adopt the framework manually.
+
+The recommended process is:
+
+1. Create the canonical folder structure described by this framework.
+2. Add `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` to the project root as the local framework guide.
+3. Begin migrating documentation incrementally using the migration process described below.
+
+---
+
+## Documentation Migration Process
+
+Whether you adopt the framework using the setup scripts or manually, existing documentation should be migrated gradually rather than reorganized all at once.
+
+The recommended migration process is:
+
+1. **Audit** existing documentation and map each document to the most appropriate framework folder or documentation domain.
+2. **Migrate** documents incrementally into the canonical structure. When practical, leave a short migration note in the original location or move superseded material into `archive/`.
+3. **Adopt** framework templates for all new documentation. Legacy documents can be refactored into the framework over time rather than rewritten immediately.
+4. **Establish** `PROJECT_INDEX.md` as the primary documentation hub. Update the project's root `README.md` to direct developers to `PROJECT_INDEX.md` for navigating project documentation.
+
+---
+
+## Incremental Adoption Philosophy
+
+The Engineering Documentation Framework is intended to evolve alongside a project—not disrupt it.
+
+Existing projects are not expected to reorganize every document immediately. Instead, documentation should gradually migrate toward the canonical structure as it is updated or expanded.
+
+This approach minimizes risk, avoids unnecessary churn, preserves project history, and allows Bteams to realize the benefits of the framework without interrupting ongoing development.
+
+---
 
 ## Recommended Workflow
 

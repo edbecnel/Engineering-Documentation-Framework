@@ -45,6 +45,15 @@ This file is intentionally maintained as a **dashboard**, not a dump of detailed
 | User Guides | [docs/User_Guides/](./docs/User_Guides/) | End-user facing documentation |
 | Active tasks | [tasks/](./tasks/) | Current work items and checklists |
 
+## Bootstrap scripts
+
+To create the canonical folder layout in a new or existing repository, run:
+
+- `./scripts/create_canonical_structure.sh` (Unix / macOS / Linux)
+- `.\scripts\create_canonical_structure.ps1` (Windows)
+
+These scripts only add **missing directories** and are safe to run repeatedly. They do not create, modify, or remove files.
+
 ## Folder Structure
 
 ```

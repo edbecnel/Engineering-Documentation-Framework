@@ -68,9 +68,18 @@ This framework solves that by defining **where** information belongs, **how** it
 
 ## How to Use This Framework
 
+### Bootstrap folder structure
+
+Run the canonical layout scripts to create missing directories in a new or existing repository. They are **idempotent** — only folders that do not already exist are created; no files are modified.
+
+- **Unix / macOS / Linux:** `./scripts/create_canonical_structure.sh`
+- **Windows (PowerShell):** `.\scripts\create_canonical_structure.ps1`
+
+Pass a target repository path as an argument to scaffold a project other than the current one.
+
 ### For a new project
 
-1. **Copy or fork** this repository (or use it as a Git submodule at `docs/`).
+1. **Copy or fork** this repository (or use it as a Git submodule at `docs/`), then run a structure script above if needed.
 2. **Rename** the repository to your project name; keep the internal folder layout.
 3. **Fill in** `PROJECT_CHARTER.md` with your project's mission, scope, and stakeholders.
 4. **Update** `PROJECT_INDEX.md` with current status, owners, and links to live documents.

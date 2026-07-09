@@ -67,6 +67,16 @@ Use it to define:
 * assumptions
 * constraints
 
+### ENGINEERING_DOCUMENTATION_FRAMEWORK.md
+
+The local adoption guide created in target projects by the canonical structure bootstrap scripts (`scripts/create_canonical_structure.sh` and `scripts/create_canonical_structure.ps1`).
+
+This file is generated at the **adopting project's root** only when it does not already exist. It explains that the project has adopted the framework, identifies `docs/` as the canonical documentation root, and describes how each documentation domain and project area should be used.
+
+It also clarifies that `documents/` is treated as legacy or project-specific content and is never modified by the bootstrap scripts.
+
+Use it as the first on-ramp for contributors landing in a project that has been scaffolded with the framework layout.
+
 ## Documentation Domains
 
 All documents should belong to one of the following domains.

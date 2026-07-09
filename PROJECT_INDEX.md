@@ -54,7 +54,9 @@ To add the canonical folder layout inside an **existing software project**, pass
 
 The scripts do not assume they are run from the project root. Quote paths that contain spaces.
 
-These scripts only create missing directories. They do not delete, overwrite, move, rename, or modify existing files.
+The scripts create missing canonical directories and, if absent, `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` at the project root — a local adoption guide explaining the `docs/` layout and how `documents/` is treated as legacy content. They do not create README files inside generated folders. Any existing `documents/` folder is left completely untouched.
+
+These scripts only create missing directories and the optional framework guide file. They do not delete, overwrite, move, rename, or modify existing files.
 
 ## Folder Structure
 

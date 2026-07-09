@@ -70,12 +70,14 @@ This framework solves that by defining **where** information belongs, **how** it
 
 ### Bootstrap folder structure
 
-Run the canonical layout scripts against an **existing software project's root** to add the framework folder layout. Pass the target project root explicitly — the scripts do not assume they are run from that directory.
+Run the canonical layout scripts against an **existing software project's root** to add the framework folder layout and, if missing, a local adoption guide (`ENGINEERING_DOCUMENTATION_FRAMEWORK.md`). Pass the target project root explicitly — the scripts do not assume they are run from that directory.
 
 - **Unix / macOS / Linux:** `./scripts/create_canonical_structure.sh "/path/to/project root"`
 - **Windows (PowerShell):** `.\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"`
 
-These scripts only create missing directories. They do not delete, overwrite, move, rename, or modify existing files.
+The scripts create missing canonical directories and `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` only when that file does not already exist. They never create README files inside generated folders. Any existing `documents/` folder is left completely untouched.
+
+These scripts only create missing directories and the optional framework guide file. They do not delete, overwrite, move, rename, or modify existing files.
 
 ### For a new project
 

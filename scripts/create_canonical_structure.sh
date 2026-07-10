@@ -2,153 +2,173 @@
 # These scripts only create missing directories and the optional framework guide file.
 # They do not delete, overwrite, move, rename, or modify existing files.
 #
-# Creates the canonical Engineering Documentation Framework folder layout inside an
-# existing software project's root directory.
-# Safe to run repeatedly — existing directories and files are left unchanged.
-# The legacy documents/ folder is never created, modified, or removed.
-#
 # Usage:
 #   ./scripts/create_canonical_structure.sh "/path/to/project root"
-#
-# Example:
-#   ./scripts/create_canonical_structure.sh "/Users/ed/Projects/The Recipe Vault"
 
 set -euo pipefail
 
 if [[ $# -ne 1 ]]; then
-  echo "Error: project root path is required." >&2
-  echo "Usage: $(basename "$0") <project-root>" >&2
-  echo "Example: $(basename "$0") \"/Users/ed/Projects/The Recipe Vault\"" >&2
-  exit 1
+    echo "Error: project root path is required." >&2
+    echo "Usage: $(basename "$0") \"/path/to/project root\"" >&2
+    exit 1
 fi
 
-PROJECT_ROOT="$1"
-
-if [[ ! -d "$PROJECT_ROOT" ]]; then
-  echo "Error: project root does not exist or is not a directory: $PROJECT_ROOT" >&2
-  exit 1
-fi
-
-# Canonical folder structure (relative to project root).
-# Note: documents/ is intentionally excluded — legacy content must remain untouched.
-DIRS=(
-  "docs/Architecture"
-  "docs/Architecture/ADRs"
-  "docs/AI"
-  "docs/Development"
-  "docs/Specifications"
-  "docs/API"
-  "docs/Database"
-  "docs/Deployment"
-  "docs/User_Guides"
-  "docs/Reference"
-  "docs/Templates"
-  "tasks"
-  "archive"
-  "scripts"
-)
-
+PROJECT_ROOT="${1%/}"
 GUIDE_FILENAME="ENGINEERING_DOCUMENTATION_FRAMEWORK.md"
 
-create_dir_if_missing() {
-  local relative_path="$1"
-  local full_path="${PROJECT_ROOT}/${relative_path}"
+if [[ ! -d "$PROJECT_ROOT" ]]; then
+    echo "Error: project root does not exist or is not a directory: $PROJECT_ROOT" >&2
+    exit 1
+fi
 
-  if [[ -d "$full_path" ]]; then
-    echo "Exists:  ${relative_path}"
-  elif [[ -e "$full_path" ]]; then
-    echo "Skipped: ${relative_path} (path exists but is not a directory)" >&2
-    return 1
-  else
-    mkdir -p -- "$full_path"
-    echo "Created: ${relative_path}"
-  fi
+DIRS=(
+    "docs/Architecture"
+    "docs/Architecture/ADRs"
+    "docs/AI"
+    "docs/Development"
+    "docs/Specifications"
+    "docs/API"
+    "docs/Database"
+    "docs/Deployment"
+    "docs/User_Guides"
+    "docs/Reference"
+    "docs/Templates"
+    "tasks"
+    "archive"
+    "scripts"
+)
+
+create_dir_if_missing() {
+    local relative_path="$1"
+    local full_path="$PROJECT_ROOT/$relative_path"
+
+    if [[ -d "$full_path" ]]; then
+        echo "Exists: $relative_path"
+    elif [[ -e "$full_path" ]]; then
+        echo "Skipped: $relative_path (path exists but is not a directory)" >&2
+        return 1
+    else
+        mkdir -p -- "$full_path"
+        echo "Created: $relative_path"
+    fi
 }
 
 create_guide_if_missing() {
-  local guide_path="${PROJECT_ROOT}/${GUIDE_FILENAME}"
+    local guide_path="$PROJECT_ROOT/$GUIDE_FILENAME"
 
-  if [[ -f "$guide_path" ]]; then
-    echo "Exists:  ${GUIDE_FILENAME}"
-  elif [[ -e "$guide_path" ]]; then
-    echo "Skipped: ${GUIDE_FILENAME} (path exists but is not a file)" >&2
-    return 1
-  else
-    cat >"$guide_path" <<'EOF'
+    if [[ -f "$guide_path" ]]; then
+        echo "Exists: $GUIDE_FILENAME"
+    elif [[ -e "$guide_path" ]]; then
+        echo "Skipped: $GUIDE_FILENAME (path exists but is not a file)" >&2
+        return 1
+    else
+        cat >"$guide_path" <<'EOF'
 # Engineering Documentation Framework
 
 This project has adopted the **Engineering Documentation Framework** for organizing engineering documentation in a consistent, scalable, and AI-friendly structure.
 
-## Documentation root
+## Documentation Root
 
 **`docs/`** is the canonical documentation root for this project. Authoritative engineering documentation should live under `docs/` unless explicitly noted otherwise.
 
-## Legacy content
+## Primary Documentation Entry Point
 
-**`documents/`** is treated as legacy or project-specific content. Framework bootstrap scripts do **not** create, modify, move, or remove anything under `documents/`. Migrate content into the appropriate `docs/` domain over time, or leave it in place if it serves a distinct purpose.
+`PROJECT_INDEX.md` should be the primary navigation hub for both humans and AI assistants. The project root `README.md` should link to it.
 
-## Project areas
+## Legacy Content
+
+**`documents/`** is treated as legacy or project-specific content. Framework bootstrap scripts do **not** create, modify, move, or remove anything under `documents/`.
+
+Migrate content into the appropriate `docs/` domain over time, or leave it in place if it serves a distinct purpose.
+
+## Project Areas
 
 | Path | Purpose |
-|------|---------|
+|---|---|
 | `tasks/` | Task planning and implementation tracking |
 | `archive/` | Obsolete or superseded documentation |
 | `scripts/` | Project utility scripts |
 
-## Documentation domains
+## Documentation Domains
 
 | Path | Purpose |
-|------|---------|
-| `docs/Architecture/` | System architecture and ADRs |
+|---|---|
+| `docs/Architecture/` | System architecture and documentation architecture |
 | `docs/Architecture/ADRs/` | Individual Architecture Decision Records |
-| `docs/AI/` | AI workflow and AI engineering guidance |
-| `docs/Development/` | Developer workflow and coding practices |
+| `docs/AI/` | Modular AI Engineering Handbook |
+| `docs/Development/` | Developer workflow, coding practices, and engineering tools |
 | `docs/Specifications/` | Requirements and feature specifications |
-| `docs/API/` | API contracts |
+| `docs/API/` | API contracts and interface documentation |
 | `docs/Database/` | Schema and persistence design |
-| `docs/Deployment/` | Deployment and operations |
+| `docs/Deployment/` | Deployment, operations, and runbooks |
 | `docs/User_Guides/` | End-user documentation |
 | `docs/Reference/` | Glossary, standards, terminology, and external references |
 | `docs/Templates/` | Reusable documentation templates |
 
-## Next steps
+## AI Engineering Handbook
 
-1. Add or copy framework navigation documents (for example `PROJECT_INDEX.md`, `PROJECT_CHARTER.md`) if not already present.
-2. Map existing documentation to the domains above.
-3. Use `PROJECT_INDEX.md` as the living navigation hub once established.
+The authoritative AI documentation entry point is:
+
+`docs/AI/README.md`
+
+The AI handbook may include:
+
+- `AI_Philosophy.md`
+- `AI_Roles.md`
+- `AI_Decision_Matrix.md`
+- `Cost_Optimization.md`
+- `Prompting_Guide.md`
+- `Context_Checklist.md`
+- `Verification.md`
+- `Security.md`
+- `Governance.md`
+
+A root-level `AI_WORKFLOW.md` is considered a legacy monolithic document. Migrate any unique content into the modular AI handbook and remove the root file only after verifying that no information or links are lost.
+
+## Next Steps
+
+1. Add or customize `PROJECT_INDEX.md`, `PROJECT_CHARTER.md`, and other root navigation documents.
+2. Point the root `README.md` to `PROJECT_INDEX.md`.
+3. Audit existing documentation and map it to the appropriate domains.
+4. Migrate content incrementally.
+5. Use framework templates for new documents.
+6. Run the analysis and migration scripts after major documentation changes.
 
 ---
 
 _This file was generated by the Engineering Documentation Framework bootstrap scripts. Customize it for this project._
 EOF
-    echo "Created: ${GUIDE_FILENAME}"
-  fi
+        echo "Created: $GUIDE_FILENAME"
+    fi
 }
 
-echo "Ensuring canonical folder structure under: ${PROJECT_ROOT}"
+echo "Ensuring canonical folder structure under: $PROJECT_ROOT"
 echo
 
-if [[ -d "${PROJECT_ROOT}/documents" ]]; then
-  echo "Leaving documents/ untouched."
-  echo
+if [[ -d "$PROJECT_ROOT/documents" ]]; then
+    echo "Leaving documents/ untouched."
+    echo
 fi
 
 errors=0
+
 for dir in "${DIRS[@]}"; do
-  if ! create_dir_if_missing "$dir"; then
-    errors=$((errors + 1))
-  fi
+    if ! create_dir_if_missing "$dir"; then
+        errors=$((errors + 1))
+    fi
 done
 
 echo
+
 if ! create_guide_if_missing; then
-  errors=$((errors + 1))
+    errors=$((errors + 1))
 fi
 
 echo
+
 if [[ $errors -gt 0 ]]; then
-  echo "Finished with ${errors} skipped path(s)." >&2
-  exit 1
+    echo "Finished with $errors skipped path(s)." >&2
+    exit 1
 fi
 
 echo "Done."

@@ -1,16 +1,8 @@
 # These scripts only create missing directories and the optional framework guide file.
 # They do not delete, overwrite, move, rename, or modify existing files.
 #
-# Creates the canonical Engineering Documentation Framework folder layout inside an
-# existing software project's root directory.
-# Safe to run repeatedly — existing directories and files are left unchanged.
-# The legacy documents/ folder is never created, modified, or removed.
-#
 # Usage:
-#   .\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"
-#
-# Example:
-#   .\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"
+# .\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\Existing Project"
 
 [CmdletBinding()]
 param(
@@ -19,15 +11,12 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-
 $GuideFileName = "ENGINEERING_DOCUMENTATION_FRAMEWORK.md"
 
 if (-not (Test-Path -LiteralPath $ProjectRoot -PathType Container)) {
     Write-Error "Project root does not exist or is not a directory: $ProjectRoot"
 }
 
-# Canonical folder structure (relative to project root).
-# Note: documents/ is intentionally excluded — legacy content must remain untouched.
 $dirs = @(
     "docs/Architecture",
     "docs/Architecture/ADRs",
@@ -46,48 +35,77 @@ $dirs = @(
 )
 
 function Get-FrameworkGuideContent {
-    @'
+@'
 # Engineering Documentation Framework
 
 This project has adopted the **Engineering Documentation Framework** for organizing engineering documentation in a consistent, scalable, and AI-friendly structure.
 
-## Documentation root
+## Documentation Root
 
 **`docs/`** is the canonical documentation root for this project. Authoritative engineering documentation should live under `docs/` unless explicitly noted otherwise.
 
-## Legacy content
+## Primary Documentation Entry Point
 
-**`documents/`** is treated as legacy or project-specific content. Framework bootstrap scripts do **not** create, modify, move, or remove anything under `documents/`. Migrate content into the appropriate `docs/` domain over time, or leave it in place if it serves a distinct purpose.
+`PROJECT_INDEX.md` should be the primary navigation hub for both humans and AI assistants. The project root `README.md` should link to it.
 
-## Project areas
+## Legacy Content
+
+**`documents/`** is treated as legacy or project-specific content. Framework bootstrap scripts do **not** create, modify, move, or remove anything under `documents/`.
+
+Migrate content into the appropriate `docs/` domain over time, or leave it in place if it serves a distinct purpose.
+
+## Project Areas
 
 | Path | Purpose |
-|------|---------|
+|---|---|
 | `tasks/` | Task planning and implementation tracking |
 | `archive/` | Obsolete or superseded documentation |
 | `scripts/` | Project utility scripts |
 
-## Documentation domains
+## Documentation Domains
 
 | Path | Purpose |
-|------|---------|
-| `docs/Architecture/` | System architecture and ADRs |
+|---|---|
+| `docs/Architecture/` | System architecture and documentation architecture |
 | `docs/Architecture/ADRs/` | Individual Architecture Decision Records |
-| `docs/AI/` | AI workflow and AI engineering guidance |
-| `docs/Development/` | Developer workflow and coding practices |
+| `docs/AI/` | Modular AI Engineering Handbook |
+| `docs/Development/` | Developer workflow, coding practices, and engineering tools |
 | `docs/Specifications/` | Requirements and feature specifications |
-| `docs/API/` | API contracts |
+| `docs/API/` | API contracts and interface documentation |
 | `docs/Database/` | Schema and persistence design |
-| `docs/Deployment/` | Deployment and operations |
+| `docs/Deployment/` | Deployment, operations, and runbooks |
 | `docs/User_Guides/` | End-user documentation |
 | `docs/Reference/` | Glossary, standards, terminology, and external references |
 | `docs/Templates/` | Reusable documentation templates |
 
-## Next steps
+## AI Engineering Handbook
 
-1. Add or copy framework navigation documents (for example `PROJECT_INDEX.md`, `PROJECT_CHARTER.md`) if not already present.
-2. Map existing documentation to the domains above.
-3. Use `PROJECT_INDEX.md` as the living navigation hub once established.
+The authoritative AI documentation entry point is:
+
+`docs/AI/README.md`
+
+The AI handbook may include:
+
+- `AI_Philosophy.md`
+- `AI_Roles.md`
+- `AI_Decision_Matrix.md`
+- `Cost_Optimization.md`
+- `Prompting_Guide.md`
+- `Context_Checklist.md`
+- `Verification.md`
+- `Security.md`
+- `Governance.md`
+
+A root-level `AI_WORKFLOW.md` is considered a legacy monolithic document. Migrate any unique content into the modular AI handbook and remove the root file only after verifying that no information or links are lost.
+
+## Next Steps
+
+1. Add or customize `PROJECT_INDEX.md`, `PROJECT_CHARTER.md`, and other root navigation documents.
+2. Point the root `README.md` to `PROJECT_INDEX.md`.
+3. Audit existing documentation and map it to the appropriate domains.
+4. Migrate content incrementally.
+5. Use framework templates for new documents.
+6. Run the analysis and migration scripts after major documentation changes.
 
 ---
 
@@ -96,14 +114,12 @@ _This file was generated by the Engineering Documentation Framework bootstrap sc
 }
 
 function New-DirectoryIfMissing {
-    param(
-        [string] $RelativePath
-    )
+    param([string] $RelativePath)
 
     $fullPath = Join-Path -Path $ProjectRoot -ChildPath $RelativePath
 
     if (Test-Path -LiteralPath $fullPath -PathType Container) {
-        Write-Host "Exists:  $RelativePath"
+        Write-Host "Exists: $RelativePath"
     }
     elseif (Test-Path -LiteralPath $fullPath) {
         Write-Warning "Skipped: $RelativePath (path exists but is not a directory)"
@@ -121,7 +137,7 @@ function New-FrameworkGuideIfMissing {
     $guidePath = Join-Path -Path $ProjectRoot -ChildPath $GuideFileName
 
     if (Test-Path -LiteralPath $guidePath -PathType Leaf) {
-        Write-Host "Exists:  $GuideFileName"
+        Write-Host "Exists: $GuideFileName"
         return $true
     }
     elseif (Test-Path -LiteralPath $guidePath) {
@@ -129,8 +145,7 @@ function New-FrameworkGuideIfMissing {
         return $false
     }
 
-    $content = Get-FrameworkGuideContent
-    [System.IO.File]::WriteAllText($guidePath, $content)
+    [System.IO.File]::WriteAllText($guidePath, (Get-FrameworkGuideContent))
     Write-Host "Created: $GuideFileName"
     return $true
 }
@@ -145,6 +160,7 @@ if (Test-Path -LiteralPath $documentsPath -PathType Container) {
 }
 
 $errors = 0
+
 foreach ($dir in $dirs) {
     if (-not (New-DirectoryIfMissing -RelativePath $dir)) {
         $errors++
@@ -152,11 +168,13 @@ foreach ($dir in $dirs) {
 }
 
 Write-Host ""
+
 if (-not (New-FrameworkGuideIfMissing)) {
     $errors++
 }
 
 Write-Host ""
+
 if ($errors -gt 0) {
     Write-Warning "Finished with $errors skipped path(s)."
     exit 1

@@ -1,35 +1,35 @@
-# Update Instructions — AI Handbook Refactor
+# Framework Consistency Update
 
-This update refactors the root `AI_WORKFLOW.md` document into a modular AI Engineering Handbook under `docs/AI/`.
+This package aligns the bootstrap, analysis, migration, and information-architecture components with the modular AI Engineering Handbook under `docs/AI/`.
 
-## Important Safety Note
+## Apply the Update
 
-Do not drag the `docs/` folder from Finder onto the existing project root. Finder may replace folders instead of merging them.
+1. Extract this ZIP into a temporary folder.
+2. From the project root, merge the extracted package using `ditto`:
 
-Use `ditto` to merge the extracted update folder into the repository root.
+   ```bash
+   ditto "./edf_framework_consistency_update/" "./"
+   ```
 
-Example, when the extracted update folder is inside the repository root:
+3. Review the Git changes before committing.
+4. No project files need to be deleted for this update.
 
-```bash
-ditto "./edf_ai_handbook_update_v3/" "./"
-```
+## Files to Copy or Overwrite
 
-Then review the Git diff before committing.
+- `scripts/analyze_project_structure.sh`
+- `scripts/analyze_project_structure.ps1`
+- `scripts/plan_documentation_migration.sh`
+- `scripts/plan_documentation_migration.ps1`
+- `scripts/create_canonical_structure.sh`
+- `scripts/create_canonical_structure.ps1`
+- `docs/Development/Project_Analysis_Validation_Tool.md`
+- `docs/Development/Documentation_Migration_Assistant.md`
+- `docs/Architecture/Documentation_Information_Architecture.md`
 
-## Files Added or Updated
+## Files to Delete
 
-See `UPDATE_FILE_MANIFEST.md`.
-
-## Files to Delete Manually After Applying the Update
-
-Delete this file from the project root after confirming the new `docs/AI/` files exist:
-
-```text
-AI_WORKFLOW.md
-```
+None.
 
 ## Suggested Commit Message
 
-```text
-docs: refactor AI workflow into AI handbook
-```
+`chore: align framework tools with modular AI handbook`

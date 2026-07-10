@@ -31,3 +31,9 @@
 
 - **M1 – Architecture Freeze:** Complete
 - **M2 – Governance:** Complete
+
+## Framework Self-Hosting
+
+- [Framework Self-Hosting](docs/Governance/Framework_Self_Hosting.md)
+- [EDF Self-Hosting Report](docs/Reference/EDF_Self_Hosting_Report.md)
+- [Reference Domain](docs/Reference/README.md)

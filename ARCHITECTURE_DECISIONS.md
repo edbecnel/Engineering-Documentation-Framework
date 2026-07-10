@@ -56,3 +56,25 @@ does not modify project-owned documentation.
 - Analyzer findings are advisory rather than automatic enforcement.
 - Governance and navigation standards are now machine-checkable.
 - Semantic duplication and factual conflict detection remain future work.
+## ADR-M4 — Framework Self-Hosting
+
+**Status:** Accepted
+
+### Decision
+
+EDF shall validate itself using the same Framework Advisor, governance, navigation,
+and documentation standards that it defines for adopting projects.
+
+Self-host validation must be repeatable through PowerShell and Bash runners and must
+produce a retained report for human review.
+
+EDF must not claim self-hosting compliance solely from an unreviewed numeric score.
+
+### Consequences
+
+- Self-hosting is a release gate for EDF v1.0.
+- The active `docs/Reference/` domain stores the self-hosting report.
+- Accepted exceptions must be explicit and reviewable.
+- The Framework Advisor remains read-only.
+- Runner scripts write only validation report output.
+- Local validation is required after package merge.

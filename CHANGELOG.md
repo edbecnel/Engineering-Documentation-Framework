@@ -1,6 +1,25 @@
 # Changelog
 
 
+
+## M4 – Framework Self-Hosting
+
+### Added
+
+- authoritative Framework Self-Hosting governance document
+- active Reference documentation domain
+- EDF Self-Hosting Report
+- PowerShell and Bash self-hosting validation runners
+- timestamped validation report output
+- explicit pass criteria and accepted-exception rules
+- EDF v1.0 self-hosting release gate
+
+### Changed
+
+- Governance navigation includes Framework Self-Hosting
+- Project Index links to self-hosting governance and reports
+- self-hosting compliance requires reviewed local Framework Advisor output
+
 ## M3 – Framework Advisor
 
 ### Added

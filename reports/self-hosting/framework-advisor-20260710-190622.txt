@@ -1,0 +1,176 @@
+Engineering Documentation Framework Advisor
+===========================================
+
+Project root: /Users/edbecnel/Development/GitHub/Engineering-Documentation-Framework
+Project name: Engineering-Documentation-Framework
+Overall compliance: 63%
+Structure score: 93%
+AI score: 100%
+Navigation score: 0%
+Governance score: 61%
+
+This report is read-only.
+No files or folders were created, modified, moved, renamed, or deleted.
+
+Missing required directories
+----------------------------
+- docs/Architecture/ADRs
+
+Missing recommended root files
+------------------------------
+- ENGINEERING_DOCUMENTATION_FRAMEWORK.md
+
+Missing AI handbook files
+-------------------------
+None.
+
+Missing Governance files
+------------------------
+None.
+
+Broken links
+------------
+- tasks/README.md -> url
+- docs/Specifications/README.md -> ../../AI_WORKFLOW.md
+- docs/User_Guides/README.md -> ../Specifications/Glossary.md
+- docs/Developer_Handbook/01_Development_Environment.md -> ../../AI_WORKFLOW.md
+- docs/Developer_Handbook/03_Git_Workflow.md -> ../../AI_WORKFLOW.md
+- docs/Developer_Handbook/README.md -> ../../AI_WORKFLOW.md
+- docs/Developer_Handbook/02_AI_Development.md -> ../../AI_WORKFLOW.md
+- docs/Developer_Handbook/02_AI_Development.md -> ../../AI_WORKFLOW.md
+- docs/Developer_Handbook/02_AI_Development.md -> ../../AI_WORKFLOW.md
+- docs/Templates/Project_Index_Template.md -> PROJECT_CHARTER.md
+- docs/Templates/Project_Index_Template.md -> ARCHITECTURE_DECISIONS.md
+- docs/Templates/Project_Index_Template.md -> docs/AI/README.md
+- docs/Templates/Project_Index_Template.md -> docs/AI/README.md
+- docs/Templates/Project_README_Template.md -> PROJECT_INDEX.md
+- docs/Templates/Project_README_Template.md -> PROJECT_CHARTER.md
+- docs/Templates/Project_README_Template.md -> ARCHITECTURE_DECISIONS.md
+- docs/Templates/Project_README_Template.md -> docs/AI/README.md
+- docs/Templates/Project_README_Template.md -> docs/Development/
+- PROJECT_CHARTER.md -> ./AI_WORKFLOW.md
+
+Orphan documents
+----------------
+- tasks/README.md
+- docs/Database/README.md
+- docs/Specifications/README.md
+- docs/User_Guides/README.md
+- docs/Developer_Handbook/README.md
+- docs/Deployment/README.md
+- docs/API/README.md
+- docs/Templates/Project_Index_Template.md
+- docs/Templates/ADR_Template.md
+- docs/Templates/Developer_Guide_Template.md
+- docs/Templates/API_Specification_Template.md
+- docs/Templates/Architecture_Document_Template.md
+- docs/Templates/Feature_Specification_Template.md
+- docs/Templates/Project_README_Template.md
+- docs/Templates/Project_Charter_Template.md
+- docs/Templates/Handover_Template.md
+- docs/Templates/Database_Design_Template.md
+- docs/Templates/Release_Notes_Template.md
+- docs/Templates/User_Guide_Template.md
+
+Navigation issues
+-----------------
+- docs/Database/README.md: missing breadcrumb navigation.
+- docs/Specifications/README.md: missing breadcrumb navigation.
+- docs/User_Guides/README.md: missing breadcrumb navigation.
+- docs/Development/Documentation_Generation_Engine.md: missing breadcrumb navigation.
+- docs/Architecture/Framework_Generation_Principles.md: missing breadcrumb navigation.
+- docs/Architecture/README.md: missing breadcrumb navigation.
+- docs/Developer_Handbook/01_Development_Environment.md: missing breadcrumb navigation.
+- docs/Developer_Handbook/01_Development_Environment.md: missing parent domain README link.
+- docs/Developer_Handbook/05_Testing.md: missing breadcrumb navigation.
+- docs/Developer_Handbook/05_Testing.md: missing parent domain README link.
+- docs/Developer_Handbook/03_Git_Workflow.md: missing breadcrumb navigation.
+- docs/Developer_Handbook/03_Git_Workflow.md: missing parent domain README link.
+- docs/Developer_Handbook/04_Coding_Standards.md: missing breadcrumb navigation.
+- docs/Developer_Handbook/04_Coding_Standards.md: missing parent domain README link.
+- docs/Developer_Handbook/README.md: missing breadcrumb navigation.
+- docs/Developer_Handbook/02_AI_Development.md: missing breadcrumb navigation.
+- docs/Developer_Handbook/02_AI_Development.md: missing parent domain README link.
+- docs/Developer_Handbook/06_Deployment.md: missing breadcrumb navigation.
+- docs/Developer_Handbook/06_Deployment.md: missing parent domain README link.
+- docs/AI/AI_Philosophy.md: missing breadcrumb navigation.
+- docs/AI/AI_Philosophy.md: missing parent domain README link.
+- docs/AI/AI_Roles.md: missing breadcrumb navigation.
+- docs/AI/AI_Roles.md: missing parent domain README link.
+- docs/AI/Governance.md: missing breadcrumb navigation.
+- docs/AI/Governance.md: missing parent domain README link.
+- docs/AI/Prompting_Guide.md: missing breadcrumb navigation.
+- docs/AI/Prompting_Guide.md: missing parent domain README link.
+- docs/AI/Cost_Optimization.md: missing breadcrumb navigation.
+- docs/AI/Cost_Optimization.md: missing parent domain README link.
+- docs/AI/README.md: missing breadcrumb navigation.
+- docs/AI/Verification.md: missing breadcrumb navigation.
+- docs/AI/Verification.md: missing parent domain README link.
+- docs/AI/AI_Decision_Matrix.md: missing breadcrumb navigation.
+- docs/AI/AI_Decision_Matrix.md: missing parent domain README link.
+- docs/AI/Security.md: missing breadcrumb navigation.
+- docs/AI/Security.md: missing parent domain README link.
+- docs/AI/Context_Checklist.md: missing breadcrumb navigation.
+- docs/AI/Context_Checklist.md: missing parent domain README link.
+- docs/Deployment/README.md: missing breadcrumb navigation.
+- docs/API/README.md: missing breadcrumb navigation.
+- docs/Templates/Project_Index_Template.md: missing breadcrumb navigation.
+- docs/Templates/ADR_Template.md: missing breadcrumb navigation.
+- docs/Templates/ADR_Template.md: missing parent domain README link.
+- docs/Templates/Developer_Guide_Template.md: missing breadcrumb navigation.
+- docs/Templates/Developer_Guide_Template.md: missing parent domain README link.
+- docs/Templates/API_Specification_Template.md: missing breadcrumb navigation.
+- docs/Templates/API_Specification_Template.md: missing parent domain README link.
+- docs/Templates/Architecture_Document_Template.md: missing breadcrumb navigation.
+- docs/Templates/Architecture_Document_Template.md: missing parent domain README link.
+- docs/Templates/Feature_Specification_Template.md: missing breadcrumb navigation.
+- docs/Templates/Feature_Specification_Template.md: missing parent domain README link.
+- docs/Templates/README.md: missing breadcrumb navigation.
+- docs/Templates/Project_README_Template.md: missing breadcrumb navigation.
+- docs/Templates/Project_Charter_Template.md: missing breadcrumb navigation.
+- docs/Templates/Project_Charter_Template.md: missing parent domain README link.
+- docs/Templates/Handover_Template.md: missing breadcrumb navigation.
+- docs/Templates/Handover_Template.md: missing parent domain README link.
+- docs/Templates/Database_Design_Template.md: missing breadcrumb navigation.
+- docs/Templates/Database_Design_Template.md: missing parent domain README link.
+- docs/Templates/Release_Notes_Template.md: missing breadcrumb navigation.
+- docs/Templates/Release_Notes_Template.md: missing parent domain README link.
+- docs/Templates/User_Guide_Template.md: missing breadcrumb navigation.
+- docs/Templates/User_Guide_Template.md: missing parent domain README link.
+
+Governance metadata and lifecycle issues
+----------------------------------------
+- docs/Development/Documentation_First_Development_Policy.md: missing or invalid Status.
+- docs/Development/Documentation_First_Development_Policy.md: missing Applies To.
+- docs/Development/EDF_Development_Workflow.md: missing or invalid Status.
+- docs/Development/Engineering_Development_Policy.md: missing or invalid Status.
+- docs/Governance/Ownership_and_Review.md: missing or invalid Status.
+- docs/Governance/Document_Metadata_Standard.md: missing or invalid Status.
+- docs/Governance/Document_Lifecycle.md: missing or invalid Status.
+- docs/Governance/Change_Management.md: missing or invalid Status.
+- docs/Governance/Governance_Checklist.md: missing or invalid Status.
+- docs/Governance/README.md: missing or invalid Status.
+- docs/Governance/Analyzer_Compliance.md: missing or invalid Status.
+- docs/Governance/Governance_Overview.md: missing or invalid Status.
+- docs/Governance/EDF_Governance.md: missing or invalid Status.
+
+Overdue reviews
+---------------
+None.
+
+Markdown outside canonical locations
+------------------------------------
+- scripts/README.md
+
+Warnings
+--------
+None.
+
+Recommendations
+---------------
+- Audit Markdown outside canonical locations.
+- Repair broken relative Markdown links.
+- Link orphan documents from the project hierarchy.
+- Add required breadcrumb and parent navigation.
+- Correct governance metadata and lifecycle issues.
+

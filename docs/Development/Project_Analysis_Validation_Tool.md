@@ -1,5 +1,7 @@
 # Project Analysis and Validation Tool
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Development](README.md) › Project Analysis and Validation Tool
+
 ## Purpose
 
 The Engineering Documentation Framework includes read-only project analysis tools that inspect an existing software project and report how closely it follows the framework.
@@ -8,7 +10,9 @@ The analyzer helps teams adopt and maintain the framework without automatically 
 
 ## Safety Guarantee
 
-The analysis tools are read-only. They do not:
+The analysis tools are read-only.
+
+They do not:
 
 - create files or folders
 - delete or overwrite files
@@ -60,7 +64,9 @@ The analyzer reports the presence of:
 - `docs/AI/Security.md`
 - `docs/AI/Governance.md`
 
-It reports both a file count and a percentage. This is a completeness indicator, not a judgment of document quality.
+It reports both a file count and a percentage.
+
+This is a completeness indicator, not a judgment of document quality.
 
 ## Output
 
@@ -93,6 +99,19 @@ A lower score means that the project has not yet fully adopted the framework. It
 
 ## Important Limitation
 
-The analyzer checks structure and selected references. It does not prove that documentation is accurate, current, non-duplicative, or complete in substance.
+The analyzer checks structure and selected references.
 
-Those concerns require human review and, later, framework governance and link-validation tools.
+It does not prove that documentation is accurate, current, non-duplicative, or complete in substance. Those concerns require human review and, later, framework governance and link-validation tools.
+
+## Parent
+
+- [Development](README.md)
+
+## Related Documents
+
+- [Documentation Migration Assistant](Documentation_Migration_Assistant.md)
+- [Documentation Generation Engine](Documentation_Generation_Engine.md)
+- [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
+- [Governance Analyzer Compliance](../Governance/Analyzer_Compliance.md)
+- [Governance Checklist](../Governance/Governance_Checklist.md)
+- [AI Engineering Handbook](../AI/README.md)

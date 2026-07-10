@@ -1,72 +1,260 @@
 # Documentation Information Architecture
 
-> **Status:** Canonical  
-> **Owner:** Engineering Documentation Framework  
-> **Authoritative:** Yes
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Architecture](README.md) › Documentation Information Architecture
 
----
+## Purpose
 
-# Purpose
+This document defines the information architecture for the Engineering Documentation Framework.
 
-This document defines the canonical documentation information architecture for the Engineering Documentation Framework (EDF).
+The framework is a reusable documentation system for long-lived software engineering projects.
 
-It serves as the authoritative specification for how documentation is organized, structured, related, generated, analyzed, governed, and maintained throughout the lifecycle of an engineering project.
+It defines:
 
-All projects adopting EDF should organize their documentation in accordance with this architecture unless there is a documented architectural decision approving a deviation.
+- where information belongs
+- which documents are authoritative
+- how documents relate to each other
+- when content should be split, merged, moved, or archived
+- how humans and AI assistants should navigate the repository
 
----
+## Core Principle
 
-# Objectives
+The repository is the single source of truth.
 
-The documentation architecture is designed to:
+Documentation should be:
 
-- Provide a consistent documentation structure across projects.
-    
-- Improve discoverability and navigation.
-    
-- Support long-lived engineering projects.
-    
-- Minimize duplication.
-    
-- Encourage modular documentation.
-    
-- Improve maintainability.
-    
-- Provide an architecture that is easy for both humans and AI systems to understand.
-    
-- Serve as the foundation for governance, generation, and analysis tools.
-    
+- modular
+- version controlled
+- reviewed
+- refactored
+- maintained
+- intentionally organized
 
----
+## Primary Entry Points
 
-# Architectural Principles
+### `README.md`
 
-The documentation architecture follows these guiding principles:
+The public-facing overview.
 
-1. The repository is the single source of truth.
-    
-2. Documentation architecture is as important as software architecture.
-    
-3. Documentation is modular.
-    
-4. Each document has a single primary responsibility.
-    
-5. Every concept has one authoritative source.
-    
-6. Documentation should evolve continuously.
-    
-7. Existing project content is never overwritten automatically.
-    
-8. AI assists; humans retain final authority.
-    
-9. The framework should be data-driven rather than hardcoded.
-    
-10. Existing projects should be improved incrementally rather than requiring wholesale restructuring.
-    
+It explains what the project or framework is, why it exists, and how to begin.
 
----
+### `PROJECT_INDEX.md`
 
-# Canonical Repository Structure
+The primary documentation hub for humans and AI assistants.
+
+It maps readers to authoritative documents, active priorities, and current project status.
+
+### `PROJECT_CHARTER.md`
+
+Defines mission, scope, goals, non-goals, stakeholders, assumptions, and constraints.
+
+### `ENGINEERING_DOCUMENTATION_FRAMEWORK.md`
+
+The local adoption guide created by the canonical bootstrap scripts in an adopting project.
+
+It identifies `docs/` as the canonical documentation root and explains the documentation domains.
+
+## Documentation Domains
+
+### Core
+
+Project identity, navigation, and framework-wide governance.
+
+Examples:
+
+- `README.md`
+- `PROJECT_INDEX.md`
+- `PROJECT_CHARTER.md`
+- `ARCHITECTURE_DECISIONS.md`
+- `CHANGELOG.md`
+
+### Architecture
+
+System structure, technical direction, diagrams, ADRs, and documentation architecture.
+
+### AI
+
+The modular AI Engineering Handbook under `docs/AI/`.
+
+Its authoritative entry point is:
+
+- `docs/AI/README.md`
+
+Expected handbook documents include:
+
+- `AI_Philosophy.md`
+- `AI_Roles.md`
+- `AI_Decision_Matrix.md`
+- `Cost_Optimization.md`
+- `Prompting_Guide.md`
+- `Context_Checklist.md`
+- `Verification.md`
+- `Security.md`
+- `Governance.md`
+
+A root-level `AI_WORKFLOW.md` is retired. If found in an existing project, migrate its unique content into the modular handbook and remove it only after verifying links and content preservation.
+
+### Development
+
+Day-to-day engineering practices, coding standards, Git workflow, testing, debugging, setup, and development tooling.
+
+### Specifications
+
+Requirements, intended behavior, user stories, acceptance criteria, and non-functional requirements.
+
+### API
+
+External and internal API contracts, authentication behavior, schemas, and interface documentation.
+
+### Database
+
+Data models, schemas, migrations, backup and restore, data ownership, and retention rules.
+
+### Deployment
+
+Environments, CI/CD, release processes, runbooks, rollback, monitoring, and operations.
+
+### User Guides
+
+End-user manuals, walkthroughs, tutorials, and troubleshooting material.
+
+### Reference
+
+Glossaries, standards, terminology, conventions, and external references.
+
+### Templates
+
+Reusable document templates.
+
+### Archive
+
+Retired, obsolete, or superseded material. Archived documents are historical and not authoritative.
+
+## Document Responsibility
+
+Each document should have one primary responsibility.
+
+Split documents when:
+
+- they are hard to scan
+- they serve multiple unrelated audiences
+- sections evolve independently
+- content belongs to different documentation domains
+- they become too large for practical AI context
+
+Merge documents when:
+
+- they serve the same purpose
+- separation makes navigation harder
+- the distinction is unclear
+
+## Single Source of Truth
+
+Detailed information should exist in one authoritative place.
+
+Acceptable duplication:
+
+- short summaries
+- navigation descriptions
+- links
+
+Unacceptable duplication:
+
+- parallel technical explanations
+- conflicting setup instructions
+- copied full sections maintained independently
+- competing authoritative documents
+
+## Standard Document Navigation
+
+Every end-user-facing Markdown document maintained or generated by EDF must include clickable navigation that places the document within the repository hierarchy.
+
+### Required Navigation Elements
+
+Each document must include, where applicable:
+
+1. **Breadcrumb navigation** near the top of the document.
+2. **Parent link** back to the domain README or immediate parent document.
+3. **Child-document links** when the document acts as a navigation hub or has subordinate documents.
+4. **Related-document links** to directly relevant documents in other domains or at the same hierarchy level.
+5. **Canonical-reference links** when the document depends on an authoritative policy, architecture document, specification, or ADR.
+
+### Standard Hierarchy
+
+```text
+README.md
+    ↓
+PROJECT_INDEX.md
+    ↓
+Domain README
+    ↓
+Individual Document
+```
+
+### Example Breadcrumb
+
+```markdown
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Development](README.md) › Project Analysis and Validation Tool
+```
+
+### Navigation Rules
+
+- All navigation links must be relative Markdown links.
+- Domain README files must link to every active child document in that domain.
+- Individual documents must link back to their domain README.
+- Links must be updated whenever a document is created, moved, renamed, deprecated, archived, or replaced.
+- Generated documents must include navigation at creation time; users must not be required to wire links manually.
+- Navigation must remain useful to both human readers and AI assistants.
+- Archived documents may use historical navigation but must not appear as current child documents in active domain indexes.
+
+## Cross-References
+
+Use relative links instead of duplicating content.
+
+Whenever a document is created, moved, renamed, retired, or replaced, update:
+
+- `PROJECT_INDEX.md`
+- relevant `README.md` files
+- links from related documents
+- any ADR or specification that cites it
+- breadcrumbs, parent links, child links, and related-document links
+
+## AI Navigation Rules
+
+AI assistants should begin with `PROJECT_INDEX.md` unless instructed otherwise.
+
+They should:
+
+- use repository documents as authoritative context
+- identify duplication
+- recommend restructuring
+- preserve document intent
+- maintain terminology
+- update cross-references
+- avoid inventing project facts
+
+Humans retain responsibility for engineering judgment, security, testing, production approval, and final acceptance.
+
+## Naming Conventions
+
+Use clear, descriptive filenames in Title Case with underscores:
+
+```text
+Documentation_Information_Architecture.md
+AI_Decision_Matrix.md
+Prompting_Guide.md
+```
+
+Use domain-oriented directory names:
+
+```text
+docs/Architecture/
+docs/AI/
+docs/Development/
+docs/Specifications/
+docs/Templates/
+```
+
+## Canonical Structure
 
 ```text
 README.md
@@ -76,329 +264,47 @@ ARCHITECTURE_DECISIONS.md
 CHANGELOG.md
 
 docs/
-    AI/
-    API/
     Architecture/
+        Documentation_Information_Architecture.md
+        ADRs/
+    AI/
+        README.md
+        AI_Philosophy.md
+        AI_Roles.md
+        AI_Decision_Matrix.md
+        Cost_Optimization.md
+        Prompting_Guide.md
+        Context_Checklist.md
+        Verification.md
+        Security.md
+        Governance.md
+    Development/
+    Specifications/
+    API/
     Database/
     Deployment/
-    Development/
-    Reference/
-    Specifications/
-    Templates/
     User_Guides/
+    Reference/
+    Templates/
 
 tasks/
-
 archive/
-
 scripts/
 ```
 
-This structure represents the canonical organization of an EDF repository.
+## Maintenance Principle
 
----
+Documentation should be continuously refactored.
 
-# Documentation Domains
+When the framework grows, do not merely append content. Improve the architecture by splitting, merging, renaming, moving, cross-linking, or retiring documents as needed.
 
-Documentation is organized into domains based on responsibility rather than document type.
+## Parent
 
-Each domain contains a `README.md` that serves as its navigation hub.
+- [Architecture](README.md)
 
-Typical domains include:
+## Related Documents
 
-- AI
-    
-- Architecture
-    
-- API
-    
-- Database
-    
-- Deployment
-    
-- Development
-    
-- Reference
-    
-- Specifications
-    
-- Templates
-    
-- User Guides
-    
-
----
-
-# Navigation Architecture
-
-Documentation should form a consistent navigation hierarchy.
-
-```text
-README.md
-        │
-        ▼
-PROJECT_INDEX.md
-        │
-        ▼
-Domain README
-        │
-        ▼
-Individual Documents
-```
-
-Every document should, where appropriate, include:
-
-- Parent document
-    
-- Related documents
-    
-- Authoritative references
-    
-- Breadcrumb navigation
-    
-
-Navigation should be generated automatically whenever practical.
-
----
-
-# Documentation as a Knowledge Graph
-
-EDF views documentation as a connected knowledge graph rather than an isolated collection of Markdown files.
-
-Documents should reference related concepts rather than duplicate them.
-
-Cross-references should make relationships between architecture, specifications, APIs, deployment, governance, and development clear and easy to follow.
-
----
-
-# Canonical Documents
-
-The following documents define the framework itself:
-
-- README.md
-    
-- PROJECT_INDEX.md
-    
-- PROJECT_CHARTER.md
-    
-- ARCHITECTURE_DECISIONS.md
-    
-- CHANGELOG.md
-    
-- Documentation Information Architecture
-    
-- (Future) Governance Handbook
-    
-
-These documents serve as authoritative references for the framework.
-
----
-
-# Framework-Owned vs. Project-Owned Artifacts
-
-EDF distinguishes between framework-owned and project-owned artifacts.
-
-## Framework-Owned
-
-Examples include:
-
-- Templates
-    
-- Generators
-    
-- Analyzer
-    
-- Governance definitions
-    
-- Framework documentation
-    
-
-These evolve as EDF evolves.
-
-## Project-Owned
-
-Examples include:
-
-- Generated documentation
-    
-- Project architecture
-    
-- Project requirements
-    
-- Project decisions
-    
-- Project-specific guides
-    
-
-Once generated, these belong to the adopting project.
-
-EDF generators must never overwrite them automatically.
-
----
-
-# Generation Philosophy
-
-Documentation generators shall:
-
-- Create missing documentation.
-    
-- Populate navigation.
-    
-- Generate links.
-    
-- Never overwrite existing project content.
-    
-- Never rename existing files.
-    
-- Never delete existing files.
-    
-- Never move existing files automatically.
-    
-
-Generated documentation becomes project-owned.
-
----
-
-# Analyzer Philosophy
-
-The Framework Advisor (Analyzer) is advisory rather than prescriptive.
-
-Its responsibilities include:
-
-- Structural analysis
-    
-- Documentation completeness
-    
-- Governance compliance
-    
-- Navigation validation
-    
-- Link validation
-    
-- Template compliance
-    
-- Documentation health
-    
-- Documentation debt identification
-    
-
-The analyzer recommends improvements but does not automatically modify documentation.
-
----
-
-# Incremental Adoption
-
-EDF supports:
-
-- New repositories
-    
-- Existing repositories
-    
-- Legacy repositories
-    
-
-Projects should be able to adopt EDF incrementally without requiring large-scale reorganization.
-
----
-
-# Data-Driven Framework
-
-EDF should minimize hardcoded assumptions.
-
-Framework behavior should instead be driven by:
-
-- Templates
-    
-- Specifications
-    
-- Governance
-    
-- Configuration
-    
-- Documentation standards
-    
-
-This improves flexibility, maintainability, and future evolution.
-
----
-
-# AI-Friendly but AI-Independent
-
-EDF is designed to benefit both humans and AI.
-
-Well-structured documentation improves:
-
-- Human understanding
-    
-- AI context retrieval
-    
-- Documentation generation
-    
-- Project analysis
-    
-- Long-term maintenance
-    
-
-However, the framework does not require AI in order to remain useful.
-
----
-
-# Framework Self-Hosting
-
-Before the Engineering Documentation Framework reaches Version 1.0, the framework repository shall fully comply with its own standards.
-
-Self-hosting includes:
-
-- Canonical structure
-    
-- Navigation
-    
-- Governance
-    
-- Templates
-    
-- Analyzer compliance
-    
-- Link validation
-    
-- Documentation completeness
-    
-
-The framework should successfully analyze itself with no significant compliance issues.
-
----
-
-# Related Documents
-
-- README.md
-    
-- PROJECT_INDEX.md
-    
-- ARCHITECTURE_DECISIONS.md
-    
-- Documentation First Development Policy
-    
-- Governance Handbook (planned)
-    
-- Framework Advisor documentation (planned)
-    
-
----
-
-# Future Evolution
-
-This document defines the canonical documentation architecture.
-
-Future enhancements should extend this architecture without compromising the core principles of:
-
-- Single authoritative sources
-    
-- Modular organization
-    
-- Incremental adoption
-    
-- Non-destructive tooling
-    
-- Human oversight
-    
-- Continuous improvement
+- [Project Index](../../PROJECT_INDEX.md)
+- [Engineering Development Policy](../Development/Engineering_Development_Policy.md)
+- [EDF Development Workflow](../Development/EDF_Development_Workflow.md)
+- [Governance](../Governance/README.md)

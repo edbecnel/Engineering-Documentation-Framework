@@ -1,5 +1,7 @@
 # Documentation Migration Assistant
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Development](README.md) › Documentation Migration Assistant
+
 ## Purpose
 
 The Documentation Migration Assistant scans an existing project for Markdown files outside canonical documentation locations and recommends where each file may belong.
@@ -52,7 +54,9 @@ A root-level `AI_WORKFLOW.md` is no longer canonical.
 
 AI engineering documentation belongs under `docs/AI/`.
 
-A legacy `AI_WORKFLOW.md` should normally be **split**, not simply moved unchanged. Review its sections and distribute unique content across the modular AI handbook, beginning with:
+A legacy `AI_WORKFLOW.md` should normally be **split**, not simply moved unchanged.
+
+Review its sections and distribute unique content across the modular AI handbook, beginning with:
 
 - `docs/AI/README.md`
 - `docs/AI/AI_Philosophy.md`
@@ -86,7 +90,9 @@ The assistant may recommend:
 
 ## Human Review Required
 
-Recommendations are based primarily on filenames. Before migrating a document, confirm:
+Recommendations are based primarily on filenames.
+
+Before migrating a document, confirm:
 
 - the document is still current
 - the recommended domain is correct
@@ -105,3 +111,15 @@ Recommendations are based primarily on filenames. Before migrating a document, c
 6. Update `README.md` and `PROJECT_INDEX.md`.
 7. Archive obsolete or superseded material with a migration note.
 8. Re-run both tools after each cleanup pass.
+
+## Parent
+
+- [Development](README.md)
+
+## Related Documents
+
+- [Project Analysis and Validation Tool](Project_Analysis_Validation_Tool.md)
+- [Documentation Generation Engine](Documentation_Generation_Engine.md)
+- [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
+- [AI Engineering Handbook](../AI/README.md)
+- [Governance](../Governance/README.md)

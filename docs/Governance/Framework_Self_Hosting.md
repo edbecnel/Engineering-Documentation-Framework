@@ -13,13 +13,11 @@
 
 This document applies only to the Engineering Documentation Framework repository.
 
-Projects adopting EDF may use the same validation approach, but they are not required
-to satisfy EDF-specific template, generator, analyzer, self-hosting, or release rules.
+Projects adopting EDF may use the same validation approach, but they are not required to satisfy EDF-specific template, generator, analyzer, self-hosting, or release rules.
 
 ## Purpose
 
-Self-hosting requires EDF to apply its own documentation architecture, governance,
-navigation, analyzer, and non-destructive tooling standards to the EDF repository.
+Self-hosting requires EDF to apply its own documentation architecture, governance, navigation, analyzer, and non-destructive tooling standards to the EDF repository.
 
 ## Requirements
 
@@ -42,24 +40,44 @@ EDF must validate:
 
 ## Validation Commands
 
-PowerShell:
+### Bash
 
-```powershell
-.\scripts\run_self_hosting_validation.ps1
-```
-
-Bash:
+From the repository root, run:
 
 ```bash
 ./scripts/run_self_hosting_validation.sh
 ```
 
-Each runner executes the Framework Advisor against the repository root and writes a
-timestamped report under:
+This is the normal macOS and Linux workflow. The wrapper automatically:
+
+1. runs the Framework Advisor Stage 1 regression verification
+2. validates Bash 3.2 compatibility and shell-script requirements
+3. runs the Framework Advisor against the EDF repository
+4. captures the complete output in a timestamped text report
+
+If the wrapper is not executable, invoke it explicitly:
+
+```bash
+bash ./scripts/run_self_hosting_validation.sh
+```
+
+The `chmod` and `git update-index --chmod` commands are one-time repository setup actions, not part of every validation run.
+
+### PowerShell
+
+```powershell
+.\scripts\run_self_hosting_validation.ps1
+```
+
+Each runner writes a timestamped report under:
 
 ```text
 reports/self-hosting/
 ```
+
+## Report Handling
+
+The generated report is a project record and should be reviewed and committed to Git when it documents an implementation milestone or release-validation result.
 
 ## Pass Criteria
 
@@ -91,8 +109,7 @@ Every accepted exception must identify:
 
 M5 release preparation must reference the latest reviewed self-hosting report.
 
-EDF must not claim self-hosting compliance until the local report has been generated
-and reviewed by the maintainer.
+EDF must not claim self-hosting compliance until the local report has been generated and reviewed by the maintainer.
 
 ## Parent
 

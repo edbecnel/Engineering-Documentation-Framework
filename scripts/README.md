@@ -6,10 +6,9 @@
 
 This directory contains the Engineering Documentation Framework utility scripts.
 
-## Shell-Script Setup
+## One-Time Shell-Script Setup
 
-After extracting an update package or copying scripts manually, ensure all shell
-scripts are executable:
+After extracting an update package or copying scripts manually, ensure the shell scripts are executable:
 
 ```bash
 chmod +x scripts/*.sh
@@ -21,23 +20,53 @@ To preserve executable modes in Git:
 git update-index --chmod=+x scripts/*.sh
 ```
 
-## Validation
+These are repository setup steps. They are not required before every validation run once the executable modes have been committed.
 
-Validate Bash 3.2 compatibility and executable permissions:
+## Complete Self-Hosting Validation
 
-```bash
-./scripts/validate_shell_scripts.sh
-```
-
-Run EDF self-hosting validation:
+From the repository root, run one command:
 
 ```bash
 ./scripts/run_self_hosting_validation.sh
 ```
 
+The wrapper performs all required Bash validation stages:
+
+1. Framework Advisor Stage 1 regression verification
+2. Bash 3.2 compatibility and shell-script validation
+3. Framework Advisor analysis of the EDF repository
+
+The complete console output is saved automatically as a timestamped text report under:
+
+```text
+reports/self-hosting/
+```
+
+The wrapper invokes its supporting shell scripts through `/bin/bash`, so those scripts do not need to be called individually.
+
+If the wrapper itself is not executable, it can still be run explicitly:
+
+```bash
+bash ./scripts/run_self_hosting_validation.sh
+```
+
+## Individual Validation Tools
+
+The supporting tools remain available for focused troubleshooting:
+
+```bash
+./scripts/verify_framework_advisor_stage1.sh
+./scripts/validate_shell_scripts.sh
+./scripts/analyze_project_structure.sh .
+```
+
+Normal self-hosting validation should use the wrapper rather than these separate commands.
+
 ## Compatibility
 
-EDF shell scripts target Bash 3.2 or newer. See:
+EDF shell scripts target Bash 3.2 or newer.
+
+See:
 
 - [Cross-Platform Shell Scripting Guidelines](../docs/Development/Cross_Platform_Shell_Scripting_Guidelines.md)
 

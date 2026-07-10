@@ -4,12 +4,14 @@
 
 ## Purpose
 
-This domain contains policies, workflows, tools, and guidance used to develop, analyze, migrate, and maintain projects that use the Engineering Documentation Framework.
+This domain contains policies, workflows, tools, and guidance used to develop,
+analyze, migrate, and maintain projects that use the Engineering Documentation Framework.
 
 ## Canonical Documents
 
 - [Engineering Development Policy](Engineering_Development_Policy.md)
 - [EDF Development Workflow](EDF_Development_Workflow.md)
+- [Cross-Platform Shell Scripting Guidelines](Cross_Platform_Shell_Scripting_Guidelines.md)
 
 ## Development Tools and Guidance
 
@@ -17,6 +19,7 @@ This domain contains policies, workflows, tools, and guidance used to develop, a
 - [Documentation Generation Engine](Documentation_Generation_Engine.md)
 - [Documentation Migration Assistant](Documentation_Migration_Assistant.md)
 - [Project Analysis and Validation Tool](Project_Analysis_Validation_Tool.md)
+- [Scripts Directory](../../scripts/README.md)
 
 ## Planned
 
@@ -32,5 +35,6 @@ This domain contains policies, workflows, tools, and guidance used to develop, a
 
 - [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
 - [Governance](../Governance/README.md)
+- [Framework Self-Hosting](../Governance/Framework_Self_Hosting.md)
 - [AI Engineering Handbook](../AI/README.md)
 - [Templates](../Templates/README.md)

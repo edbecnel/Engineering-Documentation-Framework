@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Required shell compatibility: Bash 3.2 or newer.
+# Keep this script compatible with the default Bash shipped by macOS.
 # Engineering Documentation Framework Framework Advisor.
 # Read-only analysis of structure, navigation, links, and governance.
 # Compatible with the default macOS Bash 3.2 and newer Bash versions.

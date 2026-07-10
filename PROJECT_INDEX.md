@@ -1,17 +1,11 @@
-# PROJECT INDEX (Updates for M1)
+# Project Index (M1)
 
 ## Architecture
 
-- Documentation Information Architecture *(Canonical)*
+- Documentation Information Architecture
 - Architecture Decisions
 
 ## Development
 
-- Documentation-First Development Policy *(Canonical)*
-
-## Current Milestone
-
-**M1 – Architecture Freeze**
-
-This milestone establishes the canonical documentation architecture that future
-Governance, Framework Advisor, and Self-Hosting work will build upon.
+- Engineering Development Policy
+- EDF Development Workflow

@@ -1,5 +1,7 @@
 # Governance Overview
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Governance](README.md) › Governance Overview
+
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** EDF and adopting projects
@@ -83,13 +85,20 @@ The Framework Advisor should:
 
 Projects may later choose stricter enforcement in CI or release workflows.
 
-## Parent Navigation
+## Parent
 
 - [Governance](README.md)
 
-## Related Documents
+## Child Documents
 
 - [Document Metadata Standard](Document_Metadata_Standard.md)
 - [Document Lifecycle](Document_Lifecycle.md)
 - [Ownership and Review](Ownership_and_Review.md)
-- [Analyzer Compliance](Analyzer_Compliance.md)
+- [Documentation Change Management](Change_Management.md)
+- [Governance Analyzer Compliance](Analyzer_Compliance.md)
+- [Governance Checklist](Governance_Checklist.md)
+
+## Related Documents
+
+- [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
+- [Engineering Development Policy](../Development/Engineering_Development_Policy.md)

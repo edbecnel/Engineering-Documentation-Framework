@@ -1,5 +1,7 @@
 # Documentation Change Management
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Governance](README.md) › Documentation Change Management
+
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Significant documentation changes
@@ -77,12 +79,13 @@ review when delay would create greater risk.
 
 The documentation and decision record should be corrected as soon as practical afterward.
 
-## Parent Navigation
+## Parent
 
 - [Governance](README.md)
 
 ## Related Documents
 
+- [Governance Overview](Governance_Overview.md)
+- [Document Lifecycle](Document_Lifecycle.md)
 - [Engineering Development Policy](../Development/Engineering_Development_Policy.md)
 - [EDF Development Workflow](../Development/EDF_Development_Workflow.md)
-- [Document Lifecycle](Document_Lifecycle.md)

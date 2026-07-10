@@ -1,5 +1,7 @@
 # Document Lifecycle
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Governance](README.md) › Document Lifecycle
+
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Governed documentation
@@ -93,12 +95,13 @@ that no replacement exists.
 Archiving must not delete project history. Moving files may be performed only through
 an explicit human-approved change.
 
-## Parent Navigation
+## Parent
 
 - [Governance](README.md)
 
 ## Related Documents
 
+- [Governance Overview](Governance_Overview.md)
 - [Document Metadata Standard](Document_Metadata_Standard.md)
-- [Change Management](Change_Management.md)
-- [Analyzer Compliance](Analyzer_Compliance.md)
+- [Ownership and Review](Ownership_and_Review.md)
+- [Documentation Change Management](Change_Management.md)

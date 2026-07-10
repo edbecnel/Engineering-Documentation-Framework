@@ -1,5 +1,7 @@
 # Document Metadata Standard
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Governance](README.md) › Document Metadata Standard
+
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Governed Markdown documents
@@ -103,12 +105,13 @@ A later EDF version may introduce YAML front matter or a repository governance
 manifest. The semantic meaning defined here should remain stable even if the
 serialization format changes.
 
-## Parent Navigation
+## Parent
 
 - [Governance](README.md)
 
 ## Related Documents
 
+- [Governance Overview](Governance_Overview.md)
 - [Document Lifecycle](Document_Lifecycle.md)
 - [Ownership and Review](Ownership_and_Review.md)
-- [Analyzer Compliance](Analyzer_Compliance.md)
+- [Governance Analyzer Compliance](Analyzer_Compliance.md)

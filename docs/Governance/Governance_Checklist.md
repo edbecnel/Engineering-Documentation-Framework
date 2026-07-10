@@ -1,5 +1,7 @@
 # Governance Checklist
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Governance](README.md) › Governance Checklist
+
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Governance reviews
@@ -40,12 +42,15 @@
 - [ ] Required approvals are complete.
 - [ ] Temporary `.update/` files are removed before commit.
 
-## Parent Navigation
+## Parent
 
 - [Governance](README.md)
 
 ## Related Documents
 
 - [Governance Overview](Governance_Overview.md)
-- [Analyzer Compliance](Analyzer_Compliance.md)
-- [Change Management](Change_Management.md)
+- [Document Metadata Standard](Document_Metadata_Standard.md)
+- [Document Lifecycle](Document_Lifecycle.md)
+- [Ownership and Review](Ownership_and_Review.md)
+- [Documentation Change Management](Change_Management.md)
+- [Governance Analyzer Compliance](Analyzer_Compliance.md)

@@ -1,3 +1,5 @@
+[Home](README.md) › Project Index
+
 # Project Index
 
 > Navigation hub for the Engineering Documentation Framework.

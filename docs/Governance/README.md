@@ -1,5 +1,7 @@
 # Governance
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › Governance
+
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** EDF and adopting projects
@@ -20,9 +22,15 @@ maintained, deprecated, and archived.
 - [Analyzer Compliance](Analyzer_Compliance.md)
 - [Governance Checklist](Governance_Checklist.md)
 
-## Parent Navigation
+## Child Documents
 
-- [Project Index](../../PROJECT_INDEX.md)
+- [Governance Overview](Governance_Overview.md)
+- [Document Metadata Standard](Document_Metadata_Standard.md)
+- [Document Lifecycle](Document_Lifecycle.md)
+- [Ownership and Review](Ownership_and_Review.md)
+- [Documentation Change Management](Change_Management.md)
+- [Governance Analyzer Compliance](Analyzer_Compliance.md)
+- [Governance Checklist](Governance_Checklist.md)
 
 ## Related Documents
 

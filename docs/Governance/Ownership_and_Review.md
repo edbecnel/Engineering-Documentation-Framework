@@ -1,5 +1,7 @@
 # Ownership and Review
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Governance](README.md) › Ownership and Review
+
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Governed documentation
@@ -92,12 +94,13 @@ A governed document without an owner is noncompliant.
 The analyzer should recommend an owner category but must not invent or assign one
 without project approval.
 
-## Parent Navigation
+## Parent
 
 - [Governance](README.md)
 
 ## Related Documents
 
+- [Governance Overview](Governance_Overview.md)
 - [Document Metadata Standard](Document_Metadata_Standard.md)
 - [Document Lifecycle](Document_Lifecycle.md)
 - [Governance Checklist](Governance_Checklist.md)

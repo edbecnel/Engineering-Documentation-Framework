@@ -1,5 +1,7 @@
 # Governance Analyzer Compliance
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Governance](README.md) › Governance Analyzer Compliance
+
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Framework Advisor and compatible analyzers
@@ -86,12 +88,13 @@ Accepted exceptions should be explicit, documented, scoped, and reviewable.
 
 The analyzer should distinguish accepted exceptions from unreviewed noncompliance.
 
-## Parent Navigation
+## Parent
 
 - [Governance](README.md)
 
 ## Related Documents
 
+- [Governance Overview](Governance_Overview.md)
 - [Document Metadata Standard](Document_Metadata_Standard.md)
 - [Ownership and Review](Ownership_and_Review.md)
 - [Governance Checklist](Governance_Checklist.md)

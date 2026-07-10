@@ -1,5 +1,8 @@
 # Documentation Templates
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › Templates
+
+
 ## Purpose
 
 This directory contains reusable templates for documents created under the Engineering Documentation Framework.
@@ -61,3 +64,13 @@ Prefer relative Markdown links.
 ## Maintenance
 
 Templates should evolve when repeated documentation problems are discovered. Avoid creating near-duplicate templates when an existing template can be improved.
+
+## Parent
+
+- [Project Index](../../PROJECT_INDEX.md)
+
+## Related Documents
+
+- [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
+- [Governance](../Governance/README.md)
+- [AI Engineering Handbook](../AI/README.md)

@@ -1,5 +1,8 @@
 # API Documentation
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › API
+
+
 ## Purpose
 
 This directory is the **canonical reference for programmatic interfaces** — REST, GraphQL, gRPC, webhooks, SDKs, and internal service contracts. It enables consumers (internal teams, partners, frontend developers, and AI agents) to integrate correctly without reading source code.
@@ -94,3 +97,7 @@ Link contract tests in [docs/Developer_Handbook/05_Testing.md](../Developer_Hand
 - [docs/Architecture/](../Architecture/)
 - [docs/Developer_Handbook/04_Coding_Standards.md](../Developer_Handbook/04_Coding_Standards.md)
 - [docs/User_Guides/](../User_Guides/) — consumer-facing how-tos built on these APIs
+
+## Parent
+
+- [Project Index](../../PROJECT_INDEX.md)

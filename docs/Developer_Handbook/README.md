@@ -1,5 +1,8 @@
 # Developer Handbook
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › Developer Handbook
+
+
 Practical guides for day-to-day engineering on projects that adopt this framework.
 
 | # | Document | Topics |
@@ -13,4 +16,14 @@ Practical guides for day-to-day engineering on projects that adopt this framewor
 
 Start with [01_Development_Environment.md](./01_Development_Environment.md) when onboarding.
 
-For AI tool roles across the full SDLC, see [AI_WORKFLOW.md](../../AI_WORKFLOW.md).
+For AI tool roles across the full SDLC, see [AI Engineering Handbook](../AI/README.md).
+
+## Parent
+
+- [Project Index](../../PROJECT_INDEX.md)
+
+## Related Documents
+
+- [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
+- [Governance](../Governance/README.md)
+- [AI Engineering Handbook](../AI/README.md)

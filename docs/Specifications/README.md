@@ -1,5 +1,8 @@
 # Specifications
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › Specifications
+
+
 ## Purpose
 
 This directory captures **what the software must do** — functional requirements, non-functional requirements, acceptance criteria, and feature specifications. It separates *intent* from *implementation*, enabling product, engineering, and QA to align before and during development.
@@ -122,3 +125,7 @@ Specifications/
 - [PROJECT_CHARTER.md](../../PROJECT_CHARTER.md)
 - [docs/Developer_Handbook/05_Testing.md](../Developer_Handbook/05_Testing.md)
 - [docs/User_Guides/](../User_Guides/)
+
+## Parent
+
+- [Project Index](../../PROJECT_INDEX.md)

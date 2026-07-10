@@ -1,5 +1,8 @@
 # Database Documentation
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › Database
+
+
 ## Purpose
 
 This directory documents the **data layer** — schemas, relationships, migration strategy, and data governance. Accurate database documentation prevents silent data corruption, speeds up reporting and analytics work, and gives AI tools safe context for query and migration tasks.
@@ -105,3 +108,7 @@ When using AI for SQL or migrations:
 - [docs/Architecture/](../Architecture/)
 - [docs/Developer_Handbook/06_Deployment.md](../Developer_Handbook/06_Deployment.md)
 - [docs/Deployment/](../Deployment/) — runtime database operations
+
+## Parent
+
+- [Project Index](../../PROJECT_INDEX.md)

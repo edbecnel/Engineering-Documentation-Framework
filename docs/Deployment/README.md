@@ -1,5 +1,8 @@
 # Deployment Documentation
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › Deployment
+
+
 ## Purpose
 
 This directory contains **operations and infrastructure documentation** — how the software is built, deployed, configured, monitored, and recovered in each environment. It complements the developer-focused [Developer Handbook deployment guide](../Developer_Handbook/06_Deployment.md) with platform-level detail.
@@ -102,3 +105,7 @@ During or after incidents:
 - [docs/Developer_Handbook/06_Deployment.md](../Developer_Handbook/06_Deployment.md)
 - [docs/Architecture/](../Architecture/)
 - [docs/Database/](../Database/) — migration execution in production
+
+## Parent
+
+- [Project Index](../../PROJECT_INDEX.md)

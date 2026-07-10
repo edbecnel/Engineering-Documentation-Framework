@@ -1,39 +1,37 @@
 # Tasks
 
+[Home](../README.md) › [Project Index](../PROJECT_INDEX.md) › Tasks
+
 ## Purpose
 
-The `tasks/` directory tracks **active, short-lived work** that benefits from living near documentation — migration checklists, release checklists, documentation improvement epics, and sprint notes. It is not a replacement for a full issue tracker but complements one for doc-centric and engineering-process work.
+The `tasks/` directory tracks active, short-lived work that benefits from living near documentation, including migration checklists, release checklists, documentation improvement epics, and sprint notes. It complements rather than replaces a full issue tracker.
 
-## When to use this folder
+## When to Use This Folder
 
-| Use `tasks/` | Use issue tracker instead |
-|--------------|---------------------------|
+| Use `tasks/` | Use an issue tracker instead |
+|---|---|
 | Documentation migration checklists | Bug reports with long discussion threads |
 | Release checklists for a specific version | Permanent product backlog |
-| One-off engineering initiatives with doc deliverables | Customer support tickets |
-| Onboarding task lists for new contributors | Automated CI failure tracking |
+| One-off engineering initiatives with documentation deliverables | Customer support tickets |
+| Onboarding task lists | Automated CI failure tracking |
 
-## Recommended practices
+## Recommended Practices
 
-### File naming
+### File Naming
 
-```
-YYYY-MM-short-description.md
-```
-
-Examples:
+Use descriptive names such as:
 
 - `2026-Q3-api-doc-refresh.md`
 - `2026-07-release-1.2.0-checklist.md`
-- `onboarding-contributor-checklist.md` (living document)
+- `onboarding-contributor-checklist.md`
 
-### Task file template
+### Task File Template
 
 ```markdown
 # [Task title]
 
 | Field | Value |
-|-------|-------|
+|---|---|
 | Status | Not started / In progress / Done |
 | Owner | [Name] |
 | Created | YYYY-MM-DD |
@@ -41,29 +39,37 @@ Examples:
 | Issue link | [#123](url) |
 
 ## Objective
+
 [What success looks like]
 
 ## Checklist
+
 - [ ] Item 1
 - [ ] Item 2
 
 ## Notes
+
 [Progress updates]
 ```
 
 ## Lifecycle
 
-1. **Create** when work spans multiple sessions and involves documentation deliverables.
-2. **Update** checklist items as work progresses.
-3. **Complete** — mark status Done; archive if historical value, or delete if fully captured elsewhere.
-4. **Link** from [PROJECT_INDEX.md](../PROJECT_INDEX.md) for high-visibility initiatives.
+1. Create a task file when work spans multiple sessions and includes documentation deliverables.
+2. Update checklist items as work progresses.
+3. Mark completed work as done and archive it when it retains historical value.
+4. Link high-visibility initiatives from [PROJECT_INDEX.md](../PROJECT_INDEX.md).
 
-## Current tasks
+## Current Tasks
 
-_No active tasks in the framework template. Projects adopting this framework should list active task files here or link to an external board._
+No active tasks are defined in the framework template.
 
-## Related documents
+## Parent
 
-- [PROJECT_INDEX.md](../PROJECT_INDEX.md)
-- [CHANGELOG.md](../CHANGELOG.md) — completed release work
-- [archive/](../archive/) — completed initiatives worth preserving
+- [Project Index](../PROJECT_INDEX.md)
+
+## Related Documents
+
+- [Changelog](../CHANGELOG.md)
+- [Archive](../archive/)
+- [Development](../docs/Development/README.md)
+- [Governance](../docs/Governance/README.md)

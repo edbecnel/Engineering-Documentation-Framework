@@ -1,5 +1,8 @@
 # User Guides
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › User Guides
+
+
 ## Purpose
 
 This directory contains **end-user documentation** — written for people who use the software product, not for engineers who build it. Guides should be clear, task-oriented, and free of implementation jargon unless the audience is technical users.
@@ -103,3 +106,7 @@ Document the publishing pipeline in [docs/Deployment/](../Deployment/) when esta
 - [docs/Specifications/](../Specifications/) — source requirements for features
 - [docs/API/](../API/) — for technical user / developer audience
 - [CHANGELOG.md](../../CHANGELOG.md) — engineering changelog; user guides may summarize
+
+## Parent
+
+- [Project Index](../../PROJECT_INDEX.md)

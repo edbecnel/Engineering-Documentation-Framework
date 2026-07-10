@@ -4,7 +4,9 @@
 
 ## Purpose
 
-`PROJECT_INDEX.md` serves as the **living map** of all project documentation. It answers:
+`PROJECT_INDEX.md` serves as the **living map** of all project documentation.
+
+It answers:
 
 - What is the current state of the project?
 - Where does specific information live?
@@ -34,7 +36,8 @@ This file is intentionally maintained as a **dashboard**, not a dump of detailed
 |----------|----------|-------------|
 | Project Charter | [PROJECT_CHARTER.md](./PROJECT_CHARTER.md) | Mission, scope, stakeholders, success criteria |
 | Architecture Decisions | [ARCHITECTURE_DECISIONS.md](./ARCHITECTURE_DECISIONS.md) | ADR index and decision log template |
-| AI Workflow | [AI_WORKFLOW.md](./AI_WORKFLOW.md) | How AI tools fit into the development lifecycle |
+| Documentation Information Architecture | [docs/Architecture/Documentation_Information_Architecture.md](./docs/Architecture/Documentation_Information_Architecture.md) | Authoritative guide for documentation domains, structure, ownership, and placement |
+| AI Engineering Handbook | [docs/AI/](./docs/AI/) | AI tool roles, model selection, prompting, verification, security, and governance |
 | Changelog | [CHANGELOG.md](./CHANGELOG.md) | Version history and release notes |
 | Developer Handbook | [docs/Developer_Handbook/](./docs/Developer_Handbook/) | Environment, Git, coding, testing, deployment |
 | Architecture | [docs/Architecture/](./docs/Architecture/) | System design, diagrams, component docs |
@@ -43,42 +46,70 @@ This file is intentionally maintained as a **dashboard**, not a dump of detailed
 | Deployment | [docs/Deployment/](./docs/Deployment/) | Environments, CI/CD, runbooks |
 | Specifications | [docs/Specifications/](./docs/Specifications/) | Requirements and functional specs |
 | User Guides | [docs/User_Guides/](./docs/User_Guides/) | End-user facing documentation |
+| Development Tools | [docs/Development/](./docs/Development/) | Framework development tooling and guidance |
 | Active tasks | [tasks/](./tasks/) | Current work items and checklists |
 
-## Bootstrap scripts
+## Bootstrap Scripts
 
 To add the canonical folder layout inside an **existing software project**, pass that project's root directory to the structure script:
 
-- **Unix / macOS / Linux:** `./scripts/create_canonical_structure.sh "/Users/ed/Projects/The Recipe Vault"`
-- **Windows (PowerShell):** `.\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"`
+- **Unix / macOS / Linux:**
+
+  ```bash
+  ./scripts/create_canonical_structure.sh "/Users/ed/Projects/The Recipe Vault"
+  ```
+
+- **Windows (PowerShell):**
+
+  ```powershell
+  .\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"
+  ```
 
 The scripts do not assume they are run from the project root. Quote paths that contain spaces.
 
-The scripts create missing canonical directories and, if absent, `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` at the project root — a local adoption guide explaining the `docs/` layout and how `documents/` is treated as legacy content. They do not create README files inside generated folders. Any existing `documents/` folder is left completely untouched.
+The scripts create missing canonical directories and, if absent, `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` at the project root — a local adoption guide explaining the `docs/` layout and how `documents/` is treated as legacy content.
+
+They do not create README files inside generated folders. Any existing `documents/` folder is left completely untouched.
 
 These scripts only create missing directories and the optional framework guide file. They do not delete, overwrite, move, rename, or modify existing files.
 
+## Analysis and Migration Tools
+
+| Tool | Purpose |
+|---|---|
+| `scripts/analyze_project_structure.sh` | Read-only project structure analysis for macOS/Linux |
+| `scripts/analyze_project_structure.ps1` | Read-only project structure analysis for Windows PowerShell |
+| `scripts/plan_documentation_migration.sh` | Read-only Markdown migration planning for macOS/Linux |
+| `scripts/plan_documentation_migration.ps1` | Read-only Markdown migration planning for Windows PowerShell |
+
+These tools help projects evaluate framework alignment and plan documentation migration without automatically moving or modifying files.
+
 ## Folder Structure
 
-```
+```text
 .
-├── PROJECT_INDEX.md          ← You are here
+├── README.md
+├── PROJECT_INDEX.md                  ← You are here
 ├── PROJECT_CHARTER.md
 ├── ARCHITECTURE_DECISIONS.md
-├── AI_WORKFLOW.md
 ├── CHANGELOG.md
 │
 ├── docs/
-│   ├── Developer_Handbook/   ← How we build (process & standards)
-│   ├── Architecture/         ← What we built and why (design)
-│   ├── API/                  ← External and internal interfaces
-│   ├── Database/             ← Data layer
-│   ├── Deployment/           ← How we ship and operate
-│   ├── Specifications/       ← What we're building (requirements)
-│   └── User_Guides/          ← How end users consume the product
+│   ├── Architecture/                 ← What we built and why; includes documentation architecture
+│   ├── AI/                           ← AI Engineering Handbook
+│   ├── Developer_Handbook/           ← How we build; process and standards
+│   ├── Development/                  ← Framework development tooling and guides
+│   ├── API/                          ← External and internal interfaces
+│   ├── Database/                     ← Data layer
+│   ├── Deployment/                   ← How we ship and operate
+│   ├── Specifications/               ← What we're building; requirements
+│   ├── User_Guides/                  ← How end users consume the product
+│   ├── Reference/                    ← Glossary, standards, terminology, references
+│   └── Templates/                    ← Reusable documentation templates
 │
-├── tasks/                    ← Short-lived active work
-└── archive/                  ← Retired documents (with context)
+├── scripts/                          ← Framework utility scripts
+├── tasks/                            ← Short-lived active work
+└── archive/                          ← Retired documents with context
 ```
 
 ## Where Major Information Belongs
@@ -88,8 +119,10 @@ Use this table when deciding where to file new documentation.
 | Information type | Primary location | Notes |
 |-----------------|------------------|-------|
 | Project goals and scope | `PROJECT_CHARTER.md` | Update when scope changes materially |
-| Technical decisions | `ARCHITECTURE_DECISIONS.md` + `docs/Architecture/` | ADR for the decision; Architecture for the design detail |
+| Documentation architecture / information architecture | `docs/Architecture/Documentation_Information_Architecture.md` | Defines documentation domains and placement rules |
+| Technical decisions | `ARCHITECTURE_DECISIONS.md` + `docs/Architecture/` | ADR for the decision; Architecture for design detail |
 | System diagrams | `docs/Architecture/` | Link from ADRs and PROJECT_INDEX |
+| AI tool roles, prompting, verification, security, governance | `docs/AI/` | AI Engineering Handbook |
 | REST/OpenAPI specs | `docs/API/` | Keep in sync with implementation |
 | Database schema | `docs/Database/` | Include ERD and migration notes |
 | Environment config | `docs/Deployment/` | Never commit secrets; document variable names only |
@@ -99,7 +132,8 @@ Use this table when deciding where to file new documentation.
 | Git branching policy | `docs/Developer_Handbook/03_Git_Workflow.md` | |
 | Coding conventions | `docs/Developer_Handbook/04_Coding_Standards.md` | |
 | Test strategy | `docs/Developer_Handbook/05_Testing.md` | |
-| Release procedure | `docs/Developer_Handbook/06_Deployment.md` + `docs/Deployment/` | Handbook = developer steps; Deployment = infra detail |
+| Release procedure | `docs/Developer_Handbook/06_Deployment.md` + `docs/Deployment/` | Handbook = developer steps; Deployment = infrastructure detail |
+| Framework development tools | `docs/Development/` | Tool documentation for framework scripts and migration helpers |
 | Sprint/epic tracking | `tasks/` | Link to external issue tracker if used |
 | Superseded specs | `archive/` | Prefix filename with retirement date |
 
@@ -114,8 +148,10 @@ Every major document or folder should have a **named owner** responsible for acc
 | PROJECT_INDEX.md | _[Name]_ | _[Name]_ |
 | PROJECT_CHARTER.md | _[Product owner / lead]_ | _[Name]_ |
 | ARCHITECTURE_DECISIONS.md | _[Tech lead / architect]_ | _[Name]_ |
-| docs/Developer_Handbook/ | _[Engineering lead]_ | _[Name]_ |
 | docs/Architecture/ | _[Architect]_ | _[Name]_ |
+| docs/AI/ | _[Engineering lead / AI workflow owner]_ | _[Name]_ |
+| docs/Developer_Handbook/ | _[Engineering lead]_ | _[Name]_ |
+| docs/Development/ | _[Framework maintainer]_ | _[Name]_ |
 | docs/API/ | _[API owner]_ | _[Name]_ |
 | docs/Database/ | _[Data owner]_ | _[Name]_ |
 | docs/Deployment/ | _[DevOps / SRE]_ | _[Name]_ |
@@ -133,8 +169,8 @@ Owners should:
 ### Naming conventions
 
 - Use **descriptive filenames** with underscores or hyphens: `Payment_Service_Design.md`, not `doc2.md`.
-- Prefix ordered sequences with numbers: `01_`, `02_` (as in the Developer Handbook).
-- ADR files: `ADR-NNN-short-title.md` inside `docs/Architecture/decisions/` (optional subfolder) or referenced from the central index.
+- Prefix ordered sequences with numbers when sequence matters: `01_`, `02_`.
+- ADR files should use a clear ADR naming convention and be referenced from the central ADR index.
 
 ### Document structure
 
@@ -155,7 +191,7 @@ Each substantive document should include at minimum:
 | **Update** | Same PR as related code when possible |
 | **Review** | Owner verifies quarterly or per release |
 | **Retire** | Move to `archive/` with a note explaining replacement |
-| **Delete** | Avoid; prefer archive for audit trail |
+| **Delete** | Avoid; prefer archive for audit trail unless the document is an obsolete transitional file |
 
 ### Scaling to large projects
 

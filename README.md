@@ -1,10 +1,14 @@
 # Engineering Documentation Framework
 
-A reusable documentation architecture for long-lived software projects. This repository defines **how** engineering teams organize, write, and maintain documentation — not the documentation of any single product.
+A reusable documentation architecture for long-lived software projects.
+
+This repository defines **how** engineering teams organize, write, and maintain documentation — not the documentation of any single product.
 
 ## Overview
 
-The Engineering Documentation Framework provides a consistent, scalable structure for capturing requirements, architecture, APIs, databases, deployment procedures, and day-to-day development practices. It is designed for teams that use Git as the source of truth and increasingly rely on AI-assisted development tools.
+The Engineering Documentation Framework provides a consistent, scalable structure for capturing requirements, architecture, APIs, databases, deployment procedures, AI engineering guidance, and day-to-day development practices.
+
+It is designed for teams that use Git as the source of truth and increasingly rely on AI-assisted development tools.
 
 Adopt this framework as the documentation skeleton for new repositories. Copy or submodule it, then replace generic templates with project-specific content while preserving the folder layout and conventions.
 
@@ -20,68 +24,126 @@ Adopt this framework as the documentation skeleton for new repositories. Copy or
 
 Software projects outlive their original authors. Without a deliberate documentation architecture, knowledge scatters across wikis, chat threads, and tribal memory. New contributors waste time hunting for answers. Architecture decisions get re-litigated. Deployment steps live in one person's head.
 
-This framework solves that by defining **where** information belongs, **how** it should be structured, and **which** documents are authoritative. It is intentionally generic so you can apply it to web services, libraries, data pipelines, mobile apps, or internal tools without rewriting the organizational model.
+This framework solves that by defining **where** information belongs, **how** it should be structured, and **which** documents are authoritative.
+
+It is intentionally generic so you can apply it to web services, libraries, data pipelines, mobile apps, or internal tools without rewriting the organizational model.
 
 ## Core Design Principles
 
 1. **Single source of truth** — Git is canonical. External wikis may link here, but they do not replace version-controlled docs.
 2. **Progressive disclosure** — High-level indexes point to detailed documents; readers drill down only when needed.
-3. **Templates over blank pages** — Reusable templates (charter, ADRs, handbook sections) lower the cost of writing good documentation.
+3. **Templates over blank pages** — Reusable templates lower the cost of writing good documentation.
 4. **Ownership and accountability** — Every major document has a named owner responsible for accuracy.
 5. **AI-friendly structure** — Predictable headings, explicit purpose sections, and cross-links help both humans and AI agents navigate content.
 6. **Archive, don't delete** — Superseded documents move to `archive/` with context, preserving history.
+7. **Document architecture matters** — Documentation should be organized as an engineered system, not accumulated as unrelated Markdown files.
+
+See [Documentation Information Architecture](./docs/Architecture/Documentation_Information_Architecture.md) for the framework's authoritative guidance on documentation domains, ownership, cross-references, and where information belongs.
 
 ## Benefits
 
 | Benefit | How the framework delivers it |
 |--------|--------------------------------|
-| Faster onboarding | Developer Handbook + PROJECT_INDEX give new contributors a clear starting path |
-| Better architecture hygiene | ADR template encourages recording decisions with context and alternatives |
+| Faster onboarding | Developer Handbook and `PROJECT_INDEX.md` give contributors a clear starting path |
+| Better architecture hygiene | ADR templates encourage recording decisions with context and alternatives |
 | Safer deployments | Dedicated Deployment docs separate runbooks from architecture |
 | Traceable requirements | Specifications folder isolates what from how |
-| Effective AI pairing | AI_WORKFLOW.md defines tool roles; docs use consistent patterns AI can parse |
+| Effective AI pairing | The AI Engineering Handbook defines tool roles, prompting, context, verification, security, and governance |
 | Multi-developer scale | Ownership model and Git workflow reduce documentation conflicts |
 
 ## Repository Structure
 
-```
+```text
 .
-├── README.md                    # This file — framework overview
-├── PROJECT_INDEX.md             # Master navigation and status dashboard
-├── PROJECT_CHARTER.md           # Project charter template
-├── ARCHITECTURE_DECISIONS.md    # ADR index and template
-├── AI_WORKFLOW.md               # AI tool roles across the SDLC
-├── CHANGELOG.md                 # Framework version history
+├── README.md                         # This file — framework overview
+├── PROJECT_INDEX.md                  # Master navigation and status dashboard
+├── PROJECT_CHARTER.md                # Project charter template
+├── ARCHITECTURE_DECISIONS.md         # ADR index and template
+├── CHANGELOG.md                      # Framework version history
 │
 ├── docs/
-│   ├── Developer_Handbook/      # Day-to-day engineering practices
-│   ├── Architecture/            # System design, diagrams, ADRs
-│   ├── API/                     # API contracts and references
-│   ├── Database/                # Schema, migrations, data model
-│   ├── Deployment/              # Environments, CI/CD, runbooks
-│   ├── Specifications/          # Requirements and functional specs
-│   └── User_Guides/             # End-user documentation
+│   ├── Architecture/                 # System design, diagrams, ADRs, documentation architecture
+│   ├── AI/                           # AI Engineering Handbook
+│   ├── Developer_Handbook/           # Day-to-day engineering practices
+│   ├── Development/                  # Framework development tooling and guides
+│   ├── API/                          # API contracts and references
+│   ├── Database/                     # Schema, migrations, data model
+│   ├── Deployment/                   # Environments, CI/CD, runbooks
+│   ├── Specifications/               # Requirements and functional specs
+│   ├── User_Guides/                  # End-user documentation
+│   ├── Reference/                    # Glossary, standards, terminology, external references
+│   └── Templates/                    # Reusable documentation templates
 │
-├── tasks/                       # Active work tracking (issues, epics, checklists)
-└── archive/                     # Retired or superseded documents
+├── scripts/                          # Framework utility scripts
+├── tasks/                            # Active work tracking
+└── archive/                          # Retired or superseded documents
 ```
 
 ## How to Use This Framework
 
 ### Bootstrap folder structure
 
-Run the canonical layout scripts against an **existing software project's root** to add the framework folder layout and, if missing, a local adoption guide (`ENGINEERING_DOCUMENTATION_FRAMEWORK.md`). Pass the target project root explicitly — the scripts do not assume they are run from that directory.
+Run the canonical layout scripts against an **existing software project's root** to add the framework folder layout and, if missing, a local adoption guide (`ENGINEERING_DOCUMENTATION_FRAMEWORK.md`).
 
-- **Unix / macOS / Linux:** `./scripts/create_canonical_structure.sh "/path/to/project root"`
-- **Windows (PowerShell):** `.\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"`
+Pass the target project root explicitly — the scripts do not assume they are run from that directory.
 
-The scripts create missing canonical directories and `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` only when that file does not already exist. They never create README files inside generated folders. Any existing `documents/` folder is left completely untouched.
+- **Unix / macOS / Linux:**
+
+  ```bash
+  ./scripts/create_canonical_structure.sh "/path/to/project root"
+  ```
+
+- **Windows (PowerShell):**
+
+  ```powershell
+  .\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"
+  ```
+
+The scripts create missing canonical directories and `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` only when that file does not already exist. They never create README files inside generated folders.
+
+Any existing `documents/` folder is left completely untouched.
 
 These scripts only create missing directories and the optional framework guide file. They do not delete, overwrite, move, rename, or modify existing files.
 
-### For a new project
+### Analyze an existing project
 
-1. **Copy or fork** this repository (or use it as a Git submodule at `docs/`), then run a structure script above against your project root.
+Use the project analysis tool to inspect how closely an existing project follows the framework structure.
+
+- **Unix / macOS / Linux:**
+
+  ```bash
+  ./scripts/analyze_project_structure.sh "/path/to/project root"
+  ```
+
+- **Windows (PowerShell):**
+
+  ```powershell
+  .\scripts\analyze_project_structure.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"
+  ```
+
+The analysis tool is read-only. It reports missing folders, missing key files, Markdown files outside canonical locations, and documentation structure issues.
+
+### Plan documentation migration
+
+Use the documentation migration assistant to generate a suggested migration plan for existing Markdown files.
+
+- **Unix / macOS / Linux:**
+
+  ```bash
+  ./scripts/plan_documentation_migration.sh "/path/to/project root"
+  ```
+
+- **Windows (PowerShell):**
+
+  ```powershell
+  .\scripts\plan_documentation_migration.ps1 -ProjectRoot "D:\Projects\The Recipe Vault"
+  ```
+
+The migration assistant is read-only. It recommends destinations but does not move, delete, or modify files.
+
+## For a New Project
+
+1. **Copy or fork** this repository, then run a structure script against your project root.
 2. **Rename** the repository to your project name; keep the internal folder layout.
 3. **Fill in** `PROJECT_CHARTER.md` with your project's mission, scope, and stakeholders.
 4. **Update** `PROJECT_INDEX.md` with current status, owners, and links to live documents.
@@ -99,8 +161,8 @@ For existing projects, the framework can be introduced incrementally without dis
 
 Two adoption approaches are supported:
 
-- **Script-Assisted Adoption (Recommended)** – Quickly create the canonical folder structure while preserving the existing project.
-- **Manual Adoption** – Create the structure manually and migrate documentation at your own pace.
+- **Script-Assisted Adoption (Recommended)** — Quickly create the canonical folder structure while preserving the existing project.
+- **Manual Adoption** — Create the structure manually and migrate documentation at your own pace.
 
 Regardless of the approach used, documentation should be migrated incrementally into the canonical framework.
 
@@ -122,7 +184,9 @@ The setup scripts are intentionally conservative.
 
 They **only** create missing framework directories and, if it does not already exist, a single project guide file:
 
-`ENGINEERING_DOCUMENTATION_FRAMEWORK.md`
+```text
+ENGINEERING_DOCUMENTATION_FRAMEWORK.md
+```
 
 The scripts **never**:
 
@@ -212,11 +276,11 @@ The recommended migration process is:
 
 ## Incremental Adoption Philosophy
 
-The Engineering Documentation Framework is intended to evolve alongside a project—not disrupt it.
+The Engineering Documentation Framework is intended to evolve alongside a project — not disrupt it.
 
 Existing projects are not expected to reorganize every document immediately. Instead, documentation should gradually migrate toward the canonical structure as it is updated or expanded.
 
-This approach minimizes risk, avoids unnecessary churn, preserves project history, and allows Bteams to realize the benefits of the framework without interrupting ongoing development.
+This approach minimizes risk, avoids unnecessary churn, preserves project history, and allows teams to realize the benefits of the framework without interrupting ongoing development.
 
 ---
 
@@ -242,27 +306,30 @@ flowchart LR
 
 ## Using AI During Software Development
 
-AI tools accelerate research, drafting, refactoring, and review — but they require well-structured context to be reliable. This framework supports AI-assisted development by:
+AI tools accelerate research, drafting, refactoring, implementation, and review — but they require well-structured context to be reliable.
 
-- Keeping **machine-readable structure** (consistent headings, explicit purpose sections).
-- Centralizing **workflow guidance** in `AI_WORKFLOW.md`.
-- Co-locating **authoritative docs** with code so agents can read them via repository context.
-- Defining **human accountability** — AI proposes; humans approve and own outcomes.
+This framework supports AI-assisted development by:
 
-See [AI_WORKFLOW.md](./AI_WORKFLOW.md) for tool-specific roles and when to use each.
+- keeping **machine-readable structure** with consistent headings, explicit purpose sections, and predictable domains
+- maintaining `PROJECT_INDEX.md` as the primary navigation hub for humans and AI tools
+- organizing AI development guidance in the [AI Engineering Handbook](./docs/AI/README.md)
+- co-locating authoritative docs with code so agents can read them via repository context
+- defining human accountability — AI proposes; humans approve and own outcomes
+
+See [docs/AI/README.md](./docs/AI/README.md) for tool-specific roles, model-selection guidance, prompting practices, verification rules, security guidance, and governance.
 
 ## Version Control Philosophy
 
 - **Docs are code** — Documentation changes go through the same review process as application code.
 - **Atomic updates** — When behavior changes, update the relevant doc in the same commit or PR.
-- **Meaningful commits** — Commit messages should describe documentation impact (e.g., `docs: add ADR-003 for caching layer`).
+- **Meaningful commits** — Commit messages should describe documentation impact, such as `docs: add ADR-003 for caching layer`.
 - **Branches and PRs** — Use feature branches; request review for substantive doc changes.
 - **Tags and releases** — Bump framework or project versions in `CHANGELOG.md` when publishing releases.
 - **No silent drift** — If code and docs disagree, treat it as a defect.
 
 ## Contributing
 
-Contributions that improve the **framework itself** (templates, structure, conventions) are welcome.
+Contributions that improve the **framework itself** are welcome.
 
 1. Fork the repository and create a feature branch.
 2. Make focused changes with clear rationale.

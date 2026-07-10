@@ -19,6 +19,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+$Stage1RulesetVersion = "2026-07-10-stage1"
 
 if (-not (Test-Path -LiteralPath $ProjectRoot -PathType Container)) {
     Write-Error "Project root does not exist or is not a directory: $ProjectRoot"
@@ -48,14 +49,23 @@ $RequiredDirs = @(
     "scripts"
 )
 
-$RecommendedRootFiles = @(
+$RecommendedRootFiles = [System.Collections.Generic.List[string]]::new()
+@(
     "README.md",
     "PROJECT_INDEX.md",
     "PROJECT_CHARTER.md",
     "ARCHITECTURE_DECISIONS.md",
-    "CHANGELOG.md",
-    "ENGINEERING_DOCUMENTATION_FRAMEWORK.md"
+    "CHANGELOG.md"
+) | ForEach-Object { $RecommendedRootFiles.Add($_) }
+
+$IsEDFRepository = (
+    (Test-Path -LiteralPath (Join-Path $ProjectRootFull "docs/Governance/EDF_Governance.md") -PathType Leaf) -and
+    (Test-Path -LiteralPath (Join-Path $ProjectRootFull "docs/Architecture/Documentation_Information_Architecture.md") -PathType Leaf)
 )
+
+if (-not $IsEDFRepository) {
+    $RecommendedRootFiles.Add("ENGINEERING_DOCUMENTATION_FRAMEWORK.md")
+}
 
 $AIHandbookFiles = @(
     "docs/AI/README.md",
@@ -161,6 +171,7 @@ foreach ($item in $allMarkdown) {
         $relativePath -like "docs/*" -or
         $relativePath -like "archive/*" -or
         $relativePath -like "tasks/*" -or
+        $relativePath -eq "scripts/README.md" -or
         $relativePath -eq "README.md" -or
         $relativePath -eq "PROJECT_INDEX.md" -or
         $relativePath -eq "PROJECT_CHARTER.md" -or
@@ -179,11 +190,17 @@ foreach ($item in $allMarkdown) {
     $relativePath = Get-RelativePath $item.FullName
     $content = Get-Content -LiteralPath $item.FullName -Raw
     $baseDir = Split-Path -Parent $item.FullName
+    $isTemplateSource = (
+        ($relativePath -like "docs/Templates/*.md") -and
+        ($relativePath -ne "docs/Templates/README.md")
+    )
 
     $linkMatches = [regex]::Matches($content, '(?<!\!)\[[^\]]+\]\(([^)]+)\)')
     foreach ($match in $linkMatches) {
         $target = $match.Groups[1].Value.Trim()
         if ($target -match '^(https?://|mailto:|#)') { continue }
+        if ($target -match '^(url|path|example|placeholder)$') { continue }
+        if ($isTemplateSource) { continue }
 
         $targetPath = ($target -split '#')[0]
         if ([string]::IsNullOrWhiteSpace($targetPath)) { continue }
@@ -209,7 +226,7 @@ foreach ($item in $allMarkdown) {
         }
     }
 
-    if ($relativePath -like "docs/*") {
+    if (($relativePath -like "docs/*") -and (-not $isTemplateSource)) {
         $hasBreadcrumb = ($content -match '\[Home\]\(' -and $content -match '\[Project Index\]\(')
         if (-not $hasBreadcrumb) {
             $NavigationIssues.Add("$relativePath: missing breadcrumb navigation.")
@@ -285,10 +302,13 @@ foreach ($item in $allMarkdown) {
 
 foreach ($item in $allMarkdown) {
     $relativePath = Get-RelativePath $item.FullName
-    if ($relativePath -in @("README.md", "PROJECT_INDEX.md", "CHANGELOG.md", "ARCHITECTURE_DECISIONS.md")) {
+    if ($relativePath -in @("README.md", "PROJECT_INDEX.md", "CHANGELOG.md", "ARCHITECTURE_DECISIONS.md", "scripts/README.md")) {
         continue
     }
     if ($relativePath -like "archive/*") { continue }
+    if (($relativePath -like "docs/Templates/*.md") -and ($relativePath -ne "docs/Templates/README.md")) {
+        continue
+    }
 
     if (-not $inboundLinks.ContainsKey($relativePath.ToLowerInvariant())) {
         $OrphanDocuments.Add($relativePath)
@@ -334,10 +354,16 @@ $overallScore = [math]::Floor(($structureScore + $aiScore + $governanceScore + $
 $projectName = Split-Path -Path $ProjectRootFull -Leaf
 
 Write-Host "Engineering Documentation Framework Advisor"
+Write-Host "Ruleset: $Stage1RulesetVersion"
 Write-Host "==========================================="
 Write-Host ""
 Write-Host "Project root: $ProjectRootFull"
 Write-Host "Project name: $projectName"
+if ($IsEDFRepository) {
+    Write-Host "Repository mode: EDF framework repository"
+} else {
+    Write-Host "Repository mode: EDF adopting project"
+}
 Write-Host "Overall compliance: $overallScore%"
 Write-Host "Structure score: $structureScore%"
 Write-Host "AI score: $aiScore%"

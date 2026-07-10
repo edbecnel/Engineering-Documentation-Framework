@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Required shell compatibility: Bash 3.2 or newer.
-# Keep this script compatible with the default Bash shipped by macOS.
 # Engineering Documentation Framework Framework Advisor.
 # Read-only analysis of structure, navigation, links, and governance.
 # Compatible with the default macOS Bash 3.2 and newer Bash versions.
@@ -9,6 +7,8 @@
 # ./scripts/analyze_project_structure.sh "/path/to/project root"
 
 set -euo pipefail
+
+STAGE1_RULESET_VERSION="2026-07-10-stage1"
 
 if [[ $# -ne 1 ]]; then
   echo "Error: project root path is required." >&2
@@ -30,8 +30,16 @@ required_dirs=(
 
 recommended_root_files=(
   README.md PROJECT_INDEX.md PROJECT_CHARTER.md ARCHITECTURE_DECISIONS.md
-  CHANGELOG.md ENGINEERING_DOCUMENTATION_FRAMEWORK.md
+  CHANGELOG.md
 )
+
+is_edf_repository=false
+if [[ -f "$PROJECT_ROOT/docs/Governance/EDF_Governance.md" &&
+      -f "$PROJECT_ROOT/docs/Architecture/Documentation_Information_Architecture.md" ]]; then
+  is_edf_repository=true
+else
+  recommended_root_files+=(ENGINEERING_DOCUMENTATION_FRAMEWORK.md)
+fi
 
 ai_files=(
   docs/AI/README.md docs/AI/AI_Philosophy.md docs/AI/AI_Roles.md
@@ -88,7 +96,7 @@ while IFS= read -r -d '' file; do
   all_md+=("$file")
   rel="${file#"$PROJECT_ROOT"/}"
   case "$rel" in
-    docs/*|archive/*|tasks/*|README.md|PROJECT_INDEX.md|PROJECT_CHARTER.md|ARCHITECTURE_DECISIONS.md|CHANGELOG.md|ENGINEERING_DOCUMENTATION_FRAMEWORK.md) ;;
+    docs/*|archive/*|tasks/*|scripts/README.md|README.md|PROJECT_INDEX.md|PROJECT_CHARTER.md|ARCHITECTURE_DECISIONS.md|CHANGELOG.md|ENGINEERING_DOCUMENTATION_FRAMEWORK.md) ;;
     *) markdown_outside+=("$rel") ;;
   esac
 done < <(find "$PROJECT_ROOT" -type f \( -iname '*.md' -o -iname '*.markdown' \) -print0)
@@ -101,11 +109,22 @@ for file in "${all_md[@]}"; do
   dir="$(dirname "$file")"
   content="$(cat "$file")"
 
+  is_template_source=false
+  case "$rel" in
+    docs/Templates/*.md|docs/Templates/*.markdown)
+      [[ "$rel" == "docs/Templates/README.md" ]] || is_template_source=true
+      ;;
+  esac
+
   while IFS= read -r target; do
     [[ -n "$target" ]] || continue
     case "$target" in
-      http://*|https://*|mailto:*|\#*) continue ;;
+      http://*|https://*|mailto:*|\#*|url|URL|path|PATH|example|EXAMPLE|placeholder|PLACEHOLDER) continue ;;
     esac
+
+    if [[ "$is_template_source" == true ]]; then
+      continue
+    fi
     path="${target%%#*}"
     [[ -n "$path" ]] || continue
 
@@ -124,7 +143,7 @@ for file in "${all_md[@]}"; do
     fi
   done < <(grep -oE '\[[^]]+\]\([^)]+\)' "$file" | sed -E 's/^[^(]*\(([^)]+)\)$/\1/' || true)
 
-  if [[ "$rel" == docs/* ]]; then
+  if [[ "$rel" == docs/* && "$is_template_source" == false ]]; then
     if ! grep -q '\[Home\](' "$file" || ! grep -q '\[Project Index\](' "$file"; then
       navigation_issues+=("$rel: missing breadcrumb navigation.")
     fi
@@ -192,7 +211,7 @@ done
 for file in "${all_md[@]}"; do
   rel="${file#"$PROJECT_ROOT"/}"
   case "$rel" in
-    README.md|PROJECT_INDEX.md|CHANGELOG.md|ARCHITECTURE_DECISIONS.md|archive/*) continue ;;
+    README.md|PROJECT_INDEX.md|CHANGELOG.md|ARCHITECTURE_DECISIONS.md|archive/*|scripts/README.md|docs/Templates/*.md|docs/Templates/*.markdown) continue ;;
   esac
   grep -Fqx "$rel" "$inbound_file" || orphan_docs+=("$rel")
 done
@@ -247,10 +266,16 @@ print_items() {
 }
 
 echo "Engineering Documentation Framework Advisor"
+echo "Ruleset: $STAGE1_RULESET_VERSION"
 echo "==========================================="
 echo
 echo "Project root: $PROJECT_ROOT"
 echo "Project name: $(basename "$PROJECT_ROOT")"
+if [[ "$is_edf_repository" == true ]]; then
+  echo "Repository mode: EDF framework repository"
+else
+  echo "Repository mode: EDF adopting project"
+fi
 echo "Overall compliance: $overall_score%"
 echo "Structure score: $structure_score%"
 echo "AI score: $ai_score%"

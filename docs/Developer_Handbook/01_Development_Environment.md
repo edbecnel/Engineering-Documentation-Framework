@@ -1,5 +1,8 @@
 # Development Environment
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Developer Handbook](README.md) › Development Environment
+
+
 ## Purpose
 
 This document defines how developers set up, configure, and maintain a local development environment that matches production closely enough to build and test software confidently. It is the canonical reference for onboarding and troubleshooting environment issues.
@@ -171,3 +174,7 @@ See [02_AI_Development.md](./02_AI_Development.md) and [AI_WORKFLOW.md](../../AI
 | **Document owner** | _[Name / team]_ |
 | **Last reviewed** | _[YYYY-MM-DD]_ |
 | **Review cadence** | _[e.g., Each major release or quarterly]_ |
+
+## Parent
+
+- [Developer Handbook](README.md)

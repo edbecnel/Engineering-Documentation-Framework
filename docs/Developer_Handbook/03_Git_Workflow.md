@@ -1,5 +1,8 @@
 # Git Workflow
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Developer Handbook](README.md) › Git Workflow
+
+
 ## Purpose
 
 This document defines how the team uses Git for branching, committing, reviewing, and releasing software. A consistent workflow reduces merge conflicts, preserves audit history, and integrates documentation changes with code.
@@ -244,3 +247,7 @@ Do not commit machine-specific paths or IDE metadata (enforce via `.gitignore`).
 | **Document owner** | _[Engineering lead]_ |
 | **Last reviewed** | _[YYYY-MM-DD]_ |
 | **Review cadence** | _[Annually or when workflow changes]_ |
+
+## Parent
+
+- [Developer Handbook](README.md)

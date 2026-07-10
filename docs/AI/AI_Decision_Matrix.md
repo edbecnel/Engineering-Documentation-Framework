@@ -1,5 +1,8 @@
 # AI Decision Matrix
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [AI Engineering Handbook](README.md) › AI Decision Matrix
+
+
 ## Purpose
 
 This document helps developers choose the appropriate AI tool for a software engineering task.
@@ -118,3 +121,7 @@ Recommended progression:
 - [AI_Roles.md](./AI_Roles.md)
 - [Cost_Optimization.md](./Cost_Optimization.md)
 - [Context_Checklist.md](./Context_Checklist.md)
+
+## Parent
+
+- [AI Engineering Handbook](README.md)

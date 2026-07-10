@@ -1,5 +1,8 @@
 # Testing
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Developer Handbook](README.md) › Testing
+
+
 ## Purpose
 
 This document defines the project's testing strategy, expectations, and conventions. A clear testing standard improves reliability, speeds up refactors (including AI-assisted ones), and documents what "done" means for each change.
@@ -210,3 +213,7 @@ See [02_AI_Development.md](./02_AI_Development.md).
 | **Document owner** | _[QA lead / engineering lead]_ |
 | **Last reviewed** | _[YYYY-MM-DD]_ |
 | **Review cadence** | _[Per release or semi-annual]_ |
+
+## Parent
+
+- [Developer Handbook](README.md)

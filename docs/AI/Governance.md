@@ -1,5 +1,8 @@
 # AI Governance
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [AI Engineering Handbook](README.md) › AI Governance
+
+
 ## Purpose
 
 This document defines governance expectations for AI-assisted engineering work.
@@ -74,3 +77,7 @@ Those rules should help AI assistants automatically maintain documentation consi
 - [Verification.md](./Verification.md)
 - [Security.md](./Security.md)
 - [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
+
+## Parent
+
+- [AI Engineering Handbook](README.md)

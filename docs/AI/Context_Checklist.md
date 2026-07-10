@@ -1,5 +1,8 @@
 # Context Checklist
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [AI Engineering Handbook](README.md) › Context Checklist
+
+
 ## Purpose
 
 This document defines the information that should be provided to AI assistants when performing engineering work.
@@ -86,3 +89,7 @@ Provide:
 - [Prompting_Guide.md](./Prompting_Guide.md)
 - [AI_Decision_Matrix.md](./AI_Decision_Matrix.md)
 - [Verification.md](./Verification.md)
+
+## Parent
+
+- [AI Engineering Handbook](README.md)

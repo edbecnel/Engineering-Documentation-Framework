@@ -1,5 +1,8 @@
 # Verification
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [AI Engineering Handbook](README.md) › Verification
+
+
 ## Purpose
 
 This document defines how AI-generated work should be reviewed and validated.
@@ -74,3 +77,7 @@ Before committing AI-generated changes:
 - [Governance.md](./Governance.md)
 - [Security.md](./Security.md)
 - [AI_Philosophy.md](./AI_Philosophy.md)
+
+## Parent
+
+- [AI Engineering Handbook](README.md)

@@ -1,5 +1,8 @@
 # AI Roles
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [AI Engineering Handbook](README.md) › AI Roles
+
+
 ## Purpose
 
 This document defines the primary roles of AI tools within the Engineering Documentation Framework.
@@ -193,3 +196,7 @@ AI should be viewed as an engineering assistant rather than an autonomous softwa
 - [AI_Philosophy.md](./AI_Philosophy.md)
 - [AI_Decision_Matrix.md](./AI_Decision_Matrix.md)
 - [Verification.md](./Verification.md)
+
+## Parent
+
+- [AI Engineering Handbook](README.md)

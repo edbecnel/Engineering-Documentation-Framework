@@ -1,5 +1,8 @@
 # Coding Standards
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Developer Handbook](README.md) › Coding Standards
+
+
 ## Purpose
 
 This document defines conventions for writing readable, maintainable, and consistent code across the project. Standards reduce cognitive load in reviews, help AI tools generate compatible code, and make onboarding faster.
@@ -190,3 +193,7 @@ To deviate from a standard:
 | **Document owner** | _[Tech lead]_ |
 | **Last reviewed** | _[YYYY-MM-DD]_ |
 | **Review cadence** | _[Semi-annual or when stack changes]_ |
+
+## Parent
+
+- [Developer Handbook](README.md)

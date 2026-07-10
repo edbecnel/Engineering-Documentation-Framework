@@ -1,5 +1,8 @@
 # Framework Generation Principles
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Architecture](README.md) › Framework Generation Principles
+
+
 > **Documentation path:** [Project Index](../../PROJECT_INDEX.md) → [Architecture](README.md) → Framework Generation Principles
 
 ## Purpose
@@ -111,3 +114,7 @@ A generation tool is non-compliant if it:
 - [Documentation Information Architecture](Documentation_Information_Architecture.md)
 - [Documentation Generation Engine](../Development/Documentation_Generation_Engine.md)
 - [Project Analysis and Validation Tool](../Development/Project_Analysis_Validation_Tool.md)
+
+## Parent
+
+- [Architecture](README.md)

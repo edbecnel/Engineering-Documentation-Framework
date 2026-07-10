@@ -1,5 +1,8 @@
 # Prompting Guide
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [AI Engineering Handbook](README.md) › Prompting Guide
+
+
 ## Purpose
 
 This document provides practical prompting guidance for engineering work.
@@ -106,3 +109,7 @@ When asking AI to create or move documentation, reference the framework domains:
 - [Context_Checklist.md](./Context_Checklist.md)
 - [Verification.md](./Verification.md)
 - [Governance.md](./Governance.md)
+
+## Parent
+
+- [AI Engineering Handbook](README.md)

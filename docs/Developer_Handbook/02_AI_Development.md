@@ -1,5 +1,8 @@
 # AI Development
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Developer Handbook](README.md) › AI Development
+
+
 ## Purpose
 
 This document establishes practical conventions for using AI tools during day-to-day software development. It complements [AI_WORKFLOW.md](../../AI_WORKFLOW.md) with team-specific rules, prompt patterns, and quality expectations for AI-assisted work.
@@ -185,3 +188,7 @@ Teams may track AI assistance for learning and compliance:
 | **Document owner** | _[Engineering lead]_ |
 | **Last reviewed** | _[YYYY-MM-DD]_ |
 | **Review cadence** | _[Quarterly or when AI policy changes]_ |
+
+## Parent
+
+- [Developer Handbook](README.md)

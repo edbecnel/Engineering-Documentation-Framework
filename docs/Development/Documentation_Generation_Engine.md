@@ -1,5 +1,8 @@
 # Documentation Generation Engine
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Development](README.md) › Documentation Generation Engine
+
+
 > **Documentation path:** [Project Index](../../PROJECT_INDEX.md) → [Development](README.md) → Documentation Generation Engine
 
 ## Purpose
@@ -86,3 +89,7 @@ Use their reports to migrate legacy Markdown incrementally.
 - [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
 - [Project Analysis and Validation Tool](Project_Analysis_Validation_Tool.md)
 - [Documentation Migration Assistant](Documentation_Migration_Assistant.md)
+
+## Parent
+
+- [Development](README.md)

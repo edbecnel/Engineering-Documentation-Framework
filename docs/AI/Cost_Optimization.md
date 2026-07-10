@@ -1,5 +1,8 @@
 # Cost Optimization
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [AI Engineering Handbook](README.md) › Cost Optimization
+
+
 ## Purpose
 
 This document defines the cost optimization strategy for AI-assisted software development.
@@ -76,3 +79,7 @@ Developer time is part of the cost equation. A more capable model is often justi
 
 - [AI_Philosophy.md](./AI_Philosophy.md)
 - [AI_Decision_Matrix.md](./AI_Decision_Matrix.md)
+
+## Parent
+
+- [AI Engineering Handbook](README.md)

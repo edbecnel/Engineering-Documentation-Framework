@@ -1,5 +1,8 @@
 # Security
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [AI Engineering Handbook](README.md) › Security
+
+
 ## Purpose
 
 This document defines security and privacy rules for using AI tools in software engineering projects.
@@ -85,3 +88,7 @@ DATABASE_URL=postgres://user:password@example.com/db
 - [Governance.md](./Governance.md)
 - [Verification.md](./Verification.md)
 - [AI_Decision_Matrix.md](./AI_Decision_Matrix.md)
+
+## Parent
+
+- [AI Engineering Handbook](README.md)

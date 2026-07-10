@@ -1,5 +1,8 @@
 # AI Philosophy
 
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [AI Engineering Handbook](README.md) › AI Philosophy
+
+
 ## Purpose
 
 This document defines the core philosophy for using AI tools within projects that adopt the Engineering Documentation Framework.
@@ -95,3 +98,7 @@ Use ADRs for decisions that affect:
 - [AI_Roles.md](./AI_Roles.md)
 - [AI_Decision_Matrix.md](./AI_Decision_Matrix.md)
 - [Governance.md](./Governance.md)
+
+## Parent
+
+- [AI Engineering Handbook](README.md)

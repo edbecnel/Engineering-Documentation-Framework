@@ -1,19 +1,22 @@
 # Changelog
 
 
-## Governance Applicability Clarification
+## M3 – Framework Advisor
 
 ### Added
 
-- `docs/Governance/EDF_Governance.md` for EDF-specific governance
-- explicit applicability sections throughout the Governance domain
-- documented baseline and EDF-specific governance layers
+- broken relative Markdown-link detection
+- orphan-document detection
+- breadcrumb and parent-navigation validation
+- governance metadata and lifecycle validation
+- ownership, review-frequency, and overdue-review checks
+- separate structure, AI, navigation, governance, and overall scores
 
 ### Changed
 
-- Governance Overview now distinguishes universal governance from EDF-only governance
-- Analyzer Compliance now defines baseline analyzer requirements and references EDF-specific checks separately
-- Governance navigation and Project Index now link to EDF Governance
+- project analyzer promoted to the Framework Advisor
+- PowerShell and Bash analyzer output expanded with actionable governance findings
+- analyzer documentation and governance compliance guidance updated
 
 ## M2 – Governance
 

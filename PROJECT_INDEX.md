@@ -14,11 +14,12 @@
 - [Engineering Development Policy](docs/Development/Engineering_Development_Policy.md)
 - [EDF Development Workflow](docs/Development/EDF_Development_Workflow.md)
 
+- [Framework Advisor: Project Analysis and Validation Tool](docs/Development/Project_Analysis_Validation_Tool.md)
+
 ## Governance
 
 - [Governance](docs/Governance/README.md)
 - [Governance Overview](docs/Governance/Governance_Overview.md)
-- [EDF Governance](docs/Governance/EDF_Governance.md)
 - [Document Metadata Standard](docs/Governance/Document_Metadata_Standard.md)
 - [Document Lifecycle](docs/Governance/Document_Lifecycle.md)
 - [Ownership and Review](docs/Governance/Ownership_and_Review.md)

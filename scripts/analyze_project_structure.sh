@@ -1,207 +1,267 @@
 #!/usr/bin/env bash
-# Engineering Documentation Framework project analysis tool.
-#
-# This script inspects an existing project and reports how closely it follows
-# the Engineering Documentation Framework.
-#
-# Safety guarantee:
-# - Read-only.
-# - Does not create, delete, overwrite, rename, move, or modify files.
+# Engineering Documentation Framework Framework Advisor.
+# Read-only analysis of structure, navigation, links, and governance.
 #
 # Usage:
-#   ./scripts/analyze_project_structure.sh "/path/to/project root"
+# ./scripts/analyze_project_structure.sh "/path/to/project root"
 
 set -euo pipefail
 
 if [[ $# -ne 1 ]]; then
-    echo "Error: project root path is required." >&2
-    echo "Usage: $(basename "$0") \"/path/to/project root\"" >&2
-    exit 1
+  echo "Error: project root path is required." >&2
+  echo "Usage: $(basename "$0") \"/path/to/project root\"" >&2
+  exit 1
 fi
 
 PROJECT_ROOT="${1%/}"
-
 if [[ ! -d "$PROJECT_ROOT" ]]; then
-    echo "Error: project root does not exist or is not a directory: $PROJECT_ROOT" >&2
-    exit 1
+  echo "Error: project root does not exist or is not a directory: $PROJECT_ROOT" >&2
+  exit 1
 fi
 
-REQUIRED_DIRS=(
-    "docs"
-    "docs/Architecture"
-    "docs/Architecture/ADRs"
-    "docs/AI"
-    "docs/Development"
-    "docs/Specifications"
-    "docs/API"
-    "docs/Database"
-    "docs/Deployment"
-    "docs/User_Guides"
-    "docs/Reference"
-    "docs/Templates"
-    "tasks"
-    "archive"
-    "scripts"
+required_dirs=(
+  docs docs/Architecture docs/Architecture/ADRs docs/AI docs/Development
+  docs/Governance docs/Specifications docs/API docs/Database docs/Deployment
+  docs/User_Guides docs/Reference docs/Templates tasks archive scripts
 )
 
-RECOMMENDED_ROOT_FILES=(
-    "README.md"
-    "PROJECT_INDEX.md"
-    "PROJECT_CHARTER.md"
-    "ARCHITECTURE_DECISIONS.md"
-    "CHANGELOG.md"
-    "ENGINEERING_DOCUMENTATION_FRAMEWORK.md"
+recommended_root_files=(
+  README.md PROJECT_INDEX.md PROJECT_CHARTER.md ARCHITECTURE_DECISIONS.md
+  CHANGELOG.md ENGINEERING_DOCUMENTATION_FRAMEWORK.md
 )
 
-AI_HANDBOOK_FILES=(
-    "docs/AI/README.md"
-    "docs/AI/AI_Philosophy.md"
-    "docs/AI/AI_Roles.md"
-    "docs/AI/AI_Decision_Matrix.md"
-    "docs/AI/Cost_Optimization.md"
-    "docs/AI/Prompting_Guide.md"
-    "docs/AI/Context_Checklist.md"
-    "docs/AI/Verification.md"
-    "docs/AI/Security.md"
-    "docs/AI/Governance.md"
+ai_files=(
+  docs/AI/README.md docs/AI/AI_Philosophy.md docs/AI/AI_Roles.md
+  docs/AI/AI_Decision_Matrix.md docs/AI/Cost_Optimization.md
+  docs/AI/Prompting_Guide.md docs/AI/Context_Checklist.md
+  docs/AI/Verification.md docs/AI/Security.md docs/AI/Governance.md
+)
+
+governance_files=(
+  docs/Governance/README.md docs/Governance/Governance_Overview.md
+  docs/Governance/EDF_Governance.md
+  docs/Governance/Document_Metadata_Standard.md
+  docs/Governance/Document_Lifecycle.md
+  docs/Governance/Ownership_and_Review.md
+  docs/Governance/Change_Management.md
+  docs/Governance/Analyzer_Compliance.md
+  docs/Governance/Governance_Checklist.md
 )
 
 missing_dirs=()
 missing_root_files=()
 missing_ai_files=()
+missing_governance_files=()
 warnings=()
 recommendations=()
-markdown_outside_docs=()
+markdown_outside=()
+broken_links=()
+orphan_docs=()
+navigation_issues=()
+metadata_issues=()
+review_issues=()
 
-for dir in "${REQUIRED_DIRS[@]}"; do
-    [[ -d "$PROJECT_ROOT/$dir" ]] || missing_dirs+=("$dir")
+for dir in "${required_dirs[@]}"; do
+  [[ -d "$PROJECT_ROOT/$dir" ]] || missing_dirs+=("$dir")
 done
 
-for file in "${RECOMMENDED_ROOT_FILES[@]}"; do
-    [[ -f "$PROJECT_ROOT/$file" ]] || missing_root_files+=("$file")
+for file in "${recommended_root_files[@]}"; do
+  [[ -f "$PROJECT_ROOT/$file" ]] || missing_root_files+=("$file")
 done
 
-for file in "${AI_HANDBOOK_FILES[@]}"; do
-    [[ -f "$PROJECT_ROOT/$file" ]] || missing_ai_files+=("$file")
+for file in "${ai_files[@]}"; do
+  [[ -f "$PROJECT_ROOT/$file" ]] || missing_ai_files+=("$file")
 done
 
-if [[ -f "$PROJECT_ROOT/AI_WORKFLOW.md" ]]; then
-    warnings+=("Retired root document AI_WORKFLOW.md still exists. Migrate any unique content to docs/AI/ and remove it after verifying links.")
-fi
+for file in "${governance_files[@]}"; do
+  [[ -f "$PROJECT_ROOT/$file" ]] || missing_governance_files+=("$file")
+done
 
-if [[ -d "$PROJECT_ROOT/documents" ]]; then
-    warnings+=("Existing documents/ folder found. Leave it untouched unless you intentionally migrate content into docs/.")
-fi
+[[ ! -f "$PROJECT_ROOT/AI_WORKFLOW.md" ]] || warnings+=("Retired root document AI_WORKFLOW.md still exists.")
+[[ ! -d "$PROJECT_ROOT/documents" ]] || warnings+=("Existing documents/ folder found; leave it untouched unless migration is intentional.")
 
-if [[ -f "$PROJECT_ROOT/README.md" && -f "$PROJECT_ROOT/PROJECT_INDEX.md" ]]; then
-    if ! grep -qi "PROJECT_INDEX\.md" "$PROJECT_ROOT/README.md"; then
-        warnings+=("README.md exists but does not appear to reference PROJECT_INDEX.md.")
-    fi
-fi
+all_md=()
+while IFS= read -r -d '' file; do
+  all_md+=("$file")
+  rel="${file#"$PROJECT_ROOT"/}"
+  case "$rel" in
+    docs/*|archive/*|tasks/*|README.md|PROJECT_INDEX.md|PROJECT_CHARTER.md|ARCHITECTURE_DECISIONS.md|CHANGELOG.md|ENGINEERING_DOCUMENTATION_FRAMEWORK.md) ;;
+    *) markdown_outside+=("$rel") ;;
+  esac
+done < <(find "$PROJECT_ROOT" -type f \( -iname '*.md' -o -iname '*.markdown' \) -print0)
 
-if [[ -f "$PROJECT_ROOT/README.md" ]]; then
-    if ! grep -qi "docs/AI" "$PROJECT_ROOT/README.md"; then
-        warnings+=("README.md does not appear to reference the modular AI handbook under docs/AI/.")
-    fi
-fi
+declare -A inbound=()
 
-while IFS= read -r -d '' md_file; do
-    rel_path="${md_file#"$PROJECT_ROOT"/}"
-    case "$rel_path" in
-        docs/*|archive/*|tasks/*|README.md|PROJECT_INDEX.md|PROJECT_CHARTER.md|ARCHITECTURE_DECISIONS.md|CHANGELOG.md|ENGINEERING_DOCUMENTATION_FRAMEWORK.md)
-            ;;
-        *)
-            markdown_outside_docs+=("$rel_path")
-            ;;
+for file in "${all_md[@]}"; do
+  rel="${file#"$PROJECT_ROOT"/}"
+  dir="$(dirname "$file")"
+  content="$(cat "$file")"
+
+  while IFS= read -r target; do
+    [[ -n "$target" ]] || continue
+    case "$target" in
+      http://*|https://*|mailto:*|\#*) continue ;;
     esac
-done < <(find "$PROJECT_ROOT" -type f \( -iname "*.md" -o -iname "*.markdown" \) -print0)
+    path="${target%%#*}"
+    [[ -n "$path" ]] || continue
 
-if [[ ${#markdown_outside_docs[@]} -gt 0 ]]; then
-    warnings+=("${#markdown_outside_docs[@]} Markdown file(s) found outside canonical documentation locations.")
-    recommendations+=("Audit Markdown files outside canonical locations and decide whether each should migrate, remain project-specific, or be archived.")
-fi
+    if [[ "$path" = /* ]]; then
+      resolved="$path"
+    else
+      resolved="$dir/$path"
+    fi
 
-if [[ ${#missing_ai_files[@]} -gt 0 ]]; then
-    recommendations+=("Complete the modular AI Engineering Handbook under docs/AI/.")
-fi
+    normalized="$(python3 -c 'import os,sys; print(os.path.normpath(sys.argv[1]))' "$resolved" 2>/dev/null || true)"
+    if [[ -z "$normalized" || ! -e "$normalized" ]]; then
+      broken_links+=("$rel -> $target")
+    elif [[ -f "$normalized" && "$normalized" =~ \.(md|markdown)$ ]]; then
+      target_rel="${normalized#"$PROJECT_ROOT"/}"
+      inbound["$target_rel"]=1
+    fi
+  done < <(grep -oE '\[[^]]+\]\([^)]+\)' "$file" | sed -E 's/^[^(]*\(([^)]+)\)$/\1/' || true)
 
-if [[ ! -d "$PROJECT_ROOT/docs/Architecture/ADRs" ]]; then
-    recommendations+=("Create docs/Architecture/ADRs for individual Architecture Decision Records.")
-fi
+  if [[ "$rel" == docs/* ]]; then
+    if ! grep -q '\[Home\](' "$file" || ! grep -q '\[Project Index\](' "$file"; then
+      navigation_issues+=("$rel: missing breadcrumb navigation.")
+    fi
 
-score=100
-score=$((score - ${#missing_dirs[@]} * 4))
-score=$((score - ${#missing_root_files[@]} * 3))
-score=$((score - ${#missing_ai_files[@]} * 2))
-score=$((score - ${#warnings[@]} * 2))
-(( score < 0 )) && score=0
+    if [[ "$rel" != */README.md ]] && ! grep -q 'README\.md)' "$file"; then
+      navigation_issues+=("$rel: missing parent domain README link.")
+    fi
+  fi
 
-ai_present=$((${#AI_HANDBOOK_FILES[@]} - ${#missing_ai_files[@]}))
-ai_total=${#AI_HANDBOOK_FILES[@]}
-ai_percent=$((ai_present * 100 / ai_total))
+  if grep -q '^> \*\*Status:\*\*' "$file"; then
+    status="$(sed -nE 's/^> \*\*Status:\*\*[[:space:]]*(.+)$/\1/p' "$file" | head -1)"
+    owner="$(sed -nE 's/^> \*\*Owner:\*\*[[:space:]]*(.+)$/\1/p' "$file" | head -1)"
+    applies="$(sed -nE 's/^> \*\*Applies To:\*\*[[:space:]]*(.+)$/\1/p' "$file" | head -1)"
+    reviewed="$(sed -nE 's/^> \*\*Last Reviewed:\*\*[[:space:]]*([0-9]{4}-[0-9]{2}-[0-9]{2}).*$/\1/p' "$file" | head -1)"
+    frequency="$(sed -nE 's/^> \*\*Review Frequency:\*\*[[:space:]]*(.+)$/\1/p' "$file" | head -1)"
 
-print_section() {
-    local title="$1"
-    echo
-    echo "$title"
-    printf '%*s\n' "${#title}" '' | tr ' ' '-'
+    case "$status" in
+      Draft|"In Review"|Approved|Maintained|Deprecated|Archived) ;;
+      *) metadata_issues+=("$rel: missing or invalid Status.") ;;
+    esac
+
+    [[ -n "$owner" ]] || metadata_issues+=("$rel: missing Owner.")
+    [[ -n "$applies" ]] || metadata_issues+=("$rel: missing Applies To.")
+
+    if [[ "$status" == Approved || "$status" == Maintained ]]; then
+      [[ -n "$reviewed" ]] || metadata_issues+=("$rel: approved or maintained document is missing Last Reviewed.")
+      [[ -n "$frequency" ]] || metadata_issues+=("$rel: approved or maintained document is missing Review Frequency.")
+    fi
+
+    if grep -q '^> \*\*Authoritative:\*\*[[:space:]]*Yes' "$file" &&
+       [[ "$status" == Draft || "$status" == Archived ]]; then
+      metadata_issues+=("$rel: authoritative document cannot be Draft or Archived.")
+    fi
+
+    if [[ "$status" == Deprecated ]] &&
+       ! grep -q '^> \*\*Superseded By:\*\*' "$file" &&
+       ! grep -qi 'no replacement' "$file"; then
+      metadata_issues+=("$rel: deprecated document lacks replacement information.")
+    fi
+
+    if [[ -n "$reviewed" && -n "$frequency" ]]; then
+      days=""
+      case "$frequency" in
+        Monthly) days=31 ;;
+        Quarterly) days=92 ;;
+        Semiannual) days=183 ;;
+        Annual) days=366 ;;
+      esac
+      if [[ -n "$days" ]]; then
+        if python3 - "$reviewed" "$days" <<'PY'
+from datetime import date, datetime, timedelta
+import sys
+reviewed = datetime.strptime(sys.argv[1], "%Y-%m-%d").date()
+days = int(sys.argv[2])
+sys.exit(0 if reviewed + timedelta(days=days) < date.today() else 1)
+PY
+        then
+          review_issues+=("$rel: review is overdue ($frequency; last reviewed $reviewed).")
+        fi
+      fi
+    fi
+  fi
+done
+
+for file in "${all_md[@]}"; do
+  rel="${file#"$PROJECT_ROOT"/}"
+  case "$rel" in
+    README.md|PROJECT_INDEX.md|CHANGELOG.md|ARCHITECTURE_DECISIONS.md|archive/*) continue ;;
+  esac
+  [[ -n "${inbound[$rel]:-}" ]] || orphan_docs+=("$rel")
+done
+
+[[ ${#markdown_outside[@]} -eq 0 ]] || recommendations+=("Audit Markdown outside canonical locations.")
+[[ ${#missing_ai_files[@]} -eq 0 ]] || recommendations+=("Complete the modular AI Engineering Handbook.")
+[[ ${#missing_governance_files[@]} -eq 0 ]] || recommendations+=("Complete the Governance documentation domain.")
+[[ ${#broken_links[@]} -eq 0 ]] || recommendations+=("Repair broken relative Markdown links.")
+[[ ${#orphan_docs[@]} -eq 0 ]] || recommendations+=("Link orphan documents from the project hierarchy.")
+[[ ${#navigation_issues[@]} -eq 0 ]] || recommendations+=("Add required breadcrumb and parent navigation.")
+[[ ${#metadata_issues[@]} -eq 0 ]] || recommendations+=("Correct governance metadata and lifecycle issues.")
+[[ ${#review_issues[@]} -eq 0 ]] || recommendations+=("Review overdue governed documents.")
+
+clamp() {
+  local value="$1"
+  (( value < 0 )) && value=0
+  (( value > 100 )) && value=100
+  echo "$value"
 }
 
-project_name="$(basename "$PROJECT_ROOT")"
+structure_score="$(clamp $((100 - ${#missing_dirs[@]} * 4 - ${#missing_root_files[@]} * 3)))"
+ai_score=$(( (${#ai_files[@]} - ${#missing_ai_files[@]}) * 100 / ${#ai_files[@]} ))
+governance_score="$(clamp $((100 - ${#missing_governance_files[@]} * 5 - ${#metadata_issues[@]} * 3 - ${#review_issues[@]} * 2)))"
+navigation_score="$(clamp $((100 - ${#broken_links[@]} * 3 - ${#orphan_docs[@]} * 2 - ${#navigation_issues[@]} * 2)))"
+overall_score=$(( (structure_score + ai_score + governance_score + navigation_score) / 4 ))
 
-echo "Engineering Documentation Framework Analysis"
-echo "============================================"
+print_section() {
+  local title="$1"
+  echo
+  echo "$title"
+  printf '%*s\n' "${#title}" '' | tr ' ' '-'
+}
+
+print_items() {
+  local -n items=$1
+  if [[ ${#items[@]} -eq 0 ]]; then
+    echo "None."
+  else
+    printf -- '- %s\n' "${items[@]}"
+  fi
+}
+
+echo "Engineering Documentation Framework Advisor"
+echo "==========================================="
 echo
 echo "Project root: $PROJECT_ROOT"
-echo "Project name: $project_name"
-echo "Estimated compliance score: $score%"
-echo "AI handbook completeness: $ai_present/$ai_total files ($ai_percent%)"
+echo "Project name: $(basename "$PROJECT_ROOT")"
+echo "Overall compliance: $overall_score%"
+echo "Structure score: $structure_score%"
+echo "AI score: $ai_score%"
+echo "Navigation score: $navigation_score%"
+echo "Governance score: $governance_score%"
 echo
 echo "This report is read-only."
 echo "No files or folders were created, modified, moved, renamed, or deleted."
 
-print_section "Missing required directories"
-if [[ ${#missing_dirs[@]} -eq 0 ]]; then
-    echo "None."
-else
-    printf -- '- %s\n' "${missing_dirs[@]}"
-fi
-
-print_section "Missing recommended root files"
-if [[ ${#missing_root_files[@]} -eq 0 ]]; then
-    echo "None."
-else
-    printf -- '- %s\n' "${missing_root_files[@]}"
-fi
-
-print_section "AI handbook completeness"
-for file in "${AI_HANDBOOK_FILES[@]}"; do
-    if [[ -f "$PROJECT_ROOT/$file" ]]; then
-        echo "[OK]      $file"
-    else
-        echo "[MISSING] $file"
-    fi
+for pair in \
+  "Missing required directories:missing_dirs" \
+  "Missing recommended root files:missing_root_files" \
+  "Missing AI handbook files:missing_ai_files" \
+  "Missing Governance files:missing_governance_files" \
+  "Broken links:broken_links" \
+  "Orphan documents:orphan_docs" \
+  "Navigation issues:navigation_issues" \
+  "Governance metadata and lifecycle issues:metadata_issues" \
+  "Overdue reviews:review_issues" \
+  "Markdown outside canonical locations:markdown_outside" \
+  "Warnings:warnings" \
+  "Recommendations:recommendations"
+do
+  title="${pair%%:*}"
+  array="${pair##*:}"
+  print_section "$title"
+  print_items "$array"
 done
-
-print_section "Warnings"
-if [[ ${#warnings[@]} -eq 0 ]]; then
-    echo "None."
-else
-    printf -- '- %s\n' "${warnings[@]}"
-fi
-
-print_section "Markdown files outside canonical documentation locations"
-if [[ ${#markdown_outside_docs[@]} -eq 0 ]]; then
-    echo "None."
-else
-    printf -- '- %s\n' "${markdown_outside_docs[@]}"
-fi
-
-print_section "Recommendations"
-if [[ ${#recommendations[@]} -eq 0 ]]; then
-    echo "None."
-else
-    printf -- '- %s\n' "${recommendations[@]}"
-fi
-
 echo

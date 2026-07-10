@@ -2,25 +2,29 @@
 
 [Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Development](README.md) › Project Analysis and Validation Tool
 
+> **Status:** Maintained
+> **Owner:** Engineering Documentation Framework
+> **Applies To:** EDF and adopting projects
+> **Last Reviewed:** 2026-07-10
+> **Review Frequency:** Per Release
+> **Authoritative:** Yes
+
 ## Purpose
 
-The Engineering Documentation Framework includes read-only project analysis tools that inspect an existing software project and report how closely it follows the framework.
+The Framework Advisor is a read-only analysis tool that evaluates how closely a repository follows the Engineering Documentation Framework.
 
-The analyzer helps teams adopt and maintain the framework without automatically changing project files.
+It reports structural, navigation, and governance findings without changing project files.
 
 ## Safety Guarantee
 
-The analysis tools are read-only.
+The Framework Advisor never:
 
-They do not:
-
-- create files or folders
-- delete or overwrite files
-- rename or move files
-- modify existing documentation
-- modify an existing `documents/` folder
-
-They only inspect the target project and print a report.
+- creates files or directories
+- overwrites or edits files
+- deletes files
+- renames or moves files
+- assigns owners or approvals
+- resolves governance exceptions automatically
 
 ## Scripts
 
@@ -36,72 +40,66 @@ Bash:
 ./scripts/analyze_project_structure.sh "/Users/ed/Projects/Existing Project"
 ```
 
-## What the Tool Checks
+## M3 Analysis Areas
 
-The analyzer checks:
+### Structure
 
-- required framework directories
-- recommended root-level framework files
-- whether `README.md` references `PROJECT_INDEX.md`
-- whether `README.md` references the AI handbook under `docs/AI/`
-- Markdown files outside canonical documentation locations
-- the presence of a legacy root-level `AI_WORKFLOW.md`
-- Architecture Decision Record folder structure
-- modular AI handbook completeness
+- required canonical directories
+- recommended root documents
+- Markdown outside canonical locations
+- retired `AI_WORKFLOW.md`
+- legacy `documents/` folder awareness
 
-## AI Handbook Completeness
+### AI Handbook
 
-The analyzer reports the presence of:
+- modular handbook completeness
+- missing required AI documents
 
-- `docs/AI/README.md`
-- `docs/AI/AI_Philosophy.md`
-- `docs/AI/AI_Roles.md`
-- `docs/AI/AI_Decision_Matrix.md`
-- `docs/AI/Cost_Optimization.md`
-- `docs/AI/Prompting_Guide.md`
-- `docs/AI/Context_Checklist.md`
-- `docs/AI/Verification.md`
-- `docs/AI/Security.md`
-- `docs/AI/Governance.md`
+### Navigation
 
-It reports both a file count and a percentage.
+- broken relative Markdown links
+- orphan Markdown documents
+- missing breadcrumb navigation
+- missing parent domain README links
 
-This is a completeness indicator, not a judgment of document quality.
+### Governance
 
-## Output
+- Governance-domain completeness
+- valid lifecycle states
+- required owner and scope metadata
+- required review metadata
+- overdue reviews
+- invalid authoritative status combinations
+- deprecated documents without replacement information
 
-The tool prints:
+## Scores
 
-- project root and name
-- estimated compliance score
-- AI handbook completeness
-- missing required directories
-- missing recommended root files
-- missing AI handbook files
-- warnings
-- Markdown files outside canonical locations
-- recommendations
+The Advisor reports:
 
-## Compliance Score
+- overall compliance
+- structure score
+- AI score
+- navigation score
+- governance score
 
-The compliance score is an approximate project-readiness signal, not formal certification.
+Scores are guidance, not certification. Findings and recommendations remain more important than the numeric result.
 
-A lower score means that the project has not yet fully adopted the framework. It does not mean that the software project is broken.
+## Advisory Output
 
-## Recommended Workflow
+Each finding identifies the affected document and the condition detected.
 
-1. Run the canonical structure script.
-2. Run the analysis tool.
-3. Review structural findings.
-4. Run the documentation migration assistant.
-5. Migrate documentation incrementally.
-6. Re-run both tools after major documentation changes.
+The tool recommends corrective action but does not apply changes automatically.
 
-## Important Limitation
+## Known Limits
 
-The analyzer checks structure and selected references.
+The Advisor does not yet:
 
-It does not prove that documentation is accurate, current, non-duplicative, or complete in substance. Those concerns require human review and, later, framework governance and link-validation tools.
+- detect semantic duplicate content
+- determine whether two documents conflict factually
+- validate external URLs
+- validate Markdown heading anchors
+- infer project-specific exceptions
+- replace human review
 
 ## Parent
 
@@ -111,7 +109,7 @@ It does not prove that documentation is accurate, current, non-duplicative, or c
 
 - [Documentation Migration Assistant](Documentation_Migration_Assistant.md)
 - [Documentation Generation Engine](Documentation_Generation_Engine.md)
-- [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
 - [Governance Analyzer Compliance](../Governance/Analyzer_Compliance.md)
 - [Governance Checklist](../Governance/Governance_Checklist.md)
-- [AI Engineering Handbook](../AI/README.md)
+- [Document Metadata Standard](../Governance/Document_Metadata_Standard.md)
+- [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)

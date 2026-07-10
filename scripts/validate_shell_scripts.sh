@@ -26,8 +26,14 @@ fi
 
 errors=0
 checked=0
+script_list="$(mktemp "${TMPDIR:-/tmp}/edf-shell-scripts.XXXXXX")"
+trap 'rm -f "$script_list"' EXIT
+
+find "$scripts_dir" -maxdepth 1 -type f -name '*.sh' -print | sort > "$script_list"
 
 while IFS= read -r script; do
+  [[ -n "$script" ]] || continue
+
   checked=$((checked + 1))
   relative="${script#"$project_root"/}"
 
@@ -56,7 +62,7 @@ while IFS= read -r script; do
     echo "  Fix with: chmod +x \"$relative\"" >&2
     errors=$((errors + 1))
   fi
-done < <(find "$scripts_dir" -maxdepth 1 -type f -name '*.sh' -print | sort)
+done < "$script_list"
 
 if [[ $checked -eq 0 ]]; then
   echo "No shell scripts found under: $scripts_dir" >&2

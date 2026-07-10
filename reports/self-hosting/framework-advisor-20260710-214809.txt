@@ -1,0 +1,111 @@
+Engineering Documentation Framework Self-Hosting Validation
+==========================================================
+
+Project root: /Users/edbecnel/Development/GitHub/Engineering-Documentation-Framework
+Started: 2026-07-10 21:48:09 +0800
+
+Stage 1 regression verification
+-------------------------------
+PASS: ruleset marker
+PASS: EDF repository detection
+PASS: conditional adoption guide
+PASS: scripts README canonical handling
+PASS: placeholder exclusions
+PASS: template-source detection
+PASS: template orphan exclusions
+PASS: Bash syntax
+Stage 1 verification passed.
+
+Shell compatibility validation
+------------------------------
+Shell validation passed for 8 script(s).
+Compatibility target: Bash 3.2 or newer.
+
+Framework Advisor self-hosting analysis
+---------------------------------------
+Engineering Documentation Framework Advisor
+Ruleset: 2026-07-10-stage1
+===========================================
+
+Project root: /Users/edbecnel/Development/GitHub/Engineering-Documentation-Framework
+Project name: Engineering-Documentation-Framework
+Repository mode: EDF framework repository
+Overall compliance: 83%
+Structure score: 96%
+AI score: 100%
+Navigation score: 76%
+Governance score: 61%
+
+This report is read-only.
+No files or folders were created, modified, moved, renamed, or deleted.
+
+Missing required directories
+----------------------------
+- docs/Architecture/ADRs
+
+Missing recommended root files
+------------------------------
+None.
+
+Missing AI handbook files
+-------------------------
+None.
+
+Missing Governance files
+------------------------
+None.
+
+Broken links
+------------
+- docs/Specifications/README.md -> ../../AI_WORKFLOW.md
+- docs/User_Guides/README.md -> ../Specifications/Glossary.md
+- docs/Developer_Handbook/01_Development_Environment.md -> ../../AI_WORKFLOW.md
+- docs/Developer_Handbook/03_Git_Workflow.md -> ../../AI_WORKFLOW.md
+- docs/Developer_Handbook/02_AI_Development.md -> ../../AI_WORKFLOW.md
+- docs/Developer_Handbook/02_AI_Development.md -> ../../AI_WORKFLOW.md
+- docs/Developer_Handbook/02_AI_Development.md -> ../../AI_WORKFLOW.md
+- PROJECT_CHARTER.md -> ./AI_WORKFLOW.md
+
+Orphan documents
+----------------
+None.
+
+Navigation issues
+-----------------
+None.
+
+Governance metadata and lifecycle issues
+----------------------------------------
+- docs/Development/Documentation_First_Development_Policy.md: missing or invalid Status.
+- docs/Development/Documentation_First_Development_Policy.md: missing Applies To.
+- docs/Development/EDF_Development_Workflow.md: missing or invalid Status.
+- docs/Development/Engineering_Development_Policy.md: missing or invalid Status.
+- docs/Governance/Ownership_and_Review.md: missing or invalid Status.
+- docs/Governance/Document_Metadata_Standard.md: missing or invalid Status.
+- docs/Governance/Document_Lifecycle.md: missing or invalid Status.
+- docs/Governance/Change_Management.md: missing or invalid Status.
+- docs/Governance/Governance_Checklist.md: missing or invalid Status.
+- docs/Governance/README.md: missing or invalid Status.
+- docs/Governance/Analyzer_Compliance.md: missing or invalid Status.
+- docs/Governance/Governance_Overview.md: missing or invalid Status.
+- docs/Governance/EDF_Governance.md: missing or invalid Status.
+
+Overdue reviews
+---------------
+None.
+
+Markdown outside canonical locations
+------------------------------------
+None.
+
+Warnings
+--------
+None.
+
+Recommendations
+---------------
+- Repair broken relative Markdown links.
+- Correct governance metadata and lifecycle issues.
+
+
+Validation completed: 2026-07-10 21:48:16 +0800

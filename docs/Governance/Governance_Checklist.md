@@ -1,0 +1,51 @@
+# Governance Checklist
+
+> **Status:** Canonical
+> **Owner:** Engineering Documentation Framework
+> **Applies To:** Governance reviews
+> **Last Reviewed:** 2026-07-10
+
+## Document-Level Checklist
+
+- [ ] The document has a valid status.
+- [ ] The document has an owner.
+- [ ] The document identifies its scope.
+- [ ] The authoritative status is explicit when applicable.
+- [ ] The last-reviewed date is present when required.
+- [ ] The review frequency is defined.
+- [ ] The document links to its parent.
+- [ ] Related authoritative documents are linked.
+- [ ] The content does not duplicate another authoritative source.
+- [ ] Deprecated content identifies a replacement or states that none exists.
+- [ ] Archived content is absent from active navigation.
+
+## Repository-Level Checklist
+
+- [ ] Governance documents exist.
+- [ ] Governance is linked from `PROJECT_INDEX.md`.
+- [ ] Canonical documents have owners.
+- [ ] Canonical documents have valid lifecycle states.
+- [ ] No conflicting authoritative sources exist.
+- [ ] Overdue reviews are identified.
+- [ ] Broken governance links are identified.
+- [ ] Exceptions are documented.
+- [ ] Analyzer output is advisory and explains recommendations.
+- [ ] Automated tools remain non-destructive.
+
+## Release Checklist
+
+- [ ] Governance changes are recorded in the changelog.
+- [ ] Architectural governance decisions are recorded.
+- [ ] Navigation is valid.
+- [ ] Required approvals are complete.
+- [ ] Temporary `.update/` files are removed before commit.
+
+## Parent Navigation
+
+- [Governance](README.md)
+
+## Related Documents
+
+- [Governance Overview](Governance_Overview.md)
+- [Analyzer Compliance](Analyzer_Compliance.md)
+- [Change Management](Change_Management.md)

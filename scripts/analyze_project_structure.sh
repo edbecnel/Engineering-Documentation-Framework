@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Engineering Documentation Framework Framework Advisor.
 # Read-only analysis of structure, navigation, links, and governance.
+# Compatible with the default macOS Bash 3.2 and newer Bash versions.
 #
 # Usage:
 # ./scripts/analyze_project_structure.sh "/path/to/project root"
@@ -90,7 +91,8 @@ while IFS= read -r -d '' file; do
   esac
 done < <(find "$PROJECT_ROOT" -type f \( -iname '*.md' -o -iname '*.markdown' \) -print0)
 
-declare -A inbound=()
+inbound_file="$(mktemp "${TMPDIR:-/tmp}/edf-inbound.XXXXXX")"
+trap 'rm -f "$inbound_file"' EXIT
 
 for file in "${all_md[@]}"; do
   rel="${file#"$PROJECT_ROOT"/}"
@@ -116,7 +118,7 @@ for file in "${all_md[@]}"; do
       broken_links+=("$rel -> $target")
     elif [[ -f "$normalized" && "$normalized" =~ \.(md|markdown)$ ]]; then
       target_rel="${normalized#"$PROJECT_ROOT"/}"
-      inbound["$target_rel"]=1
+      printf '%s\n' "$target_rel" >> "$inbound_file"
     fi
   done < <(grep -oE '\[[^]]+\]\([^)]+\)' "$file" | sed -E 's/^[^(]*\(([^)]+)\)$/\1/' || true)
 
@@ -190,7 +192,7 @@ for file in "${all_md[@]}"; do
   case "$rel" in
     README.md|PROJECT_INDEX.md|CHANGELOG.md|ARCHITECTURE_DECISIONS.md|archive/*) continue ;;
   esac
-  [[ -n "${inbound[$rel]:-}" ]] || orphan_docs+=("$rel")
+  grep -Fqx "$rel" "$inbound_file" || orphan_docs+=("$rel")
 done
 
 [[ ${#markdown_outside[@]} -eq 0 ]] || recommendations+=("Audit Markdown outside canonical locations.")
@@ -223,12 +225,23 @@ print_section() {
 }
 
 print_items() {
-  local -n items=$1
-  if [[ ${#items[@]} -eq 0 ]]; then
-    echo "None."
-  else
-    printf -- '- %s\n' "${items[@]}"
-  fi
+  local array_name="$1"
+
+  case "$array_name" in
+    missing_dirs) [[ ${#missing_dirs[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${missing_dirs[@]}" ;;
+    missing_root_files) [[ ${#missing_root_files[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${missing_root_files[@]}" ;;
+    missing_ai_files) [[ ${#missing_ai_files[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${missing_ai_files[@]}" ;;
+    missing_governance_files) [[ ${#missing_governance_files[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${missing_governance_files[@]}" ;;
+    broken_links) [[ ${#broken_links[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${broken_links[@]}" ;;
+    orphan_docs) [[ ${#orphan_docs[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${orphan_docs[@]}" ;;
+    navigation_issues) [[ ${#navigation_issues[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${navigation_issues[@]}" ;;
+    metadata_issues) [[ ${#metadata_issues[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${metadata_issues[@]}" ;;
+    review_issues) [[ ${#review_issues[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${review_issues[@]}" ;;
+    markdown_outside) [[ ${#markdown_outside[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${markdown_outside[@]}" ;;
+    warnings) [[ ${#warnings[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${warnings[@]}" ;;
+    recommendations) [[ ${#recommendations[@]} -eq 0 ]] && echo "None." || printf -- '- %s\n' "${recommendations[@]}" ;;
+    *) echo "None." ;;
+  esac
 }
 
 echo "Engineering Documentation Framework Advisor"

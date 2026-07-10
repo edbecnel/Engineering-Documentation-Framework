@@ -141,6 +141,37 @@ Use the documentation migration assistant to generate a suggested migration plan
 
 The migration assistant is read-only. It recommends destinations but does not move, delete, or modify files.
 
+
+## Generate a Cross-Linked Documentation Skeleton
+
+After creating the canonical folders, you can generate missing starter documents and domain indexes:
+
+- **Unix / macOS / Linux:**
+
+```bash
+./scripts/generate_documentation_skeleton.sh "/path/to/project root"
+```
+
+- **Windows (PowerShell):**
+
+```powershell
+.\scripts\generate_documentation_skeleton.ps1 -ProjectRoot "D:\Projects\Existing Project"
+```
+
+The generator creates only files that do not already exist. It never overwrites, edits, renames, moves, merges into, or deletes an existing file.
+
+Generated documents include working hierarchical navigation links so users can move between:
+
+```text
+README.md
+    -> PROJECT_INDEX.md
+        -> domain README.md
+            -> individual documents
+```
+
+If a target file already exists, the generator reports it as skipped and leaves it unchanged. See [Framework Generation Principles](./docs/Architecture/Framework_Generation_Principles.md) and [Documentation Generation Engine](./docs/Development/Documentation_Generation_Engine.md).
+
+
 ## For a New Project
 
 1. **Copy or fork** this repository, then run a structure script against your project root.

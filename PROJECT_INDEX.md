@@ -73,6 +73,22 @@ They do not create README files inside generated folders. Any existing `document
 
 These scripts only create missing directories and the optional framework guide file. They do not delete, overwrite, move, rename, or modify existing files.
 
+
+## Documentation Generation
+
+Use the non-destructive documentation generator after the folder bootstrap step:
+
+- `scripts/generate_documentation_skeleton.sh`
+- `scripts/generate_documentation_skeleton.ps1`
+
+The generator creates only missing starter documents and domain `README.md` files. Every generated user-facing Markdown document includes hierarchical navigation links. Existing files are always skipped and never modified.
+
+Authoritative guidance:
+
+- [Framework Generation Principles](./docs/Architecture/Framework_Generation_Principles.md)
+- [Documentation Generation Engine](./docs/Development/Documentation_Generation_Engine.md)
+
+
 ## Analysis and Migration Tools
 
 | Tool | Purpose |

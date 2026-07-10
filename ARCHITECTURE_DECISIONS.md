@@ -35,3 +35,23 @@ documentation.
 - Governance rules provide the foundation for Framework Advisor scoring.
 - Projects may adopt stricter enforcement through configuration or CI.
 - Human approval remains the final authority.
+## ADR-M2A — Governance Applicability Layers
+
+**Status:** Accepted
+
+### Decision
+
+EDF Governance is divided into two applicability layers:
+
+1. Baseline governance applies to both EDF and projects adopting EDF.
+2. `EDF_Governance.md` defines additional requirements that apply only to
+   development, maintenance, self-hosting, and release of EDF itself.
+
+Each baseline Governance document must identify its applicability explicitly.
+
+### Consequences
+
+- Adopting projects are not required to maintain EDF-specific framework machinery.
+- EDF remains subject to the same baseline governance it defines for adopting projects.
+- Framework-specific rules have one authoritative document.
+- Analyzer rules can distinguish universal project compliance from EDF self-hosting compliance.

@@ -1,5 +1,20 @@
 # Changelog
 
+
+## Governance Applicability Clarification
+
+### Added
+
+- `docs/Governance/EDF_Governance.md` for EDF-specific governance
+- explicit applicability sections throughout the Governance domain
+- documented baseline and EDF-specific governance layers
+
+### Changed
+
+- Governance Overview now distinguishes universal governance from EDF-only governance
+- Analyzer Compliance now defines baseline analyzer requirements and references EDF-specific checks separately
+- Governance navigation and Project Index now link to EDF Governance
+
 ## M2 – Governance
 
 ### Added

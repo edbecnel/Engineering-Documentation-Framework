@@ -7,6 +7,16 @@
 > **Applies To:** Governed documentation
 > **Last Reviewed:** 2026-07-10
 
+## Applicability
+
+This document defines baseline governance that applies to:
+
+- the Engineering Documentation Framework repository
+- projects that adopt the Engineering Documentation Framework
+
+EDF itself follows this baseline governance and also follows the additional
+framework-specific requirements in [EDF Governance](EDF_Governance.md).
+
 ## Purpose
 
 This policy defines accountability for documentation and establishes review expectations.

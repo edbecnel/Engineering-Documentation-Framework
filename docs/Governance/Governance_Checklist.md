@@ -7,6 +7,16 @@
 > **Applies To:** Governance reviews
 > **Last Reviewed:** 2026-07-10
 
+## Applicability
+
+This document defines baseline governance that applies to:
+
+- the Engineering Documentation Framework repository
+- projects that adopt the Engineering Documentation Framework
+
+EDF itself follows this baseline governance and also follows the additional
+framework-specific requirements in [EDF Governance](EDF_Governance.md).
+
 ## Document-Level Checklist
 
 - [ ] The document has a valid status.

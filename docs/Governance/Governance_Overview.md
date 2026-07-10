@@ -7,6 +7,16 @@
 > **Applies To:** EDF and adopting projects
 > **Last Reviewed:** 2026-07-10
 
+## Applicability
+
+This document defines baseline governance that applies to:
+
+- the Engineering Documentation Framework repository
+- projects that adopt the Engineering Documentation Framework
+
+EDF itself follows this baseline governance and also follows the additional
+framework-specific requirements in [EDF Governance](EDF_Governance.md).
+
 ## Purpose
 
 Governance ensures that documentation remains authoritative, discoverable,
@@ -14,6 +24,25 @@ reviewable, current, and aligned with the project it describes.
 
 Governance complements the documentation information architecture by defining how
 documents are managed throughout their lifecycle.
+
+## Governance Layers
+
+EDF uses two governance layers.
+
+### Baseline Governance
+
+Baseline governance applies to both the Engineering Documentation Framework and
+projects that adopt it. It covers document metadata, lifecycle, ownership, review,
+change management, analyzer expectations, and governance checks.
+
+### EDF-Specific Governance
+
+EDF-specific governance applies only to development and maintenance of the
+Engineering Documentation Framework repository. It extends the baseline with rules
+for templates, generators, the Framework Advisor, framework governance documents,
+self-hosting, versioning, and releases.
+
+See [EDF Governance](EDF_Governance.md) for the framework-specific extension.
 
 ## Governance Principles
 
@@ -91,6 +120,7 @@ Projects may later choose stricter enforcement in CI or release workflows.
 
 ## Child Documents
 
+- [EDF Governance](EDF_Governance.md)
 - [Document Metadata Standard](Document_Metadata_Standard.md)
 - [Document Lifecycle](Document_Lifecycle.md)
 - [Ownership and Review](Ownership_and_Review.md)

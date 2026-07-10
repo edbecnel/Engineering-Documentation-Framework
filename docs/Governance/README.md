@@ -7,6 +7,16 @@
 > **Applies To:** EDF and adopting projects
 > **Last Reviewed:** 2026-07-10
 
+## Applicability
+
+This document defines baseline governance that applies to:
+
+- the Engineering Documentation Framework repository
+- projects that adopt the Engineering Documentation Framework
+
+EDF itself follows this baseline governance and also follows the additional
+framework-specific requirements in [EDF Governance](EDF_Governance.md).
+
 ## Purpose
 
 This domain defines how engineering documentation is owned, reviewed, approved,
@@ -15,6 +25,7 @@ maintained, deprecated, and archived.
 ## Governance Documents
 
 - [Governance Overview](Governance_Overview.md)
+- [EDF Governance](EDF_Governance.md)
 - [Document Metadata Standard](Document_Metadata_Standard.md)
 - [Document Lifecycle](Document_Lifecycle.md)
 - [Ownership and Review](Ownership_and_Review.md)
@@ -25,6 +36,7 @@ maintained, deprecated, and archived.
 ## Child Documents
 
 - [Governance Overview](Governance_Overview.md)
+- [EDF Governance](EDF_Governance.md)
 - [Document Metadata Standard](Document_Metadata_Standard.md)
 - [Document Lifecycle](Document_Lifecycle.md)
 - [Ownership and Review](Ownership_and_Review.md)

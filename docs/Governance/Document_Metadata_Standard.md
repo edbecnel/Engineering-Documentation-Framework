@@ -24,6 +24,17 @@ as a Markdown block immediately below the document title.
 > **Last Reviewed:** YYYY-MM-DD
 > **Review Frequency:** Annual
 > **Authoritative:** Yes
+
+## Applicability
+
+This document defines baseline governance that applies to:
+
+- the Engineering Documentation Framework repository
+- projects that adopt the Engineering Documentation Framework
+
+EDF itself follows this baseline governance and also follows the additional
+framework-specific requirements in [EDF Governance](EDF_Governance.md).
+
 ```
 
 ## Required Fields

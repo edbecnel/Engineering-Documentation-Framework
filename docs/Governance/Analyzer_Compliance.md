@@ -7,9 +7,21 @@
 > **Applies To:** Framework Advisor and compatible analyzers
 > **Last Reviewed:** 2026-07-10
 
+## Applicability
+
+This document defines baseline governance that applies to:
+
+- the Engineering Documentation Framework repository
+- projects that adopt the Engineering Documentation Framework
+
+EDF itself follows this baseline governance and also follows the additional
+framework-specific requirements in [EDF Governance](EDF_Governance.md).
+
 ## Purpose
 
-This specification defines governance checks that the Framework Advisor should support.
+This specification defines baseline governance checks that the Framework Advisor or a compatible analyzer should support for both EDF and adopting projects.
+
+Checks that apply only to maintenance of EDF itself are defined in [EDF Governance](EDF_Governance.md).
 
 ## Initial Checks
 
@@ -95,6 +107,7 @@ The analyzer should distinguish accepted exceptions from unreviewed noncomplianc
 ## Related Documents
 
 - [Governance Overview](Governance_Overview.md)
+- [EDF Governance](EDF_Governance.md)
 - [Document Metadata Standard](Document_Metadata_Standard.md)
 - [Ownership and Review](Ownership_and_Review.md)
 - [Governance Checklist](Governance_Checklist.md)

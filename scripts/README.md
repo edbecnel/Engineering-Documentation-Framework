@@ -35,11 +35,32 @@ The wrapper performs all required Bash validation stages:
 1. Framework Advisor Stage 1 regression verification
 2. Bash 3.2 compatibility and shell-script validation
 3. Framework Advisor analysis of the EDF repository
+4. Final summary of the report path, compliance scores, and recommended actions
 
-The complete console output is saved automatically as a timestamped text report under:
+The complete console output and final summary are saved automatically as a timestamped text report under:
 
 ```text
 reports/self-hosting/
+```
+
+A successful run ends with a summary similar to:
+
+```text
+Self-hosting validation completed successfully.
+
+Report:
+reports/self-hosting/framework-advisor-YYYYMMDD-HHMMSS.txt
+
+Compliance scores:
+- Overall: 83%
+- Structure: 96%
+- AI: 100%
+- Navigation: 76%
+- Governance: 61%
+
+Next recommended actions:
+- Repair broken relative Markdown links.
+- Correct governance metadata and lifecycle issues.
 ```
 
 The wrapper invokes its supporting shell scripts through `/bin/bash`, so those scripts do not need to be called individually.

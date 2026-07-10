@@ -6,9 +6,10 @@
 #   1. Framework Advisor Stage 1 regression verification
 #   2. Shell compatibility validation
 #   3. Framework Advisor analysis against EDF itself
+#   4. Concise result summary
 #
-# The complete console output is written to a timestamped report under
-# reports/self-hosting/.
+# The complete console output and final summary are written to a timestamped
+# report under reports/self-hosting/.
 
 set -euo pipefail
 
@@ -28,6 +29,66 @@ require_file() {
         echo "Required $description not found: $required_file" >&2
         exit 1
     fi
+}
+
+extract_score() {
+    label="$1"
+    report="$2"
+
+    sed -n "s/^${label}: \\([0-9][0-9]*%\\)$/\\1/p" "$report" | tail -n 1
+}
+
+print_recommendations() {
+    report="$1"
+    recommendations="$(
+        awk '
+            /^Recommendations$/ {
+                in_recommendations = 1
+                next
+            }
+            in_recommendations && /^- / {
+                print
+                found = 1
+                next
+            }
+            in_recommendations && found && $0 !~ /^- / {
+                exit
+            }
+        ' "$report"
+    )"
+
+    if [[ -n "$recommendations" ]]; then
+        printf '%s\n' "$recommendations"
+    else
+        echo "- No recommendations reported."
+    fi
+}
+
+print_summary() {
+    report="$1"
+    overall="$(extract_score "Overall compliance" "$report")"
+    structure="$(extract_score "Structure score" "$report")"
+    ai="$(extract_score "AI score" "$report")"
+    navigation="$(extract_score "Navigation score" "$report")"
+    governance="$(extract_score "Governance score" "$report")"
+
+    echo
+    echo "============================================================"
+    echo "Self-hosting validation completed successfully."
+    echo
+    echo "Report:"
+    echo "${report#$project_root/}"
+    echo
+    echo "Compliance scores:"
+    echo "- Overall: ${overall:-Not reported}"
+    echo "- Structure: ${structure:-Not reported}"
+    echo "- AI: ${ai:-Not reported}"
+    echo "- Navigation: ${navigation:-Not reported}"
+    echo "- Governance: ${governance:-Not reported}"
+    echo
+    echo "Next recommended actions:"
+    print_recommendations "$report"
+    echo "============================================================"
 }
 
 require_file "$stage1_verifier" "Stage 1 verification script"
@@ -66,15 +127,12 @@ run_self_hosting_validation() {
 }
 
 if run_self_hosting_validation 2>&1 | tee "$report_path"; then
-    echo
-    echo "Self-hosting validation passed."
-    echo "Report written to:"
-    echo "$report_path"
+    print_summary "$report_path" | tee -a "$report_path"
 else
     validation_status=$?
     echo
-    echo "Self-hosting validation failed." >&2
-    echo "Review the captured report:" >&2
-    echo "$report_path" >&2
+    echo "Self-hosting validation failed." | tee -a "$report_path" >&2
+    echo "Review the captured report:" | tee -a "$report_path" >&2
+    echo "$report_path" | tee -a "$report_path" >&2
     exit "$validation_status"
 fi

@@ -40,7 +40,6 @@
 - [ ] Architectural governance decisions are recorded.
 - [ ] Navigation is valid.
 - [ ] Required approvals are complete.
-- [ ] Temporary `.update/` files are removed before commit.
 
 ## Parent
 

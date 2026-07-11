@@ -119,7 +119,6 @@ An EDF release should not be considered complete until:
 - self-hosting results are acceptable
 - architecture decisions are recorded
 - the changelog is updated
-- temporary `.update/` files are removed
 - a human maintainer approves the release
 
 ## Maintenance Responsibility

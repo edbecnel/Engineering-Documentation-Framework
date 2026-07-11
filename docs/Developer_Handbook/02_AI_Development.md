@@ -23,9 +23,9 @@ This document establishes practical conventions for using AI tools during day-to
 
 | Tool | Use case | Approval status |
 |------|----------|-----------------|
-| Cursor Composer | Multi-file implementation, refactors | _[Approved / Restricted]_ |
-| ChatGPT | Research, specs, prose | _[Approved tier]_ |
-| VS Code + Continue | Inline completion | _[Approved]_ |
+| Cursor + Composer 2.5 (standard) | Multi-file implementation, documentation, refactors | _[Approved]_ |
+| VS Code + GitHub Copilot | Inline completion, single-file work | _[Approved]_ |
+| VS Code + Continue | Interactive assistant with local or cloud models | _[Approved]_ |
 | Ollama (local) | Offline / sensitive drafts | _[Approved models: list]_ |
 | _[Cloud provider]_ | _[CI automation]_ | _[Requires security review]_ |
 

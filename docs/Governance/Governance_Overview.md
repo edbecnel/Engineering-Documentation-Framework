@@ -76,7 +76,6 @@ Governance may be lighter for:
 - working drafts
 - generated reports
 - disposable migration artifacts
-- update-package files under `.update/`
 
 ## Governance Model
 

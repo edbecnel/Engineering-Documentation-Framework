@@ -8,7 +8,7 @@ This directory contains the Engineering Documentation Framework utility scripts.
 
 ## One-Time Shell-Script Setup
 
-After extracting an update package or copying scripts manually, ensure the shell scripts are executable:
+After cloning the repository or copying scripts manually, ensure the shell scripts are executable:
 
 ```bash
 chmod +x scripts/*.sh

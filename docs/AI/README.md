@@ -15,7 +15,7 @@ The AI Engineering Handbook defines:
 - how to provide useful context to AI assistants
 - how to verify AI-generated work
 - how to preserve human accountability
-- how AI assistants should retrieve repository context and deliver reviewable update packages
+- how AI assistants work directly on the local repository through Cursor (Composer 2.5 standard) or VS Code
 
 ## Core Principle
 
@@ -30,12 +30,12 @@ Saving a small amount of model usage cost is not worthwhile if it creates hours 
 | Document | Purpose |
 |---|---|
 | [AI_Philosophy.md](./AI_Philosophy.md) | Core principles for AI-assisted engineering |
-| [AI_Roles.md](./AI_Roles.md) | Responsibilities of ChatGPT, Cursor, Continue, Ollama, cloud models, and the human developer |
+| [AI_Roles.md](./AI_Roles.md) | Responsibilities of Cursor + Composer 2.5, VS Code + Copilot, Continue, Ollama, cloud models, and the human developer |
 | [AI_Decision_Matrix.md](./AI_Decision_Matrix.md) | Guidance for selecting the right AI tool for a task |
 | [Cost_Optimization.md](./Cost_Optimization.md) | Strategy for balancing model cost, capability, and developer time |
 | [Prompting_Guide.md](./Prompting_Guide.md) | Prompting practices for engineering work |
 | [Context_Checklist.md](./Context_Checklist.md) | Checklist for preparing useful AI context |
-| [Repository_Workflow.md](./Repository_Workflow.md) | Standard workflow for repository-based AI implementation packages |
+| [Repository_Workflow.md](./Repository_Workflow.md) | Standard workflow for AI-assisted work in the local repository |
 | [Verification.md](./Verification.md) | How to review and validate AI-generated work |
 | [Security.md](./Security.md) | Security and privacy rules for AI usage |
 | [Governance.md](./Governance.md) | Human accountability and documentation governance |

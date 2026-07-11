@@ -7,50 +7,23 @@
 
 This document defines the primary roles of AI tools within the Engineering Documentation Framework.
 
-Different AI tools have different strengths. The goal is to select the tool that fits the task rather than using one model or product for everything.
+AI-assisted engineering happens directly in the local repository through IDE-integrated assistants. Different tools have different strengths. The goal is to select the tool that fits the task rather than using one model or product for everything.
 
-## ChatGPT — Engineering Advisor and Documentation Partner
-
-### Primary Role
-
-ChatGPT serves as the primary engineering advisor and documentation partner throughout the software development lifecycle.
-
-It is best used for high-level thinking, problem solving, architectural design, documentation, and technical decision making.
-
-### Typical Responsibilities
-
-- product vision and feature brainstorming
-- requirements analysis
-- software architecture
-- database design
-- API design
-- design reviews and trade-off analysis
-- project planning and roadmaps
-- technical documentation
-- Markdown documentation
-- Architecture Decision Records
-- troubleshooting complex engineering problems
-- explaining technical concepts
-- reviewing implementation strategies
-
-### Best Used When
-
-- making engineering decisions
-- designing new systems
-- creating or reviewing documentation
-- evaluating alternative approaches
-- planning implementation before writing code
-
-## Cursor Composer — Implementation and Agentic Coding
+## Cursor + Composer 2.5 (standard) — Primary Repository Assistant
 
 ### Primary Role
 
-Cursor Composer is the primary AI tool for implementation work within an existing codebase.
+Cursor with **Composer 2.5 (standard)** is the primary AI environment for documentation and multi-file implementation work.
 
-It is best suited for coordinated, multi-file development and larger code changes.
+It operates directly on the local Git working tree and is best suited for coordinated changes across the repository.
+
+### Default Model
+
+Use **Composer 2.5 (standard)** as the default Cursor model unless a task clearly requires escalation to a stronger reasoning model.
 
 ### Typical Responsibilities
 
+- reading and modifying documentation
 - multi-file feature implementation
 - large refactoring tasks
 - cross-file updates
@@ -58,14 +31,42 @@ It is best suited for coordinated, multi-file development and larger code change
 - applying coordinated code changes
 - test generation
 - code modernization
-- repetitive implementation tasks
+- navigation and cross-link updates
+- running validation and reviewing results
 
 ### Best Used When
 
 - implementing planned features
 - modifying multiple related files
-- generating production-ready code
+- updating documentation architecture
 - performing project-wide changes
+- working on EDF framework maintenance
+
+## Visual Studio Code + GitHub Copilot — Primary VS Code Assistant
+
+### Primary Role
+
+GitHub Copilot provides AI assistance directly within Visual Studio Code on the local repository.
+
+It is the primary AI tool for developers who work in VS Code rather than Cursor.
+
+### Typical Responsibilities
+
+- inline code completion and suggestions
+- explaining selected code
+- answering programming questions within the open project
+- refactoring individual functions or files
+- writing unit tests
+- debugging support
+- interactive development assistance
+- documentation drafting in context
+
+### Best Used When
+
+- working within the currently open project in VS Code
+- exploring unfamiliar code
+- iterating on individual files or components
+- asking implementation-specific questions with repository context
 
 ## Visual Studio Code + Continue — Interactive Coding Assistant
 
@@ -93,6 +94,7 @@ Depending on task complexity, Continue may use either a local Ollama model or a 
 - exploring unfamiliar code
 - iterating on individual files or components
 - asking implementation-specific questions
+- privacy-sensitive work with local models
 
 ## Local Ollama — Private, Low-Cost AI
 
@@ -131,7 +133,7 @@ It is intended for routine development tasks where privacy, speed, or operating 
 
 ### Primary Role
 
-Claude Sonnet is a preferred cloud model for difficult coding, architecture, debugging, review, and cross-file reasoning tasks.
+Claude Sonnet is a preferred cloud model for difficult coding, architecture, debugging, review, and cross-file reasoning tasks when used through an IDE-integrated assistant.
 
 Use the latest generally available Claude Sonnet model unless a project-specific reason is documented for using a different version.
 
@@ -195,6 +197,7 @@ AI should be viewed as an engineering assistant rather than an autonomous softwa
 
 - [AI_Philosophy.md](./AI_Philosophy.md)
 - [AI_Decision_Matrix.md](./AI_Decision_Matrix.md)
+- [Repository_Workflow.md](./Repository_Workflow.md)
 - [Verification.md](./Verification.md)
 
 ## Parent

@@ -109,7 +109,7 @@ Specifications/
 ## AI-assisted specification work
 
 - Use AI to expand bullet points into structured specs; human approves accuracy.
-- Feed approved specs to implementation tools (Cursor Composer) via `@` references.
+- Feed approved specs to implementation tools (Cursor with Composer 2.5) via `@` references.
 - See [AI Engineering Handbook](../AI/README.md).
 
 ## Maintenance

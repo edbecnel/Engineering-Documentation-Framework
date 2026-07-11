@@ -53,23 +53,6 @@ A documentation change is significant when it affects:
 Changes that establish or reverse architectural direction should be recorded in
 `ARCHITECTURE_DECISIONS.md` or in the project's ADR system.
 
-## Update Packages
-
-EDF update packages may include:
-
-```text
-.update/
-    README_UPDATE_INSTRUCTIONS.md
-    CHANGE_SUMMARY.md
-    ARCHITECTURAL_DECISIONS.md
-    AFFECTED_DOCUMENTS.md
-    COMMIT_MESSAGE.txt
-    DELETE_FILES.txt
-```
-
-The `.update/` directory is temporary and should not remain in the repository after
-the change is reviewed and merged.
-
 ## Non-Destructive Rule
 
 Automated tools must not:

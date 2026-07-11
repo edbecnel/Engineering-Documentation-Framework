@@ -85,7 +85,7 @@ git update-index --chmod=+x scripts/*.sh
 
 Then commit the mode changes.
 
-A ZIP archive may not reliably preserve executable permissions across every extraction
+Copying files outside Git may not reliably preserve executable permissions across every
 tool or operating system. Git remains the authoritative source for file modes.
 
 ## Validation

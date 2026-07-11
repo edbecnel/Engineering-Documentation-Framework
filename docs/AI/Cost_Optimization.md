@@ -34,10 +34,11 @@ When choosing an AI tool, consider:
 Use this progression unless a project-specific reason justifies a different choice:
 
 1. Local model such as Qwen 14B for routine tasks
-2. Low-cost cloud model for simple tasks that do not require advanced reasoning
-3. Claude Sonnet for complex coding, review, debugging, and cross-file reasoning
-4. GPT-5 reasoning for exceptionally difficult engineering problems
-5. Codex for high-value agentic implementation tasks
+2. Cursor + Composer 2.5 (standard) for everyday multi-file documentation and implementation
+3. Low-cost cloud model for simple tasks that do not require advanced reasoning
+4. Claude Sonnet for complex coding, review, debugging, and cross-file reasoning
+5. GPT-5 reasoning for exceptionally difficult engineering problems
+6. Codex for high-value agentic implementation tasks
 
 ## When to Use Local AI
 

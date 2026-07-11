@@ -85,22 +85,22 @@ When asking AI to create or move documentation, reference the framework domains:
 
 ### New Feature
 
-1. Define requirements.
-2. Review architecture with ChatGPT if needed.
+1. Define requirements in the local repository.
+2. Review architecture with Cursor (Composer 2.5) when needed.
 3. Record important decisions in `ARCHITECTURE_DECISIONS.md`.
-4. Implement with Cursor Composer Standard.
+4. Implement with Cursor (Composer 2.5) or VS Code + GitHub Copilot.
 5. Escalate to Claude Sonnet only when stronger reasoning is required.
 6. Review, test, and commit.
 
 ### Existing Code Investigation
 
-1. Begin with VS Code + Continue + local AI.
+1. Begin with VS Code + Copilot or Continue + local AI.
 2. Escalate to Claude Sonnet for multi-file reasoning.
-3. Document important findings.
+3. Document important findings in the repository.
 
 ### Documentation
 
-1. Draft with ChatGPT.
+1. Draft with Cursor (Composer 2.5) in the local working tree.
 2. Verify against the implementation.
 3. Commit documentation with related code whenever practical.
 

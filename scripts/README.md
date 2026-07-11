@@ -83,6 +83,46 @@ The supporting tools remain available for focused troubleshooting:
 
 Normal self-hosting validation should use the wrapper rather than these separate commands.
 
+## Adoption Conformance Validation
+
+Use this wrapper when validating an **adopting project** and saving a timestamped conformance report inside that project:
+
+```bash
+./scripts/run_conformance_validation.sh "/path/to/adopting project root"
+```
+
+PowerShell:
+
+```powershell
+.\scripts\run_conformance_validation.ps1 -ProjectRoot "D:\Projects\Adopting Project"
+```
+
+The wrapper:
+
+1. Runs the Framework Advisor (`analyze_project_structure.sh` / `.ps1`) against the target project
+2. Streams full output to the terminal
+3. Saves the same output plus a completion summary under:
+
+```text
+<project-root>/reports/conformance/framework-advisor-YYYYMMDD-HHMMSS.txt
+```
+
+### When to use which command
+
+| Command | Target | Report location |
+|---------|--------|-----------------|
+| `run_self_hosting_validation.sh` | EDF repository only | `reports/self-hosting/` in EDF |
+| `run_conformance_validation.sh` | Any adopting project | `reports/conformance/` in target project |
+| `analyze_project_structure.sh` | Any project | stdout only (no saved report) |
+
+Do **not** use `run_self_hosting_validation.sh` for adopting projects. It includes EDF-specific Stage 1 regression checks and shell validation that belong only to EDF maintenance.
+
+If the wrapper is not executable, run it explicitly:
+
+```bash
+bash ./scripts/run_conformance_validation.sh "/path/to/adopting project root"
+```
+
 ## Compatibility
 
 EDF shell scripts target Bash 3.2 or newer.

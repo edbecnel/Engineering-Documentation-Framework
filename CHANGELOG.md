@@ -1,6 +1,13 @@
 # Changelog
 
+## [Unreleased]
 
+### Added
+
+- Bash and PowerShell adoption conformance validation wrappers
+  (`run_conformance_validation.sh` / `.ps1`) that run the Framework Advisor
+  against an adopting project and save timestamped reports under
+  `reports/conformance/` in the target repository
 
 ## M4 – Framework Self-Hosting
 

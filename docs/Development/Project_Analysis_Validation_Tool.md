@@ -40,6 +40,28 @@ Bash:
 ./scripts/analyze_project_structure.sh "/Users/ed/Projects/Existing Project"
 ```
 
+## Adoption Conformance Report
+
+For adopting projects, use the conformance validation wrapper to run the Framework Advisor and save a timestamped report inside the target repository:
+
+```bash
+/path/to/Engineering-Documentation-Framework/scripts/run_conformance_validation.sh "/path/to/adopting project root"
+```
+
+PowerShell:
+
+```powershell
+.\scripts\run_conformance_validation.ps1 -ProjectRoot "D:\Projects\Existing Project"
+```
+
+The wrapper writes to:
+
+```text
+<project-root>/reports/conformance/framework-advisor-YYYYMMDD-HHMMSS.txt
+```
+
+Use `analyze_project_structure.sh` directly when you only need console output. Use `run_self_hosting_validation.sh` only when validating the EDF framework repository itself.
+
 ## M3 Analysis Areas
 
 ### Structure

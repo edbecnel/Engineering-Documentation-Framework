@@ -123,6 +123,14 @@ Use the project analysis tool to inspect how closely an existing project follows
 
 The analysis tool is read-only. It reports missing folders, missing key files, Markdown files outside canonical locations, and documentation structure issues.
 
+To save a timestamped conformance report inside the adopting project, use the conformance validation wrapper from the EDF repository:
+
+```bash
+/path/to/Engineering-Documentation-Framework/scripts/run_conformance_validation.sh "/path/to/project root"
+```
+
+Reports are written to `reports/conformance/` in the target project. See [scripts/README.md](./scripts/README.md) for details.
+
 ### Plan documentation migration
 
 Use the documentation migration assistant to generate a suggested migration plan for existing Markdown files.

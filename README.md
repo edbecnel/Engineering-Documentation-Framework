@@ -105,6 +105,10 @@ Any existing `documents/` folder is left completely untouched.
 
 These scripts only create missing directories and the optional framework guide file. They do not delete, overwrite, move, rename, or modify existing files.
 
+### First-time setup
+
+New contributors start with [docs/Developer_Handbook/00_First_Time_Setup.md](docs/Developer_Handbook/00_First_Time_Setup.md). That guide links to the authoritative setup sections in the Developer Handbook, Database, Architecture, and Deployment domains.
+
 ### Analyze an existing project
 
 Use the project analysis tool to inspect how closely an existing project follows the framework structure.

@@ -24,7 +24,7 @@ if [[ ! -d "$PROJECT_ROOT" ]]; then
 fi
 
 required_dirs=(
-  docs docs/Architecture docs/Architecture/ADRs docs/AI docs/Development
+  docs docs/Architecture docs/Architecture/ADRs docs/AI docs/Developer_Handbook docs/Development
   docs/Governance docs/Specifications docs/API docs/Database docs/Deployment
   docs/User_Guides docs/Reference docs/Templates tasks archive scripts
 )

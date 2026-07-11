@@ -35,6 +35,7 @@ $RequiredDirs = @(
     "docs/Architecture",
     "docs/Architecture/ADRs",
     "docs/AI",
+    "docs/Developer_Handbook",
     "docs/Development",
     "docs/Governance",
     "docs/Specifications",

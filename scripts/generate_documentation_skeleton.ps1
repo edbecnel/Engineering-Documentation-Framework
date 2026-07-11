@@ -31,6 +31,8 @@ This is the primary documentation hub for humans and AI assistants.
 - [Architecture Decisions](ARCHITECTURE_DECISIONS.md)
 - [Architecture](docs/Architecture/README.md)
 - [AI Engineering](docs/AI/README.md)
+- [Developer Handbook](docs/Developer_Handbook/README.md)
+- [First-Time Setup](docs/Developer_Handbook/00_First_Time_Setup.md)
 - [Development](docs/Development/README.md)
 - [Specifications](docs/Specifications/README.md)
 - [API](docs/API/README.md)
@@ -173,6 +175,136 @@ Add documents whose primary responsibility matches this domain.
 
 Update this index whenever a major document in this domain is created, moved, renamed, or retired.
 '@
+    "docs/Developer_Handbook/README.md" = @'
+# Developer Handbook
+
+> **Documentation path:** [Project Index](../../PROJECT_INDEX.md) → Developer Handbook
+
+## Purpose
+
+Day-to-day project engineering: first-time setup, development environment, Git workflow, coding standards, testing, and releases.
+
+## Start here
+
+New contributors begin with [00_First_Time_Setup.md](./00_First_Time_Setup.md).
+
+## Authoritative Documents
+
+- [00_First_Time_Setup.md](./00_First_Time_Setup.md)
+- [01_Development_Environment.md](./01_Development_Environment.md)
+
+## Navigation
+
+- [Project Index](../../PROJECT_INDEX.md)
+- [Development](../Development/README.md)
+
+## Maintenance
+
+Update this index whenever a major document in this domain is created, moved, renamed, or retired.
+'@
+    "docs/Developer_Handbook/00_First_Time_Setup.md" = @'
+# First-Time Setup
+
+> **Documentation path:** [Project Index](../../PROJECT_INDEX.md) → [Developer Handbook](README.md) → First-Time Setup
+
+## Purpose
+
+Entry point for new contributors setting up a local development environment. This guide links to authoritative setup documents and specific sections.
+
+## Setup checklist
+
+1. **Prerequisites** → [01_Development_Environment.md → Prerequisites](./01_Development_Environment.md#prerequisites)
+2. **Clone and configure** → [01_Development_Environment.md → Repository setup](./01_Development_Environment.md#repository-setup)
+3. **Technology stack** → [PROJECT_INDEX.md](../../PROJECT_INDEX.md), [docs/Architecture/](../Architecture/)
+4. **Database** → [docs/Database/](../Database/)
+5. **Local services** → [01_Development_Environment.md → Local services](./01_Development_Environment.md#local-services)
+6. **Run and verify** → [01_Development_Environment.md → Running the application](./01_Development_Environment.md#running-the-application)
+7. **IDE and AI tooling** → [01_Development_Environment.md → IDE configuration](./01_Development_Environment.md#ide-configuration)
+8. **Tests and CI** → [docs/Deployment/](../Deployment/)
+
+## When something fails
+
+→ [01_Development_Environment.md → Troubleshooting](./01_Development_Environment.md#troubleshooting)
+
+## Parent
+
+- [Developer Handbook](README.md)
+'@
+    "docs/Developer_Handbook/01_Development_Environment.md" = @'
+# Development Environment
+
+> **Documentation path:** [Project Index](../../PROJECT_INDEX.md) → [Developer Handbook](README.md) → Development Environment
+
+## Purpose
+
+Canonical reference for local development environment setup, configuration, and troubleshooting.
+
+New contributors should follow [00_First_Time_Setup.md](./00_First_Time_Setup.md) first.
+
+## Prerequisites
+
+### Required software
+
+| Tool | Minimum version | Purpose | Install reference |
+|------|-----------------|---------|-------------------|
+| Git | | Version control | |
+| | | | |
+
+## Repository setup
+
+### Clone and initialize
+
+```bash
+git clone <repository-url>
+cd <project-directory>
+```
+
+### Environment variables
+
+| Variable | Required | Description | Example |
+|----------|----------|-------------|---------|
+| | | | |
+
+### Secrets handling
+
+- Use `.env` (gitignored) and provide `.env.example`.
+
+## Local services
+
+### Running dependencies
+
+[Describe how to start local databases, caches, or containers.]
+
+### Seed data
+
+[Describe how to load development data.]
+
+## Running the application
+
+### Start commands
+
+```bash
+# [command]
+```
+
+### Verify installation
+
+```bash
+# [health check]
+```
+
+## IDE configuration
+
+[Editor extensions and project settings.]
+
+## Troubleshooting
+
+[Common environment issues and resolutions.]
+
+## Parent
+
+- [Developer Handbook](README.md)
+'@
     "docs/Development/README.md" = @'
 # Development
 
@@ -180,7 +312,9 @@ Update this index whenever a major document in this domain is created, moved, re
 
 ## Purpose
 
-Developer setup, workflows, coding practices, testing, debugging, and engineering tools.
+Framework adoption engineering: documentation-first policies, migration and validation tooling, and engineering practices for maintaining documentation alongside code.
+
+For day-to-day project engineering (setup, Git, coding, testing), see [Developer Handbook](../Developer_Handbook/README.md).
 
 ## Authoritative Documents
 
@@ -193,6 +327,7 @@ Add documents whose primary responsibility matches this domain.
 ## Navigation
 
 - [Project Index](../../PROJECT_INDEX.md)
+- [Developer Handbook](../Developer_Handbook/README.md)
 - [Project README](../../README.md)
 
 ## Maintenance

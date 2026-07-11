@@ -21,6 +21,7 @@ $dirs = @(
     "docs/Architecture",
     "docs/Architecture/ADRs",
     "docs/AI",
+    "docs/Developer_Handbook",
     "docs/Development",
     "docs/Specifications",
     "docs/API",
@@ -69,7 +70,8 @@ Migrate content into the appropriate `docs/` domain over time, or leave it in pl
 | `docs/Architecture/` | System architecture and documentation architecture |
 | `docs/Architecture/ADRs/` | Individual Architecture Decision Records |
 | `docs/AI/` | Modular AI Engineering Handbook |
-| `docs/Development/` | Developer workflow, coding practices, and engineering tools |
+| `docs/Developer_Handbook/` | Day-to-day project engineering: first-time setup, environment, Git, coding, testing |
+| `docs/Development/` | Framework adoption engineering: documentation-first policies, migration, and validation tools |
 | `docs/Specifications/` | Requirements and feature specifications |
 | `docs/API/` | API contracts and interface documentation |
 | `docs/Database/` | Schema and persistence design |

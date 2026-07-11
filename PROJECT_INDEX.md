@@ -16,6 +16,7 @@
 - [AI Engineering Handbook](docs/AI/README.md)
 - [Architecture](docs/Architecture/README.md)
 - [Developer Handbook](docs/Developer_Handbook/README.md)
+- [First-Time Setup](docs/Developer_Handbook/00_First_Time_Setup.md)
 - [Development](docs/Development/README.md)
 - [API](docs/API/README.md)
 - [Database](docs/Database/README.md)
@@ -33,6 +34,8 @@
 
 ## Key Authoritative References
 
+- [First-Time Setup](docs/Developer_Handbook/00_First_Time_Setup.md)
+- [Development Environment](docs/Developer_Handbook/01_Development_Environment.md)
 - [Documentation Information Architecture](docs/Architecture/Documentation_Information_Architecture.md)
 - [Framework Generation Principles](docs/Architecture/Framework_Generation_Principles.md)
 - [Engineering Development Policy](docs/Development/Engineering_Development_Policy.md)

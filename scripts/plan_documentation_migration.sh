@@ -69,8 +69,11 @@ recommend_destination() {
         *spec*|*requirement*|*feature*|*story*|*acceptance*)
             printf 'docs/Specifications/%s' "$file_name"
             ;;
-        *developer*|*development*|*coding*|*git*|*test*|*debug*|*setup*|*contributor*)
-            printf 'docs/Development/%s' "$file_name"
+        *handbook*|*first-time*|*first_time*|*onboarding*|*contributor*)
+            printf 'docs/Developer_Handbook/%s' "$file_name"
+            ;;
+        *developer*|*development*|*coding*|*git*|*test*|*debug*|*setup*|*environment*)
+            printf 'docs/Developer_Handbook/%s' "$file_name"
             ;;
         *ai*|*prompt*|*cursor*|*continue*|*ollama*|*claude*|*gpt*|*copilot*|*model*)
             printf 'docs/AI/%s' "$file_name"

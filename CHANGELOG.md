@@ -8,6 +8,14 @@
   (`run_conformance_validation.sh` / `.ps1`) that run the Framework Advisor
   against an adopting project and save timestamped reports under
   `reports/conformance/` in the target repository
+- `docs/Developer_Handbook/00_First_Time_Setup.md` — onboarding entry point linking to authoritative setup sections
+- `Development_Environment_Template.md` and `First_Time_Setup_Template.md` templates
+- `docs/Developer_Handbook/` added to bootstrap scripts, Framework Advisor required directories, and documentation skeleton generator
+
+### Changed
+
+- Clarified `docs/Developer_Handbook/` (project engineering) vs `docs/Development/` (framework adoption engineering) across architecture and domain README files
+- Migration assistant routes setup and handbook content to `docs/Developer_Handbook/`
 
 ## M4 – Framework Self-Hosting
 

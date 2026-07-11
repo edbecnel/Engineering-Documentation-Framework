@@ -57,7 +57,9 @@ project-root/
 
 ## Development
 
-See [developer documentation](docs/Development/).
+New contributors: [First-Time Setup](docs/Developer_Handbook/00_First_Time_Setup.md)
+
+See [Developer Handbook](docs/Developer_Handbook/README.md) for day-to-day engineering practices.
 
 ## Contributing
 

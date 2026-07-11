@@ -34,6 +34,7 @@ When starting a new AI session, useful entry points include:
 - `docs/Architecture/`
 - `docs/Specifications/`
 - `docs/Development/`
+- `docs/Developer_Handbook/`
 - `docs/AI/`
 
 ## Avoid Overloading Context

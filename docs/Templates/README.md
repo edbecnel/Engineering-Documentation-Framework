@@ -19,6 +19,8 @@ Templates provide a consistent starting point. They are not rigid forms. Remove 
 | `API_Specification_Template.md` | Documenting an API or service contract |
 | `Database_Design_Template.md` | Describing schemas, entities, migrations, and persistence decisions |
 | `Developer_Guide_Template.md` | Explaining setup, workflows, debugging, or contributor practices |
+| `Development_Environment_Template.md` | Documenting local development environment setup |
+| `First_Time_Setup_Template.md` | Creating a first-time onboarding path that links to authoritative setup sections |
 | `User_Guide_Template.md` | Explaining how end users perform tasks |
 | `Project_Charter_Template.md` | Defining project mission, scope, goals, and constraints |
 | `Project_Index_Template.md` | Creating the primary documentation hub for humans and AI assistants |

@@ -4,8 +4,9 @@
 
 ## Purpose
 
-This domain contains policies, workflows, tools, and guidance used to develop,
-analyze, migrate, and maintain projects that use the Engineering Documentation Framework.
+This domain contains **framework adoption engineering** — policies, workflows, tools, and guidance for developing and maintaining projects that use the Engineering Documentation Framework.
+
+For **day-to-day project engineering** (first-time setup, local environment, Git, coding, testing, releases), see the [Developer Handbook](../Developer_Handbook/README.md). New contributors should start with [First-Time Setup](../Developer_Handbook/00_First_Time_Setup.md).
 
 ## Canonical Documents
 
@@ -21,18 +22,13 @@ analyze, migrate, and maintain projects that use the Engineering Documentation F
 - [Project Analysis and Validation Tool](Project_Analysis_Validation_Tool.md)
 - [Scripts Directory](../../scripts/README.md)
 
-## Planned
-
-- `AI_Assisted_Development.md`
-- `Coding_Standards.md`
-- `Git_Workflow.md`
-
 ## Parent
 
 - [Project Index](../../PROJECT_INDEX.md)
 
 ## Related Documents
 
+- [Developer Handbook](../Developer_Handbook/README.md)
 - [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
 - [Governance](../Governance/README.md)
 - [Framework Self-Hosting](../Governance/Framework_Self_Hosting.md)

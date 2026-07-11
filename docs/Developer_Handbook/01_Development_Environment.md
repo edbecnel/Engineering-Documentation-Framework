@@ -9,7 +9,7 @@ This document defines how developers set up, configure, and maintain a local dev
 
 ## When to use it
 
-- **Onboarding** — New contributors follow this guide on day one.
+- **Onboarding** — New contributors follow [00_First_Time_Setup.md](./00_First_Time_Setup.md) on day one.
 - **Stack changes** — When runtime, toolchain, or dependency versions change, update this document in the same PR.
 - **"Works on my machine" incidents** — Compare local setup against this baseline.
 - **CI alignment** — Ensure local tooling versions match CI images defined here.

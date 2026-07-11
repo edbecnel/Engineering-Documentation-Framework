@@ -95,7 +95,21 @@ A root-level `AI_WORKFLOW.md` is retired. If found in an existing project, migra
 
 ### Development
 
-Day-to-day engineering practices, coding standards, Git workflow, testing, debugging, setup, and development tooling.
+Framework adoption engineering: documentation-first policies, migration and validation tooling, and engineering practices for maintaining documentation alongside code.
+
+For **local environment setup, Git workflow, coding standards, testing, and releases**, see `docs/Developer_Handbook/`.
+
+### Developer Handbook
+
+Day-to-day project engineering for contributors: first-time setup, development environment, AI conventions, Git workflow, coding standards, testing, and developer-oriented deployment checklists.
+
+The onboarding entry point is:
+
+- `docs/Developer_Handbook/00_First_Time_Setup.md`
+
+Canonical environment setup reference:
+
+- `docs/Developer_Handbook/01_Development_Environment.md`
 
 ### Specifications
 
@@ -249,6 +263,7 @@ Use domain-oriented directory names:
 ```text
 docs/Architecture/
 docs/AI/
+docs/Developer_Handbook/
 docs/Development/
 docs/Specifications/
 docs/Templates/
@@ -278,6 +293,10 @@ docs/
         Verification.md
         Security.md
         Governance.md
+    Developer_Handbook/
+        README.md
+        00_First_Time_Setup.md
+        01_Development_Environment.md
     Development/
     Specifications/
     API/

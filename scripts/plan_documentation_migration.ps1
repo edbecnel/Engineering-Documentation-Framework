@@ -82,7 +82,7 @@ function Get-Recommendation {
         return @{ Destination = "docs/Specifications/$fileName"; Reason = "Filename suggests requirements, feature, or specification content." }
     }
     if ($lower -match "developer|development|coding|git|test|debug|setup|contributor") {
-        return @{ Destination = "docs/Development/$fileName"; Reason = "Filename suggests developer workflow, setup, coding, testing, or contributor guidance." }
+        return @{ Destination = "docs/Developer_Handbook/$fileName"; Reason = "Filename suggests developer handbook content: setup, workflow, coding, testing, or contributor guidance." }
     }
     if ($lower -match "ai|prompt|cursor|continue|ollama|claude|gpt|copilot|model") {
         return @{ Destination = "docs/AI/$fileName"; Reason = "Filename suggests AI workflow or AI engineering guidance." }

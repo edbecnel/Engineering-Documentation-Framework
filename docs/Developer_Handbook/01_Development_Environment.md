@@ -138,7 +138,7 @@ _[Point to committed `.editorconfig`, `.vscode/settings.json`, or equivalent.]_
 
 ### AI tooling
 
-See [02_AI_Development.md](./02_AI_Development.md) and [AI_WORKFLOW.md](../../AI_WORKFLOW.md).
+See [02_AI_Development.md](./02_AI_Development.md) and the [AI Engineering Handbook](../AI/README.md).
 
 ---
 

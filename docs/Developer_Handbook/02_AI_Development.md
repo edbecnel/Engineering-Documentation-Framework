@@ -5,7 +5,7 @@
 
 ## Purpose
 
-This document establishes practical conventions for using AI tools during day-to-day software development. It complements [AI_WORKFLOW.md](../../AI_WORKFLOW.md) with team-specific rules, prompt patterns, and quality expectations for AI-assisted work.
+This document establishes practical conventions for using AI tools during day-to-day software development. It complements the [AI Engineering Handbook](../AI/README.md) with team-specific rules, prompt patterns, and quality expectations for AI-assisted work.
 
 ## When to use it
 
@@ -29,7 +29,7 @@ This document establishes practical conventions for using AI tools during day-to
 | Ollama (local) | Offline / sensitive drafts | _[Approved models: list]_ |
 | _[Cloud provider]_ | _[CI automation]_ | _[Requires security review]_ |
 
-For role definitions and SDLC mapping, see [AI_WORKFLOW.md](../../AI_WORKFLOW.md).
+For role definitions and SDLC mapping, see [AI_Roles.md](../AI/AI_Roles.md).
 
 ---
 
@@ -174,7 +174,7 @@ Teams may track AI assistance for learning and compliance:
 
 ## Related documents
 
-- [AI_WORKFLOW.md](../../AI_WORKFLOW.md) — Tool roles across the SDLC
+- [AI Engineering Handbook](../AI/README.md) — Tool roles across the SDLC
 - [03_Git_Workflow.md](./03_Git_Workflow.md) — Branching and PR process
 - [04_Coding_Standards.md](./04_Coding_Standards.md) — Code conventions
 - [05_Testing.md](./05_Testing.md) — Test requirements

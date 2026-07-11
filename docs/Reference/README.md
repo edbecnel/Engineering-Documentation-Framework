@@ -10,10 +10,12 @@ authoritative documentation domain.
 
 ## Documents
 
+- [Glossary](Glossary.md)
 - [EDF Self-Hosting Report](EDF_Self_Hosting_Report.md)
 
 ## Child Documents
 
+- [Glossary](Glossary.md)
 - [EDF Self-Hosting Report](EDF_Self_Hosting_Report.md)
 
 ## Parent

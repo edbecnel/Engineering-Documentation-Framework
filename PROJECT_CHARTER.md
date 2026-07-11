@@ -217,7 +217,7 @@ _[Describe how charter amendments are proposed, reviewed, and versioned. Major s
 - [ARCHITECTURE_DECISIONS.md](./ARCHITECTURE_DECISIONS.md) — Technical decision log
 - [docs/Specifications/](./docs/Specifications/) — Detailed requirements
 - [docs/Architecture/](./docs/Architecture/) — System design
-- [AI_WORKFLOW.md](./AI_WORKFLOW.md) — AI-assisted development practices
+- [docs/AI/README.md](./docs/AI/README.md) — AI Engineering Handbook
 
 ---
 

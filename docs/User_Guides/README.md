@@ -38,7 +38,7 @@ This directory contains **end-user documentation** — written for people who us
 1. **Task-first titles** — "Create a project" not "Project creation module."
 2. **Short sentences** — Aim for grade 8–10 reading level unless audience is expert.
 3. **Screenshots and diagrams** — Update when UI changes; store assets in `images/`.
-4. **Consistent terminology** — Use [docs/Specifications/Glossary.md](../Specifications/Glossary.md) terms.
+4. **Consistent terminology** — Use [docs/Reference/Glossary.md](../Reference/Glossary.md) terms.
 5. **Version awareness** — Note minimum product version when behavior differs.
 
 ## Suggested document structure

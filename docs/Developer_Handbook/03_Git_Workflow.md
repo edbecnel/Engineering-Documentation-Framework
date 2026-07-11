@@ -236,7 +236,7 @@ Do not commit machine-specific paths or IDE metadata (enforce via `.gitignore`).
 - [01_Development_Environment.md](./01_Development_Environment.md) — Local setup
 - [04_Coding_Standards.md](./04_Coding_Standards.md) — Style enforced in review
 - [06_Deployment.md](./06_Deployment.md) — Release and deploy steps
-- [AI_WORKFLOW.md](../../AI_WORKFLOW.md) — AI-assisted changes still use this workflow
+- [AI Engineering Handbook](../AI/README.md) — AI-assisted changes still use this workflow
 
 ---
 

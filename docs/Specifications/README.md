@@ -110,7 +110,7 @@ Specifications/
 
 - Use AI to expand bullet points into structured specs; human approves accuracy.
 - Feed approved specs to implementation tools (Cursor Composer) via `@` references.
-- See [AI_WORKFLOW.md](../../AI_WORKFLOW.md).
+- See [AI Engineering Handbook](../AI/README.md).
 
 ## Maintenance
 

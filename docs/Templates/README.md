@@ -53,6 +53,13 @@ Database_Architecture.md
 
 Do not modify the original template when creating project documentation.
 
+## GitHub and Obsidian links
+
+Follow [GitHub and Obsidian link conventions](../Architecture/Documentation_Information_Architecture.md#github-and-obsidian-link-conventions):
+
+- **Dual links** (Markdown + wikilink) for same-file sections and cross-file section links.
+- **Markdown only** for whole-document links unless Obsidian backlinks are specifically desired.
+
 ## Cross-References
 
 New authoritative documents should be linked from:

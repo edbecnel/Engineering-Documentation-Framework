@@ -16,6 +16,7 @@
 
 - Clarified `docs/Developer_Handbook/` (project engineering) vs `docs/Development/` (framework adoption engineering) across architecture and domain README files
 - Migration assistant routes setup and handbook content to `docs/Developer_Handbook/`
+- Documented GitHub and Obsidian dual-link conventions for section navigation
 
 ## M4 – Framework Self-Hosting
 

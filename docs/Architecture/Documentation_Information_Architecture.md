@@ -212,13 +212,62 @@ Individual Document
 
 ### Navigation Rules
 
-- All navigation links must be relative Markdown links.
+- Primary cross-document navigation must use relative Markdown links so GitHub and in-browser viewers work correctly.
+- Follow [GitHub and Obsidian link conventions](#github-and-obsidian-link-conventions) when documents may be read in Obsidian as well as on GitHub.
 - Domain README files must link to every active child document in that domain.
 - Individual documents must link back to their domain README.
 - Links must be updated whenever a document is created, moved, renamed, deprecated, archived, or replaced.
 - Generated documents must include navigation at creation time; users must not be required to wire links manually.
 - Navigation must remain useful to both human readers and AI assistants.
 - Archived documents may use historical navigation but must not appear as current child documents in active domain indexes.
+
+### GitHub and Obsidian link conventions
+
+EDF documentation is read in two common environments:
+
+- **GitHub and in-browser Markdown viewers** — use standard Markdown links: a label in square brackets, a relative path in parentheses, and `#heading-slug` for sections.
+- **Obsidian** — uses wikilinks: double-bracket note names, optional `#Heading`, and optional display text after a pipe.
+
+Provide both forms when a link must work well in **both** environments.
+
+#### When dual links are required
+
+| Link type | Markdown (GitHub) | Obsidian wikilink | Dual link required? |
+|-----------|-------------------|-------------------|---------------------|
+| Same-file section | label + `#heading-slug` | `[[#Heading\|label]]` | **Yes** |
+| Another file, specific section | label + `path.md#heading-slug` | `[[path#Heading\|label]]` | **Yes** |
+| Another file (whole document) | label + `path.md` | optional | **No** — Markdown is sufficient |
+| Directory or domain index | label + `../Domain/` | optional | **No** — Markdown is sufficient |
+
+Use an Obsidian wikilink in addition to Markdown when:
+
+- linking to a **heading inside another note** (required alongside Markdown), or
+- you want Obsidian-native features such as **backlinks** and **graph** navigation for that target.
+
+#### Dual-link format
+
+Place the Markdown link first, then the wikilink, separated by ` · ` (space, middle dot, space):
+
+```markdown
+[Prerequisites](../Developer_Handbook/01_Development_Environment.md#prerequisites) · [[01_Development_Environment#Prerequisites|Prerequisites]]
+```
+
+Same-file section example:
+
+```markdown
+[GitHub and Obsidian link conventions](#github-and-obsidian-link-conventions) · [[#GitHub and Obsidian link conventions|GitHub and Obsidian link conventions]]
+```
+
+#### Obsidian wikilink rules
+
+- Use the **heading text** after `#`, not the GitHub slug. Example: heading `## Repository setup` → `[[Note#Repository setup|...]]`, paired with Markdown `#repository-setup`.
+- Prefer **filename without path** when the target note is in the same folder. Use a relative path when linking across folders: `[[../Architecture/README#Purpose|Architecture]]`.
+- Avoid parentheses inside Markdown link **labels** when possible; they can confuse automated link checkers. Parentheses in Obsidian heading names are fine inside the wikilink `#Heading` portion.
+- Do not remove Markdown links in favor of wikilinks alone; GitHub does not resolve wikilinks.
+
+#### Framework Advisor note
+
+The Framework Advisor validates relative Markdown links. Obsidian wikilinks are not validated and should be updated manually when files or headings are renamed.
 
 ## Cross-References
 

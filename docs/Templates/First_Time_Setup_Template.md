@@ -10,6 +10,8 @@ Entry point for new contributors setting up a local development environment for 
 
 This guide links to authoritative setup documents and specific sections. Do not duplicate detailed instructions here.
 
+Use [GitHub and Obsidian dual links](../Architecture/Documentation_Information_Architecture.md#github-and-obsidian-link-conventions) for section navigation.
+
 ## Who this is for
 
 **Required**
@@ -33,15 +35,15 @@ This guide links to authoritative setup documents and specific sections. Do not 
 
 **Required**
 
-Customize links to match your project's authoritative documents.
+Customize links to match your project's authoritative documents. Use dual links for section targets.
 
 ### 1. Install prerequisites
 
-→ [01_Development_Environment.md → Prerequisites](../Developer_Handbook/01_Development_Environment.md#prerequisites)
+→ [Prerequisites](../Developer_Handbook/01_Development_Environment.md#prerequisites) · [[01_Development_Environment#Prerequisites|Prerequisites]]
 
 ### 2. Clone and configure the repository
 
-→ [01_Development_Environment.md → Repository setup](../Developer_Handbook/01_Development_Environment.md#repository-setup)
+→ [Repository setup](../Developer_Handbook/01_Development_Environment.md#repository-setup) · [[01_Development_Environment#Repository setup|Repository setup]]
 
 ### 3. Understand the technology stack
 
@@ -49,19 +51,19 @@ Customize links to match your project's authoritative documents.
 
 ### 4. Set up the database
 
-→ [docs/Database/](../Database/) and [01_Development_Environment.md → Seed data](../Developer_Handbook/01_Development_Environment.md#seed-data)
+→ [docs/Database/](../Database/) and [Seed data](../Developer_Handbook/01_Development_Environment.md#seed-data) · [[01_Development_Environment#Seed data|Seed data]]
 
 ### 5. Start local services
 
-→ [01_Development_Environment.md → Local services](../Developer_Handbook/01_Development_Environment.md#local-services)
+→ [Local services](../Developer_Handbook/01_Development_Environment.md#local-services) · [[01_Development_Environment#Local services|Local services]]
 
 ### 6. Run and verify the application
 
-→ [01_Development_Environment.md → Running the application](../Developer_Handbook/01_Development_Environment.md#running-the-application)
+→ [Running the application](../Developer_Handbook/01_Development_Environment.md#running-the-application) · [[01_Development_Environment#Running the application|Running the application]]
 
 ### 7. Configure IDE and AI tooling
 
-→ [01_Development_Environment.md → IDE configuration](../Developer_Handbook/01_Development_Environment.md#ide-configuration)
+→ [IDE configuration](../Developer_Handbook/01_Development_Environment.md#ide-configuration) · [[01_Development_Environment#IDE configuration|IDE configuration]]
 
 ### 8. Run tests and confirm CI alignment
 
@@ -69,7 +71,7 @@ Customize links to match your project's authoritative documents.
 
 ## When something fails
 
-→ [01_Development_Environment.md → Troubleshooting](../Developer_Handbook/01_Development_Environment.md#troubleshooting)
+→ [Troubleshooting](../Developer_Handbook/01_Development_Environment.md#troubleshooting) · [[01_Development_Environment#Troubleshooting|Troubleshooting]]
 
 ## After setup
 
@@ -82,3 +84,4 @@ Customize links to match your project's authoritative documents.
 ## Related documents
 
 - [Development Environment Template](./Development_Environment_Template.md)
+- [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)

@@ -248,22 +248,22 @@ create_file_if_missing "docs/Developer_Handbook/00_First_Time_Setup.md" <<'EDF_E
 
 ## Purpose
 
-Entry point for new contributors setting up a local development environment. This guide links to authoritative setup documents and specific sections.
+Entry point for new contributors setting up a local development environment. This guide links to authoritative setup documents and specific sections. Use dual Markdown and Obsidian wikilinks for section targets.
 
 ## Setup checklist
 
-1. **Prerequisites** → [01_Development_Environment.md → Prerequisites](./01_Development_Environment.md#prerequisites)
-2. **Clone and configure** → [01_Development_Environment.md → Repository setup](./01_Development_Environment.md#repository-setup)
+1. **Prerequisites** → [Prerequisites](./01_Development_Environment.md#prerequisites) · [[01_Development_Environment#Prerequisites|Prerequisites]]
+2. **Clone and configure** → [Repository setup](./01_Development_Environment.md#repository-setup) · [[01_Development_Environment#Repository setup|Repository setup]]
 3. **Technology stack** → [PROJECT_INDEX.md](../../PROJECT_INDEX.md), [docs/Architecture/](../Architecture/)
 4. **Database** → [docs/Database/](../Database/)
-5. **Local services** → [01_Development_Environment.md → Local services](./01_Development_Environment.md#local-services)
-6. **Run and verify** → [01_Development_Environment.md → Running the application](./01_Development_Environment.md#running-the-application)
-7. **IDE and AI tooling** → [01_Development_Environment.md → IDE configuration](./01_Development_Environment.md#ide-configuration)
+5. **Local services** → [Local services](./01_Development_Environment.md#local-services) · [[01_Development_Environment#Local services|Local services]]
+6. **Run and verify** → [Running the application](./01_Development_Environment.md#running-the-application) · [[01_Development_Environment#Running the application|Running the application]]
+7. **IDE and AI tooling** → [IDE configuration](./01_Development_Environment.md#ide-configuration) · [[01_Development_Environment#IDE configuration|IDE configuration]]
 8. **Tests and CI** → [docs/Deployment/](../Deployment/)
 
 ## When something fails
 
-→ [01_Development_Environment.md → Troubleshooting](./01_Development_Environment.md#troubleshooting)
+→ [Troubleshooting](./01_Development_Environment.md#troubleshooting) · [[01_Development_Environment#Troubleshooting|Troubleshooting]]
 
 ## Parent
 

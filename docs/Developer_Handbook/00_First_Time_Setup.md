@@ -8,6 +8,8 @@ This guide is the **entry point for new contributors** setting up a local develo
 
 It does not duplicate setup instructions. Each step links to the authoritative document and section where the detailed instructions live. Customize the linked documents for your project; keep this guide as a stable onboarding path.
 
+Section links use [GitHub and Obsidian dual-link conventions](../Architecture/Documentation_Information_Architecture.md#github-and-obsidian-link-conventions) so navigation works in both GitHub and Obsidian.
+
 ## Who this is for
 
 - New developers joining the project
@@ -33,13 +35,13 @@ Work through the steps below in order. Open each link and complete the reference
 
 ### 1. Install prerequisites
 
-**Authoritative section:** [Development Environment → Prerequisites](./01_Development_Environment.md#prerequisites)
+**Authoritative section:** [Development Environment → Prerequisites](./01_Development_Environment.md#prerequisites) · [[01_Development_Environment#Prerequisites|Prerequisites]]
 
 Install required tools (Git, language runtimes, Docker, IDE, and so on) listed in:
 
-- [Required software](./01_Development_Environment.md#required-software)
-- [Optional tools](./01_Development_Environment.md#optional-tools) — when applicable
-- [Hardware recommendations](./01_Development_Environment.md#hardware-recommendations) — when applicable
+- [Required software](./01_Development_Environment.md#required-software) · [[01_Development_Environment#Required software|Required software]]
+- [Optional tools](./01_Development_Environment.md#optional-tools) · [[01_Development_Environment#Optional tools|Optional tools]] — when applicable
+- [Hardware recommendations](./01_Development_Environment.md#hardware-recommendations) · [[01_Development_Environment#Hardware recommendations|Hardware recommendations]] — when applicable
 
 **Checkpoint:** You can run `git --version` and each required runtime or tool from a terminal.
 
@@ -47,13 +49,13 @@ Install required tools (Git, language runtimes, Docker, IDE, and so on) listed i
 
 ### 2. Clone the repository and initialize the workspace
 
-**Authoritative section:** [Development Environment → Repository setup](./01_Development_Environment.md#repository-setup)
+**Authoritative section:** [Development Environment → Repository setup](./01_Development_Environment.md#repository-setup) · [[01_Development_Environment#Repository setup|Repository setup]]
 
 Complete:
 
-- [Clone and initialize](./01_Development_Environment.md#clone-and-initialize)
-- [Environment variables](./01_Development_Environment.md#environment-variables)
-- [Secrets handling](./01_Development_Environment.md#secrets-handling)
+- [Clone and initialize](./01_Development_Environment.md#clone-and-initialize) · [[01_Development_Environment#Clone and initialize|Clone and initialize]]
+- [Environment variables](./01_Development_Environment.md#environment-variables) · [[01_Development_Environment#Environment variables|Environment variables]]
+- [Secrets handling](./01_Development_Environment.md#secrets-handling) · [[01_Development_Environment#Secrets handling|Secrets handling]]
 
 **Checkpoint:** The repository is cloned, dependencies are installed, and `.env` (or equivalent) is configured from `.env.example`.
 
@@ -82,8 +84,8 @@ Complete:
 | Concern | Where to read |
 |---------|---------------|
 | Schema, entities, migrations | [docs/Database/](../Database/) |
-| Local database connection | [Development Environment → Environment variables](./01_Development_Environment.md#environment-variables) |
-| Seed and fixture data | [Development Environment → Seed data](./01_Development_Environment.md#seed-data) |
+| Local database connection | [Environment variables](./01_Development_Environment.md#environment-variables) · [[01_Development_Environment#Environment variables|Environment variables]] |
+| Seed and fixture data | [Seed data](./01_Development_Environment.md#seed-data) · [[01_Development_Environment#Seed data|Seed data]] |
 
 **Checkpoint:** You can connect to the local database (or equivalent persistence) and apply migrations or seed data successfully.
 
@@ -91,13 +93,13 @@ Complete:
 
 ### 5. Start local services and dependencies
 
-**Authoritative section:** [Development Environment → Local services](./01_Development_Environment.md#local-services)
+**Authoritative section:** [Development Environment → Local services](./01_Development_Environment.md#local-services) · [[01_Development_Environment#Local services|Local services]]
 
 Complete:
 
-- [Running dependencies](./01_Development_Environment.md#running-dependencies) — databases, caches, queues, containers
-- [Local service endpoints](./01_Development_Environment.md#service-endpoints-local)
-- [Seed data](./01_Development_Environment.md#seed-data) — if not completed in step 4
+- [Running dependencies](./01_Development_Environment.md#running-dependencies) · [[01_Development_Environment#Running dependencies|Running dependencies]] — databases, caches, queues, containers
+- [Local service endpoints](./01_Development_Environment.md#service-endpoints-local) · [[01_Development_Environment#Service endpoints (local)|Local service endpoints]]
+- [Seed data](./01_Development_Environment.md#seed-data) · [[01_Development_Environment#Seed data|Seed data]] — if not completed in step 4
 
 For platform-level environment detail, see [docs/Deployment/](../Deployment/).
 
@@ -107,13 +109,13 @@ For platform-level environment detail, see [docs/Deployment/](../Deployment/).
 
 ### 6. Run the application and verify installation
 
-**Authoritative section:** [Development Environment → Running the application](./01_Development_Environment.md#running-the-application)
+**Authoritative section:** [Development Environment → Running the application](./01_Development_Environment.md#running-the-application) · [[01_Development_Environment#Running the application|Running the application]]
 
 Complete:
 
-- [Start commands](./01_Development_Environment.md#start-commands)
-- [Verify installation](./01_Development_Environment.md#verify-installation)
-- [Common development tasks](./01_Development_Environment.md#common-development-tasks)
+- [Start commands](./01_Development_Environment.md#start-commands) · [[01_Development_Environment#Start commands|Start commands]]
+- [Verify installation](./01_Development_Environment.md#verify-installation) · [[01_Development_Environment#Verify installation|Verify installation]]
+- [Common development tasks](./01_Development_Environment.md#common-development-tasks) · [[01_Development_Environment#Common development tasks|Common development tasks]]
 
 **Checkpoint:** The application starts, health checks pass, and you can run the primary dev commands (lint, test, build).
 
@@ -121,7 +123,7 @@ Complete:
 
 ### 7. Configure your IDE and AI tooling
 
-**Authoritative section:** [Development Environment → IDE configuration](./01_Development_Environment.md#ide-configuration)
+**Authoritative section:** [Development Environment → IDE configuration](./01_Development_Environment.md#ide-configuration) · [[01_Development_Environment#IDE configuration|IDE configuration]]
 
 Also review:
 
@@ -160,11 +162,11 @@ See [Project Analysis and Validation Tool](../Development/Project_Analysis_Valid
 
 ## When something fails
 
-**Authoritative section:** [Development Environment → Troubleshooting](./01_Development_Environment.md#troubleshooting)
+**Authoritative section:** [Development Environment → Troubleshooting](./01_Development_Environment.md#troubleshooting) · [[01_Development_Environment#Troubleshooting|Troubleshooting]]
 
 | Problem type | Start here |
 |--------------|------------|
-| Environment, ports, dependencies | [Troubleshooting](./01_Development_Environment.md#troubleshooting) |
+| Environment, ports, dependencies | [Troubleshooting](./01_Development_Environment.md#troubleshooting) · [[01_Development_Environment#Troubleshooting|Troubleshooting]] |
 | Test failures | [Testing](./05_Testing.md) |
 | Deployment or CI issues | [Developer deployment checklist](./06_Deployment.md) and [docs/Deployment/](../Deployment/) |
 

@@ -6,7 +6,7 @@
 
 This document defines the information architecture for the Engineering Documentation Framework.
 
-The framework is a reusable documentation system for long-lived software engineering projects.
+The framework is a reusable documentation system for long-lived engineering projects across disciplines. Software engineering was the original domain; the framework now evolves toward **EDF Core** plus optional **Domain Profiles** (see [ADR-0001 — Domain Profiles](ADRs/ADR-0001-Domain-Profiles.md)).
 
 It defines:
 
@@ -142,6 +142,54 @@ Reusable document templates.
 ### Archive
 
 Retired, obsolete, or superseded material. Archived documents are historical and not authoritative.
+
+## EDF Core vs Software Engineering Profile
+
+EDF separates **domain-independent Core** requirements from **profile-specific** extensions. See [ADR-0001 — Domain Profiles](ADRs/ADR-0001-Domain-Profiles.md) and [ADR-0002 — Domain Profile Specification](ADRs/ADR-0002-Domain-Profile-Specification.md).
+
+### Extraction principle
+
+**Core must not require software domains.** If a requirement only makes sense for software projects, it belongs in the **Software Engineering profile**, not in Core.
+
+Non-software adopters must not be scored against API, database, deployment, or developer-handbook folders they do not need.
+
+### What belongs in Core
+
+Applies to any engineering project regardless of discipline:
+
+| Layer | Paths and documents |
+|---|---|
+| Project identity | `README.md`, `PROJECT_INDEX.md`, `PROJECT_CHARTER.md`, `ARCHITECTURE_DECISIONS.md`, `CHANGELOG.md` |
+| Governance | `docs/Governance/` |
+| Architecture | `docs/Architecture/`, including ADRs and this document |
+| Specifications | `docs/Specifications/` — requirements and intended behavior |
+| AI handbook | `docs/AI/` — AI-assisted engineering across domains |
+| Reference | `docs/Reference/` |
+| Generic templates | `docs/Templates/` — templates not tied to a single discipline |
+| User guides | `docs/User_Guides/` — end-user documentation |
+| Framework adoption | `docs/Development/` — documentation-first policies and migration tooling for adopters |
+| Operations | `tasks/`, `archive/`, `scripts/`, `reports/` |
+
+### What belongs in the Software Engineering profile
+
+Required only when a project declares the Software Engineering profile (default for v1.0 software adopters):
+
+| Path | Responsibility |
+|---|---|
+| `docs/API/` | API contracts, schemas, authentication behavior |
+| `docs/Database/` | Data models, migrations, retention |
+| `docs/Deployment/` | CI/CD, environments, runbooks, operations |
+| `docs/Developer_Handbook/` | Coding, Git, testing, local dev environment, contributor workflow |
+
+Software-specific templates (`API_Specification_Template`, `Database_Design_Template`, `Development_Environment_Template`, `First_Time_Setup_Template`, `Developer_Guide_Template`) belong with the profile, not Core.
+
+### v1.0 interim
+
+This repository self-hosts as the **Software Engineering reference implementation** and still contains software profile directories. The Framework Advisor still requires those paths until post-v1.0 profile implementation. The specification documents them as **profile requirements**, not universal Core requirements.
+
+### Future profiles
+
+Other disciplines declare their own paths (for example, `scores/`, `audio/` for Music Education) via profile manifests. Profile checks are additive; Core checks never require another discipline's folders.
 
 ## Document Responsibility
 
@@ -320,6 +368,8 @@ docs/Templates/
 
 ## Canonical Structure
 
+### EDF Core (all projects)
+
 ```text
 README.md
 PROJECT_INDEX.md
@@ -342,10 +392,42 @@ docs/
         Verification.md
         Security.md
         Governance.md
+    Governance/
+    Development/
+    Specifications/
+    User_Guides/
+    Reference/
+    Templates/
+
+tasks/
+archive/
+scripts/
+```
+
+### Software Engineering profile (declared profile only)
+
+```text
+docs/
+    API/
+    Database/
+    Deployment/
     Developer_Handbook/
         README.md
         00_First_Time_Setup.md
         01_Development_Environment.md
+```
+
+Other Domain Profiles add their own declared directories. See [ADR-0002 — Domain Profile Specification](ADRs/ADR-0002-Domain-Profile-Specification.md).
+
+### Legacy combined diagram (v1.0 reference implementation)
+
+The EDF repository currently contains Core and Software Engineering profile paths together for self-hosting:
+
+```text
+docs/
+    Architecture/
+    AI/
+    Developer_Handbook/
     Development/
     Specifications/
     API/
@@ -354,10 +436,6 @@ docs/
     User_Guides/
     Reference/
     Templates/
-
-tasks/
-archive/
-scripts/
 ```
 
 ## Maintenance Principle

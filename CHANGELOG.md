@@ -4,6 +4,25 @@
 
 ### Added
 
+- [ADR-0001 — Domain Profiles](docs/Architecture/ADRs/ADR-0001-Domain-Profiles.md) accepted; navigation and ADR index added
+- [ADR-0002 — Domain Profile Specification](docs/Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md) outline (manifest, validation model, software extraction inventory)
+- `docs/Architecture/ADRs/README.md` — ADR index for numbered framework ADRs
+- Core vs Software Engineering Profile boundary in Documentation Information Architecture
+
+### Changed
+
+- README positioning: general engineering framework; Software Engineering as v1.0 reference profile
+- `ARCHITECTURE_DECISIONS.md` and Architecture README index ADR-0001 and ADR-0002
+
+### Deferred (post-v1.0)
+
+- Profile manifest format and `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` profile declaration
+- Removing software paths from Core Framework Advisor `required_dirs`
+- Profile-aware Framework Advisor, bootstrap `--profile`, and profile packaging
+- Music Education profile pilot
+
+### Added
+
 - Bash and PowerShell adoption conformance validation wrappers
   (`run_conformance_validation.sh` / `.ps1`) that run the Framework Advisor
   against an adopting project and save timestamped reports under

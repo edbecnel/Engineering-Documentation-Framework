@@ -1,6 +1,19 @@
 # Architecture Decisions
 
-## ADR-M1 — Architecture Freeze
+[Home](README.md) › Architecture Decisions
+
+## Numbered ADRs
+
+Individual ADRs live under [docs/Architecture/ADRs/](docs/Architecture/ADRs/README.md). See the [ADR index](docs/Architecture/ADRs/README.md) for the full list.
+
+| ID | Decision | Status | Date |
+|---|---|---|---|
+| [ADR-0001](docs/Architecture/ADRs/ADR-0001-Domain-Profiles.md) | Domain Profiles — layered Core + profile architecture | Accepted | 2026-07-15 |
+| [ADR-0002](docs/Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md) | Domain Profile specification outline | Proposed | 2026-07-15 |
+
+## Milestone ADRs
+
+### ADR-M1 — Architecture Freeze
 
 **Status:** Accepted
 

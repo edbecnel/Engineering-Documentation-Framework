@@ -14,7 +14,14 @@ This domain contains the authoritative architectural description of the project 
 
 ## Architecture Decision Records
 
-Project-specific ADRs belong under `docs/Architecture/ADRs/` and are indexed from [ARCHITECTURE_DECISIONS.md](../../ARCHITECTURE_DECISIONS.md).
+Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in [ARCHITECTURE_DECISIONS.md](../../ARCHITECTURE_DECISIONS.md).
+
+| ID | Decision | Status |
+|---|---|---|
+| [ADR-0001](ADRs/ADR-0001-Domain-Profiles.md) | Domain Profiles — layered Core + profile architecture | Accepted |
+| [ADR-0002](ADRs/ADR-0002-Domain-Profile-Specification.md) | Domain Profile specification outline | Proposed |
+
+Adopting projects place project-specific ADRs under `docs/Architecture/ADRs/` using the same conventions.
 
 ## Parent
 

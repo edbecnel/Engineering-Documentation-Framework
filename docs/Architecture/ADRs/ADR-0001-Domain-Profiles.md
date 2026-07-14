@@ -1,9 +1,11 @@
 # ADR-0001-Domain-Profiles
 
+[Home](../../../README.md) › [Project Index](../../../PROJECT_INDEX.md) › [Architecture](../README.md) › [Architecture Decision Records](README.md) › ADR-0001 Domain Profiles
+
 | | |
 |---|---|
-| **Status** | Proposed |
-| **Date** | YYYY-MM-DD |
+| **Status** | Accepted |
+| **Date** | 2026-07-15 |
 | **Decision Makers** | Ed Becnel |
 | **Supersedes** | None |
 | **Superseded By** | None |
@@ -239,6 +241,20 @@ This decision is fully backward compatible.
 Existing EDF projects continue to function without modification.
 
 Domain Profiles are introduced as an optional extension mechanism and will be implemented only after the EDF Core reaches sufficient maturity.
+
+**Implementation deferral (v1.0):** Profile manifests, profile-aware Framework Advisor checks, bootstrap `--profile` selection, and profile packaging remain **documentation-only** until EDF v1.0 ships as the Software Engineering reference implementation. See [ADR-0002-Domain-Profile-Specification.md](ADR-0002-Domain-Profile-Specification.md) for the planned specification outline.
+
+---
+
+# Parent
+
+- [Architecture Decision Records](README.md)
+
+## Related Documents
+
+- [ADR-0002 — Domain Profile Specification](ADR-0002-Domain-Profile-Specification.md)
+- [Documentation Information Architecture](../Documentation_Information_Architecture.md)
+- [Architecture Decisions](../../../ARCHITECTURE_DECISIONS.md)
 
 ---
 

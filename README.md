@@ -1,16 +1,18 @@
 # Engineering Documentation Framework
 
-A reusable documentation architecture for long-lived software projects.
+A reusable documentation architecture for long-lived engineering projects.
 
-This repository defines **how** engineering teams organize, write, and maintain documentation — not the documentation of any single product.
+This repository defines **how** teams organize, write, and maintain documentation across disciplines — not the documentation of any single product. It ships as the **Software Engineering reference implementation** of EDF Core plus the Software Engineering Domain Profile.
 
 ## Overview
 
-The Engineering Documentation Framework provides a consistent, scalable structure for capturing requirements, architecture, APIs, databases, deployment procedures, AI engineering guidance, and day-to-day development practices.
+The Engineering Documentation Framework provides a consistent, scalable structure for capturing requirements, architecture, governance, AI engineering guidance, and discipline-specific deliverables.
 
-It is designed for teams that use Git as the source of truth and increasingly rely on AI-assisted development tools.
+**EDF Core** is domain-independent: navigation, governance, specifications, architecture, reference, and the AI handbook apply to any engineering project.
 
-Adopt this framework as the documentation skeleton for new repositories. Copy or submodule it, then replace generic templates with project-specific content while preserving the folder layout and conventions.
+**Domain Profiles** extend Core with discipline-specific folders and validation — for example, APIs and deployment for software, or scores and curriculum for music education. See [ADR-0001 — Domain Profiles](./docs/Architecture/ADRs/ADR-0001-Domain-Profiles.md).
+
+This repository includes the full Software Engineering profile (`docs/API`, `docs/Database`, `docs/Deployment`, `docs/Developer_Handbook`) as the v1.0 reference layout. Non-software adopters will not be required to use those paths once profile-aware validation ships post-v1.0.
 
 ## Goals
 
@@ -20,13 +22,17 @@ Adopt this framework as the documentation skeleton for new repositories. Copy or
 - **AI readiness** — Documents are written and organized so AI tools can retrieve, summarize, and act on them effectively.
 - **Git-native workflow** — Documentation lives alongside code, is reviewed in pull requests, and versions with releases.
 
+It is designed for teams that use Git as the source of truth and increasingly rely on AI-assisted development tools.
+
+Adopt EDF Core for any engineering discipline. Select the Software Engineering profile (this repository's default layout) for software projects, or a future profile for other domains. Copy or submodule this repository, then replace generic templates with project-specific content while preserving Core conventions.
+
 ## Why This Framework Exists
 
-Software projects outlive their original authors. Without a deliberate documentation architecture, knowledge scatters across wikis, chat threads, and tribal memory. New contributors waste time hunting for answers. Architecture decisions get re-litigated. Deployment steps live in one person's head.
+Engineering projects outlive their original authors. Without a deliberate documentation architecture, knowledge scatters across wikis, chat threads, and tribal memory. New contributors waste time hunting for answers. Architecture decisions get re-litigated. Critical procedures live in one person's head.
 
 This framework solves that by defining **where** information belongs, **how** it should be structured, and **which** documents are authoritative.
 
-It is intentionally generic so you can apply it to web services, libraries, data pipelines, mobile apps, or internal tools without rewriting the organizational model.
+Software was the first domain; the same model applies to music education, hardware, research, and other disciplines through Domain Profiles — without forcing every project into software folders.
 
 ## Core Design Principles
 
@@ -38,52 +44,95 @@ It is intentionally generic so you can apply it to web services, libraries, data
 6. **Archive, don't delete** — Superseded documents move to `archive/` with context, preserving history.
 7. **Document architecture matters** — Documentation should be organized as an engineered system, not accumulated as unrelated Markdown files.
 
-See [Documentation Information Architecture](./docs/Architecture/Documentation_Information_Architecture.md) for the framework's authoritative guidance on documentation domains, ownership, cross-references, and where information belongs.
+See [Documentation Information Architecture](./docs/Architecture/Documentation_Information_Architecture.md) for the framework's authoritative guidance on documentation domains, Core vs profile boundaries, ownership, cross-references, and where information belongs.
+
+## EDF Core and Domain Profiles
+
+```text
+EDF Core (domain-independent)
+    │
+    ├── Domain Profile: Software Engineering  ← this repository (v1.0 reference)
+    ├── Domain Profile: Music Education       ← future
+    └── Domain Profile: …                     ← future profiles
+```
+
+**Extraction principle:** Software-specific requirements (API, database, deployment, developer handbook) belong in the Software Engineering profile, not in Core. Non-software projects must not fight irrelevant validation rules.
+
+Profile implementation (manifests, profile-aware Framework Advisor, bootstrap `--profile`) is documented in [ADR-0002](./docs/Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md) and deferred until after v1.0.
 
 ## Benefits
 
 | Benefit | How the framework delivers it |
 |--------|--------------------------------|
-| Faster onboarding | Developer Handbook and `PROJECT_INDEX.md` give contributors a clear starting path |
+| Faster onboarding | `PROJECT_INDEX.md` and profile handbooks give contributors a clear starting path |
 | Better architecture hygiene | ADR templates encourage recording decisions with context and alternatives |
-| Safer deployments | Dedicated Deployment docs separate runbooks from architecture |
+| Safer deployments | Software profile Deployment docs separate runbooks from architecture |
 | Traceable requirements | Specifications folder isolates what from how |
 | Effective AI pairing | The AI Engineering Handbook defines tool roles, prompting, context, verification, security, and governance |
 | Multi-developer scale | Ownership model and Git workflow reduce documentation conflicts |
+| Cross-discipline reuse | EDF Core stays stable; Domain Profiles add discipline-specific structure without forking the framework |
 
 ## Repository Structure
 
+This repository contains **EDF Core** paths plus the **Software Engineering profile** paths used for v1.0 self-hosting.
+
+### EDF Core
+
 ```text
 .
-├── README.md                         # This file — framework overview
-├── PROJECT_INDEX.md                  # Master navigation and status dashboard
-├── PROJECT_CHARTER.md                # Project charter template
-├── ARCHITECTURE_DECISIONS.md         # ADR index and template
-├── CHANGELOG.md                      # Framework version history
+├── README.md
+├── PROJECT_INDEX.md
+├── PROJECT_CHARTER.md
+├── ARCHITECTURE_DECISIONS.md
+├── CHANGELOG.md
 │
 ├── docs/
-│   ├── Architecture/                 # System design, diagrams, ADRs, documentation architecture
+│   ├── Architecture/                 # System design, ADRs, documentation architecture
 │   ├── AI/                           # AI Engineering Handbook
-│   ├── Developer_Handbook/           # Day-to-day engineering practices
-│   ├── Development/                  # Framework development tooling and guides
-│   ├── API/                          # API contracts and references
-│   ├── Database/                     # Schema, migrations, data model
-│   ├── Deployment/                   # Environments, CI/CD, runbooks
+│   ├── Governance/                   # Document metadata, lifecycle, ownership
+│   ├── Development/                  # Framework adoption tooling and guides
 │   ├── Specifications/               # Requirements and functional specs
 │   ├── User_Guides/                  # End-user documentation
-│   ├── Reference/                    # Glossary, standards, terminology, external references
+│   ├── Reference/                    # Glossary, standards, terminology
 │   └── Templates/                    # Reusable documentation templates
 │
-├── scripts/                          # Framework utility scripts
-├── tasks/                            # Active work tracking
-└── archive/                          # Retired or superseded documents
+├── scripts/
+├── tasks/
+└── archive/
+```
+
+### Software Engineering profile (included in this repository)
+
+```text
+docs/
+    ├── API/                          # API contracts and references
+    ├── Database/                     # Schema, migrations, data model
+    ├── Deployment/                   # Environments, CI/CD, runbooks
+    └── Developer_Handbook/           # Day-to-day software engineering practices
+```
+
+### Combined layout (v1.0 reference implementation)
+
+```text
+.
+├── README.md
+├── PROJECT_INDEX.md
+├── PROJECT_CHARTER.md
+├── ARCHITECTURE_DECISIONS.md
+├── CHANGELOG.md
+├── docs/                             # Core + Software Engineering profile (see above)
+├── scripts/
+├── tasks/
+└── archive/
 ```
 
 ## How to Use This Framework
 
 ### Bootstrap folder structure
 
-Run the canonical layout scripts against an **existing software project's root** to add the framework folder layout and, if missing, a local adoption guide (`ENGINEERING_DOCUMENTATION_FRAMEWORK.md`).
+Run the canonical layout scripts against an **existing project's root** to add the framework folder layout and, if missing, a local adoption guide (`ENGINEERING_DOCUMENTATION_FRAMEWORK.md`).
+
+**v1.0 note:** Bootstrap currently creates the Software Engineering profile directories for all projects. Profile selection and Core-only bootstrap are planned post-v1.0 per [ADR-0002](./docs/Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md).
 
 Pass the target project root explicitly — the scripts do not assume they are run from that directory.
 
@@ -105,9 +154,9 @@ Any existing `documents/` folder is left completely untouched.
 
 These scripts only create missing directories and the optional framework guide file. They do not delete, overwrite, move, rename, or modify existing files.
 
-### First-time setup
+### First-time setup (Software Engineering profile)
 
-New contributors start with [docs/Developer_Handbook/00_First_Time_Setup.md](docs/Developer_Handbook/00_First_Time_Setup.md). That guide links to the authoritative setup sections in the Developer Handbook, Database, Architecture, and Deployment domains.
+New software contributors start with [docs/Developer_Handbook/00_First_Time_Setup.md](docs/Developer_Handbook/00_First_Time_Setup.md). That guide links to the authoritative setup sections in the Developer Handbook, Database, Architecture, and Deployment domains.
 
 ### Analyze an existing project
 
@@ -190,7 +239,7 @@ If a target file already exists, the generator reports it as skipped and leaves 
 2. **Rename** the repository to your project name; keep the internal folder layout.
 3. **Fill in** `PROJECT_CHARTER.md` with your project's mission, scope, and stakeholders.
 4. **Update** `PROJECT_INDEX.md` with current status, owners, and links to live documents.
-5. **Customize** Developer Handbook sections for your stack and team conventions.
+5. **Customize** profile-specific handbook sections for your stack and team conventions (Software Engineering: Developer Handbook).
 6. **Record** your first ADR in `ARCHITECTURE_DECISIONS.md` when you make a significant technical choice.
 7. **Add** project-specific content under each `docs/` subdirectory as the system grows.
 
@@ -198,7 +247,7 @@ If a target file already exists, the generator reports it as skipped and leaves 
 
 ## Adopting the Framework in an Existing Project
 
-The Engineering Documentation Framework is designed to be adopted by both new and existing software projects.
+The Engineering Documentation Framework is designed to be adopted by both new and existing engineering projects. Software projects use the Software Engineering profile layout in this repository; other disciplines will use future Domain Profiles on top of EDF Core.
 
 For existing projects, the framework can be introduced incrementally without disrupting the current project structure or development workflow.
 
@@ -347,7 +396,7 @@ flowchart LR
     B --> H[ADRs]
 ```
 
-## Using AI During Software Development
+## Using AI During Engineering Work
 
 AI tools accelerate research, drafting, refactoring, implementation, and review — but they require well-structured context to be reliable.
 

@@ -28,6 +28,7 @@ Deferred architectural initiatives that are intentionally outside the current ro
 | ID | Initiative | Status |
 |---|---|---|
 | [AWI-0001](Watch_Items/AWI-0001-Domain-Independence.md) | Domain Independence — evolve EDF into a domain-independent methodology | Active |
+| [AWI-0002](Watch_Items/AWI-0002-Interaction-Layer-Separation.md) | Interaction Layer Separation — distinguish methodology from optional interaction models | Active |
 
 Adopting projects place project-specific ADRs under `docs/Architecture/ADRs/` using the same conventions.
 

@@ -81,6 +81,24 @@ Reports are saved to `<project>/reports/conformance/`. Compare scores to the tie
 
 Track progress in [ADOPTION_STATUS.md](../Templates/ADOPTION_STATUS_Template.md).
 
+## Optional Interaction-Layer Conformance
+
+Conversation Specifications and other interaction-layer artifacts are **optional**. No adopter tier requires AI or a Conversation Specification.
+
+Projects that publish Conversation Specifications under `interaction/specs/` (or adopt EDF reference specs) may optionally verify:
+
+- [ ] Each spec declares `non_ai_equivalent` pointing to an existing canonical guide or CLI path
+- [ ] Each spec lists `executes_methodology` references that resolve to `docs/` or `scripts/` paths
+- [ ] `./scripts/validate_conversation_specs.sh` passes with zero errors
+
+```bash
+./scripts/validate_conversation_specs.sh
+```
+
+This check does not affect Framework Advisor scores. It confirms interaction-layer artifacts remain aligned with methodology per [ADR-0003](../Architecture/ADRs/ADR-0003-Conversation-Specifications.md).
+
+Reference pilot: [edf.bootstrap.v1.yaml](../../interaction/specs/edf.bootstrap.v1.yaml) — non-AI equivalent: [Bootstrap Guide](Bootstrap_Guide.md).
+
 ## EDF Self-Hosting vs Adopter Tiers
 
 | | EDF self-hosting | Adopter tiers |

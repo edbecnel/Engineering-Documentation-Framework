@@ -1,0 +1,91 @@
+# EDF Bootstrap Conversation Specification (pilot)
+# Schema: ADR-0003 — Conversation Specifications
+# Prompt text: docs/AI/Bootstrap_Playbook.md (referenced by prompt_ref, not duplicated here)
+
+conversation_spec_id: edf.bootstrap.v1
+display_name: EDF Repository Bootstrap
+spec_version: "1.0.0"
+status: pilot
+
+executes_methodology:
+  - docs/Development/Bootstrap_Guide.md
+  - docs/Development/Adopter_Conformance_Tiers.md
+  - scripts/adopt-edf.sh
+
+non_ai_equivalent: docs/Development/Bootstrap_Guide.md
+
+inputs:
+  - name: project_root
+    description: Absolute path to the target project repository root
+    required: true
+  - name: edf_clone_path
+    description: Absolute path to local Engineering Documentation Framework clone
+    required: true
+  - name: profile
+    description: "Domain profile: software-engineering (default) or core"
+    required: false
+    default: software-engineering
+  - name: target_tier
+    description: "Initial conformance target: Bootstrap, Navigable, Governed, or Reference Parity"
+    required: false
+    default: Bootstrap
+
+outputs:
+  - ENGINEERING_DOCUMENTATION_FRAMEWORK.md
+  - PROJECT_CHARTER.md
+  - PROJECT_INDEX.md
+  - docs/ canonical structure
+  - reports/conformance/framework-advisor-*.txt
+  - ADOPTION_STATUS.md
+
+phases:
+  - id: confirm_greenfield_pattern
+    human_gate: required
+    methodology_ref: docs/Development/Bootstrap_Guide.md#greenfield-pattern-decision-tree
+    prompt_ref: docs/AI/Bootstrap_Playbook.md#decision-tree--greenfield-pattern
+    description: Confirm fork-EDF vs adopt-into-separate-repo before running scripts
+
+  - id: confirm_scope
+    human_gate: required
+    methodology_ref: docs/Development/Bootstrap_Guide.md#prerequisites
+    prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-0--confirm-scope
+    description: Collect project name, paths, profile, and target tier
+
+  - id: run_bootstrap
+    human_gate: optional
+    command: "{edf_clone_path}/scripts/adopt-edf.sh bootstrap [--profile {profile}] \"{project_root}\""
+    methodology_ref: docs/Development/Bootstrap_Guide.md#bootstrap-sequence
+    prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-1--run-bootstrap
+    description: Create structure, skeleton, and baseline conformance report
+
+  - id: customize_identity
+    human_gate: required
+    methodology_ref: docs/Development/Bootstrap_Guide.md#step-5--customize-project-identity
+    prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-2--customize-identity
+    description: Fill PROJECT_CHARTER, PROJECT_INDEX, README with project-specific content
+
+  - id: track_adoption
+    human_gate: optional
+    methodology_ref: docs/Templates/ADOPTION_STATUS_Template.md
+    description: Copy ADOPTION_STATUS template and mark bootstrap phase complete
+
+  - id: validate_tier
+    human_gate: optional
+    command: "{edf_clone_path}/scripts/adopt-edf.sh validate \"{project_root}\""
+    methodology_ref: docs/Development/Adopter_Conformance_Tiers.md#bootstrap
+    prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-3--validate
+    description: Compare Framework Advisor scores to target tier
+
+validation_gates:
+  - id: G1
+    reference: docs/AI/Bootstrap_Playbook.md#g1--scripts
+    criterion: adopt-edf bootstrap exits successfully
+  - id: G2
+    reference: docs/Development/Adopter_Conformance_Tiers.md#bootstrap
+    criterion: Structure score >= 80%
+  - id: G3
+    reference: docs/AI/Bootstrap_Playbook.md#g3--identity
+    criterion: CHARTER and INDEX describe the actual project
+  - id: G4
+    reference: docs/AI/Bootstrap_Playbook.md#g4--navigation
+    criterion: README links to PROJECT_INDEX

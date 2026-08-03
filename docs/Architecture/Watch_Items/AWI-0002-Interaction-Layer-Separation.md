@@ -4,11 +4,12 @@
 
 | | |
 |---|---|
-| **Status** | Active |
+| **Status** | Promoted |
 | **Owner** | Engineering Documentation Framework |
 | **Created** | 2026-08-03 |
+| **Promoted** | 2026-08-03 |
 | **Revisit Trigger** | After the current repository adoption initiative is complete |
-| **Related ADRs** | None directly applicable |
+| **Related ADRs** | [ADR-0003 — Conversation Specifications](../ADRs/ADR-0003-Conversation-Specifications.md) |
 
 ---
 
@@ -48,6 +49,8 @@ This watch item:
 - Does **not** authorize new AI tooling, Framework Advisor changes, bootstrap changes, or interaction-layer implementation packages.
 
 While `Active`, this document is **non-authoritative for implementation**. It records a deferred architectural direction for intentional future review.
+
+**Update (2026-08-03):** This watch item was revisited after the adoption initiative completed. See [AWI-0002 Revisit Assessment](AWI-0002-Revisit-Assessment.md). Promotion outcome: [ADR-0003 — Conversation Specifications](../ADRs/ADR-0003-Conversation-Specifications.md). Pilot specs live under [interaction/](../../../interaction/README.md).
 
 ---
 
@@ -108,4 +111,6 @@ Deferred until revisit:
 - [AI Philosophy](../../AI/AI_Philosophy.md)
 - [Project Analysis / Framework Advisor](../../Development/Project_Analysis_Validation_Tool.md)
 - [AWI-0001 — Domain Independence](AWI-0001-Domain-Independence.md)
-- [Repository Overview](../../../README.md)
+- [AWI-0002 Revisit Assessment](AWI-0002-Revisit-Assessment.md)
+- [ADR-0003 — Conversation Specifications](../ADRs/ADR-0003-Conversation-Specifications.md)
+- [Interaction Layer](../../../interaction/README.md)

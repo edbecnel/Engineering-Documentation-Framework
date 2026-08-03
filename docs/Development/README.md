@@ -20,6 +20,7 @@ For **day-to-day project engineering** (first-time setup, local environment, Git
 - [Migration Guide](Migration_Guide.md) — phased playbook for existing repositories
 - [Adopter Conformance Tiers](Adopter_Conformance_Tiers.md) — adoption success criteria and score targets
 - [Profile-Aware Bootstrap](Profile_Aware_Bootstrap.md) — Core vs Software Engineering profiles
+- [Interaction Layer](../../interaction/README.md) — optional Conversation Specifications (ADR-0003)
 
 ## Development Tools and Guidance
 

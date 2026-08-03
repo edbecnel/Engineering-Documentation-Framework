@@ -49,6 +49,8 @@ AI-assisted repository adoption workflows (distinct from ongoing [Repository_Wor
 | [Bootstrap_Playbook.md](./Bootstrap_Playbook.md) | AI decision trees, file copy rules, and prompts for bootstrapping new EDF repos |
 | [Migration_Playbook.md](./Migration_Playbook.md) | AI prompts per migration phase, link checklist, `AI_WORKFLOW.md` mapping |
 
+Machine-readable contracts: [Conversation Specifications](../../interaction/specs/README.md) (optional; see [ADR-0003](../Architecture/ADRs/ADR-0003-Conversation-Specifications.md))
+
 Human-oriented guides: [Bootstrap Guide](../Development/Bootstrap_Guide.md) · [Migration Guide](../Development/Migration_Guide.md) · [Adopter Conformance Tiers](../Development/Adopter_Conformance_Tiers.md)
 
 ## Parent

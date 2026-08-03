@@ -40,6 +40,7 @@
 ## Framework Operations
 
 - [Scripts](scripts/README.md)
+- [Interaction Layer](interaction/README.md)
 - [Active Tasks](tasks/README.md)
 - [Archive](archive/)
 

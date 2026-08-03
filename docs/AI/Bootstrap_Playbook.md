@@ -13,6 +13,8 @@
 
 This playbook enables AI assistants (Cursor, Copilot, etc.) to bootstrap EDF-compliant repositories reliably. It supplements the human-oriented [Bootstrap Guide](../Development/Bootstrap_Guide.md) with decision trees, file copy rules, prompt templates, and validation gates.
 
+For the machine-readable interaction contract, see [edf.bootstrap.v1.yaml](../../interaction/specs/edf.bootstrap.v1.yaml) and [ADR-0003](../Architecture/ADRs/ADR-0003-Conversation-Specifications.md). Execute phases per the spec; do not embed methodology rules here that are not in the canonical guide.
+
 For ongoing engineering work after adoption, see [Repository_Workflow.md](Repository_Workflow.md).
 
 ## AI Responsibilities During Bootstrap
@@ -133,3 +135,4 @@ Do not mark bootstrap complete until G1–G4 pass. G5 may be deferred if human a
 - [Context_Checklist.md](Context_Checklist.md)
 - [Repository_Workflow.md](Repository_Workflow.md)
 - [Adopter Conformance Tiers](../Development/Adopter_Conformance_Tiers.md)
+- [Conversation Specification: edf.bootstrap.v1](../../interaction/specs/edf.bootstrap.v1.yaml)

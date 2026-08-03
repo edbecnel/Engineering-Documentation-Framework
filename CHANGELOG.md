@@ -4,6 +4,10 @@
 
 ### Added
 
+- [AWI-0003 — Repository Semantic Context and Convention Binding](docs/Architecture/Watch_Items/AWI-0003-Repository-Semantic-Context-and-Convention-Binding.md) — open architectural question on repository-level semantics
+- [Repository Bootstrap](docs/Development/Repository_Bootstrap/README.md) framework and [Architecture Specification Repository](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/README.md) bootstrap guidance
+- [ASR Bootstrap Playbook](docs/AI/ASR_Bootstrap_Playbook.md) for AI-assisted ASR bootstrap
+- ASR templates: Architectural Discovery Record, Architecture Specification, ASR Bootstrap Report
 - [ADR-0001 — Domain Profiles](docs/Architecture/ADRs/ADR-0001-Domain-Profiles.md) accepted; navigation and ADR index added
 - [ADR-0002 — Domain Profile Specification](docs/Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md) outline (manifest, validation model, software extraction inventory)
 - `docs/Architecture/ADRs/README.md` — ADR index for numbered framework ADRs

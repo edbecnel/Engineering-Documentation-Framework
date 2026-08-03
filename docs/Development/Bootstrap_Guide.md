@@ -39,13 +39,19 @@ Starting a new project?
 │     → Rename repository; replace PROJECT_CHARTER, PROJECT_INDEX, handbook content
 │     → Skip create_canonical_structure (structure already exists)
 │
-└─ Adopt EDF into a separate empty or existing repository
+├─ Bootstrap an Architecture Specification Repository
+│     → Repository whose primary artifact is an adoptable architecture, methodology,
+│       protocol, framework, specification, standard, or engineering discipline
+│     → Follow [Architecture Specification Repository Bootstrap Procedure](Repository_Bootstrap/Architecture_Specification_Repository/Bootstrap_Procedure.md)
+│     → Use profile: core; invoke the ASR procedure intentionally (no config field)
+│
+└─ Adopt EDF into a separate empty or existing repository (general engineering)
       → Create or open your project repository
       → Run bootstrap scripts from your local EDF clone (steps below)
       → Customize generated stubs and copy reference content as needed
 ```
 
-**Do not conflate these paths.** Forking EDF gives you the full reference implementation. Running bootstrap scripts against another repo creates structure and minimal stubs only.
+**Do not conflate these paths.** Forking EDF gives you the full reference implementation. Running bootstrap scripts against another repo creates structure and minimal stubs only. Architecture Specification Repositories use the dedicated [Repository Bootstrap](Repository_Bootstrap/README.md) procedure.
 
 ## Bootstrap Sequence
 
@@ -163,8 +169,11 @@ Bootstrap currently defaults to the **Software Engineering** profile (all profil
 
 ## Related Documents
 
+- [Repository Bootstrap](Repository_Bootstrap/README.md)
+- [Architecture Specification Repository Bootstrap Procedure](Repository_Bootstrap/Architecture_Specification_Repository/Bootstrap_Procedure.md)
 - [Migration Guide](Migration_Guide.md)
 - [Bootstrap Playbook](../AI/Bootstrap_Playbook.md)
+- [ASR Bootstrap Playbook](../AI/ASR_Bootstrap_Playbook.md)
 - [Adopter Conformance Tiers](Adopter_Conformance_Tiers.md)
 - [Documentation Generation Engine](Documentation_Generation_Engine.md)
 - [Project Analysis and Validation Tool](Project_Analysis_Validation_Tool.md)

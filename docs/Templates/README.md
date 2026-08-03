@@ -28,6 +28,9 @@ Templates provide a consistent starting point. They are not rigid forms. Remove 
 | `Handover_Template.md` | Transferring work between people, teams, AI sessions, or tools |
 | `Release_Notes_Template.md` | Documenting a software or framework release |
 | `ADOPTION_STATUS_Template.md` | Tracking EDF bootstrap or migration progress in adopting projects |
+| `Architectural_Discovery_Record_Template.md` | Recording non-normative historical architectural discovery (e.g., CRA-0000) |
+| `Architecture_Specification_Template.md` | Defining normative architecture specifications (e.g., CRA-0001) |
+| `ASR_Bootstrap_Report_Template.md` | Recording ASR bootstrap outcome, mappings, and gaps |
 
 ## Required and Optional Sections
 

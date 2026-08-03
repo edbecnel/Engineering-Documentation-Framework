@@ -39,6 +39,7 @@ Deferred architectural initiatives that are intentionally outside the current ro
 |---|---|---|
 | [AWI-0001](Watch_Items/AWI-0001-Domain-Independence.md) | Domain Independence — evolve EDF into a domain-independent methodology | Active |
 | [AWI-0002](Watch_Items/AWI-0002-Interaction-Layer-Separation.md) | Interaction Layer Separation — distinguish methodology from optional interaction models | Promoted |
+| [AWI-0003](Watch_Items/AWI-0003-Repository-Semantic-Context-and-Convention-Binding.md) | Repository Semantic Context and Convention Binding — open question on repository-level semantics | Active |
 
 Adopting projects place project-specific ADRs under `docs/Architecture/ADRs/` using the same conventions.
 

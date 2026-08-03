@@ -32,7 +32,10 @@
 - [Migration Guide](docs/Development/Migration_Guide.md) — existing repository migration
 - [Adopter Conformance Tiers](docs/Development/Adopter_Conformance_Tiers.md) — adoption success criteria
 - [Profile-Aware Bootstrap](docs/Development/Profile_Aware_Bootstrap.md) — Core vs Software Engineering profiles
+- [Repository Bootstrap](docs/Development/Repository_Bootstrap/README.md) — specialized bootstrap procedures
+- [Architecture Specification Repository Bootstrap Procedure](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Bootstrap_Procedure.md)
 - [AI Bootstrap Playbook](docs/AI/Bootstrap_Playbook.md) — AI-assisted bootstrap
+- [ASR Bootstrap Playbook](docs/AI/ASR_Bootstrap_Playbook.md) — AI-assisted ASR bootstrap
 - [AI Migration Playbook](docs/AI/Migration_Playbook.md) — AI-assisted migration
 - [ADR-0004 — Interaction Specifications](docs/Architecture/ADRs/ADR-0004-Interaction-Specifications.md)
 - [Implementation Bindings](interaction/Implementation_Bindings.md) — CLI, conversation, GUI binding profiles

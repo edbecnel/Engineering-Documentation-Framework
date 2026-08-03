@@ -4,11 +4,14 @@ A reusable documentation architecture for long-lived engineering projects.
 
 This repository defines **how** teams organize, write, and maintain documentation across disciplines — not the documentation of any single product. It ships as the **Software Engineering reference implementation** of EDF Core plus the Software Engineering Domain Profile.
 
+EDF also exhibits the characteristics of an **Architecture Specification Repository**: its primary engineering artifact is an adoptable documentation methodology and engineering discipline. EDF provides [bootstrap guidance for Architecture Specification Repositories](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/README.md) and serves as a validation case for that capability.
+
 ## Quick Start
 
 | I want to… | Start here |
 |------------|------------|
 | Bootstrap a new EDF-compliant repository | [Bootstrap Guide](docs/Development/Bootstrap_Guide.md) |
+| Bootstrap an Architecture Specification Repository | [ASR Bootstrap Procedure](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Bootstrap_Procedure.md) |
 | Migrate an existing repository to EDF | [Migration Guide](docs/Development/Migration_Guide.md) |
 | Use AI to adopt EDF | [AI Adoption Playbooks](docs/AI/README.md#adoption) |
 

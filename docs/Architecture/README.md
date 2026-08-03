@@ -21,6 +21,14 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 | [ADR-0001](ADRs/ADR-0001-Domain-Profiles.md) | Domain Profiles — layered Core + profile architecture | Accepted |
 | [ADR-0002](ADRs/ADR-0002-Domain-Profile-Specification.md) | Domain Profile specification outline | Proposed |
 
+## Architectural Watch Items
+
+Deferred architectural initiatives that are intentionally outside the current roadmap. Watch items are non-authoritative for implementation until promoted.
+
+| ID | Initiative | Status |
+|---|---|---|
+| [AWI-0001](Watch_Items/AWI-0001-Domain-Independence.md) | Domain Independence — evolve EDF into a domain-independent methodology | Active |
+
 Adopting projects place project-specific ADRs under `docs/Architecture/ADRs/` using the same conventions.
 
 ## Parent

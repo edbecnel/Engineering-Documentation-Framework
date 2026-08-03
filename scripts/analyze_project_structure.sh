@@ -10,6 +10,10 @@ set -euo pipefail
 
 STAGE1_RULESET_VERSION="2026-07-10-stage1"
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=edf_profile.sh
+source "$script_dir/edf_profile.sh"
+
 if [[ $# -ne 1 ]]; then
   echo "Error: project root path is required." >&2
   echo "Usage: $(basename "$0") \"/path/to/project root\"" >&2
@@ -22,11 +26,11 @@ if [[ ! -d "$PROJECT_ROOT" ]]; then
   exit 1
 fi
 
-required_dirs=(
-  docs docs/Architecture docs/Architecture/ADRs docs/AI docs/Developer_Handbook docs/Development
-  docs/Governance docs/Specifications docs/API docs/Database docs/Deployment
-  docs/User_Guides docs/Reference docs/Templates tasks archive scripts
-)
+if ! resolve_edf_profile "$PROJECT_ROOT" ""; then
+  exit 1
+fi
+
+required_dirs=("${EDF_REQUIRED_DIRS[@]}")
 
 recommended_root_files=(
   README.md PROJECT_INDEX.md PROJECT_CHARTER.md ARCHITECTURE_DECISIONS.md
@@ -271,6 +275,7 @@ echo "==========================================="
 echo
 echo "Project root: $PROJECT_ROOT"
 echo "Project name: $(basename "$PROJECT_ROOT")"
+echo "Profile: $EDF_PROFILE"
 if [[ "$is_edf_repository" == true ]]; then
   echo "Repository mode: EDF framework repository"
 else

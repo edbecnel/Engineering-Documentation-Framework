@@ -14,6 +14,13 @@ For **day-to-day project engineering** (first-time setup, local environment, Git
 - [EDF Development Workflow](EDF_Development_Workflow.md)
 - [Cross-Platform Shell Scripting Guidelines](Cross_Platform_Shell_Scripting_Guidelines.md)
 
+## Adoption Guides
+
+- [Bootstrap Guide](Bootstrap_Guide.md) — ordered checklist for new repositories
+- [Migration Guide](Migration_Guide.md) — phased playbook for existing repositories
+- [Adopter Conformance Tiers](Adopter_Conformance_Tiers.md) — adoption success criteria and score targets
+- [Profile-Aware Bootstrap](Profile_Aware_Bootstrap.md) — Core vs Software Engineering profiles
+
 ## Development Tools and Guidance
 
 - [Documentation-First Development Policy](Documentation_First_Development_Policy.md)
@@ -21,6 +28,7 @@ For **day-to-day project engineering** (first-time setup, local environment, Git
 - [Documentation Migration Assistant](Documentation_Migration_Assistant.md)
 - [Project Analysis and Validation Tool](Project_Analysis_Validation_Tool.md)
 - [Scripts Directory](../../scripts/README.md)
+- [adopt-edf orchestration](../../scripts/adopt-edf.sh) — `bootstrap`, `migrate`, `validate`
 
 ## Parent
 

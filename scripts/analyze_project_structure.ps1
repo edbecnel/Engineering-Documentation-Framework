@@ -20,6 +20,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 $Stage1RulesetVersion = "2026-07-10-stage1"
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+. (Join-Path -Path $scriptDir -ChildPath "edf_profile.ps1")
 
 if (-not (Test-Path -LiteralPath $ProjectRoot -PathType Container)) {
     Write-Error "Project root does not exist or is not a directory: $ProjectRoot"
@@ -30,25 +32,8 @@ $ProjectRootFull = (Resolve-Path -LiteralPath $ProjectRoot).Path.TrimEnd(
     [System.IO.Path]::AltDirectorySeparatorChar
 )
 
-$RequiredDirs = @(
-    "docs",
-    "docs/Architecture",
-    "docs/Architecture/ADRs",
-    "docs/AI",
-    "docs/Developer_Handbook",
-    "docs/Development",
-    "docs/Governance",
-    "docs/Specifications",
-    "docs/API",
-    "docs/Database",
-    "docs/Deployment",
-    "docs/User_Guides",
-    "docs/Reference",
-    "docs/Templates",
-    "tasks",
-    "archive",
-    "scripts"
-)
+Resolve-EdfProfile -ProjectRoot $ProjectRootFull
+$RequiredDirs = $EdfRequiredDirs
 
 $RecommendedRootFiles = [System.Collections.Generic.List[string]]::new()
 @(
@@ -360,6 +345,7 @@ Write-Host "==========================================="
 Write-Host ""
 Write-Host "Project root: $ProjectRootFull"
 Write-Host "Project name: $projectName"
+Write-Host "Profile: $EdfProfile"
 if ($IsEDFRepository) {
     Write-Host "Repository mode: EDF framework repository"
 } else {

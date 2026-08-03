@@ -6,6 +6,28 @@
 
 This directory contains the Engineering Documentation Framework utility scripts.
 
+## Adoption Orchestration
+
+Unified entry point for bootstrap, migration planning, and validation:
+
+```bash
+./scripts/adopt-edf.sh bootstrap "/path/to/project"
+./scripts/adopt-edf.sh migrate "/path/to/project"
+./scripts/adopt-edf.sh validate "/path/to/project"
+```
+
+PowerShell:
+
+```powershell
+.\scripts\adopt-edf.ps1 -Command bootstrap -ProjectRoot "D:\Projects\My Project"
+.\scripts\adopt-edf.ps1 -Command migrate -ProjectRoot "D:\Projects\My Project"
+.\scripts\adopt-edf.ps1 -Command validate -ProjectRoot "D:\Projects\My Project"
+```
+
+Optional profile selection: `--profile core` or `-Profile core` (see [Profile-Aware Bootstrap](../docs/Development/Profile_Aware_Bootstrap.md)).
+
+Human guides: [Bootstrap Guide](../docs/Development/Bootstrap_Guide.md) · [Migration Guide](../docs/Development/Migration_Guide.md)
+
 ## One-Time Shell-Script Setup
 
 After cloning the repository or copying scripts manually, ensure the shell scripts are executable:
@@ -113,6 +135,9 @@ The wrapper:
 |---------|--------|-----------------|
 | `run_self_hosting_validation.sh` | EDF repository only | `reports/self-hosting/` in EDF |
 | `run_conformance_validation.sh` | Any adopting project | `reports/conformance/` in target project |
+| `adopt-edf.sh bootstrap` | Any adopting project | `reports/conformance/` in target project |
+| `adopt-edf.sh migrate` | Any adopting project | `MIGRATION_PLAN.md` in target project |
+| `adopt-edf.sh validate` | Any adopting project | `reports/conformance/` in target project |
 | `analyze_project_structure.sh` | Any project | stdout only (no saved report) |
 
 Do **not** use `run_self_hosting_validation.sh` for adopting projects. It includes EDF-specific Stage 1 regression checks and shell validation that belong only to EDF maintenance.

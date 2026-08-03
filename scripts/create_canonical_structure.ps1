@@ -3,37 +3,28 @@
 #
 # Usage:
 # .\scripts\create_canonical_structure.ps1 -ProjectRoot "D:\Projects\Existing Project"
+# .\scripts\create_canonical_structure.ps1 -Profile core -ProjectRoot "D:\Projects\Existing Project"
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true, Position = 0)]
-    [string] $ProjectRoot
+    [string] $ProjectRoot,
+
+    [ValidateSet("core", "software-engineering")]
+    [string] $Profile = ""
 )
 
 $ErrorActionPreference = "Stop"
 $GuideFileName = "ENGINEERING_DOCUMENTATION_FRAMEWORK.md"
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+. (Join-Path -Path $scriptDir -ChildPath "edf_profile.ps1")
 
 if (-not (Test-Path -LiteralPath $ProjectRoot -PathType Container)) {
     Write-Error "Project root does not exist or is not a directory: $ProjectRoot"
 }
 
-$dirs = @(
-    "docs/Architecture",
-    "docs/Architecture/ADRs",
-    "docs/AI",
-    "docs/Developer_Handbook",
-    "docs/Development",
-    "docs/Specifications",
-    "docs/API",
-    "docs/Database",
-    "docs/Deployment",
-    "docs/User_Guides",
-    "docs/Reference",
-    "docs/Templates",
-    "tasks",
-    "archive",
-    "scripts"
-)
+Resolve-EdfProfile -ProjectRoot $ProjectRoot -CliProfile $Profile
+$dirs = $EdfRequiredDirs
 
 function Get-FrameworkGuideContent {
 @'
@@ -153,6 +144,7 @@ function New-FrameworkGuideIfMissing {
 }
 
 Write-Host "Ensuring canonical folder structure under: $ProjectRoot"
+Write-Host "Profile: $EdfProfile"
 Write-Host ""
 
 $documentsPath = Join-Path -Path $ProjectRoot -ChildPath "documents"

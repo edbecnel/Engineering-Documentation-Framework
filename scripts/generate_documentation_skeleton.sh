@@ -4,6 +4,10 @@
 
 set -euo pipefail
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=edf_profile.sh
+source "$script_dir/edf_profile.sh"
+
 if [[ $# -ne 1 ]]; then
     echo "Usage: $(basename "$0") "/path/to/project root"" >&2
     exit 1
@@ -13,6 +17,10 @@ PROJECT_ROOT="${1%/}"
 
 if [[ ! -d "$PROJECT_ROOT" ]]; then
     echo "Error: project root does not exist: $PROJECT_ROOT" >&2
+    exit 1
+fi
+
+if ! resolve_edf_profile "$PROJECT_ROOT" ""; then
     exit 1
 fi
 
@@ -213,6 +221,7 @@ Add documents whose primary responsibility matches this domain.
 Update this index whenever a major document in this domain is created, moved, renamed, or retired.
 EDF_EOF
 
+if [[ "$EDF_PROFILE" != "core" ]]; then
 create_file_if_missing "docs/Developer_Handbook/README.md" <<'EDF_EOF'
 # Developer Handbook
 
@@ -345,6 +354,7 @@ cd <project-directory>
 
 - [Developer Handbook](README.md)
 EDF_EOF
+fi
 
 create_file_if_missing "docs/Development/README.md" <<'EDF_EOF'
 # Development
@@ -403,6 +413,7 @@ Add documents whose primary responsibility matches this domain.
 Update this index whenever a major document in this domain is created, moved, renamed, or retired.
 EDF_EOF
 
+if [[ "$EDF_PROFILE" != "core" ]]; then
 create_file_if_missing "docs/API/README.md" <<'EDF_EOF'
 # API
 
@@ -483,6 +494,7 @@ Add documents whose primary responsibility matches this domain.
 
 Update this index whenever a major document in this domain is created, moved, renamed, or retired.
 EDF_EOF
+fi
 
 create_file_if_missing "docs/User_Guides/README.md" <<'EDF_EOF'
 # User Guides

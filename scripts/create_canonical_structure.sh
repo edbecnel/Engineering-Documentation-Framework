@@ -3,17 +3,42 @@
 # They do not delete, overwrite, move, rename, or modify existing files.
 #
 # Usage:
-#   ./scripts/create_canonical_structure.sh "/path/to/project root"
+#   ./scripts/create_canonical_structure.sh [--profile core|software-engineering] "/path/to/project root"
 
 set -euo pipefail
 
-if [[ $# -ne 1 ]]; then
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=edf_profile.sh
+source "$script_dir/edf_profile.sh"
+
+PROFILE=""
+PROJECT_ROOT=""
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --profile)
+            PROFILE="$2"
+            shift 2
+            ;;
+        *)
+            if [[ -z "$PROJECT_ROOT" ]]; then
+                PROJECT_ROOT="${1%/}"
+            else
+                echo "Error: unexpected argument: $1" >&2
+                echo "Usage: $(basename "$0") [--profile core|software-engineering] \"/path/to/project root\"" >&2
+                exit 1
+            fi
+            shift
+            ;;
+    esac
+done
+
+if [[ -z "$PROJECT_ROOT" ]]; then
     echo "Error: project root path is required." >&2
-    echo "Usage: $(basename "$0") \"/path/to/project root\"" >&2
+    echo "Usage: $(basename "$0") [--profile core|software-engineering] \"/path/to/project root\"" >&2
     exit 1
 fi
 
-PROJECT_ROOT="${1%/}"
 GUIDE_FILENAME="ENGINEERING_DOCUMENTATION_FRAMEWORK.md"
 
 if [[ ! -d "$PROJECT_ROOT" ]]; then
@@ -21,23 +46,11 @@ if [[ ! -d "$PROJECT_ROOT" ]]; then
     exit 1
 fi
 
-DIRS=(
-    "docs/Architecture"
-    "docs/Architecture/ADRs"
-    "docs/AI"
-    "docs/Developer_Handbook"
-    "docs/Development"
-    "docs/Specifications"
-    "docs/API"
-    "docs/Database"
-    "docs/Deployment"
-    "docs/User_Guides"
-    "docs/Reference"
-    "docs/Templates"
-    "tasks"
-    "archive"
-    "scripts"
-)
+if ! resolve_edf_profile "$PROJECT_ROOT" "$PROFILE"; then
+    exit 1
+fi
+
+DIRS=("${EDF_REQUIRED_DIRS[@]}")
 
 create_dir_if_missing() {
     local relative_path="$1"
@@ -145,6 +158,7 @@ EOF
 }
 
 echo "Ensuring canonical folder structure under: $PROJECT_ROOT"
+echo "Profile: $EDF_PROFILE"
 echo
 
 if [[ -d "$PROJECT_ROOT/documents" ]]; then

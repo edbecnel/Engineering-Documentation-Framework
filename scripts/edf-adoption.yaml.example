@@ -1,0 +1,16 @@
+# EDF Adoption Configuration
+#
+# Copy this file to your project root as edf-adoption.yaml when adopting EDF.
+# Scripts read profile from this file when --profile is not passed on the command line.
+#
+# See: docs/Development/Profile_Aware_Bootstrap.md
+
+# Domain profile: software-engineering (default) or core
+profile: software-engineering
+
+# Human-readable project name (informational; used in adoption reports)
+project_name: My Project
+
+# Whether to copy the full AI handbook from EDF during bootstrap (documentation only;
+# not yet implemented as an automated script option — copy manually or via AI playbook)
+copy_ai_handbook: false

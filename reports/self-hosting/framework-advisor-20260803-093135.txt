@@ -1,0 +1,44 @@
+Engineering Documentation Framework Self-Hosting Validation
+==========================================================
+
+Project root: /Users/edbecnel/Development/GitHub/Engineering-Documentation-Framework
+Started: 2026-08-03 09:31:35 +0800
+
+Stage 1 regression verification
+-------------------------------
+PASS: ruleset marker
+PASS: EDF repository detection
+PASS: conditional adoption guide
+PASS: scripts README canonical handling
+PASS: placeholder exclusions
+PASS: template-source detection
+PASS: template orphan exclusions
+PASS: Bash syntax
+Stage 1 verification passed.
+
+Shell compatibility validation
+------------------------------
+mktemp: mkstemp failed on /var/folders/3n/2q1gqlt505b058rshfrgnbg00000gn/T/tmp.nEczeYAxvX/edf-shell-scripts.U0dl3H: No such file or directory
+
+Framework Advisor self-hosting analysis
+---------------------------------------
+mktemp: mkstemp failed on /var/folders/3n/2q1gqlt505b058rshfrgnbg00000gn/T/tmp.nEczeYAxvX/edf-inbound.uKbajt: No such file or directory
+
+Validation completed: 2026-08-03 09:31:35 +0800
+
+============================================================
+Self-hosting validation completed successfully.
+
+Report:
+reports/self-hosting/framework-advisor-20260803-093135.txt
+
+Compliance scores:
+- Overall: Not reported
+- Structure: Not reported
+- AI: Not reported
+- Navigation: Not reported
+- Governance: Not reported
+
+Next recommended actions:
+- No recommendations reported.
+============================================================

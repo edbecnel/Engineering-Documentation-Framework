@@ -40,6 +40,17 @@ Saving a small amount of model usage cost is not worthwhile if it creates hours 
 | [Security.md](./Security.md) | Security and privacy rules for AI usage |
 | [Governance.md](./Governance.md) | Human accountability and documentation governance |
 
+## Adoption
+
+AI-assisted repository adoption workflows (distinct from ongoing [Repository_Workflow.md](Repository_Workflow.md)):
+
+| Document | Purpose |
+|---|---|
+| [Bootstrap_Playbook.md](./Bootstrap_Playbook.md) | AI decision trees, file copy rules, and prompts for bootstrapping new EDF repos |
+| [Migration_Playbook.md](./Migration_Playbook.md) | AI prompts per migration phase, link checklist, `AI_WORKFLOW.md` mapping |
+
+Human-oriented guides: [Bootstrap Guide](../Development/Bootstrap_Guide.md) · [Migration Guide](../Development/Migration_Guide.md) · [Adopter Conformance Tiers](../Development/Adopter_Conformance_Tiers.md)
+
 ## Parent
 
 - [Project Index](../../PROJECT_INDEX.md)

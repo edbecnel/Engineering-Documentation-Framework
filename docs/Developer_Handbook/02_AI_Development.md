@@ -9,7 +9,7 @@ This document establishes practical conventions for using AI tools during day-to
 
 ## When to use it
 
-- **Before first AI-assisted commit** — Read this alongside the AI Workflow document.
+- **Before first AI-assisted commit** — Read this alongside the [AI Engineering Handbook](../AI/README.md).
 - **Code review** — Reviewers verify AI-generated changes meet these standards.
 - **Onboarding** — New developers learn approved tools and data policies.
 - **Policy updates** — When the organization changes AI vendor or privacy rules.

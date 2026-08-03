@@ -4,6 +4,16 @@ A reusable documentation architecture for long-lived engineering projects.
 
 This repository defines **how** teams organize, write, and maintain documentation across disciplines — not the documentation of any single product. It ships as the **Software Engineering reference implementation** of EDF Core plus the Software Engineering Domain Profile.
 
+## Quick Start
+
+| I want to… | Start here |
+|------------|------------|
+| Bootstrap a new EDF-compliant repository | [Bootstrap Guide](docs/Development/Bootstrap_Guide.md) |
+| Migrate an existing repository to EDF | [Migration Guide](docs/Development/Migration_Guide.md) |
+| Use AI to adopt EDF | [AI Adoption Playbooks](docs/AI/README.md#adoption) |
+
+Prerequisites: clone this repository locally, run `chmod +x scripts/*.sh` (Unix), then follow the guide for your scenario. For unified orchestration, see `./scripts/adopt-edf.sh`.
+
 ## Overview
 
 The Engineering Documentation Framework provides a consistent, scalable structure for capturing requirements, architecture, governance, AI engineering guidance, and discipline-specific deliverables.
@@ -154,9 +164,9 @@ Any existing `documents/` folder is left completely untouched.
 
 These scripts only create missing directories and the optional framework guide file. They do not delete, overwrite, move, rename, or modify existing files.
 
-### First-time setup (Software Engineering profile)
+### Contributor setup (after framework adoption)
 
-New software contributors start with [docs/Developer_Handbook/00_First_Time_Setup.md](docs/Developer_Handbook/00_First_Time_Setup.md). That guide links to the authoritative setup sections in the Developer Handbook, Database, Architecture, and Deployment domains.
+After EDF is adopted, new software contributors start with [docs/Developer_Handbook/00_First_Time_Setup.md](docs/Developer_Handbook/00_First_Time_Setup.md) — **local development environment setup**, not framework bootstrap. For adopting EDF into a repository, use the [Bootstrap Guide](docs/Development/Bootstrap_Guide.md) or [Migration Guide](docs/Development/Migration_Guide.md).
 
 ### Analyze an existing project
 
@@ -235,13 +245,15 @@ If a target file already exists, the generator reports it as skipped and leaves 
 
 ## For a New Project
 
-1. **Copy or fork** this repository, then run a structure script against your project root.
-2. **Rename** the repository to your project name; keep the internal folder layout.
+Follow the [Bootstrap Guide](docs/Development/Bootstrap_Guide.md) for the complete ordered checklist. Summary:
+
+1. **Choose a greenfield pattern** — fork this repo as a template, or adopt EDF into a separate repository with bootstrap scripts.
+2. **Run bootstrap scripts** — `create_canonical_structure` and `generate_documentation_skeleton` (or `./scripts/adopt-edf.sh bootstrap`).
 3. **Fill in** `PROJECT_CHARTER.md` with your project's mission, scope, and stakeholders.
 4. **Update** `PROJECT_INDEX.md` with current status, owners, and links to live documents.
 5. **Customize** profile-specific handbook sections for your stack and team conventions (Software Engineering: Developer Handbook).
 6. **Record** your first ADR in `ARCHITECTURE_DECISIONS.md` when you make a significant technical choice.
-7. **Add** project-specific content under each `docs/` subdirectory as the system grows.
+7. **Validate** against [Adopter Conformance Tiers](docs/Development/Adopter_Conformance_Tiers.md) and track progress in `ADOPTION_STATUS.md`.
 
 ---
 
@@ -437,4 +449,4 @@ This framework is released under the [MIT License](./LICENSE). You are free to u
 
 ---
 
-**Next step:** Open [PROJECT_INDEX.md](./PROJECT_INDEX.md) to navigate the framework, or start with [PROJECT_CHARTER.md](./PROJECT_CHARTER.md) when bootstrapping a new project.
+**Next step:** [Bootstrap](docs/Development/Bootstrap_Guide.md) or [migrate](docs/Development/Migration_Guide.md) your repository, or open [PROJECT_INDEX.md](./PROJECT_INDEX.md) to explore the framework reference implementation.

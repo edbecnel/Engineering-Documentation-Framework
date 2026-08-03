@@ -3,21 +3,43 @@
 #
 # Safety guarantee:
 # - Read-only.
-# - Does not create, delete, overwrite, rename, move, or modify files.
+# - Does not create, delete, overwrite, rename, move, or modify project files.
+# - Writing --output MIGRATION_PLAN.md is the only optional file write.
 # - Does not modify an existing documents/ folder.
 #
 # Usage:
 #   ./scripts/plan_documentation_migration.sh "/path/to/project root"
+#   ./scripts/plan_documentation_migration.sh --output "/path/to/MIGRATION_PLAN.md" "/path/to/project root"
 
 set -euo pipefail
 
-if [[ $# -ne 1 ]]; then
+OUTPUT_FILE=""
+PROJECT_ROOT=""
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --output)
+            OUTPUT_FILE="$2"
+            shift 2
+            ;;
+        *)
+            if [[ -z "$PROJECT_ROOT" ]]; then
+                PROJECT_ROOT="${1%/}"
+            else
+                echo "Error: unexpected argument: $1" >&2
+                echo "Usage: $(basename "$0") [--output FILE] \"/path/to/project root\"" >&2
+                exit 1
+            fi
+            shift
+            ;;
+    esac
+done
+
+if [[ -z "$PROJECT_ROOT" ]]; then
     echo "Error: project root path is required." >&2
-    echo "Usage: $(basename "$0") \"/path/to/project root\"" >&2
+    echo "Usage: $(basename "$0") [--output FILE] \"/path/to/project root\"" >&2
     exit 1
 fi
-
-PROJECT_ROOT="${1%/}"
 
 if [[ ! -d "$PROJECT_ROOT" ]]; then
     echo "Error: project root does not exist or is not a directory: $PROJECT_ROOT" >&2
@@ -148,6 +170,11 @@ recommend_reason() {
 }
 
 project_name="$(basename "$PROJECT_ROOT")"
+report_file="$(mktemp "${TMPDIR:-/tmp}/edf-migration-plan.XXXXXX")"
+trap 'rm -f "$report_file"' EXIT
+
+exec 3>&1
+exec 1> "$report_file"
 
 echo "Engineering Documentation Framework Migration Plan"
 echo "=================================================="
@@ -169,6 +196,12 @@ done < <(find "$PROJECT_ROOT" -type f \( -iname "*.md" -o -iname "*.markdown" \)
 
 if [[ ${#candidates[@]} -eq 0 ]]; then
     echo "No Markdown migration candidates found outside canonical documentation locations."
+    exec 1>&3-
+    cat "$report_file"
+    if [[ -n "$OUTPUT_FILE" ]]; then
+        cp "$report_file" "$OUTPUT_FILE"
+        echo "Wrote migration plan: $OUTPUT_FILE" >&2
+    fi
     exit 0
 fi
 
@@ -195,3 +228,11 @@ echo "3. Move only documents whose purpose is clear."
 echo "4. Add or update links from README.md and PROJECT_INDEX.md."
 echo "5. Archive obsolete or superseded documents with a short migration note."
 echo "6. Re-run the analysis and migration scripts after each cleanup pass."
+
+exec 1>&3-
+cat "$report_file"
+
+if [[ -n "$OUTPUT_FILE" ]]; then
+    cp "$report_file" "$OUTPUT_FILE"
+    echo "Wrote migration plan: $OUTPUT_FILE" >&2
+fi

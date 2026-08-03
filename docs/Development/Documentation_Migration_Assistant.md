@@ -32,6 +32,13 @@ Bash:
 
 ```bash
 ./scripts/plan_documentation_migration.sh "/Users/ed/Projects/Existing Project"
+./scripts/plan_documentation_migration.sh --output "/Users/ed/Projects/Existing Project/MIGRATION_PLAN.md" "/Users/ed/Projects/Existing Project"
+```
+
+Or use the unified wrapper:
+
+```bash
+./scripts/adopt-edf.sh migrate "/path/to/project"
 ```
 
 ## Canonical Markdown Locations
@@ -103,9 +110,11 @@ Before migrating a document, confirm:
 
 ## Recommended Workflow
 
+See [Migration Guide](Migration_Guide.md) for the full phased playbook. Summary:
+
 1. Run the canonical structure script.
 2. Run the project analyzer.
-3. Run the migration assistant.
+3. Run the migration assistant (or `adopt-edf.sh migrate` to write `MIGRATION_PLAN.md`).
 4. Review every recommendation.
 5. Migrate only documents whose purpose is clear.
 6. Update `README.md` and `PROJECT_INDEX.md`.
@@ -120,6 +129,7 @@ Before migrating a document, confirm:
 
 - [Project Analysis and Validation Tool](Project_Analysis_Validation_Tool.md)
 - [Documentation Generation Engine](Documentation_Generation_Engine.md)
-- [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
+- [Migration Guide](Migration_Guide.md)
+- [Bootstrap Guide](Bootstrap_Guide.md)
 - [AI Engineering Handbook](../AI/README.md)
 - [Governance](../Governance/README.md)

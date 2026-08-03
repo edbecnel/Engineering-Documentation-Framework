@@ -13,7 +13,9 @@ Usage:
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true, Position = 0)]
-    [string] $ProjectRoot
+    [string] $ProjectRoot,
+
+    [string] $OutputFile = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -108,6 +110,13 @@ function Get-Recommendation {
 
 $projectName = Split-Path -Path $ProjectRootFull -Leaf
 $candidates = [System.Collections.Generic.List[string]]::new()
+$reportLines = [System.Collections.Generic.List[string]]::new()
+
+function Write-ReportLine {
+    param([string] $Line)
+    Write-Host $Line
+    $reportLines.Add($Line) | Out-Null
+}
 
 Get-ChildItem -LiteralPath $ProjectRootFull -Recurse -File -Include *.md, *.markdown |
     Sort-Object FullName |
@@ -118,40 +127,49 @@ Get-ChildItem -LiteralPath $ProjectRootFull -Recurse -File -Include *.md, *.mark
         }
     }
 
-Write-Host "Engineering Documentation Framework Migration Plan"
-Write-Host "=================================================="
-Write-Host ""
-Write-Host "Project root: $ProjectRootFull"
-Write-Host "Project name: $projectName"
-Write-Host ""
-Write-Host "This report is read-only."
-Write-Host "No files or folders were created, modified, moved, renamed, or deleted."
-Write-Host ""
+Write-ReportLine "Engineering Documentation Framework Migration Plan"
+Write-ReportLine "=================================================="
+Write-ReportLine ""
+Write-ReportLine "Project root: $ProjectRootFull"
+Write-ReportLine "Project name: $projectName"
+Write-ReportLine ""
+Write-ReportLine "This report is read-only."
+Write-ReportLine "No files or folders were created, modified, moved, renamed, or deleted."
+Write-ReportLine ""
 
 if ($candidates.Count -eq 0) {
-    Write-Host "No Markdown migration candidates found outside canonical documentation locations."
+    Write-ReportLine "No Markdown migration candidates found outside canonical documentation locations."
+    if ($OutputFile) {
+        $reportLines -join [Environment]::NewLine | Set-Content -LiteralPath $OutputFile -Encoding UTF8
+        Write-Host "Wrote migration plan: $OutputFile"
+    }
     exit 0
 }
 
-Write-Host "Migration candidates found: $($candidates.Count)"
-Write-Host ""
+Write-ReportLine "Migration candidates found: $($candidates.Count)"
+Write-ReportLine ""
 
 $index = 1
 foreach ($candidate in $candidates) {
     $recommendation = Get-Recommendation -RelativePath $candidate
 
-    Write-Host "$index. $candidate"
-    Write-Host "   Recommended destination: $($recommendation.Destination)"
-    Write-Host "   Reason: $($recommendation.Reason)"
-    Write-Host "   Action: Review manually before migrating. Do not move automatically."
-    Write-Host ""
+    Write-ReportLine "$index. $candidate"
+    Write-ReportLine "   Recommended destination: $($recommendation.Destination)"
+    Write-ReportLine "   Reason: $($recommendation.Reason)"
+    Write-ReportLine "   Action: Review manually before migrating. Do not move automatically."
+    Write-ReportLine ""
     $index++
 }
 
-Write-Host "Recommended next steps:"
-Write-Host "1. Review each recommendation."
-Write-Host "2. Split legacy AI_WORKFLOW.md content across docs/AI/ when encountered."
-Write-Host "3. Move only documents whose purpose is clear."
-Write-Host "4. Add or update links from README.md and PROJECT_INDEX.md."
-Write-Host "5. Archive obsolete or superseded documents with a short migration note."
-Write-Host "6. Re-run the analysis and migration scripts after each cleanup pass."
+Write-ReportLine "Recommended next steps:"
+Write-ReportLine "1. Review each recommendation."
+Write-ReportLine "2. Split legacy AI_WORKFLOW.md content across docs/AI/ when encountered."
+Write-ReportLine "3. Move only documents whose purpose is clear."
+Write-ReportLine "4. Add or update links from README.md and PROJECT_INDEX.md."
+Write-ReportLine "5. Archive obsolete or superseded documents with a short migration note."
+Write-ReportLine "6. Re-run the analysis and migration scripts after each cleanup pass."
+
+if ($OutputFile) {
+    $reportLines -join [Environment]::NewLine | Set-Content -LiteralPath $OutputFile -Encoding UTF8
+    Write-Host "Wrote migration plan: $OutputFile"
+}

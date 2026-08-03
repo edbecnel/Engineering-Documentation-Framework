@@ -27,6 +27,7 @@ Templates provide a consistent starting point. They are not rigid forms. Remove 
 | `Project_README_Template.md` | Creating the public-facing project overview |
 | `Handover_Template.md` | Transferring work between people, teams, AI sessions, or tools |
 | `Release_Notes_Template.md` | Documenting a software or framework release |
+| `ADOPTION_STATUS_Template.md` | Tracking EDF bootstrap or migration progress in adopting projects |
 
 ## Required and Optional Sections
 

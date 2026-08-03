@@ -26,6 +26,17 @@
 - [Governance](docs/Governance/README.md)
 - [Templates](docs/Templates/README.md)
 
+## Adopt EDF
+
+- [Bootstrap Guide](docs/Development/Bootstrap_Guide.md) — new repository setup
+- [Migration Guide](docs/Development/Migration_Guide.md) — existing repository migration
+- [Adopter Conformance Tiers](docs/Development/Adopter_Conformance_Tiers.md) — adoption success criteria
+- [Profile-Aware Bootstrap](docs/Development/Profile_Aware_Bootstrap.md) — Core vs Software Engineering profiles
+- [AI Bootstrap Playbook](docs/AI/Bootstrap_Playbook.md) — AI-assisted bootstrap
+- [AI Migration Playbook](docs/AI/Migration_Playbook.md) — AI-assisted migration
+- [Scripts](scripts/README.md) — bootstrap, migration, and validation tooling
+- [Framework Advisor](docs/Development/Project_Analysis_Validation_Tool.md) — conformance analysis
+
 ## Framework Operations
 
 - [Scripts](scripts/README.md)

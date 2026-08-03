@@ -6,11 +6,14 @@
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Architecture Specification Repository bootstrap validation
 > **Last Reviewed:** 2026-08-03
+> **Review Frequency:** On Change
 > **Authoritative:** Yes
 
 ## Purpose
 
 Validate that an Architecture Specification Repository bootstrap completed successfully. Use with Framework Advisor (`profile: core`) and produce a gap report for remaining work.
+
+For existing repositories that already publish ASR guidance, use the [Self-Conformance Review Procedure](Self_Conformance_Review.md) instead of applying this checklist mechanically.
 
 ## Validation Layers
 
@@ -22,6 +25,8 @@ Validate that an Architecture Specification Repository bootstrap completed succe
 | Gap reporting | `ASR_BOOTSTRAP_REPORT.md` in target repository |
 
 ## Required
+
+*Applicability: **Bootstrap target** unless noted. See [Checklist Applicability](Self_Conformance_Review.md#checklist-applicability) for framework source repos and mature ASRs.*
 
 - [ ] Engineer followed the [Bootstrap Procedure](Bootstrap_Procedure.md) intentionally
 - [ ] `profile: core` (or equivalent Core-only structure)
@@ -80,11 +85,14 @@ After CRA bootstrap:
 
 EDF should be describable as an ASR without special exceptions. Full EDF structural self-migration is explicitly out of scope for initial ASR guidance implementation.
 
+Use the [Self-Conformance Review Procedure](Self_Conformance_Review.md) and [EDF ASR Self-Conformance Review](../../EDF_ASR_Self_Conformance_Review.md) — not the bootstrap checklist — when validating EDF itself.
+
 | Criterion | EDF state |
 |---|---|
 | Primary artifact is adoptable specification | Yes — documentation methodology |
 | Discovery vs normative separation | AWIs vs ADRs vs Specifications — see [Guidance](Guidance.md) mapping |
 | Reference implementation | Software profile layout is reference, not canonical architecture |
+| Self-Conformance Review completed | Yes — [EDF ASR Self-Conformance Review](../../EDF_ASR_Self_Conformance_Review.md) |
 
 ## Parent
 
@@ -93,4 +101,5 @@ EDF should be describable as an ASR without special exceptions. Full EDF structu
 ## Related Documents
 
 - [Bootstrap Procedure](Bootstrap_Procedure.md)
+- [Self-Conformance Review Procedure](Self_Conformance_Review.md)
 - [Project Analysis and Validation Tool](../../Project_Analysis_Validation_Tool.md)

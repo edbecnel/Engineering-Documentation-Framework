@@ -6,6 +6,7 @@
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** New and existing Architecture Specification Repositories
 > **Last Reviewed:** 2026-08-03
+> **Review Frequency:** On Change
 > **Authoritative:** Yes
 
 ## Purpose

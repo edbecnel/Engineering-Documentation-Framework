@@ -4,6 +4,9 @@
 
 ### Added
 
+- [EDF ASR Self-Conformance Review](docs/Development/EDF_ASR_Self_Conformance_Review.md) — EDF validated against published ASR bootstrap guidance
+- [ASR Self-Conformance Review Procedure](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Self_Conformance_Review.md) — self-validation distinct from bootstrap
+- `docs/Architecture/Watch_Items/README.md` — watch item domain index
 - [AWI-0003 — Repository Semantic Context and Convention Binding](docs/Architecture/Watch_Items/AWI-0003-Repository-Semantic-Context-and-Convention-Binding.md) — open architectural question on repository-level semantics
 - [Repository Bootstrap](docs/Development/Repository_Bootstrap/README.md) framework and [Architecture Specification Repository](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/README.md) bootstrap guidance
 - [ASR Bootstrap Playbook](docs/AI/ASR_Bootstrap_Playbook.md) for AI-assisted ASR bootstrap
@@ -15,6 +18,10 @@
 
 ### Changed
 
+- ASR Validation Checklist — checklist applicability matrix and link to Self-Conformance Review Procedure
+- Architecture, Specifications, and root README — ASR semantic surfacing (discovery records, dual-semantics Specifications note, reference implementation labeling)
+- Glossary — AWI, engineering methodology, and self-conformance review terms
+- AWI-0003 — EDF self-conformance status and revisit scheduling notes
 - README positioning: general engineering framework; Software Engineering as v1.0 reference profile
 - `ARCHITECTURE_DECISIONS.md` and Architecture README index ADR-0001 and ADR-0002
 

@@ -21,6 +21,7 @@ For **day-to-day project engineering** (first-time setup, local environment, Git
 - [Adopter Conformance Tiers](Adopter_Conformance_Tiers.md) — adoption success criteria and score targets
 - [Profile-Aware Bootstrap](Profile_Aware_Bootstrap.md) — Core vs Software Engineering profiles
 - [Repository Bootstrap](Repository_Bootstrap/README.md) — specialized bootstrap procedures (including Architecture Specification Repositories)
+- [EDF ASR Self-Conformance Review](EDF_ASR_Self_Conformance_Review.md) — EDF self-validation against published ASR guidance
 - [Interaction Layer](../../interaction/README.md) — optional Interaction Specifications (ADR-0004)
 
 ## Development Tools and Guidance

@@ -71,6 +71,7 @@ See [Repository Bootstrap README](../README.md#conservative-design-principle).
 | [Reference Model](Reference_Model.md) | Conceptual artifact areas ASRs commonly evolve — not requirements |
 | [Guidance](Guidance.md) | Domain interpretations, discovery records, historical vs normative rules |
 | [Bootstrap Procedure](Bootstrap_Procedure.md) | Step-by-step bootstrap for new and existing repositories |
+| [Self-Conformance Review Procedure](Self_Conformance_Review.md) | Self-validation for existing ASRs — distinct from bootstrap |
 | [Validation Checklist](Validation_Checklist.md) | Bootstrap validation and gap reporting |
 
 ## Parent
@@ -83,3 +84,4 @@ See [Repository Bootstrap README](../README.md#conservative-design-principle).
 - [Profile-Aware Bootstrap](../../Profile_Aware_Bootstrap.md)
 - [AWI-0003 — Repository Semantic Context and Convention Binding](../../../Architecture/Watch_Items/AWI-0003-Repository-Semantic-Context-and-Convention-Binding.md)
 - [ASR Bootstrap Playbook](../../../AI/ASR_Bootstrap_Playbook.md)
+- [EDF ASR Self-Conformance Review](../../EDF_ASR_Self_Conformance_Review.md)

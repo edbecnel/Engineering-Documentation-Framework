@@ -34,6 +34,8 @@
 - [Profile-Aware Bootstrap](docs/Development/Profile_Aware_Bootstrap.md) — Core vs Software Engineering profiles
 - [Repository Bootstrap](docs/Development/Repository_Bootstrap/README.md) — specialized bootstrap procedures
 - [Architecture Specification Repository Bootstrap Procedure](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Bootstrap_Procedure.md)
+- [ASR Self-Conformance Review Procedure](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Self_Conformance_Review.md)
+- [EDF ASR Self-Conformance Review](docs/Development/EDF_ASR_Self_Conformance_Review.md) — EDF validated against its own ASR guidance
 - [AI Bootstrap Playbook](docs/AI/Bootstrap_Playbook.md) — AI-assisted bootstrap
 - [ASR Bootstrap Playbook](docs/AI/ASR_Bootstrap_Playbook.md) — AI-assisted ASR bootstrap
 - [AI Migration Playbook](docs/AI/Migration_Playbook.md) — AI-assisted migration

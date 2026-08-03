@@ -6,6 +6,7 @@
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Architecture Specification Repositories
 > **Last Reviewed:** 2026-08-03
+> **Review Frequency:** On Change
 > **Authoritative:** Yes
 
 ## Purpose
@@ -84,6 +85,12 @@ Uses EDF Core (`profile: core`) only. No ASR-specific script-created subdirector
 
 **Not applicable:** `docs/API/`, `docs/Database/`, `docs/Deployment/`, `docs/Developer_Handbook/` unless optional reference implementation.
 
+## Valid ASR Layouts
+
+Mature Architecture Specification Repositories may hold normative content in `docs/Architecture/` historically (for example, information architecture documents predating ASR numbering). Bootstrap maps forward — it does not require backward-forcing relocation to `docs/Specifications/`.
+
+For existing repositories evaluating alignment without restructuring, use the [Self-Conformance Review Procedure](Self_Conformance_Review.md). See [EDF ASR Self-Conformance Review](../../EDF_ASR_Self_Conformance_Review.md) as the first worked example.
+
 ## Parent
 
 - [Architecture Specification Repository](README.md)
@@ -92,4 +99,5 @@ Uses EDF Core (`profile: core`) only. No ASR-specific script-created subdirector
 
 - [Reference Model](Reference_Model.md)
 - [Bootstrap Procedure](Bootstrap_Procedure.md)
+- [Self-Conformance Review Procedure](Self_Conformance_Review.md)
 - [AWI-0003](../../../Architecture/Watch_Items/AWI-0003-Repository-Semantic-Context-and-Convention-Binding.md)

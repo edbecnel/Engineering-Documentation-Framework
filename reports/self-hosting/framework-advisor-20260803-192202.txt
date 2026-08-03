@@ -1,0 +1,125 @@
+Engineering Documentation Framework Self-Hosting Validation
+==========================================================
+
+Project root: /Users/edbecnel/Development/GitHub/Engineering-Documentation-Framework
+Started: 2026-08-03 19:22:02 +0800
+
+Stage 1 regression verification
+-------------------------------
+PASS: ruleset marker
+PASS: EDF repository detection
+PASS: conditional adoption guide
+PASS: scripts README canonical handling
+PASS: placeholder exclusions
+PASS: template-source detection
+PASS: template orphan exclusions
+PASS: Bash syntax
+Stage 1 verification passed.
+
+Shell compatibility validation
+------------------------------
+Shell validation passed for 13 script(s).
+Compatibility target: Bash 3.2 or newer.
+
+Framework Advisor self-hosting analysis
+---------------------------------------
+Engineering Documentation Framework Advisor
+Ruleset: 2026-07-10-stage1
+===========================================
+
+Project root: /Users/edbecnel/Development/GitHub/Engineering-Documentation-Framework
+Project name: Engineering-Documentation-Framework
+Profile: software-engineering
+Repository mode: EDF framework repository
+Overall compliance: 90%
+Structure score: 100%
+AI score: 100%
+Navigation score: 100%
+Governance score: 61%
+
+This report is read-only.
+No files or folders were created, modified, moved, renamed, or deleted.
+
+Missing required directories
+----------------------------
+None.
+
+Missing recommended root files
+------------------------------
+None.
+
+Missing AI handbook files
+-------------------------
+None.
+
+Missing Governance files
+------------------------
+None.
+
+Broken links
+------------
+None.
+
+Orphan documents
+----------------
+None.
+
+Navigation issues
+-----------------
+None.
+
+Governance metadata and lifecycle issues
+----------------------------------------
+- docs/Development/Documentation_First_Development_Policy.md: missing or invalid Status.
+- docs/Development/Documentation_First_Development_Policy.md: missing Applies To.
+- docs/Development/EDF_Development_Workflow.md: missing or invalid Status.
+- docs/Development/Engineering_Development_Policy.md: missing or invalid Status.
+- docs/Governance/Ownership_and_Review.md: missing or invalid Status.
+- docs/Governance/Document_Metadata_Standard.md: missing or invalid Status.
+- docs/Governance/Document_Lifecycle.md: missing or invalid Status.
+- docs/Governance/Change_Management.md: missing or invalid Status.
+- docs/Governance/Governance_Checklist.md: missing or invalid Status.
+- docs/Governance/README.md: missing or invalid Status.
+- docs/Governance/Analyzer_Compliance.md: missing or invalid Status.
+- docs/Governance/Governance_Overview.md: missing or invalid Status.
+- docs/Governance/EDF_Governance.md: missing or invalid Status.
+
+Overdue reviews
+---------------
+None.
+
+Markdown outside canonical locations
+------------------------------------
+- interaction/Implementation_Bindings.md
+- interaction/specs/README.md
+- interaction/README.md
+
+Warnings
+--------
+None.
+
+Recommendations
+---------------
+- Audit Markdown outside canonical locations.
+- Correct governance metadata and lifecycle issues.
+
+
+Validation completed: 2026-08-03 19:22:23 +0800
+
+============================================================
+Self-hosting validation completed successfully.
+
+Report:
+reports/self-hosting/framework-advisor-20260803-192202.txt
+
+Compliance scores:
+- Overall: 90%
+- Structure: 100%
+- AI: 100%
+- Navigation: 100%
+- Governance: 61%
+
+Next recommended actions:
+- Audit Markdown outside canonical locations.
+- Correct governance metadata and lifecycle issues.
+============================================================

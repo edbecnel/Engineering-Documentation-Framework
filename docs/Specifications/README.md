@@ -7,6 +7,8 @@
 
 This directory captures **what the software must do** — functional requirements, non-functional requirements, acceptance criteria, and feature specifications. It separates *intent* from *implementation*, enabling product, engineering, and QA to align before and during development.
 
+> **ASR interpretation:** In [Architecture Specification Repositories](../Development/Repository_Bootstrap/Architecture_Specification_Repository/README.md), this domain holds **normative architecture specifications** and conformance requirements — not product or software requirements. Use the [Architecture Specification Template](../Templates/Architecture_Specification_Template.md) and see [ASR Guidance](../Development/Repository_Bootstrap/Architecture_Specification_Repository/Guidance.md). Software-oriented guidance below remains the default for product repositories.
+
 ## Audience
 
 - Product owners and business analysts

@@ -89,6 +89,8 @@ Profile implementation (manifests, profile-aware Framework Advisor, bootstrap `-
 
 This repository contains **EDF Core** paths plus the **Software Engineering profile** paths used for v1.0 self-hosting.
 
+> **Reference implementation:** The Software Engineering profile paths (`docs/API/`, `docs/Database/`, `docs/Deployment/`, `docs/Developer_Handbook/`) are a **non-canonical demonstration layout** for software projects — not normative architecture. ASR repositories use `profile: core` unless an optional reference implementation warrants profile paths. See [ADR-0002](./docs/Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md) and [EDF ASR Self-Conformance Review](./docs/Development/EDF_ASR_Self_Conformance_Review.md).
+
 ### EDF Core
 
 ```text

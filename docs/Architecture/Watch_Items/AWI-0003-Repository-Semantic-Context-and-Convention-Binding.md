@@ -8,6 +8,7 @@
 | **Owner** | Engineering Documentation Framework |
 | **Created** | 2026-08-03 |
 | **Revisit Trigger** | After ASR bootstrap capability is validated against CRA and EDF |
+| **Self-Conformance Status** | EDF portion complete — [EDF ASR Self-Conformance Review](../../Development/EDF_ASR_Self_Conformance_Review.md) (2026-08-03). CRA bootstrap review pending. |
 | **Related ADRs** | [ADR-0001](../ADRs/ADR-0001-Domain-Profiles.md) (Accepted), [ADR-0002](../ADRs/ADR-0002-Domain-Profile-Specification.md) (Proposed) |
 | **Related AWIs** | [AWI-0001](AWI-0001-Domain-Independence.md) (Active) |
 
@@ -97,8 +98,12 @@ Indicators that promotion of this initiative may be warranted:
 When this watch item is revisited:
 
 1. ASR bootstrap capability has been applied to at least CRA and reviewed against EDF self-description.
+   - **EDF:** Complete — [EDF ASR Self-Conformance Review](../../Development/EDF_ASR_Self_Conformance_Review.md) (2026-08-03).
+   - **CRA:** Pending CRA bootstrap and review.
 2. Framework maintainer approves elevation to one or more Proposed ADR(s) or scoped implementation planning.
 3. Candidate mechanisms have been evaluated against the self-classification test (EDF, CRA, SIP fit without special cases).
+
+**Revisit scheduling:** Mechanism evaluation may proceed after CRA bootstrap review completes. No `repository_class` or equivalent field shall be introduced while this watch item is Active.
 
 ---
 
@@ -124,3 +129,4 @@ Deferred until revisit:
 - [AWI-0001 — Domain Independence](AWI-0001-Domain-Independence.md)
 - [Repository Bootstrap](../../Development/Repository_Bootstrap/README.md)
 - [Architecture Specification Repository Bootstrap Procedure](../../Development/Repository_Bootstrap/Architecture_Specification_Repository/Bootstrap_Procedure.md)
+- [EDF ASR Self-Conformance Review](../../Development/EDF_ASR_Self_Conformance_Review.md)

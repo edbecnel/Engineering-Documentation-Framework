@@ -12,7 +12,8 @@ This directory contains individual Architecture Decision Records for the Enginee
 |---|---|---|---|
 | [ADR-0001](ADR-0001-Domain-Profiles.md) | Domain Profiles — layered Core + profile architecture | Accepted | 2026-07-15 |
 | [ADR-0002](ADR-0002-Domain-Profile-Specification.md) | Domain Profile specification outline (manifest, validation, software extraction) | Proposed | 2026-07-15 |
-| [ADR-0003](ADR-0003-Conversation-Specifications.md) | Conversation Specifications as optional interaction layer | Proposed | 2026-08-03 |
+| [ADR-0003](ADR-0003-Conversation-Specifications.md) | Conversation Specifications pilot (terminology refined by ADR-0004) | Proposed | 2026-08-03 |
+| [ADR-0004](ADR-0004-Interaction-Specifications.md) | Interaction Specifications — umbrella layer, schema v2, Reference Not Replace | Proposed | 2026-08-03 |
 
 Milestone ADRs (framework development history) remain indexed in [ARCHITECTURE_DECISIONS.md](../../../ARCHITECTURE_DECISIONS.md).
 

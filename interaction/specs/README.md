@@ -1,26 +1,29 @@
-# Conversation Specifications
+# Interaction Specifications
 
-[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Interaction Layer](../README.md) › Conversation Specifications
+[Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Interaction Layer](../README.md) › Interaction Specifications
 
 ## Purpose
 
-Index of AI-executable Conversation Specifications. Each spec references canonical methodology; it does not replace it.
+Index of **Interaction Specifications** — versioned, workflow-neutral contracts that execute canonical methodology without replacing it.
 
-Schema: [ADR-0003](../../docs/Architecture/ADRs/ADR-0003-Conversation-Specifications.md)
+Schema: [ADR-0004](../../docs/Architecture/ADRs/ADR-0004-Interaction-Specifications.md) (v2) · [ADR-0003](../../docs/Architecture/ADRs/ADR-0003-Conversation-Specifications.md) (v1 pilot)
+
+Bindings: [Implementation Bindings](../Implementation_Bindings.md)
 
 ## Specifications
 
-| ID | File | Status | Non-AI equivalent |
-|----|------|--------|-------------------|
-| `edf.bootstrap.v1` | [edf.bootstrap.v1.yaml](edf.bootstrap.v1.yaml) | Pilot | [Bootstrap Guide](../../docs/Development/Bootstrap_Guide.md) |
+| ID | Workflow | File | Status | Non-AI equivalent |
+|----|----------|------|--------|-------------------|
+| `edf.bootstrap.v1` | `edf.repository.bootstrap` | [edf.bootstrap.v1.yaml](edf.bootstrap.v1.yaml) | Pilot | [Bootstrap Guide](../../docs/Development/Bootstrap_Guide.md) |
+| `edf.adr.create.v1` | `edf.adr.create` | [edf.adr.create.v1.yaml](edf.adr.create.v1.yaml) | Pilot | [ADR Template](../../docs/Templates/ADR_Template.md) |
 
 ## Adding a Specification
 
-1. Copy schema from an existing spec or ADR-0003.
-2. Set `non_ai_equivalent` to a documented human/CLI path.
-3. List all `executes_methodology` references — no embedded methodology rules.
-4. Run `./scripts/validate_conversation_specs.sh`.
-5. Link from the relevant AI playbook; do not duplicate prompt prose in the YAML file.
+1. Copy schema from an existing v2 spec or [ADR-0004](../../docs/Architecture/ADRs/ADR-0004-Interaction-Specifications.md).
+2. Set `workflow_id`, `authoritative_sources`, `executes_methodology`, and `non_ai_equivalent`.
+3. Declare `implementation_bindings` (cli, conversation, gui, ide).
+4. Run `./scripts/validate_interaction_specs.sh`.
+5. Link from relevant playbooks; do not duplicate methodology prose in YAML.
 
 ## Parent
 

@@ -34,6 +34,8 @@
 - [Profile-Aware Bootstrap](docs/Development/Profile_Aware_Bootstrap.md) — Core vs Software Engineering profiles
 - [AI Bootstrap Playbook](docs/AI/Bootstrap_Playbook.md) — AI-assisted bootstrap
 - [AI Migration Playbook](docs/AI/Migration_Playbook.md) — AI-assisted migration
+- [ADR-0004 — Interaction Specifications](docs/Architecture/ADRs/ADR-0004-Interaction-Specifications.md)
+- [Implementation Bindings](interaction/Implementation_Bindings.md) — CLI, conversation, GUI binding profiles
 - [Scripts](scripts/README.md) — bootstrap, migration, and validation tooling
 - [Framework Advisor](docs/Development/Project_Analysis_Validation_Tool.md) — conformance analysis
 

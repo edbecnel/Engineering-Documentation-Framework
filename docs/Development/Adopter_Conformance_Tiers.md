@@ -85,19 +85,20 @@ Track progress in [ADOPTION_STATUS.md](../Templates/ADOPTION_STATUS_Template.md)
 
 Conversation Specifications and other interaction-layer artifacts are **optional**. No adopter tier requires AI or a Conversation Specification.
 
-Projects that publish Conversation Specifications under `interaction/specs/` (or adopt EDF reference specs) may optionally verify:
+Projects that publish Interaction Specifications under `interaction/specs/` may optionally verify:
 
 - [ ] Each spec declares `non_ai_equivalent` pointing to an existing canonical guide or CLI path
+- [ ] Each v2 spec declares `authoritative_sources` with resolvable `docs/` paths
 - [ ] Each spec lists `executes_methodology` references that resolve to `docs/` or `scripts/` paths
-- [ ] `./scripts/validate_conversation_specs.sh` passes with zero errors
+- [ ] `./scripts/validate_interaction_specs.sh` passes with zero errors
 
 ```bash
-./scripts/validate_conversation_specs.sh
+./scripts/validate_interaction_specs.sh
 ```
 
-This check does not affect Framework Advisor scores. It confirms interaction-layer artifacts remain aligned with methodology per [ADR-0003](../Architecture/ADRs/ADR-0003-Conversation-Specifications.md).
+This check does not affect Framework Advisor scores. It confirms interaction-layer artifacts remain aligned with methodology per [ADR-0004](../Architecture/ADRs/ADR-0004-Interaction-Specifications.md).
 
-Reference pilot: [edf.bootstrap.v1.yaml](../../interaction/specs/edf.bootstrap.v1.yaml) — non-AI equivalent: [Bootstrap Guide](Bootstrap_Guide.md).
+Reference pilots: [edf.bootstrap.v1.yaml](../../interaction/specs/edf.bootstrap.v1.yaml) · [edf.adr.create.v1.yaml](../../interaction/specs/edf.adr.create.v1.yaml)
 
 ## EDF Self-Hosting vs Adopter Tiers
 

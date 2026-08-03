@@ -28,7 +28,7 @@ Optional profile selection: `--profile core` or `-Profile core` (see [Profile-Aw
 
 Human guides: [Bootstrap Guide](../docs/Development/Bootstrap_Guide.md) · [Migration Guide](../docs/Development/Migration_Guide.md)
 
-Conversation Specifications (optional): [interaction/README.md](../interaction/README.md) · `validate_conversation_specs.sh`
+Interaction Specifications (optional): [interaction/README.md](../../interaction/README.md) · `validate_interaction_specs.sh`
 
 ## One-Time Shell-Script Setup
 

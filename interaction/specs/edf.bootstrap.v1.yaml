@@ -1,11 +1,24 @@
-# EDF Bootstrap Conversation Specification (pilot)
-# Schema: ADR-0003 — Conversation Specifications
+# EDF Bootstrap Interaction Specification (pilot)
+# Schema: ADR-0004 — Interaction Specifications v2
 # Prompt text: docs/AI/Bootstrap_Playbook.md (referenced by prompt_ref, not duplicated here)
 
+interaction_spec_id: edf.bootstrap.v1
 conversation_spec_id: edf.bootstrap.v1
+workflow_id: edf.repository.bootstrap
 display_name: EDF Repository Bootstrap
 spec_version: "1.0.0"
+schema_version: "2.0"
 status: pilot
+
+implementation_bindings:
+  - cli
+  - conversation
+
+authoritative_sources:
+  - docs/Development/Bootstrap_Guide.md
+  - docs/Development/Adopter_Conformance_Tiers.md
+  - PROJECT_CHARTER.md
+  - docs/Templates/ADOPTION_STATUS_Template.md
 
 executes_methodology:
   - docs/Development/Bootstrap_Guide.md

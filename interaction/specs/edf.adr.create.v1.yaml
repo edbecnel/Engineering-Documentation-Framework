@@ -1,0 +1,79 @@
+# EDF ADR Creation Interaction Specification (pilot)
+# Schema: ADR-0004 — Interaction Specifications v2
+# Proves workflow-independent design beyond repository adoption.
+
+interaction_spec_id: edf.adr.create.v1
+workflow_id: edf.adr.create
+display_name: EDF Architecture Decision Record Creation
+spec_version: "1.0.0"
+schema_version: "2.0"
+status: pilot
+
+implementation_bindings:
+  - document
+  - conversation
+
+authoritative_sources:
+  - PROJECT_CHARTER.md
+  - ARCHITECTURE_DECISIONS.md
+  - docs/Architecture/ADRs/README.md
+  - docs/Templates/ADR_Template.md
+  - docs/Governance/Document_Metadata_Standard.md
+
+executes_methodology:
+  - docs/Templates/ADR_Template.md
+  - docs/Architecture/ADRs/
+
+non_ai_equivalent: docs/Templates/ADR_Template.md
+
+inputs:
+  - name: decision_title
+    description: Short title for the architecture decision
+    required: true
+  - name: adr_number
+    description: Next ADR sequence number (for example 0004)
+    required: true
+  - name: target_path
+    description: "Relative path under docs/Architecture/ADRs/ (for example ADR-0004-Interaction-Specifications.md)"
+    required: true
+
+outputs:
+  - docs/Architecture/ADRs/ADR-NNNN-*.md
+  - ARCHITECTURE_DECISIONS.md index entry
+
+phases:
+  - id: gather_context
+    human_gate: required
+    methodology_ref: docs/Templates/ADR_Template.md
+    description: Read charter, related ADRs, and applicable specifications before drafting
+
+  - id: draft_adr
+    human_gate: required
+    methodology_ref: docs/Templates/ADR_Template.md
+    description: Create ADR from template with context, decision, alternatives, and consequences
+
+  - id: apply_governance_metadata
+    human_gate: required
+    methodology_ref: docs/Governance/Document_Metadata_Standard.md
+    description: Add required metadata block (Status, Date, Decision Makers, Related)
+
+  - id: update_index
+    human_gate: required
+    methodology_ref: docs/Architecture/ADRs/README.md
+    description: Add entry to ADR index and ARCHITECTURE_DECISIONS.md
+
+  - id: review_and_accept
+    human_gate: required
+    methodology_ref: docs/Governance/Document_Lifecycle.md
+    description: Human review; set Status to Accepted when approved
+
+validation_gates:
+  - id: ADR1
+    reference: docs/Templates/ADR_Template.md
+    criterion: All required ADR sections present
+  - id: ADR2
+    reference: docs/Governance/Document_Metadata_Standard.md
+    criterion: Governance metadata complete
+  - id: ADR3
+    reference: docs/Architecture/ADRs/README.md
+    criterion: ADR indexed in Architecture ADRs README

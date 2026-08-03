@@ -4,12 +4,12 @@
 
 | | |
 |---|---|
-| **Status** | Proposed |
+| **Status** | Proposed (terminology refined by [ADR-0004](ADR-0004-Interaction-Specifications.md)) |
 | **Date** | 2026-08-03 |
 | **Decision Makers** | Ed Becnel |
 | **Supersedes** | None |
-| **Superseded By** | None |
-| **Related** | [AWI-0002 — Interaction Layer Separation](../Watch_Items/AWI-0002-Interaction-Layer-Separation.md), [AWI-0002 Revisit Assessment](../Watch_Items/AWI-0002-Revisit-Assessment.md), [ADR-0001](ADR-0001-Domain-Profiles.md) |
+| **Superseded By** | [ADR-0004](ADR-0004-Interaction-Specifications.md) — umbrella terminology and schema v2 |
+| **Related** | [AWI-0002 — Interaction Layer Separation](../Watch_Items/AWI-0002-Interaction-Layer-Separation.md), [AWI-0002 Revisit Assessment](../Watch_Items/AWI-0002-Revisit-Assessment.md), [ADR-0001](ADR-0001-Domain-Profiles.md), [ADR-0004](ADR-0004-Interaction-Specifications.md) |
 
 ---
 
@@ -24,6 +24,8 @@ The repository adoption initiative established document-centric bootstrap and mi
 - Non-AI parity exists in practice but is not machine-verifiable.
 
 This ADR formalizes **Conversation Specifications** as an optional interaction-layer artifact type without changing EDF Core methodology.
+
+> **Note:** [ADR-0004](ADR-0004-Interaction-Specifications.md) refines this pilot with the umbrella term **Interaction Specifications**, schema v2 (`authoritative_sources`, `workflow_id`), and the foundational **Reference, Not Replace** principle. v1 decisions on optional conformance and `interaction/specs/` placement remain valid.
 
 ---
 

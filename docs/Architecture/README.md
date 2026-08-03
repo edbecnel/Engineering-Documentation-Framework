@@ -20,13 +20,17 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 |---|---|---|
 | [ADR-0001](ADRs/ADR-0001-Domain-Profiles.md) | Domain Profiles — layered Core + profile architecture | Accepted |
 | [ADR-0002](ADRs/ADR-0002-Domain-Profile-Specification.md) | Domain Profile specification outline | Proposed |
-| [ADR-0003](ADRs/ADR-0003-Conversation-Specifications.md) | Conversation Specifications as optional interaction layer | Proposed |
+| [ADR-0003](ADRs/ADR-0003-Conversation-Specifications.md) | Conversation Specifications pilot | Proposed |
+| [ADR-0004](ADRs/ADR-0004-Interaction-Specifications.md) | Interaction Specifications — umbrella layer, schema v2 | Proposed |
 
 ## Interaction Layer
 
-Optional interaction models (Conversation Specifications, CLI) — not canonical methodology:
+Optional interaction models — not canonical methodology:
 
 - [Interaction Layer](../../interaction/README.md)
+- [Implementation Bindings](../../interaction/Implementation_Bindings.md)
+- [Interaction Specifications](../../interaction/specs/README.md)
+
 ## Architectural Watch Items
 
 Deferred architectural initiatives that are intentionally outside the current roadmap. Watch items are non-authoritative for implementation until promoted.

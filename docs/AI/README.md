@@ -51,6 +51,7 @@ AI-assisted repository adoption workflows (distinct from ongoing [Repository_Wor
 | [Bootstrap_Playbook.md](./Bootstrap_Playbook.md) | AI decision trees, file copy rules, and prompts for bootstrapping new EDF repos |
 | [ASR_Bootstrap_Playbook.md](./ASR_Bootstrap_Playbook.md) | AI-assisted Architecture Specification Repository bootstrap |
 | [Migration_Playbook.md](./Migration_Playbook.md) | AI prompts per migration phase, link checklist, `AI_WORKFLOW.md` mapping |
+| [Governance_Header_Prompt.md](./Governance_Header_Prompt.md) | Copy-paste prompt to add breadcrumb and governance headers to Markdown in an external adopting project |
 
 Machine-readable contracts: [Interaction Specifications](../../interaction/specs/README.md) (optional; see [ADR-0004](../Architecture/ADRs/ADR-0004-Interaction-Specifications.md))
 

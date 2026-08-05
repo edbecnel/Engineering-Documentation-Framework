@@ -108,6 +108,8 @@ If a section spans multiple topics, split content across files and add cross-lin
 
 ## Link Update Checklist
 
+For a reusable prompt that adds breadcrumb and governance headers to multiple Markdown files in an external adopting project, see [Governance Header Prompt](Governance_Header_Prompt.md).
+
 After moving a document:
 
 - [ ] Breadcrumb line at top of moved file

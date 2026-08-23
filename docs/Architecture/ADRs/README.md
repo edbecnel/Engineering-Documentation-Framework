@@ -14,6 +14,8 @@ This directory contains individual Architecture Decision Records for the Enginee
 | [ADR-0002](ADR-0002-Domain-Profile-Specification.md) | Domain Profile specification outline (manifest, validation, software extraction) | Proposed | 2026-07-15 |
 | [ADR-0003](ADR-0003-Conversation-Specifications.md) | Conversation Specifications pilot (terminology refined by ADR-0004) | Proposed | 2026-08-03 |
 | [ADR-0004](ADR-0004-Interaction-Specifications.md) | Interaction Specifications — umbrella layer, schema v2, Reference Not Replace | Proposed | 2026-08-03 |
+| [ADR-0005](ADR-0005-Project-Classification-and-Capabilities.md) | Project classification dimensions and composable EDF Capabilities | Accepted | 2026-08-23 |
+| [ADR-0006](ADR-0006-Engineering-Documentation-vs-Artifacts.md) | Engineering documentation vs engineering artifacts | Accepted | 2026-08-23 |
 
 Milestone ADRs (framework development history) remain indexed in [ARCHITECTURE_DECISIONS.md](../../../ARCHITECTURE_DECISIONS.md).
 

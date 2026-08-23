@@ -26,6 +26,7 @@ if [[ ! -d "$PROJECT_ROOT" ]]; then
   exit 1
 fi
 
+init_edf_capabilities_root "$script_dir"
 if ! resolve_edf_profile "$PROJECT_ROOT" ""; then
   exit 1
 fi
@@ -75,6 +76,22 @@ orphan_docs=()
 navigation_issues=()
 metadata_issues=()
 review_issues=()
+
+project_context_file="$PROJECT_ROOT/edf-project-context.yaml"
+if [[ -f "$project_context_file" ]]; then
+  if grep -q 'artifact_class:' "$project_context_file" 2>/dev/null; then
+    if ! find "$PROJECT_ROOT/docs/Architecture/ADRs" -maxdepth 1 -name '*.md' ! -name 'README.md' 2>/dev/null | grep -q .; then
+      recommendations+=("Project extensions in edf-project-context.yaml should be documented in docs/Architecture/ADRs/")
+    fi
+  fi
+  if grep -qE '^[[:space:]]*governed_scope:[[:space:]]*$' "$project_context_file" 2>/dev/null; then
+    warnings+=("edf-project-context.yaml: authority.governed_scope is empty")
+  fi
+else
+  if [[ "$EDF_PROFILE" == "core" ]]; then
+    recommendations+=("Consider edf-project-context.yaml to record repository role, disciplines, activities, and authority")
+  fi
+fi
 
 for dir in "${required_dirs[@]}"; do
   [[ -d "$PROJECT_ROOT/$dir" ]] || missing_dirs+=("$dir")
@@ -276,6 +293,9 @@ echo
 echo "Project root: $PROJECT_ROOT"
 echo "Project name: $(basename "$PROJECT_ROOT")"
 echo "Profile: $EDF_PROFILE"
+if [[ ${#EDF_CAPABILITY_IDS[@]} -gt 0 ]]; then
+  echo "Capabilities: ${EDF_CAPABILITY_IDS[*]}"
+fi
 if [[ "$is_edf_repository" == true ]]; then
   echo "Repository mode: EDF framework repository"
 else

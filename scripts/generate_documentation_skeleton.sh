@@ -20,6 +20,7 @@ if [[ ! -d "$PROJECT_ROOT" ]]; then
     exit 1
 fi
 
+init_edf_capabilities_root "$script_dir"
 if ! resolve_edf_profile "$PROJECT_ROOT" ""; then
     exit 1
 fi

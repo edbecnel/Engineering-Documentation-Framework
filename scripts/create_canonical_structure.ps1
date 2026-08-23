@@ -23,6 +23,7 @@ if (-not (Test-Path -LiteralPath $ProjectRoot -PathType Container)) {
     Write-Error "Project root does not exist or is not a directory: $ProjectRoot"
 }
 
+Initialize-EdfCapabilitiesRoot -ScriptDir $scriptDir
 Resolve-EdfProfile -ProjectRoot $ProjectRoot -CliProfile $Profile
 $dirs = $EdfRequiredDirs
 
@@ -90,6 +91,21 @@ The AI handbook may include:
 - `Governance.md`
 
 A root-level `AI_WORKFLOW.md` is considered a legacy monolithic document. Migrate any unique content into the modular AI handbook and remove the root file only after verifying that no information or links are lost.
+
+## Contributing Capabilities Back to EDF
+
+If this project discovered discipline-specific structure, artifact classes, or workflows not covered by EDF Core or existing capabilities:
+
+1. Record extensions in `edf-project-context.yaml` and an ADR in `docs/Architecture/ADRs/`.
+2. Complete `EDF_BOOTSTRAP_REPORT.md` with capability gaps discovered during adoption.
+3. Use AI with the **EDF Capability Contribution Playbook** (in your local EDF clone under `docs/AI/`) to draft a community capability manifest.
+4. Open a pull request to the Engineering Documentation Framework repository for maintainer review.
+
+Authoritative human guide (EDF clone): `docs/Development/EDF_Capability_Contribution_Guide.md`
+
+AI-assisted workflow (EDF clone): `docs/AI/Capability_Contribution_Playbook.md`
+
+AI may draft capability manifests and PR materials; a human must approve classification labels, validation scope, and the pull request before any capability is promoted in EDF.
 
 ## Next Steps
 

@@ -1,54 +1,76 @@
-# Profile-Aware Bootstrap
+# Profile-Aware and Capability-Aware Bootstrap
 
 [Home](../../README.md) › [Project Index](../../PROJECT_INDEX.md) › [Development](README.md) › Profile-Aware Bootstrap
 
 > **Status:** Maintained
 > **Owner:** Engineering Documentation Framework
-> **Applies To:** EDF adoption with domain profile selection
-> **Last Reviewed:** 2026-08-03
+> **Applies To:** EDF adoption with legacy profiles and composable capabilities
+> **Last Reviewed:** 2026-08-23
 > **Review Frequency:** On Change
 > **Authoritative:** Yes
 
 ## Purpose
 
-This document describes profile-aware bootstrap and validation introduced post-v1.0 planning per [ADR-0002](../Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md). It allows adopters to select **EDF Core** structure without Software Engineering profile folders when those paths do not apply.
+This document describes bootstrap and validation for EDF adopters. It covers:
 
-## Supported Profiles
+1. **Legacy profiles** (`core`, `software-engineering`) — operational in bootstrap scripts today
+2. **Composable capabilities** — multi-discipline model per [ADR-0005](../Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md)
+3. **Project context** — `edf-project-context.yaml` for repository role, disciplines, and activities
+
+**Canonical AI entry point:** [EDF AI Bootstrap Entry](../AI/EDF_AI_Bootstrap_Entry.md)
+
+## Legacy Profiles (Scripts)
 
 | Profile ID | Display name | Use when |
 |------------|--------------|----------|
-| `software-engineering` | Software Engineering | Software projects (default) |
-| `core` | EDF Core only | Non-software disciplines, or Core-only adoption |
+| `core` | EDF Core only | Default when ambiguous; non-software disciplines; unknown disciplines |
+| `software-engineering` | Software Engineering | Software projects |
 
-Additional profiles (for example music education) will ship with their own manifests in future releases.
+Default when no config exists: **`core`** (not `software-engineering`).
 
-## Declaring a Profile
-
-### Option 1 — Command-line flag
+### Declaring a legacy profile
 
 ```bash
-./scripts/create_canonical_structure.sh --profile core "/path/to/project"
 ./scripts/adopt-edf.sh bootstrap --profile core "/path/to/project"
 ```
 
-### Option 2 — `edf-adoption.yaml` in project root
-
-Copy [edf-adoption.yaml.example](../../scripts/edf-adoption.yaml.example) to your project:
+Or in `edf-adoption.yaml`:
 
 ```yaml
 profile: core
 project_name: My Research Project
 ```
 
-Scripts read `profile:` from this file when no `--profile` flag is passed.
+## Composable Capabilities
 
-## Directory Sets by Profile
+Capabilities replace monolithic domain profiles. See [capabilities/index.yaml](../../capabilities/index.yaml).
 
-### EDF Core (`core`)
+| Type | Examples |
+|---|---|
+| Discipline | `software-engineering`, `electronics` (community) |
+| Activity | `development`, `research` (community) |
+| Repository role | `asr` |
+
+Declare capabilities in `edf-project-context.yaml`:
+
+```yaml
+repository_role: engineering-project
+disciplines: [electronics]
+activities: [research, validation]
+legacy_profile: core
+capabilities:
+  - electronics
+  - research
+```
+
+Scripts merge capability `documentation_dirs` into required structure when manifests are found in the EDF clone `capabilities/` directory.
+
+## EDF Core Directories
 
 ```text
 docs/Architecture/
 docs/Architecture/ADRs/
+docs/Architecture/Watch_Items/
 docs/AI/
 docs/Development/
 docs/Governance/
@@ -61,7 +83,7 @@ archive/
 scripts/
 ```
 
-### Software Engineering (`software-engineering`)
+## Software Engineering (Legacy Profile or Capability)
 
 Core directories plus:
 
@@ -74,24 +96,19 @@ docs/Deployment/
 
 ## Framework Advisor Behavior
 
-When `edf-adoption.yaml` declares `profile: core`, Framework Advisor:
+- `profile: core` — does not require software profile directories
+- Reads `edf-project-context.yaml` for capability composition when present
+- Recommends project context file for Core adopters
+- Warns when extensions lack ADR documentation
 
-- Does **not** penalize missing Software Engineering profile directories
-- Does **not** require `docs/Developer_Handbook/`, `docs/API/`, `docs/Database/`, or `docs/Deployment/`
-- Still validates Core structure, navigation, and governance expectations appropriate to adopters
+## Multi-Discipline Bootstrap
 
-When `profile: software-engineering` (default), all profile directories are required as today.
-
-## Adoption Guides by Profile
-
-| Profile | Bootstrap | Migration |
-|---------|-----------|-----------|
-| Software Engineering | [Bootstrap Guide](Bootstrap_Guide.md) | [Migration Guide](Migration_Guide.md) |
-| EDF Core | [Bootstrap Guide](Bootstrap_Guide.md) — use `--profile core` | [Migration Guide](Migration_Guide.md) — ignore software-specific planner suggestions if not applicable |
-
-## Future Profiles
-
-Profile manifests will define `required_dirs`, `recommended_dirs`, and profile-specific validation per ADR-0002. Until additional profiles ship, use `core` and add project-specific domains under `docs/` with documented rationale in an ADR.
+| Step | Document |
+|---|---|
+| AI entry | [EDF AI Bootstrap Entry](../AI/EDF_AI_Bootstrap_Entry.md) |
+| Normative contract | [Universal Bootstrap Specification](../AI/Universal_Bootstrap_Specification.md) |
+| Engineering concepts | [General Engineering Project Model](../Architecture/General_Engineering_Project_Model.md) |
+| Contribute capabilities | [EDF Capability Contribution Guide](EDF_Capability_Contribution_Guide.md) |
 
 ## Parent
 
@@ -99,6 +116,7 @@ Profile manifests will define `required_dirs`, `recommended_dirs`, and profile-s
 
 ## Related Documents
 
-- [ADR-0002 — Domain Profile Specification](../Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md)
-- [Adopter Conformance Tiers](Adopter_Conformance_Tiers.md)
+- [ADR-0005 — Project Classification and Capabilities](../Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md)
+- [ADR-0002 — Domain Profile Specification](../Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md) (historical; superseded for new capabilities)
 - [Bootstrap Guide](Bootstrap_Guide.md)
+- [Adopter Conformance Tiers](Adopter_Conformance_Tiers.md)

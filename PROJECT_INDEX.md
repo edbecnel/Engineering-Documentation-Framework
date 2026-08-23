@@ -28,10 +28,19 @@
 
 ## Adopt EDF
 
+### Multi-discipline bootstrap (any engineering discipline)
+
+- [EDF AI Bootstrap Entry](docs/AI/EDF_AI_Bootstrap_Entry.md) — **canonical AI start** for bootstrap
+- [Universal Bootstrap Specification](docs/AI/Universal_Bootstrap_Specification.md) — normative bootstrap contract
+- [General Engineering Project Model](docs/Architecture/General_Engineering_Project_Model.md) — discipline-independent concepts
+- [Capability registry](capabilities/index.yaml) — composable discipline and activity capabilities
+
+### Standard adoption
+
 - [Bootstrap Guide](docs/Development/Bootstrap_Guide.md) — new repository setup
 - [Migration Guide](docs/Development/Migration_Guide.md) — existing repository migration
 - [Adopter Conformance Tiers](docs/Development/Adopter_Conformance_Tiers.md) — adoption success criteria
-- [Profile-Aware Bootstrap](docs/Development/Profile_Aware_Bootstrap.md) — Core vs Software Engineering profiles
+- [Profile-Aware Bootstrap](docs/Development/Profile_Aware_Bootstrap.md) — legacy profiles and capability composition
 - [Repository Bootstrap](docs/Development/Repository_Bootstrap/README.md) — specialized bootstrap procedures
 - [Architecture Specification Repository Bootstrap Procedure](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Bootstrap_Procedure.md)
 - [ASR Self-Conformance Review Procedure](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Self_Conformance_Review.md)
@@ -43,6 +52,11 @@
 - [Implementation Bindings](interaction/Implementation_Bindings.md) — CLI, conversation, GUI binding profiles
 - [Scripts](scripts/README.md) — bootstrap, migration, and validation tooling
 - [Framework Advisor](docs/Development/Project_Analysis_Validation_Tool.md) — conformance analysis
+
+### Contribute capabilities back to EDF
+
+- [EDF Capability Contribution Guide](docs/Development/EDF_Capability_Contribution_Guide.md) — maturing discoveries into reusable capabilities
+- [AI Capability Contribution Playbook](docs/AI/Capability_Contribution_Playbook.md) — semi-automatable AI-assisted PR workflow
 
 ## Framework Operations
 

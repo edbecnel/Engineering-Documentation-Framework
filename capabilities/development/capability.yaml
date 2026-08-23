@@ -1,0 +1,20 @@
+capability_id: development
+capability_type: activity
+display_name: Engineering Development
+version: "1.0.0"
+maturity: built-in
+description: >
+  Product and system development activity — implementation, integration, release preparation.
+
+composes_with:
+  - software-engineering
+
+ai_bootstrap_hints: |
+  Document development workflow in docs/Development/ or Developer_Handbook.
+  Link specifications to implementation status in PROJECT_INDEX.
+
+deferred_artifacts:
+  - release process documentation
+  - integration test strategy
+
+validation_scope: activity

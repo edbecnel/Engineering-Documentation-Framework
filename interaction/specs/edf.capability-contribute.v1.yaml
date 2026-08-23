@@ -1,0 +1,90 @@
+# EDF Capability Contribution Interaction Specification (pilot)
+# AI entry point: docs/AI/Capability_Contribution_Playbook.md
+# Normative guide: docs/Development/EDF_Capability_Contribution_Guide.md
+
+interaction_spec_id: edf.capability-contribute.v1
+conversation_spec_id: edf.capability-contribute.v1
+workflow_id: edf.capability.contribute
+display_name: EDF Capability Contribution
+spec_version: "1.0.0"
+schema_version: "2.0"
+status: pilot
+
+ai_entry_point: docs/AI/Capability_Contribution_Playbook.md
+
+implementation_bindings:
+  - conversation
+
+authoritative_sources:
+  - docs/AI/Capability_Contribution_Playbook.md
+  - docs/Development/EDF_Capability_Contribution_Guide.md
+  - capabilities/capability-schema.yaml
+  - capabilities/index.yaml
+
+executes_methodology:
+  - docs/Development/EDF_Capability_Contribution_Guide.md
+
+non_ai_equivalent: docs/Development/EDF_Capability_Contribution_Guide.md
+
+inputs:
+  - name: adopting_project_root
+    description: Absolute path to the adopting project repository
+    required: true
+  - name: edf_clone_path
+    description: Absolute path to local Engineering Documentation Framework clone
+    required: true
+  - name: capability_ids
+    description: Candidate capability IDs to draft (after classification)
+    required: false
+
+outputs:
+  - capabilities/contrib/<id>/capability.yaml
+  - capabilities/index.yaml entry
+  - pull request body (draft)
+
+phases:
+  - id: read_playbook
+    human_gate: optional
+    methodology_ref: docs/AI/Capability_Contribution_Playbook.md
+    description: AI reads contribution playbook and capability schema
+
+  - id: gather_inputs
+    human_gate: required
+    methodology_ref: docs/AI/Capability_Contribution_Playbook.md#required-inputs
+    description: Collect edf-project-context.yaml, bootstrap report, ADRs from adopting project
+
+  - id: classify_discoveries
+    human_gate: required
+    methodology_ref: docs/Development/EDF_Capability_Contribution_Guide.md#classification-labels
+    prompt_ref: docs/AI/Capability_Contribution_Playbook.md#phase-0--confirm-contribution-scope
+    description: Label discoveries; separate candidate-capability from project-customization
+
+  - id: draft_capability_manifest
+    human_gate: required
+    methodology_ref: capabilities/capability-schema.yaml
+    prompt_ref: docs/AI/Capability_Contribution_Playbook.md#phase-1--draft-capability-manifest
+    description: Draft capability.yaml for each approved candidate
+
+  - id: draft_registry_and_pr
+    human_gate: required
+    methodology_ref: .github/PULL_REQUEST_TEMPLATE/capability_contribution.md
+    prompt_ref: docs/AI/Capability_Contribution_Playbook.md#phase-2--draft-registry-and-pr
+    description: Draft index.yaml entry and PR body with validation plan
+
+  - id: human_pr_approval
+    human_gate: required
+    description: Human reviews and opens PR to EDF repository; maintainer promotes after validation
+
+validation_gates:
+  - id: G1
+    reference: docs/AI/Capability_Contribution_Playbook.md#g1
+    criterion: Each candidate-capability has source evidence in bootstrap report or ADR
+  - id: G2
+    reference: docs/Architecture/ADRs/ADR-0006-Engineering-Documentation-vs-Artifacts.md
+    criterion: artifact_classes used for tool outputs; no default docs paths for schematics
+  - id: G3
+    reference: docs/Development/EDF_Capability_Contribution_Guide.md#scope-matched-validation
+    criterion: validation_plan matches validation_scope
+  - id: G4
+    reference: docs/AI/Capability_Contribution_Playbook.md#human-confirmation-gates
+    criterion: Human approved labels and PR package before submission

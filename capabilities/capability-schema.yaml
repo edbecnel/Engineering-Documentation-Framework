@@ -1,0 +1,33 @@
+# EDF Capability Manifest Schema (outline)
+# Normative reference: docs/Development/EDF_Capability_Contribution_Guide.md
+# Supersedes ADR-0002 profile manifest outline for new capabilities
+
+schema_version: "1.0.0"
+
+# Required fields per capability manifest (capability.yaml)
+required_fields:
+  - capability_id
+  - capability_type      # discipline | activity | repository-role
+  - display_name
+  - version
+  - maturity             # pilot | validated | built-in
+
+optional_fields:
+  - description
+  - composes_with        # other capability IDs that pair well
+  - legacy_profile_map   # maps to core or software-engineering for scripts
+  - documentation_dirs   # additional docs/ paths (create-if-missing)
+  - artifact_classes     # engineering artifact types (NOT under docs/)
+  - templates
+  - detection_signals
+  - ai_bootstrap_hints
+  - deferred_artifacts
+  - adoption_evidence
+  - validation_scope     # discipline | activity | cross-cutting | multidisciplinary
+
+# artifact_classes entry shape
+artifact_class_fields:
+  - id
+  - display_name
+  - location_patterns    # glob patterns, project-relative
+  - governance_notes

@@ -4,6 +4,29 @@
 
 ### Added
 
+- Phase 6: [Capability Contribution Playbook](docs/AI/Capability_Contribution_Playbook.md) and [edf.capability-contribute.v1.yaml](interaction/specs/edf.capability-contribute.v1.yaml) for semi-automatable AI-guided capability PRs
+- Generated `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` now includes **Contributing Capabilities Back to EDF** section (create-if-missing)
+- [PROJECT_INDEX.md](PROJECT_INDEX.md) and [README.md](README.md) link multi-discipline bootstrap entry points and contribution workflow
+- Multi-discipline bootstrap architecture: [General Engineering Project Model](docs/Architecture/General_Engineering_Project_Model.md), [ADR-0005](docs/Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md), [ADR-0006](docs/Architecture/ADRs/ADR-0006-Engineering-Documentation-vs-Artifacts.md)
+- [CRA, CKES, and EDF Boundaries](docs/Architecture/CRA_CKES_EDF_Boundaries.md)
+- Canonical AI bootstrap entry: [EDF AI Bootstrap Entry](docs/AI/EDF_AI_Bootstrap_Entry.md), [Universal Bootstrap Specification](docs/AI/Universal_Bootstrap_Specification.md)
+- Composable capabilities registry under `capabilities/` with community `electronics` and `research` pilots from Hardware Research adoption exercise
+- [EDF Capability Contribution Guide](docs/Development/EDF_Capability_Contribution_Guide.md), capability PR template, [Cross Repo Concern Matrix Template](docs/Templates/Cross_Repo_Concern_Matrix_Template.md)
+- Templates: [Bootstrap Context](docs/Templates/Bootstrap_Context_Template.md), [EDF Bootstrap Report](docs/Templates/EDF_Bootstrap_Report_Template.md)
+- [AWI-0005 — Engineering Tool Provider Compatibility](docs/Architecture/Watch_Items/AWI-0005-Engineering-Tool-Provider-Compatibility.md)
+- `docs/Architecture/Watch_Items/` added to EDF Core required directories
+- Capability-aware profile resolution in `edf_profile.sh` / `edf_profile.ps1`
+- Framework Advisor recommendations for `edf-project-context.yaml` and project extensions
+
+### Changed
+
+- Default legacy profile when ambiguous: `core` (was `software-engineering`)
+- [edf.bootstrap.v1.yaml](interaction/specs/edf.bootstrap.v1.yaml) v1.1.0 — inspect, context, capability phases; AI entry point binding
+- [Bootstrap Playbook](docs/AI/Bootstrap_Playbook.md) — references canonical entry point and inspect-first rules
+- [Profile-Aware Bootstrap](docs/Development/Profile_Aware_Bootstrap.md) — capability composition model
+
+### Added
+
 - [EDF ASR Self-Conformance Review](docs/Development/EDF_ASR_Self_Conformance_Review.md) — EDF validated against published ASR bootstrap guidance
 - [ASR Self-Conformance Review Procedure](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Self_Conformance_Review.md) — self-validation distinct from bootstrap
 - `docs/Architecture/Watch_Items/README.md` — watch item domain index

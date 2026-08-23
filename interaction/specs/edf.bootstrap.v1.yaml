@@ -1,26 +1,35 @@
 # EDF Bootstrap Interaction Specification (pilot)
 # Schema: ADR-0004 — Interaction Specifications v2
-# Prompt text: docs/AI/Bootstrap_Playbook.md (referenced by prompt_ref, not duplicated here)
+# AI entry point: docs/AI/EDF_AI_Bootstrap_Entry.md (canonical — begin here)
+# Normative contract: docs/AI/Universal_Bootstrap_Specification.md
 
 interaction_spec_id: edf.bootstrap.v1
 conversation_spec_id: edf.bootstrap.v1
 workflow_id: edf.repository.bootstrap
 display_name: EDF Repository Bootstrap
-spec_version: "1.0.0"
+spec_version: "1.1.0"
 schema_version: "2.0"
 status: pilot
+
+ai_entry_point: docs/AI/EDF_AI_Bootstrap_Entry.md
 
 implementation_bindings:
   - cli
   - conversation
 
 authoritative_sources:
+  - docs/AI/EDF_AI_Bootstrap_Entry.md
+  - docs/AI/Universal_Bootstrap_Specification.md
+  - docs/Architecture/General_Engineering_Project_Model.md
+  - docs/Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md
   - docs/Development/Bootstrap_Guide.md
   - docs/Development/Adopter_Conformance_Tiers.md
   - PROJECT_CHARTER.md
   - docs/Templates/ADOPTION_STATUS_Template.md
+  - docs/Templates/EDF_Bootstrap_Report_Template.md
 
 executes_methodology:
+  - docs/AI/Universal_Bootstrap_Specification.md
   - docs/Development/Bootstrap_Guide.md
   - docs/Development/Adopter_Conformance_Tiers.md
   - scripts/adopt-edf.sh
@@ -35,47 +44,79 @@ inputs:
     description: Absolute path to local Engineering Documentation Framework clone
     required: true
   - name: profile
-    description: "Domain profile: software-engineering (default) or core"
+    description: "Legacy profile: core (default when ambiguous) or software-engineering"
     required: false
-    default: software-engineering
+    default: core
   - name: target_tier
     description: "Initial conformance target: Bootstrap, Navigable, Governed, or Reference Parity"
     required: false
     default: Bootstrap
+  - name: bootstrap_context_path
+    description: Optional path to BOOTSTRAP_CONTEXT.md at project root
+    required: false
 
 outputs:
+  - edf-project-context.yaml
   - ENGINEERING_DOCUMENTATION_FRAMEWORK.md
   - PROJECT_CHARTER.md
   - PROJECT_INDEX.md
+  - EDF_BOOTSTRAP_REPORT.md
   - docs/ canonical structure
   - reports/conformance/framework-advisor-*.txt
   - ADOPTION_STATUS.md
 
 phases:
+  - id: read_entry_point
+    human_gate: optional
+    methodology_ref: docs/AI/EDF_AI_Bootstrap_Entry.md
+    description: AI reads canonical entry point and discovery chain before acting
+
+  - id: inspect_repository
+    human_gate: required
+    methodology_ref: docs/AI/Universal_Bootstrap_Specification.md#phase-1--inspect-repository
+    prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-inspect--repository
+    description: Map existing documentation and engineering artifacts; record preservation constraints
+
+  - id: establish_project_context
+    human_gate: required
+    methodology_ref: docs/AI/Universal_Bootstrap_Specification.md#phase-2--establish-project-engineering-context
+    prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-context--establish-engineering-context
+    description: Resolve repository role, disciplines, activities; write edf-project-context.yaml
+
+  - id: resolve_capabilities
+    human_gate: required
+    methodology_ref: docs/Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md
+    prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-context--establish-engineering-context
+    description: Match capabilities from capabilities/index.yaml; propose plan to human
+
   - id: confirm_greenfield_pattern
     human_gate: required
     methodology_ref: docs/Development/Bootstrap_Guide.md#greenfield-pattern-decision-tree
     prompt_ref: docs/AI/Bootstrap_Playbook.md#decision-tree--greenfield-pattern
     description: Confirm fork-EDF vs adopt-into-separate-repo before running scripts
 
-  - id: confirm_scope
-    human_gate: required
-    methodology_ref: docs/Development/Bootstrap_Guide.md#prerequisites
-    prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-0--confirm-scope
-    description: Collect project name, paths, profile, and target tier
-
   - id: run_bootstrap
     human_gate: optional
     command: "{edf_clone_path}/scripts/adopt-edf.sh bootstrap [--profile {profile}] \"{project_root}\""
-    methodology_ref: docs/Development/Bootstrap_Guide.md#bootstrap-sequence
+    methodology_ref: docs/AI/Universal_Bootstrap_Specification.md#phase-5--bootstrap-minimum-structure
     prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-1--run-bootstrap
-    description: Create structure, skeleton, and baseline conformance report
+    description: Create Core structure, skeleton, and baseline conformance report
+
+  - id: apply_capability_extensions
+    human_gate: optional
+    methodology_ref: docs/AI/Universal_Bootstrap_Specification.md#phase-5--bootstrap-minimum-structure
+    description: Apply capability structure hints create-if-missing; document project extensions in ADR
 
   - id: customize_identity
     human_gate: required
     methodology_ref: docs/Development/Bootstrap_Guide.md#step-5--customize-project-identity
     prompt_ref: docs/AI/Bootstrap_Playbook.md#phase-2--customize-identity
     description: Fill PROJECT_CHARTER, PROJECT_INDEX, README with project-specific content
+
+  - id: write_bootstrap_report
+    human_gate: required
+    methodology_ref: docs/Templates/EDF_Bootstrap_Report_Template.md
+    description: Record mappings, deferred artifacts, validation summary, EDF feedback
 
   - id: track_adoption
     human_gate: optional
@@ -102,3 +143,9 @@ validation_gates:
   - id: G4
     reference: docs/AI/Bootstrap_Playbook.md#g4--navigation
     criterion: README links to PROJECT_INDEX
+  - id: G5
+    reference: docs/Templates/EDF_Bootstrap_Report_Template.md
+    criterion: EDF_BOOTSTRAP_REPORT.md complete with deferred artifacts and feedback
+  - id: G6
+    reference: docs/AI/Universal_Bootstrap_Specification.md#phase-4--human-confirmation-gate
+    criterion: Human confirmed project context before bootstrap

@@ -5,7 +5,7 @@
 > **Status:** Maintained
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** AI-assisted EDF repository bootstrap
-> **Last Reviewed:** 2026-08-03
+> **Last Reviewed:** 2026-08-23
 > **Review Frequency:** On Change
 > **Authoritative:** Yes
 
@@ -13,16 +13,25 @@
 
 This playbook enables AI assistants (Cursor, Copilot, etc.) to bootstrap EDF-compliant repositories reliably. It supplements the human-oriented [Bootstrap Guide](../Development/Bootstrap_Guide.md) with decision trees, file copy rules, prompt templates, and validation gates.
 
+**Canonical AI entry point:** [EDF AI Bootstrap Entry](EDF_AI_Bootstrap_Entry.md) — read this first.
+
+**Normative bootstrap contract:** [Universal Bootstrap Specification](Universal_Bootstrap_Specification.md).
+
 For the machine-readable interaction contract, see [edf.bootstrap.v1.yaml](../../interaction/specs/edf.bootstrap.v1.yaml) and [ADR-0004](../Architecture/ADRs/ADR-0004-Interaction-Specifications.md). Execute phases per the spec; do not embed methodology rules here that are not in the canonical guide.
 
 For ongoing engineering work after adoption, see [Repository_Workflow.md](Repository_Workflow.md).
 
 ## AI Responsibilities During Bootstrap
 
-- Read [Bootstrap Guide](../Development/Bootstrap_Guide.md) and this playbook before acting
+- Read [EDF AI Bootstrap Entry](EDF_AI_Bootstrap_Entry.md) and [Universal Bootstrap Specification](Universal_Bootstrap_Specification.md) before acting
+- **Inspect first** — map documentation and engineering artifacts; preserve historical content
+- Establish project engineering context ([ADR-0005](../Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md)); write `edf-project-context.yaml`
+- Obtain human confirmation before structural changes or bootstrap scripts
+- Default to `--profile core` when discipline is unknown or non-software
+- Do not relocate engineering artifacts into `docs/` without explicit approval ([ADR-0006](../Architecture/ADRs/ADR-0006-Engineering-Documentation-vs-Artifacts.md))
 - Confirm greenfield pattern with the human (fork EDF vs adopt into separate repo)
 - Run bootstrap scripts from the local EDF clone; never assume scripts run from the target repo
-- Produce complete files at normal repository paths
+- Write `EDF_BOOTSTRAP_REPORT.md` after bootstrap
 - Run Framework Advisor after structural changes
 - Report limitations and ask before destructive or ambiguous actions
 
@@ -57,6 +66,36 @@ User wants to bootstrap EDF?
 
 ## Prompt Templates
 
+### Phase Inspect — Repository
+
+```text
+Inspect [TARGET] before any EDF changes.
+
+1. List top-level files and directories.
+2. Classify each significant item as engineering documentation or engineering artifact.
+3. Note historical/founding documents that must be preserved at current paths.
+4. Produce a mapping table for EDF_BOOTSTRAP_REPORT.md.
+
+Do not modify any files during inspection.
+```
+
+### Phase Context — Establish engineering context
+
+```text
+Establish project engineering context for [project name] at [TARGET].
+
+Repository role: [human-confirmed]
+Disciplines: [list or unknown]
+Activities: [list]
+Authority/scope: [from human or BOOTSTRAP_CONTEXT.md]
+
+Read capabilities/index.yaml from EDF clone [PATH].
+Propose capability composition and any project extensions.
+Write edf-project-context.yaml draft.
+
+Wait for my confirmation before running bootstrap scripts.
+```
+
 ### Phase 0 — Confirm scope
 
 ```text
@@ -64,7 +103,7 @@ I am bootstrapping EDF for [project name].
 
 Greenfield pattern: [fork EDF template | adopt into separate repo at PATH]
 EDF clone path: [PATH]
-Profile: [software-engineering | core]
+Profile: [core | software-engineering]  (default core when ambiguous)
 Target tier: [Bootstrap | Navigable | Governed | Reference Parity]
 
 Read docs/Development/Bootstrap_Guide.md and docs/AI/Bootstrap_Playbook.md.
@@ -110,9 +149,11 @@ Summarize gaps and recommend next steps. Update ADOPTION_STATUS.md if present.
 | **G2 — Structure** | Framework Advisor Structure score ≥ 80% (Bootstrap tier) |
 | **G3 — Identity** | PROJECT_CHARTER and PROJECT_INDEX describe the actual project |
 | **G4 — Navigation** | README links to PROJECT_INDEX |
-| **G5 — Tier** | Overall score meets target tier in Adopter Conformance Tiers |
+| **G5 — Report** | `EDF_BOOTSTRAP_REPORT.md` complete |
+| **G6 — Confirmation** | Human confirmed project context before bootstrap |
+| **G7 — Tier** | Overall score meets target tier in Adopter Conformance Tiers |
 
-Do not mark bootstrap complete until G1–G4 pass. G5 may be deferred if human accepts a lower initial tier.
+Do not mark bootstrap complete until G1–G5 and G6 pass. G7 may be deferred if human accepts a lower initial tier.
 
 ## Common Failure Modes
 
@@ -130,6 +171,8 @@ Do not mark bootstrap complete until G1–G4 pass. G5 may be deferred if human a
 
 ## Related Documents
 
+- [EDF AI Bootstrap Entry](EDF_AI_Bootstrap_Entry.md)
+- [Universal Bootstrap Specification](Universal_Bootstrap_Specification.md)
 - [Bootstrap Guide](../Development/Bootstrap_Guide.md)
 - [Migration Playbook](Migration_Playbook.md)
 - [Context_Checklist.md](Context_Checklist.md)

@@ -42,13 +42,14 @@ Saving a small amount of model usage cost is not worthwhile if it creates hours 
 
 ## Adoption
 
-- [ASR Bootstrap Playbook](ASR_Bootstrap_Playbook.md) — AI-assisted Architecture Specification Repository bootstrap
-
-AI-assisted repository adoption workflows (distinct from ongoing [Repository_Workflow.md](Repository_Workflow.md)):
+**Start here for EDF bootstrap:** [EDF AI Bootstrap Entry](EDF_AI_Bootstrap_Entry.md)
 
 | Document | Purpose |
 |---|---|
+| [EDF_AI_Bootstrap_Entry.md](./EDF_AI_Bootstrap_Entry.md) | Canonical AI entry point for EDF bootstrap |
+| [Universal_Bootstrap_Specification.md](./Universal_Bootstrap_Specification.md) | Normative bootstrap contract (all disciplines) |
 | [Bootstrap_Playbook.md](./Bootstrap_Playbook.md) | AI decision trees, file copy rules, and prompts for bootstrapping new EDF repos |
+| [Capability_Contribution_Playbook.md](./Capability_Contribution_Playbook.md) | Semi-automatable AI workflow for contributing capabilities back to EDF |
 | [ASR_Bootstrap_Playbook.md](./ASR_Bootstrap_Playbook.md) | AI-assisted Architecture Specification Repository bootstrap |
 | [Migration_Playbook.md](./Migration_Playbook.md) | AI prompts per migration phase, link checklist, `AI_WORKFLOW.md` mapping |
 | [Governance_Header_Prompt.md](./Governance_Header_Prompt.md) | Copy-paste prompt to add breadcrumb and governance headers to Markdown in an external adopting project |

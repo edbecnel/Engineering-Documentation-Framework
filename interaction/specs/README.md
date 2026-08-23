@@ -15,6 +15,7 @@ Bindings: [Implementation Bindings](../Implementation_Bindings.md)
 | ID | Workflow | File | Status | Non-AI equivalent |
 |----|----------|------|--------|-------------------|
 | `edf.bootstrap.v1` | `edf.repository.bootstrap` | [edf.bootstrap.v1.yaml](edf.bootstrap.v1.yaml) | Pilot | [Bootstrap Guide](../../docs/Development/Bootstrap_Guide.md) |
+| `edf.capability-contribute.v1` | `edf.capability.contribute` | [edf.capability-contribute.v1.yaml](edf.capability-contribute.v1.yaml) | Pilot | [EDF Capability Contribution Guide](../../docs/Development/EDF_Capability_Contribution_Guide.md) |
 | `edf.adr.create.v1` | `edf.adr.create` | [edf.adr.create.v1.yaml](edf.adr.create.v1.yaml) | Pilot | [ADR Template](../../docs/Templates/ADR_Template.md) |
 
 ## Adding a Specification

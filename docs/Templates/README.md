@@ -31,6 +31,9 @@ Templates provide a consistent starting point. They are not rigid forms. Remove 
 | `Architectural_Discovery_Record_Template.md` | Recording non-normative historical architectural discovery (e.g., CRA-0000) |
 | `Architecture_Specification_Template.md` | Defining normative architecture specifications (e.g., CRA-0001) |
 | `ASR_Bootstrap_Report_Template.md` | Recording ASR bootstrap outcome, mappings, and gaps |
+| `Bootstrap_Context_Template.md` | Supplying project context to AI during EDF bootstrap |
+| `EDF_Bootstrap_Report_Template.md` | Recording any EDF bootstrap outcome, mappings, and gaps |
+| `Cross_Repo_Concern_Matrix_Template.md` | Mapping discipline-specific instances to shared EDF concerns |
 
 ## Required and Optional Sections
 

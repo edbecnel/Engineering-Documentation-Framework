@@ -10,9 +10,11 @@ EDF also exhibits the characteristics of an **Architecture Specification Reposit
 
 | I want to… | Start here |
 |------------|------------|
+| Bootstrap any engineering discipline (AI-assisted) | [EDF AI Bootstrap Entry](docs/AI/EDF_AI_Bootstrap_Entry.md) |
 | Bootstrap a new EDF-compliant repository | [Bootstrap Guide](docs/Development/Bootstrap_Guide.md) |
 | Bootstrap an Architecture Specification Repository | [ASR Bootstrap Procedure](docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Bootstrap_Procedure.md) |
 | Migrate an existing repository to EDF | [Migration Guide](docs/Development/Migration_Guide.md) |
+| Contribute a new capability to EDF (AI-assisted) | [Capability Contribution Playbook](docs/AI/Capability_Contribution_Playbook.md) |
 | Use AI to adopt EDF | [AI Adoption Playbooks](docs/AI/README.md#adoption) |
 
 Prerequisites: clone this repository locally, run `chmod +x scripts/*.sh` (Unix), then follow the guide for your scenario. For unified orchestration, see `./scripts/adopt-edf.sh`.
@@ -23,9 +25,9 @@ The Engineering Documentation Framework provides a consistent, scalable structur
 
 **EDF Core** is domain-independent: navigation, governance, specifications, architecture, reference, and the AI handbook apply to any engineering project.
 
-**Domain Profiles** extend Core with discipline-specific folders and validation — for example, APIs and deployment for software, or scores and curriculum for music education. See [ADR-0001 — Domain Profiles](./docs/Architecture/ADRs/ADR-0001-Domain-Profiles.md).
+**Domain Profiles** extend Core with discipline-specific structure. EDF now models extensions as **composable capabilities** (discipline, activity, repository role) per [ADR-0005 — Project Classification and Capabilities](./docs/Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md). See the [capability registry](./capabilities/index.yaml).
 
-This repository includes the full Software Engineering profile (`docs/API`, `docs/Database`, `docs/Deployment`, `docs/Developer_Handbook`) as the v1.0 reference layout. Non-software adopters will not be required to use those paths once profile-aware validation ships post-v1.0.
+This repository includes the full Software Engineering capability (`docs/API`, `docs/Database`, `docs/Deployment`, `docs/Developer_Handbook`) as the v1.0 reference layout. Non-software adopters bootstrap with `profile: core` and optional capabilities — they are not required to use software paths.
 
 ## Goals
 
@@ -45,7 +47,9 @@ Engineering projects outlive their original authors. Without a deliberate docume
 
 This framework solves that by defining **where** information belongs, **how** it should be structured, and **which** documents are authoritative.
 
-Software was the first domain; the same model applies to music education, hardware, research, and other disciplines through Domain Profiles — without forcing every project into software folders.
+Software was the first domain; the same model applies to music education, hardware, research, and other disciplines through composable capabilities — without forcing every project into software folders.
+
+Discoveries from adoption exercises can be contributed back to EDF. See the [EDF Capability Contribution Guide](docs/Development/EDF_Capability_Contribution_Guide.md) and [AI Capability Contribution Playbook](docs/AI/Capability_Contribution_Playbook.md).
 
 ## Core Design Principles
 
@@ -59,19 +63,19 @@ Software was the first domain; the same model applies to music education, hardwa
 
 See [Documentation Information Architecture](./docs/Architecture/Documentation_Information_Architecture.md) for the framework's authoritative guidance on documentation domains, Core vs profile boundaries, ownership, cross-references, and where information belongs.
 
-## EDF Core and Domain Profiles
+## EDF Core and Composable Capabilities
 
 ```text
 EDF Core (domain-independent)
     │
-    ├── Domain Profile: Software Engineering  ← this repository (v1.0 reference)
-    ├── Domain Profile: Music Education       ← future
-    └── Domain Profile: …                     ← future profiles
+    ├── Capability: software-engineering  ← this repository (v1.0 reference)
+    ├── Capability: electronics           ← community (contrib/)
+    └── Capability: …                     ← adopt and contribute more
 ```
 
-**Extraction principle:** Software-specific requirements (API, database, deployment, developer handbook) belong in the Software Engineering profile, not in Core. Non-software projects must not fight irrelevant validation rules.
+**Extraction principle:** Software-specific requirements (API, database, deployment, developer handbook) belong in the Software Engineering capability, not in Core. Non-software projects must not fight irrelevant validation rules.
 
-Profile implementation (manifests, profile-aware Framework Advisor, bootstrap `--profile`) is documented in [ADR-0002](./docs/Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md) and deferred until after v1.0.
+Capability manifests and composition are defined in [ADR-0005](./docs/Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md). Legacy `profile: core` and `profile: software-engineering` remain supported in bootstrap scripts.
 
 ## Benefits
 

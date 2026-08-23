@@ -16,6 +16,7 @@ Watch items are **non-authoritative for implementation** while Active. They reco
 | [AWI-0002](AWI-0002-Interaction-Layer-Separation.md) | Interaction Layer Separation — distinguish methodology from optional interaction models | Promoted |
 | [AWI-0002-Revisit-Assessment](AWI-0002-Revisit-Assessment.md) | Post-promotion assessment for AWI-0002 | — |
 | [AWI-0003](AWI-0003-Repository-Semantic-Context-and-Convention-Binding.md) | Repository Semantic Context and Convention Binding — repository-level semantics | Active |
+| [AWI-0005](AWI-0005-Engineering-Tool-Provider-Compatibility.md) | Engineering Tool Provider Compatibility — govern external tool artifacts | Active |
 
 ## Lifecycle
 

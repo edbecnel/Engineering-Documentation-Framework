@@ -1,0 +1,31 @@
+capability_id: asr
+capability_type: repository-role
+display_name: Architecture Specification Repository
+version: "1.0.0"
+maturity: built-in
+description: >
+  Repository whose primary artifact is an adoptable architecture, methodology, protocol,
+  framework, specification, standard, or engineering discipline.
+
+legacy_profile_map: core
+
+documentation_dirs:
+  - docs/Architecture/Watch_Items
+
+procedure_overlays:
+  - docs/Development/Repository_Bootstrap/Architecture_Specification_Repository/Bootstrap_Procedure.md
+
+ai_bootstrap_hints: |
+  Human must confirm ASR intent — never auto-detect.
+  Preserve founding discovery documents at root when present.
+  Create Watch_Items and defer normative specifications until post-bootstrap.
+  Use ASR_BOOTSTRAP_REPORT or EDF_BOOTSTRAP_REPORT template.
+
+detection_signals:
+  keywords:
+    - architecture specification
+    - methodology repository
+    - normative specification
+  note: Signals are advisory only; ASR requires human confirmation.
+
+validation_scope: cross-cutting

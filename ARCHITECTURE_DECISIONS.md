@@ -12,6 +12,8 @@ Individual ADRs live under [docs/Architecture/ADRs/](docs/Architecture/ADRs/READ
 | [ADR-0002](docs/Architecture/ADRs/ADR-0002-Domain-Profile-Specification.md) | Domain Profile specification outline | Proposed | 2026-07-15 |
 | [ADR-0003](docs/Architecture/ADRs/ADR-0003-Conversation-Specifications.md) | Conversation Specifications pilot (superseded by ADR-0004 terminology) | Proposed | 2026-08-03 |
 | [ADR-0004](docs/Architecture/ADRs/ADR-0004-Interaction-Specifications.md) | Interaction Specifications — umbrella layer, schema v2, Reference Not Replace | Proposed | 2026-08-03 |
+| [ADR-0005](docs/Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md) | Project classification dimensions and composable EDF Capabilities | Accepted | 2026-08-23 |
+| [ADR-0006](docs/Architecture/ADRs/ADR-0006-Engineering-Documentation-vs-Artifacts.md) | Engineering documentation vs engineering artifacts | Accepted | 2026-08-23 |
 
 ## Milestone ADRs
 

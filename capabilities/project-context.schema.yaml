@@ -1,0 +1,30 @@
+# EDF Project Context — illustrative schema
+# Written to adopting project root as edf-project-context.yaml
+# See ADR-0005 and Universal Bootstrap Specification
+
+schema_version: "1.0.0"
+
+# Required fields
+repository_role: engineering-project  # human-confirmed
+
+# Optional multi-value dimensions
+disciplines: []      # e.g. [electronics, software-engineering]
+activities: []       # e.g. [research, development, validation]
+
+# Authority block (required for unknown disciplines or project extensions)
+authority:
+  governed_scope: ""
+  decision_authority: ""
+  canonicalization_policy: ""
+
+# Resolved capability IDs from capabilities/index.yaml
+capabilities: []
+
+# Legacy bootstrap profile (optional; maps to capability set)
+legacy_profile: core  # core | software-engineering
+
+# Project-specific extensions not covered by capabilities
+extensions:
+  # - artifact_class: example
+  #   location: path/to/artifacts/
+  #   rationale: why this extension exists

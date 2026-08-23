@@ -9,6 +9,8 @@ This domain contains the authoritative architectural description of the project 
 ## Canonical Documents
 
 - [Documentation Information Architecture](Documentation_Information_Architecture.md)
+- [General Engineering Project Model](General_Engineering_Project_Model.md)
+- [CRA, CKES, and EDF Boundaries](CRA_CKES_EDF_Boundaries.md)
 - [Framework Generation Principles](Framework_Generation_Principles.md)
 - [Architecture Decisions](../../ARCHITECTURE_DECISIONS.md)
 
@@ -35,6 +37,8 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 | [ADR-0002](ADRs/ADR-0002-Domain-Profile-Specification.md) | Domain Profile specification outline | Proposed |
 | [ADR-0003](ADRs/ADR-0003-Conversation-Specifications.md) | Conversation Specifications pilot | Proposed |
 | [ADR-0004](ADRs/ADR-0004-Interaction-Specifications.md) | Interaction Specifications — umbrella layer, schema v2 | Proposed |
+| [ADR-0005](ADRs/ADR-0005-Project-Classification-and-Capabilities.md) | Project classification and composable capabilities | Accepted |
+| [ADR-0006](ADRs/ADR-0006-Engineering-Documentation-vs-Artifacts.md) | Engineering documentation vs artifacts | Accepted |
 
 ## Interaction Layer
 
@@ -55,6 +59,7 @@ Indexed in [Watch_Items/README.md](Watch_Items/README.md).
 | [AWI-0001](Watch_Items/AWI-0001-Domain-Independence.md) | Domain Independence — evolve EDF into a domain-independent methodology | Active |
 | [AWI-0002](Watch_Items/AWI-0002-Interaction-Layer-Separation.md) | Interaction Layer Separation — distinguish methodology from optional interaction models | Promoted |
 | [AWI-0003](Watch_Items/AWI-0003-Repository-Semantic-Context-and-Convention-Binding.md) | Repository Semantic Context and Convention Binding — open question on repository-level semantics | Active |
+| [AWI-0005](Watch_Items/AWI-0005-Engineering-Tool-Provider-Compatibility.md) | Engineering Tool Provider Compatibility — external tool artifact governance | Active |
 
 Adopting projects place project-specific ADRs under `docs/Architecture/ADRs/` using the same conventions.
 

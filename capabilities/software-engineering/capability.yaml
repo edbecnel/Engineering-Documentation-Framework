@@ -1,0 +1,55 @@
+capability_id: software-engineering
+capability_type: discipline
+display_name: Software Engineering
+version: "1.0.0"
+maturity: built-in
+description: >
+  Software development discipline — APIs, databases, deployment, developer handbook.
+  Formalizes the legacy software-engineering profile as a composed capability.
+
+legacy_profile_map: software-engineering
+
+composes_with:
+  - development
+
+documentation_dirs:
+  - docs/Developer_Handbook
+  - docs/API
+  - docs/Database
+  - docs/Deployment
+
+artifact_classes:
+  - id: source-code
+    display_name: Source Code
+    location_patterns:
+      - "src/**"
+      - "lib/**"
+      - "app/**"
+    governance_notes: Source code is an engineering artifact; API contracts live in docs/API.
+
+detection_signals:
+  file_patterns:
+    - "package.json"
+    - "Cargo.toml"
+    - "pyproject.toml"
+    - "go.mod"
+  path_patterns:
+    - "src/**"
+    - "tests/**"
+  keywords:
+    - API
+    - database
+    - deployment
+    - CI/CD
+
+ai_bootstrap_hints: |
+  Populate Developer_Handbook with project-specific setup and workflow.
+  API and Database domains document contracts and schemas as the system grows.
+  Deployment domain covers CI/CD and operational runbooks.
+
+deferred_artifacts:
+  - full governance policy set
+  - complete API specifications
+  - production deployment runbooks
+
+validation_scope: discipline

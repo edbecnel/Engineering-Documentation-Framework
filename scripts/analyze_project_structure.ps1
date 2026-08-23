@@ -32,6 +32,7 @@ $ProjectRootFull = (Resolve-Path -LiteralPath $ProjectRoot).Path.TrimEnd(
     [System.IO.Path]::AltDirectorySeparatorChar
 )
 
+Initialize-EdfCapabilitiesRoot -ScriptDir $scriptDir
 Resolve-EdfProfile -ProjectRoot $ProjectRootFull
 $RequiredDirs = $EdfRequiredDirs
 

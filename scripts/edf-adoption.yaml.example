@@ -3,10 +3,11 @@
 # Copy this file to your project root as edf-adoption.yaml when adopting EDF.
 # Scripts read profile from this file when --profile is not passed on the command line.
 #
+# For multi-discipline projects, prefer edf-project-context.yaml (see capabilities/project-context.schema.yaml)
 # See: docs/Development/Profile_Aware_Bootstrap.md
 
-# Domain profile: software-engineering (default) or core
-profile: software-engineering
+# Legacy domain profile: core (default when ambiguous) or software-engineering
+profile: core
 
 # Human-readable project name (informational; used in adoption reports)
 project_name: My Project

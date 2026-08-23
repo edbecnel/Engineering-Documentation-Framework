@@ -1,0 +1,31 @@
+capability_id: research
+capability_type: activity
+display_name: Engineering Research
+version: "0.1.0"
+maturity: pilot
+description: >
+  Research activity capability — experimental development, hypothesis testing, bench validation.
+  Extracted from Hardware Research adoption exercise.
+
+composes_with:
+  - electronics
+
+ai_bootstrap_hints: |
+  Document research objectives and hypotheses in PROJECT_CHARTER and Specifications.
+  Record experimental results as observations linked to test procedures.
+  Use Watch Items for open research questions.
+  Defer formal publication or compliance artifacts.
+
+documentation_dirs:
+  - docs/Architecture/Watch_Items
+
+deferred_artifacts:
+  - formal research report template
+  - literature review index
+
+adoption_evidence:
+  - "Hardware Research adoption exercise (see contrib/electronics/ADOPTION_EXERCISE.md)"
+
+validation_scope: activity
+validation_plan: >
+  Validate by applying research activity patterns to a non-electronics research project.

@@ -1,0 +1,45 @@
+# EDF Capability Registry
+# See docs/Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md
+
+registry_version: "1.0.0"
+
+# Legacy profile mapping (bootstrap scripts until full capability resolution ships)
+legacy_profiles:
+  core:
+    description: EDF Core only — universal baseline for any engineering discipline
+    capabilities: []
+  software-engineering:
+    description: Composed software engineering capability set
+    capabilities:
+      - software-engineering
+      - development
+
+built_in:
+  - id: software-engineering
+    type: discipline
+    path: software-engineering/capability.yaml
+    maturity: built-in
+  - id: development
+    type: activity
+    path: development/capability.yaml
+    maturity: built-in
+  - id: asr
+    type: repository-role
+    path: asr/capability.yaml
+    maturity: built-in
+
+community:
+  - id: electronics
+    type: discipline
+    path: contrib/electronics/capability.yaml
+    maturity: pilot
+    adoption_evidence:
+      - "Hardware Research adoption exercise (see contrib/electronics/ADOPTION_EXERCISE.md)"
+    validation_plan: "Second electronics project required before built-in promotion"
+  - id: research
+    type: activity
+    path: contrib/research/capability.yaml
+    maturity: pilot
+    adoption_evidence:
+      - "Hardware Research adoption exercise"
+    validation_plan: "Apply to non-electronics research project before built-in promotion"

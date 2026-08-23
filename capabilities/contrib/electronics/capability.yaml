@@ -1,0 +1,91 @@
+capability_id: electronics
+capability_type: discipline
+display_name: Electronics Engineering
+version: "0.1.0"
+maturity: pilot
+description: >
+  Electronics discipline capability extracted from Hardware Research adoption exercise.
+  Governs schematic, PCB, BOM, and bench validation artifact classes without placing
+  tool outputs under docs/.
+
+composes_with:
+  - research
+
+artifact_classes:
+  - id: schematics
+    display_name: Schematic Designs
+    location_patterns:
+      - "**/*.kicad_sch"
+      - "schematics/**"
+      - "hardware/schematics/**"
+    governance_notes: >
+      KiCad and other schematic files are engineering artifacts. Document design intent,
+      revision history, and requirement links in docs/Specifications/ or docs/Architecture/ADRs/.
+
+  - id: pcb-layouts
+    display_name: PCB Layouts
+    location_patterns:
+      - "**/*.kicad_pcb"
+      - "pcb/**"
+      - "hardware/pcb/**"
+    governance_notes: Link layouts to schematic revisions and fabrication outputs.
+
+  - id: bill-of-materials
+    display_name: Bill of Materials
+    location_patterns:
+      - "**/BOM*.csv"
+      - "**/bom/**"
+    governance_notes: >
+      BOM data may live as structured files outside docs/. Authoritative interpretation
+      and alternates policy belong in governed documentation.
+
+  - id: bench-validation
+    display_name: Bench Test Data
+    location_patterns:
+      - "testdata/**"
+      - "measurements/**"
+    governance_notes: Test procedures in docs/; raw captures and datasets as artifacts.
+
+documentation_dirs:
+  - docs/Specifications
+  - docs/Architecture/ADRs
+
+detection_signals:
+  file_patterns:
+    - "*.kicad_sch"
+    - "*.kicad_pcb"
+    - "*.kicad_pro"
+    - "*.spice"
+    - "*.asc"
+  path_patterns:
+    - "hardware/**"
+    - "schematics/**"
+    - "pcb/**"
+  keywords:
+    - KiCad
+    - PCB
+    - schematic
+    - BOM
+    - prototype
+    - SPICE
+
+ai_bootstrap_hints: |
+  Inspect and preserve existing KiCad and hardware artifact paths.
+  Do not move schematics or PCB files into docs/.
+  Document requirement-to-schematic traceability in Specifications or an ADR.
+  Record test procedures in docs/; keep measurement datasets as artifacts.
+  Defer manufacturing and compliance documentation until adoption exercise matures.
+
+deferred_artifacts:
+  - discipline glossary
+  - manufacturing procedures
+  - compliance certification documentation
+  - fabrication package archive policy
+
+adoption_evidence:
+  - "Hardware Research adoption exercise (this directory)"
+
+validation_scope: discipline
+validation_plan: >
+  Promote to built-in after successful application to a second electronics project.
+  Validation target: second project in same discipline (scope-matched).

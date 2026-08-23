@@ -19,7 +19,8 @@ For **day-to-day project engineering** (first-time setup, local environment, Git
 - [Bootstrap Guide](Bootstrap_Guide.md) — ordered checklist for new repositories
 - [Migration Guide](Migration_Guide.md) — phased playbook for existing repositories
 - [Adopter Conformance Tiers](Adopter_Conformance_Tiers.md) — adoption success criteria and score targets
-- [Profile-Aware Bootstrap](Profile_Aware_Bootstrap.md) — Core vs Software Engineering profiles
+- [Profile-Aware Bootstrap](Profile_Aware_Bootstrap.md) — legacy profiles and composable capabilities
+- [EDF Capability Contribution Guide](EDF_Capability_Contribution_Guide.md) — maturing capabilities from adoption exercises
 - [Repository Bootstrap](Repository_Bootstrap/README.md) — specialized bootstrap procedures (including Architecture Specification Repositories)
 - [EDF ASR Self-Conformance Review](EDF_ASR_Self_Conformance_Review.md) — EDF self-validation against published ASR guidance
 - [Interaction Layer](../../interaction/README.md) — optional Interaction Specifications (ADR-0004)

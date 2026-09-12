@@ -29,7 +29,7 @@ Discovery record identifiers (for example, `CRA-0000`) use a **separate series**
 
 ## Architecture Decision Records
 
-Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in [ARCHITECTURE_DECISIONS.md](../../ARCHITECTURE_DECISIONS.md).
+Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in [ARCHITECTURE_DECISIONS.md](../../ARCHITECTURE_DECISIONS.md). Approval steps: [ADR Approval Workflow](ADRs/ADR_Approval_Workflow.md).
 
 | ID | Decision | Status |
 |---|---|---|

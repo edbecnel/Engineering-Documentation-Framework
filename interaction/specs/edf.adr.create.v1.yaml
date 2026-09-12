@@ -18,10 +18,12 @@ authoritative_sources:
   - ARCHITECTURE_DECISIONS.md
   - docs/Architecture/ADRs/README.md
   - docs/Templates/ADR_Template.md
+  - docs/Architecture/ADRs/ADR_Approval_Workflow.md
   - docs/Governance/Document_Metadata_Standard.md
 
 executes_methodology:
   - docs/Templates/ADR_Template.md
+  - docs/Architecture/ADRs/ADR_Approval_Workflow.md
   - docs/Architecture/ADRs/
 
 non_ai_equivalent: docs/Templates/ADR_Template.md
@@ -64,8 +66,8 @@ phases:
 
   - id: review_and_accept
     human_gate: required
-    methodology_ref: docs/Governance/Document_Lifecycle.md
-    description: Human review; set Status to Accepted when approved
+    methodology_ref: docs/Architecture/ADRs/ADR_Approval_Workflow.md
+    description: Human review; complete approval checklist and set Status to Accepted when approved
 
 validation_gates:
   - id: ADR1

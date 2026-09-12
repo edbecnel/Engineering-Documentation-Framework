@@ -4,6 +4,7 @@
 
 ### Added
 
+- [ADR Approval Workflow](docs/Architecture/ADRs/ADR_Approval_Workflow.md) — propose, review, and accept ADRs (Proposed → Accepted)
 - Phase 6: [Capability Contribution Playbook](docs/AI/Capability_Contribution_Playbook.md) and [edf.capability-contribute.v1.yaml](interaction/specs/edf.capability-contribute.v1.yaml) for semi-automatable AI-guided capability PRs
 - Generated `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` now includes **Contributing Capabilities Back to EDF** section (create-if-missing)
 - [PROJECT_INDEX.md](PROJECT_INDEX.md) and [README.md](README.md) link multi-discipline bootstrap entry points and contribution workflow

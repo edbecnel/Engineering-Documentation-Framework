@@ -13,7 +13,7 @@ Templates provide a consistent starting point. They are not rigid forms. Remove 
 
 | Template | Use When |
 |---|---|
-| `ADR_Template.md` | Recording a significant architecture decision |
+| `ADR_Template.md` | Recording a significant architecture decision (see [ADR Approval Workflow](../Architecture/ADRs/ADR_Approval_Workflow.md)) |
 | `Architecture_Document_Template.md` | Describing a system, subsystem, service, or major technical design |
 | `Feature_Specification_Template.md` | Defining a feature before implementation |
 | `API_Specification_Template.md` | Documenting an API or service contract |

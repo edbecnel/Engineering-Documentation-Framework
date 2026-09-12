@@ -6,6 +6,8 @@
 
 This directory contains individual Architecture Decision Records for the Engineering Documentation Framework.
 
+To propose, review, and approve ADRs (including updating **Proposed** → **Accepted**), see [ADR Approval Workflow](ADR_Approval_Workflow.md).
+
 ## ADR Index
 
 | ID | Decision | Status | Date |
@@ -25,5 +27,6 @@ Milestone ADRs (framework development history) remain indexed in [ARCHITECTURE_D
 
 ## Related Documents
 
+- [ADR Approval Workflow](ADR_Approval_Workflow.md)
 - [Architecture Decisions](../../../ARCHITECTURE_DECISIONS.md)
 - [Documentation Information Architecture](../Documentation_Information_Architecture.md)

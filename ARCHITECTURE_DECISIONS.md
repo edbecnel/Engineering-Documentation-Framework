@@ -4,7 +4,7 @@
 
 ## Numbered ADRs
 
-Individual ADRs live under [docs/Architecture/ADRs/](docs/Architecture/ADRs/README.md). See the [ADR index](docs/Architecture/ADRs/README.md) for the full list.
+Individual ADRs live under [docs/Architecture/ADRs/](docs/Architecture/ADRs/README.md). See the [ADR index](docs/Architecture/ADRs/README.md) for the full list. To approve a Proposed ADR, follow [ADR Approval Workflow](docs/Architecture/ADRs/ADR_Approval_Workflow.md).
 
 | ID | Decision | Status | Date |
 |---|---|---|---|

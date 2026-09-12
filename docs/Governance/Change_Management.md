@@ -53,6 +53,9 @@ A documentation change is significant when it affects:
 Changes that establish or reverse architectural direction should be recorded in
 `ARCHITECTURE_DECISIONS.md` or in the project's ADR system.
 
+To move an ADR from **Proposed** to **Accepted**, follow
+[ADR Approval Workflow](../Architecture/ADRs/ADR_Approval_Workflow.md).
+
 ## Non-Destructive Rule
 
 Automated tools must not:

@@ -95,6 +95,8 @@ AI MUST obtain human confirmation before:
 
 Present: repository role, disciplines, activities, selected capabilities, preservation decisions, and deferred artifacts.
 
+Projects that define **program gates** MAY record Phase 4 confirmation in an [Engineering Gate Review Record](../Program/Gate_Reviews/) per [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) instead of relying on informal approval only.
+
 ## Phase 5 — Bootstrap Minimum Structure
 
 From EDF clone path:

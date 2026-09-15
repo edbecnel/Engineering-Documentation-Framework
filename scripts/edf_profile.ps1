@@ -10,6 +10,8 @@ function Get-EdfCoreDirs {
         "docs/Development",
         "docs/Governance",
         "docs/Specifications",
+        "docs/Program",
+        "docs/Program/Gate_Reviews",
         "docs/User_Guides",
         "docs/Reference",
         "docs/Templates",

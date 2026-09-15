@@ -16,6 +16,8 @@ edf_core_dirs=(
   "docs/Development"
   "docs/Governance"
   "docs/Specifications"
+  "docs/Program"
+  "docs/Program/Gate_Reviews"
   "docs/User_Guides"
   "docs/Reference"
   "docs/Templates"

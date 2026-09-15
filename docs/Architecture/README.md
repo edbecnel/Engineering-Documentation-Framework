@@ -39,8 +39,9 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 | [ADR-0004](ADRs/ADR-0004-Interaction-Specifications.md) | Interaction Specifications — umbrella layer, schema v2 | Proposed |
 | [ADR-0005](ADRs/ADR-0005-Project-Classification-and-Capabilities.md) | Project classification and composable capabilities | Accepted |
 | [ADR-0006](ADRs/ADR-0006-Engineering-Documentation-vs-Artifacts.md) | Engineering documentation vs artifacts | Accepted |
+| [ADR-0007](ADRs/ADR-0007-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records (EGR) | Proposed |
 
-## Interaction Layer
+Program gate reviews: [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md), [Program](../Program/README.md).
 
 Optional interaction models — not canonical methodology:
 

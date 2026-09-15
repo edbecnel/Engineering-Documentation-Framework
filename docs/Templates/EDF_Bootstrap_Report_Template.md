@@ -35,7 +35,7 @@ Universal successor to the ASR-specific bootstrap report template — use this f
 | Inspect repository | | Map docs and engineering artifacts |
 | Preserve historical artifacts | | |
 | Establish project engineering context | | `edf-project-context.yaml` |
-| Human confirmation | | |
+| Human confirmation | | Optional: record in an [Engineering Gate Review Record](../Program/Gate_Reviews/) per [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) when the project defines program gates |
 | Apply EDF Core | | `adopt-edf.sh bootstrap` |
 | Apply capability extensions | | create-if-missing only |
 | Apply repository role overlay (ASR, etc.) | | if applicable |

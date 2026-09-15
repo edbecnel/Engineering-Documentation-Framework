@@ -4,6 +4,8 @@
 
 ### Added
 
+- [ADR-0007](docs/Architecture/ADRs/ADR-0007-Engineering-Gate-Review-Records.md) and [EGR-0001](docs/Specifications/EGR-0001-Engineering-Gate-Review-Records.md) — Engineering Gate Review Records (program gates)
+- [Gate_Review_Record_Template.md](docs/Templates/Gate_Review_Record_Template.md), `docs/Program/` and `docs/Program/Gate_Reviews/` Core paths
 - [ADR Approval Workflow](docs/Architecture/ADRs/ADR_Approval_Workflow.md) — propose, review, and accept ADRs (Proposed → Accepted)
 - Phase 6: [Capability Contribution Playbook](docs/AI/Capability_Contribution_Playbook.md) and [edf.capability-contribute.v1.yaml](interaction/specs/edf.capability-contribute.v1.yaml) for semi-automatable AI-guided capability PRs
 - Generated `ENGINEERING_DOCUMENTATION_FRAMEWORK.md` now includes **Contributing Capabilities Back to EDF** section (create-if-missing)

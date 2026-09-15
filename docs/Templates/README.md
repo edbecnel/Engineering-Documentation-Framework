@@ -33,6 +33,7 @@ Templates provide a consistent starting point. They are not rigid forms. Remove 
 | `ASR_Bootstrap_Report_Template.md` | Recording ASR bootstrap outcome, mappings, and gaps |
 | `Bootstrap_Context_Template.md` | Supplying project context to AI during EDF bootstrap |
 | `EDF_Bootstrap_Report_Template.md` | Recording any EDF bootstrap outcome, mappings, and gaps |
+| `Gate_Review_Record_Template.md` | Recording human approval for program gates ([EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md)) |
 | `Cross_Repo_Concern_Matrix_Template.md` | Mapping discipline-specific instances to shared EDF concerns |
 
 ## Required and Optional Sections

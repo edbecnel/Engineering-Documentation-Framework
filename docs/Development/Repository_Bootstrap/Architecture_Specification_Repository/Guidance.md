@@ -48,6 +48,18 @@ Normative specifications define adoptable architecture, methodology, protocol, o
 - **Normative:** Yes
 - **Template:** [Architecture Specification Template](../../../Templates/Architecture_Specification_Template.md)
 
+### Implementation conformance audits
+
+**Architectural Audit Records (AAR)** document reviews of implementation (code, reference implementation, or similar) against authoritative ADRs and normative specifications.
+
+- **Location:** `docs/Architecture/Audits/`
+- **Document type:** Architectural Audit Record
+- **Normative (instances):** No — findings are assessments
+- **Framework specification:** [AAR-0001](../../../Specifications/AAR-0001-Architectural-Audit-Records.md)
+- **Template:** [Architectural Audit Record Template](../../../Templates/Architectural_Audit_Record_Template.md)
+
+AARs MUST NOT substitute for [Self-Conformance Review](Self_Conformance_Review.md) or Framework Advisor reports under `reports/`.
+
 ### Identifier namespaces
 
 Discovery record identifiers (e.g., `CRA-0000`) and specification identifiers (e.g., `CRA-0001`) use **separate series**. A discovery record is never promoted to a normative specification without an explicit architectural decision.

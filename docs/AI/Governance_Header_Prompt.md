@@ -85,6 +85,7 @@ Templates (for field values and breadcrumb patterns):
 | Adoption Status | `docs/Templates/ADOPTION_STATUS_Template.md` |
 | ASR Bootstrap Report | `docs/Templates/ASR_Bootstrap_Report_Template.md` |
 | Architectural Discovery Record | `docs/Templates/Architectural_Discovery_Record_Template.md` |
+| Architectural Audit Record | `docs/Templates/Architectural_Audit_Record_Template.md` |
 | First-Time Setup | `docs/Templates/First_Time_Setup_Template.md` |
 
 ## Standard Header Format

@@ -69,7 +69,7 @@ Examples:
 
 ### Architecture
 
-System structure, technical direction, diagrams, ADRs, and documentation architecture.
+System structure, technical direction, diagrams, ADRs, implementation conformance audits (`Audits/`), and documentation architecture.
 
 ### AI
 

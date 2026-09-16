@@ -6,6 +6,7 @@ function Get-EdfCoreDirs {
         "docs/Architecture",
         "docs/Architecture/ADRs",
         "docs/Architecture/Watch_Items",
+        "docs/Architecture/Audits",
         "docs/AI",
         "docs/Development",
         "docs/Governance",

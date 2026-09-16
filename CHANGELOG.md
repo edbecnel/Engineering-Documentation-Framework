@@ -4,6 +4,8 @@
 
 ### Added
 
+- [ADR-0008](docs/Architecture/ADRs/ADR-0008-Architectural-Audit-Records.md) and [AAR-0001](docs/Specifications/AAR-0001-Architectural-Audit-Records.md) — Architectural Audit Records (implementation conformance reviews)
+- [Architectural_Audit_Record_Template.md](docs/Templates/Architectural_Audit_Record_Template.md), `docs/Architecture/Audits/` Core path
 - [ADR-0007](docs/Architecture/ADRs/ADR-0007-Engineering-Gate-Review-Records.md) and [EGR-0001](docs/Specifications/EGR-0001-Engineering-Gate-Review-Records.md) — Engineering Gate Review Records (program gates)
 - [Gate_Review_Record_Template.md](docs/Templates/Gate_Review_Record_Template.md), `docs/Program/` and `docs/Program/Gate_Reviews/` Core paths
 - [ADR Approval Workflow](docs/Architecture/ADRs/ADR_Approval_Workflow.md) — propose, review, and accept ADRs (Proposed → Accepted)

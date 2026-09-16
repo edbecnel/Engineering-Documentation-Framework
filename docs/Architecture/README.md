@@ -27,6 +27,19 @@ Historical architectural discovery records capture origin, motivation, and pre-s
 
 Discovery record identifiers (for example, `CRA-0000`) use a **separate series** from normative specification identifiers (for example, `CRA-0001`). A discovery record is never promoted to a normative specification without an explicit architectural decision.
 
+## Architectural Audit Records
+
+Implementation conformance reviews compare code or reference implementation to authoritative ADRs and normative specifications.
+
+| Aspect | Convention |
+|---|---|
+| **Location** | `docs/Architecture/Audits/` |
+| **Normative (instances)** | No — findings are assessments; requirements remain in ADRs and `docs/Specifications/` |
+| **Normative (framework spec)** | [AAR-0001](../Specifications/AAR-0001-Architectural-Audit-Records.md) |
+| **Template** | [Architectural Audit Record Template](../Templates/Architectural_Audit_Record_Template.md) |
+
+Indexed in [Audits/README.md](Audits/README.md). Not a substitute for [ASR Self-Conformance Review](../Development/Repository_Bootstrap/Architecture_Specification_Repository/Self_Conformance_Review.md) or Framework Advisor reports under `reports/`.
+
 ## Architecture Decision Records
 
 Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in [ARCHITECTURE_DECISIONS.md](../../ARCHITECTURE_DECISIONS.md). Approval steps: [ADR Approval Workflow](ADRs/ADR_Approval_Workflow.md).
@@ -40,8 +53,11 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 | [ADR-0005](ADRs/ADR-0005-Project-Classification-and-Capabilities.md) | Project classification and composable capabilities | Accepted |
 | [ADR-0006](ADRs/ADR-0006-Engineering-Documentation-vs-Artifacts.md) | Engineering documentation vs artifacts | Accepted |
 | [ADR-0007](ADRs/ADR-0007-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records (EGR) | Proposed |
+| [ADR-0008](ADRs/ADR-0008-Architectural-Audit-Records.md) | Architectural Audit Records (AAR) | Proposed |
 
 Program gate reviews: [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md), [Program](../Program/README.md).
+
+Architectural audits: [AAR-0001](../Specifications/AAR-0001-Architectural-Audit-Records.md), [Audits](Audits/README.md).
 
 Optional interaction models — not canonical methodology:
 
@@ -75,3 +91,4 @@ Adopting projects place project-specific ADRs under `docs/Architecture/ADRs/` us
 - [Governance](../Governance/README.md)
 - [Templates](../Templates/README.md)
 - [Watch Items](Watch_Items/README.md)
+- [Audits](Audits/README.md)

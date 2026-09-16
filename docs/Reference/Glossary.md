@@ -11,6 +11,7 @@ This document defines domain terms and consistent terminology used across projec
 | Term | Definition |
 |------|------------|
 | **Architecture Specification Repository (ASR)** | A repository whose primary engineering artifact is an architecture, methodology, protocol, framework, specification, standard, or engineering discipline intended for independent adoption, implementation, conformance, or extension. |
+| **Architectural Audit Record (AAR)** | A governed, non-normative document recording an implementation conformance review against authoritative ADRs and normative specifications — gaps, violations, and conformant areas. Framework rules: [AAR-0001](../Specifications/AAR-0001-Architectural-Audit-Records.md). |
 | **Architectural Discovery Record** | A non-normative document capturing historical architectural context, origin, and motivation before or alongside normative specifications. |
 | **Architectural Watch Item (AWI)** | A deferred architectural initiative recorded for future review. AWIs are non-authoritative for implementation while Active until promoted to ADRs or closed. |
 | **Architecture Specification** | A normative document defining adoptable architecture, behavior, or conformance requirements. |

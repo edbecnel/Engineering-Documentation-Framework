@@ -13,7 +13,14 @@ This document defines domain terms and consistent terminology used across projec
 | **Architecture Specification Repository (ASR)** | A repository whose primary engineering artifact is an architecture, methodology, protocol, framework, specification, standard, or engineering discipline intended for independent adoption, implementation, conformance, or extension. |
 | **Architectural Audit Record (AAR)** | A governed, non-normative document recording an implementation conformance review against authoritative ADRs and normative specifications — gaps, violations, and conformant areas. Framework rules: [AAR-0001](../Specifications/AAR-0001-Architectural-Audit-Records.md). |
 | **Architectural Discovery Record** | A non-normative document capturing historical architectural context, origin, and motivation before or alongside normative specifications. |
-| **Architectural Watch Item (AWI)** | A deferred architectural initiative recorded for future review. AWIs are non-authoritative for implementation while Active until promoted to ADRs or closed. |
+| **Architectural Watch Item (AWI)** | A deferred architectural initiative recorded for future review. AWIs are non-authoritative for implementation while Active until promoted to ADRs or closed. An AWI is not the tracking record for an Open program-gate obligation or a Governed Dependency Override. |
+| **Authorized Downstream Scope** | The explicitly identified governed activity a Governed Dependency Override permits to start. Not limited to another EGR or gate. MAY be a clearly bounded downstream gate, implementation tranche, milestone, release activity, named work package, or other explicitly identified governed activity. MUST be precise enough to determine what is and is not authorized. Work outside that scope remains Blocking. |
+| **Bootstrap Validation Gate (BVG)** | An automated EDF adoption/bootstrap check (documentation aliases BVG-1 … BVG-6 for interaction-spec G1–G6). Distinct from program gates. A GDO MUST NOT relax BVG checks. |
+| **Dependency Disposition** | Whether a declared prerequisite remains **Blocking** (default while the source gate is Open) or **Non-Blocking** (only via an Active Governed Dependency Override) for a stated Authorized Downstream Scope. Independent of Gate Status. |
+| **Engineering Gate Review (EGR)** | Governed Markdown record of human approval for a program gate, stored under `docs/Program/Gate_Reviews/`. Framework rules: [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md). |
+| **Gate Status** | Lifecycle of a program-gate obligation: Open, Satisfied, Rejected, Deferred (decision postponed), Waived (obligation no longer required), or Superseded (replaced). Not the same fact as Dependency Disposition. |
+| **Governed Dependency Override (GDO)** | An explicit, authorized, auditable change recorded on a still-Open source EGR that sets Dependency Disposition to Non-Blocking for a precise Authorized Downstream Scope. It does not complete, waive, or supersede the remaining obligation. Local IDs only (for example `GDO-1`); not a separate record type. |
+| **Program gate** | A human checkpoint declared in a roadmap, charter, or release plan that bundles review of authoritative documents before unblocking defined work. Recorded as an EGR. Distinct from a Bootstrap Validation Gate. |
 | **Architecture Specification** | A normative document defining adoptable architecture, behavior, or conformance requirements. |
 | **Engineering Methodology** | The canonical, normative engineering knowledge corpus in `docs/` and governance — the sole authoritative source that interaction-layer artifacts and scripts execute but do not redefine. |
 | **Repository Bootstrap** | EDF guidance for initializing repositories with specialized engineering contexts; procedures are invoked intentionally by engineers. |
@@ -34,4 +41,5 @@ This document defines domain terms and consistent terminology used across projec
 ## Related documents
 
 - [docs/Specifications/](../Specifications/) — requirements that introduce domain terms
+- [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) — program gates and Governed Dependency Override
 - [docs/User_Guides/](../User_Guides/) — end-user documentation using these terms

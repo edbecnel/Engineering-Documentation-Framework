@@ -5,7 +5,7 @@
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** EDF and adopting projects
-> **Last Reviewed:** 2026-07-10
+> **Last Reviewed:** 2026-09-22
 
 ## Applicability
 
@@ -49,13 +49,14 @@ See [EDF Governance](EDF_Governance.md) for the framework-specific extension.
 1. Every authoritative document has a clearly identified owner.
 2. Every governed document has an explicit lifecycle state.
 3. Review frequency is proportional to the document's risk and rate of change.
-4. Project facts must not be invented or inferred without evidence.
-5. Significant documentation changes require traceable review.
-6. Deprecated documents remain discoverable until they are archived.
-7. Archived documents are preserved but removed from normal navigation.
-8. Automation may analyze and recommend, but must not silently alter project-owned content.
-9. Governance rules should be configurable where project needs differ.
-10. Human approval remains the final authority.
+4. Governance rigor should be proportional to unresolved engineering risk. After substantive decisions are Accepted, remaining administrative or documentation work MUST NOT automatically stay on the critical path unless that work is necessary to protect correctness, traceability, safety, compliance, or another declared requirement. A [Governed Dependency Override](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) is the controlled mechanism for that proportionality — not informal gate skipping.
+5. Project facts must not be invented or inferred without evidence.
+6. Significant documentation changes require traceable review.
+7. Deprecated documents remain discoverable until they are archived.
+8. Archived documents are preserved but removed from normal navigation.
+9. Automation may analyze and recommend, but must not silently alter project-owned content.
+10. Governance rules should be configurable where project needs differ.
+11. Human approval remains the final authority.
 
 ## Scope
 
@@ -130,4 +131,5 @@ Projects may later choose stricter enforcement in CI or release workflows.
 ## Related Documents
 
 - [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
+- [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md)
 - [Engineering Development Policy](../Development/Engineering_Development_Policy.md)

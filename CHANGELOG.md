@@ -4,6 +4,7 @@
 
 ### Added
 
+- Governed Dependency Override (GDO) semantics on [EGR-0001](docs/Specifications/EGR-0001-Engineering-Gate-Review-Records.md) and [ADR-0007](docs/Architecture/ADRs/ADR-0007-Engineering-Gate-Review-Records.md) — leave a program gate Open while authorizing a precise Non-Blocking downstream activity
 - [ADR-0008](docs/Architecture/ADRs/ADR-0008-Architectural-Audit-Records.md) and [AAR-0001](docs/Specifications/AAR-0001-Architectural-Audit-Records.md) — Architectural Audit Records (implementation conformance reviews)
 - [Architectural_Audit_Record_Template.md](docs/Templates/Architectural_Audit_Record_Template.md), `docs/Architecture/Audits/` Core path
 - [ADR-0007](docs/Architecture/ADRs/ADR-0007-Engineering-Gate-Review-Records.md) and [EGR-0001](docs/Specifications/EGR-0001-Engineering-Gate-Review-Records.md) — Engineering Gate Review Records (program gates)
@@ -25,6 +26,10 @@
 
 ### Changed
 
+- [EGR-0001](docs/Specifications/EGR-0001-Engineering-Gate-Review-Records.md) v1.1 — Gate Status includes Waived and Superseded; independent Dependency Disposition; Authorized Downstream Scope is not limited to another EGR
+- [AAR-0001](docs/Specifications/AAR-0001-Architectural-Audit-Records.md) v1.1 — record Active GDOs in implementation-scope audits
+- [Documentation Information Architecture](docs/Architecture/Documentation_Information_Architecture.md) and [PROJECT_INDEX.md](PROJECT_INDEX.md) — Program domain indexed as EDF Core
+- [Governance Overview](docs/Governance/Governance_Overview.md) — governance rigor proportional to unresolved engineering risk
 - Default legacy profile when ambiguous: `core` (was `software-engineering`)
 - [edf.bootstrap.v1.yaml](interaction/specs/edf.bootstrap.v1.yaml) v1.1.0 — inspect, context, capability phases; AI entry point binding
 - [Bootstrap Playbook](docs/AI/Bootstrap_Playbook.md) — references canonical entry point and inspect-first rules

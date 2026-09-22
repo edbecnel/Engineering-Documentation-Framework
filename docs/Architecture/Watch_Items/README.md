@@ -8,6 +8,8 @@ This directory contains **Architectural Watch Items (AWIs)** — deferred archit
 
 Watch items are **non-authoritative for implementation** while Active. They record open questions, longer-horizon evolution, or architectural uncertainty until promoted to ADRs or explicitly closed.
 
+An AWI is **not** the tracking record for an Open [program-gate](../../Program/README.md) obligation. A [Governed Dependency Override](../../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) stays on the source EGR. Do not create an AWI automatically for a GDO. An AWI MAY be added only when remaining work is new architectural uncertainty rather than unfinished on-roadmap gate work.
+
 ## Watch Item Index
 
 | ID | Initiative | Status |
@@ -41,4 +43,5 @@ Adopting projects place project-specific watch items in this directory using the
 
 - [Architecture README](../README.md)
 - [Architecture Decision Records](../ADRs/README.md)
+- [Engineering Gate Review Records](../../Specifications/EGR-0001-Engineering-Gate-Review-Records.md)
 - [Glossary](../../Reference/Glossary.md)

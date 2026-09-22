@@ -15,7 +15,7 @@ AARs record how code or reference implementation aligns with authoritative ADRs 
 | AAR (this folder) | **Implementation** vs architectural **requirements** |
 | [EDF ASR Self-Conformance Review](../../Development/EDF_ASR_Self_Conformance_Review.md) | **Documentation structure** vs ASR guidance |
 | Framework Advisor reports | Automated **documentation** scoring under `reports/conformance/` |
-| [Engineering Gate Review Records](../../Program/Gate_Reviews/) | Human **program gate** approval over authoritative documents |
+| [Engineering Gate Review Records](../../Program/Gate_Reviews/README.md) | Human **program gate** approval over authoritative documents |
 
 ## Index
 

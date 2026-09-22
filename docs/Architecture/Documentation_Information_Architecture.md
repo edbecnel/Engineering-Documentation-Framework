@@ -99,6 +99,10 @@ Framework adoption engineering: documentation-first policies, migration and vali
 
 For **local environment setup, Git workflow, coding standards, testing, and releases**, see `docs/Developer_Handbook/`.
 
+### Program
+
+Program-level engineering documentation: milestones, releases, and **Engineering Gate Review Records (EGR)** under `docs/Program/Gate_Reviews/`. See [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md).
+
 ### Developer Handbook
 
 Day-to-day project engineering for contributors: first-time setup, development environment, AI conventions, Git workflow, coding standards, testing, and developer-oriented deployment checklists.
@@ -168,6 +172,7 @@ Applies to any engineering project regardless of discipline:
 | Generic templates | `docs/Templates/` — templates not tied to a single discipline |
 | User guides | `docs/User_Guides/` — end-user documentation |
 | Framework adoption | `docs/Development/` — documentation-first policies and migration tooling for adopters |
+| Program | `docs/Program/` — milestones, releases, and Engineering Gate Review Records |
 | Operations | `tasks/`, `archive/`, `scripts/`, `reports/` |
 
 ### What belongs in the Software Engineering profile
@@ -362,6 +367,7 @@ docs/Architecture/
 docs/AI/
 docs/Developer_Handbook/
 docs/Development/
+docs/Program/
 docs/Specifications/
 docs/Templates/
 ```
@@ -394,6 +400,8 @@ docs/
         Governance.md
     Governance/
     Development/
+    Program/
+        Gate_Reviews/
     Specifications/
     User_Guides/
     Reference/
@@ -429,6 +437,7 @@ docs/
     AI/
     Developer_Handbook/
     Development/
+    Program/
     Specifications/
     API/
     Database/
@@ -451,6 +460,7 @@ When the framework grows, do not merely append content. Improve the architecture
 ## Related Documents
 
 - [Project Index](../../PROJECT_INDEX.md)
+- [Program](../Program/README.md)
 - [Engineering Development Policy](../Development/Engineering_Development_Policy.md)
 - [EDF Development Workflow](../Development/EDF_Development_Workflow.md)
 - [Governance](../Governance/README.md)

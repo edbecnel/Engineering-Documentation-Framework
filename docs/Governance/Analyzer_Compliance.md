@@ -5,7 +5,7 @@
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Framework Advisor and compatible analyzers
-> **Last Reviewed:** 2026-07-10
+> **Last Reviewed:** 2026-09-22
 
 ## Purpose
 
@@ -117,6 +117,8 @@ The PowerShell and Bash Framework Advisor scripts implement:
 - structure, AI, navigation, governance, and overall scores
 
 External links, semantic duplication, and factual contradictions remain outside the M3 implementation.
+
+EGR Gate Status, Dependency Disposition, and Governed Dependency Override evidence are a **future** analyzer class. This increment does not require the Framework Advisor to parse EGRs. Until that class exists, GDO conformance is specified in [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) and checked by human review.
 
 ## Related Implementation
 

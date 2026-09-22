@@ -13,7 +13,7 @@ This directory captures **what the software must do** — functional requirement
 
 | ID | Title |
 |---|---|
-| [EGR-0001](EGR-0001-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records |
+| [EGR-0001](EGR-0001-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records (including Governed Dependency Override) |
 | [AAR-0001](AAR-0001-Architectural-Audit-Records.md) | Architectural Audit Records |
 
 ## Audience

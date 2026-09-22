@@ -14,10 +14,13 @@
 | **Audit Date** | YYYY-MM-DD (or period) |
 | **Owner** | [Role or name] |
 | **Superseded By** | [Link to replacement AAR if Superseded] |
+| **Active GDOs in implementation scope** | None / [source EGR and Override ID] |
 
 ## Purpose
 
 Describe why this audit was conducted and what implementation areas or release it supports.
+
+If in-scope implementation proceeded under an Active Governed Dependency Override, record the source EGR and Override ID in metadata. A GDO does not complete this audit or hide Gaps or Violations.
 
 ## Requirements Basis
 
@@ -83,4 +86,5 @@ After audit **Complete**, track follow-up:
 
 - [AAR-0001](../Specifications/AAR-0001-Architectural-Audit-Records.md)
 - [ADR-0008](../Architecture/ADRs/ADR-0008-Architectural-Audit-Records.md)
+- [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md)
 - [ADR Approval Workflow](../Architecture/ADRs/ADR_Approval_Workflow.md)

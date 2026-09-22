@@ -10,8 +10,8 @@
 | **Normative** | Yes |
 | **Status** | Proposed |
 | **Specification ID** | AAR-0001 |
-| **Version** | 1.0 |
-| **Date** | 2026-09-17 |
+| **Version** | 1.1 |
+| **Date** | 2026-09-22 |
 | **Owner** | Engineering Documentation Framework |
 | **Authoritative** | Yes |
 
@@ -27,6 +27,7 @@ Define adoptable requirements for **Architectural Audit Records (AAR)** — gove
 - Finding classifications (conformant, gap, violation, deferred, out of scope)
 - Separation from documentation self-conformance, bootstrap reports, and program gate records (EGR)
 - Relationship to ADR and document lifecycle workflows for remediation
+- Relationship to Engineering Gate Review Records and Governed Dependency Overrides
 
 ### Out of scope
 
@@ -49,7 +50,8 @@ Define adoptable requirements for **Architectural Audit Records (AAR)** — gove
 11. When an audit is re-run, the prior AAR SHOULD be marked **Superseded** with a link to the replacement AAR.
 12. **Audit ID** namespace (`AAR-NNNN`) MUST remain separate from architectural discovery record identifiers (for example `CRA-0000`), **Engineering Gate Review** gate IDs, and bootstrap **Bootstrap Validation Gate (BVG)** aliases (BVG-1 … BVG-6).
 13. An [Engineering Gate Review Record (EGR)](EGR-0001-Engineering-Gate-Review-Records.md) MAY require a **Complete** AAR before the gate is satisfied. Satisfying an EGR MUST NOT by itself close open findings or change remediation status in an AAR.
-14. Projects SHOULD use [Architectural_Audit_Record_Template.md](../Templates/Architectural_Audit_Record_Template.md) or a project copy derived from it.
+14. An AAR SHOULD record whether in-scope implementation proceeded under an Active [Governed Dependency Override](EGR-0001-Engineering-Gate-Review-Records.md). A GDO MUST NOT by itself mark an AAR Complete or hide Gaps or Violations. If work that remained Open under a GDO later exposes conflicting requirements affecting implementation, the finding MUST be classified as Gap or Violation and the relevant GDO MUST be Reactivated. Unreconciled Active GDOs at a declared closeout SHOULD be noted in any AAR covering that increment; they do not automatically fail architectural completeness unless the audit charter treats the missing documentation as an implementation requirement.
+15. Projects SHOULD use [Architectural_Audit_Record_Template.md](../Templates/Architectural_Audit_Record_Template.md) or a project copy derived from it.
 
 ## Conformance
 

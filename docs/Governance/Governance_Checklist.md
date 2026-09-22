@@ -5,7 +5,7 @@
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Governance reviews
-> **Last Reviewed:** 2026-07-10
+> **Last Reviewed:** 2026-09-22
 
 ## Document-Level Checklist
 
@@ -40,6 +40,7 @@
 - [ ] Architectural governance decisions are recorded.
 - [ ] Navigation is valid.
 - [ ] Required approvals are complete.
+- [ ] Declared program or release closeout reconciles Open EGRs with Active Governed Dependency Overrides (Satisfied, Waived, Superseded, or explicitly carried forward).
 
 ## Parent
 

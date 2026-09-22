@@ -52,7 +52,7 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 | [ADR-0004](ADRs/ADR-0004-Interaction-Specifications.md) | Interaction Specifications — umbrella layer, schema v2 | Proposed |
 | [ADR-0005](ADRs/ADR-0005-Project-Classification-and-Capabilities.md) | Project classification and composable capabilities | Accepted |
 | [ADR-0006](ADRs/ADR-0006-Engineering-Documentation-vs-Artifacts.md) | Engineering documentation vs artifacts | Accepted |
-| [ADR-0007](ADRs/ADR-0007-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records (EGR) | Proposed |
+| [ADR-0007](ADRs/ADR-0007-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records (EGR) and Governed Dependency Override | Proposed |
 | [ADR-0008](ADRs/ADR-0008-Architectural-Audit-Records.md) | Architectural Audit Records (AAR) | Proposed |
 
 Program gate reviews: [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md), [Program](../Program/README.md).
@@ -87,6 +87,7 @@ Adopting projects place project-specific ADRs under `docs/Architecture/ADRs/` us
 ## Related Documents
 
 - [Specifications](../Specifications/README.md)
+- [Program](../Program/README.md)
 - [Development](../Development/README.md)
 - [Governance](../Governance/README.md)
 - [Templates](../Templates/README.md)

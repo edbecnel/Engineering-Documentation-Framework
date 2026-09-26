@@ -120,6 +120,10 @@ git commit -m "Descriptive commit message"
 git push
 ```
 
+## Optional Governed Maintenance Fast Path
+
+Projects that adopt [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) use two declared-architecture-authority gates (authorization; acceptance and publication). During the authorized execution interval (GMFP-2), the AI assistant may implement, validate, document, and commit locally without intermediate approval. Push remains subject to explicit publication authorization after acceptance. See [Governed_Maintenance_Record_Template.md](../Templates/Governed_Maintenance_Record_Template.md).
+
 ## Repository Safety Rules
 
 Unless explicitly approved for a particular implementation, the AI assistant must not automatically:

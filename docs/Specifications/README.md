@@ -15,6 +15,7 @@ This directory captures **what the software must do** — functional requirement
 |---|---|
 | [EGR-0001](EGR-0001-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records (including Governed Dependency Override) |
 | [AAR-0001](AAR-0001-Architectural-Audit-Records.md) | Architectural Audit Records |
+| [GMFP-0001](GMFP-0001-Governed-Maintenance-Fast-Path.md) | Governed Maintenance Fast Path (optional capability) |
 
 ## Audience
 

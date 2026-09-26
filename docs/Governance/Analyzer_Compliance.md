@@ -120,6 +120,8 @@ External links, semantic duplication, and factual contradictions remain outside 
 
 EGR Gate Status, Dependency Disposition, and Governed Dependency Override evidence are a **future** analyzer class. This increment does not require the Framework Advisor to parse EGRs. Until that class exists, GDO conformance is specified in [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) and checked by human review.
 
+Governed Maintenance Record (GMR) metadata and GMFP maintenance status are a **future** analyzer class. Until that class exists, GMFP conformance is specified in [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) and checked by human review.
+
 ## Related Implementation
 
 - [Project Analysis and Validation Tool](../Development/Project_Analysis_Validation_Tool.md)

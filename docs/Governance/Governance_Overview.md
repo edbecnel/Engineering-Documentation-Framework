@@ -49,7 +49,7 @@ See [EDF Governance](EDF_Governance.md) for the framework-specific extension.
 1. Every authoritative document has a clearly identified owner.
 2. Every governed document has an explicit lifecycle state.
 3. Review frequency is proportional to the document's risk and rate of change.
-4. Governance rigor should be proportional to unresolved engineering risk. After substantive decisions are Accepted, remaining administrative or documentation work MUST NOT automatically stay on the critical path unless that work is necessary to protect correctness, traceability, safety, compliance, or another declared requirement. A [Governed Dependency Override](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) is the controlled mechanism for that proportionality — not informal gate skipping.
+4. Governance rigor should be proportional to unresolved engineering risk. After substantive decisions are Accepted, remaining administrative or documentation work MUST NOT automatically stay on the critical path unless that work is necessary to protect correctness, traceability, safety, compliance, or another declared requirement. A [Governed Dependency Override](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) is the controlled mechanism for that proportionality on Open program gates — not informal gate skipping. Projects that adopt the optional [Governed Maintenance Fast Path](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) apply the same proportionality idea to bounded corrective maintenance via two declared-architecture-authority gates and a lightweight Governed Maintenance Record.
 5. Project facts must not be invented or inferred without evidence.
 6. Significant documentation changes require traceable review.
 7. Deprecated documents remain discoverable until they are archived.
@@ -132,4 +132,5 @@ Projects may later choose stricter enforcement in CI or release workflows.
 
 - [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
 - [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md)
+- [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md)
 - [Engineering Development Policy](../Development/Engineering_Development_Policy.md)

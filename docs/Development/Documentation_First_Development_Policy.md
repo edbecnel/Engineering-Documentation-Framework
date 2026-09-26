@@ -32,6 +32,8 @@ Documentation defines the intended architecture before implementation. The repos
 
 Minor editorial corrections, formatting improvements, and broken-link fixes may be performed without following the full workflow.
 
+Projects that adopt the optional [Governed Maintenance Fast Path (GMFP)](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) MAY use that workflow for eligible bounded corrective maintenance instead of treating each implementation, documentation, and commit step as a separate architecture-authority gate. GMFP does not waive documentation-first requirements for architectural or product change.
+
 ## Future Analyzer Checks
 
 The Framework Advisor should eventually verify:

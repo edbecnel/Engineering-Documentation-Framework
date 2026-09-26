@@ -101,7 +101,7 @@ For **local environment setup, Git workflow, coding standards, testing, and rele
 
 ### Program
 
-Program-level engineering documentation: milestones, releases, and **Engineering Gate Review Records (EGR)** under `docs/Program/Gate_Reviews/`. See [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md).
+Program-level engineering documentation: milestones, releases, **Engineering Gate Review Records (EGR)** under `docs/Program/Gate_Reviews/`, and optional **Governed Maintenance Records (GMR)** under `docs/Program/Maintenance_Records/`. See [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) and [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md).
 
 ### Developer Handbook
 
@@ -172,7 +172,7 @@ Applies to any engineering project regardless of discipline:
 | Generic templates | `docs/Templates/` — templates not tied to a single discipline |
 | User guides | `docs/User_Guides/` — end-user documentation |
 | Framework adoption | `docs/Development/` — documentation-first policies and migration tooling for adopters |
-| Program | `docs/Program/` — milestones, releases, and Engineering Gate Review Records |
+| Program | `docs/Program/` — milestones, releases, Engineering Gate Review Records, and optional Maintenance Records (GMFP) |
 | Operations | `tasks/`, `archive/`, `scripts/`, `reports/` |
 
 ### What belongs in the Software Engineering profile
@@ -402,6 +402,7 @@ docs/
     Development/
     Program/
         Gate_Reviews/
+        Maintenance_Records/
     Specifications/
     User_Guides/
     Reference/

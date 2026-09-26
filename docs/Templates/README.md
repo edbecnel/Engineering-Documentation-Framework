@@ -35,6 +35,7 @@ Templates provide a consistent starting point. They are not rigid forms. Remove 
 | `EDF_Bootstrap_Report_Template.md` | Recording any EDF bootstrap outcome, mappings, and gaps |
 | `Gate_Review_Record_Template.md` | Recording human approval for program gates ([EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md)) |
 | `Architectural_Audit_Record_Template.md` | Recording implementation conformance audits ([AAR-0001](../Specifications/AAR-0001-Architectural-Audit-Records.md)) |
+| `Governed_Maintenance_Record_Template.md` | Recording bounded maintenance under GMFP ([GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md)) |
 | `Cross_Repo_Concern_Matrix_Template.md` | Mapping discipline-specific instances to shared EDF concerns |
 
 ## Required and Optional Sections

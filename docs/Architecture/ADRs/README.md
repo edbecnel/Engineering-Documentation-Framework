@@ -20,6 +20,7 @@ To propose, review, and approve ADRs (including updating **Proposed** → **Acce
 | [ADR-0006](ADR-0006-Engineering-Documentation-vs-Artifacts.md) | Engineering documentation vs engineering artifacts | Accepted | 2026-08-23 |
 | [ADR-0007](ADR-0007-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records (EGR) and Governed Dependency Override | Proposed | 2026-09-22 |
 | [ADR-0008](ADR-0008-Architectural-Audit-Records.md) | Architectural Audit Records (AAR) | Proposed | 2026-09-17 |
+| [ADR-0009](ADR-0009-Governed-Maintenance-Fast-Path.md) | Governed Maintenance Fast Path (GMFP) | Proposed | 2026-09-26 |
 
 Milestone ADRs (framework development history) remain indexed in [ARCHITECTURE_DECISIONS.md](../../../ARCHITECTURE_DECISIONS.md).
 

@@ -39,6 +39,7 @@ Engineering work should normally follow:
 
 ## Related Documents
 
+- [Governed Maintenance Fast Path (GMFP)](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) — optional bounded corrective maintenance workflow
 - [Documentation-First Development Policy](Documentation_First_Development_Policy.md)
 - [EDF Development Workflow](EDF_Development_Workflow.md)
 - [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)

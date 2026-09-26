@@ -78,6 +78,7 @@
 - [Governance Overview](docs/Governance/Governance_Overview.md)
 - [Document Metadata Standard](docs/Governance/Document_Metadata_Standard.md)
 - [Repository Workflow](docs/AI/Repository_Workflow.md)
+- [GMFP-0001 — Governed Maintenance Fast Path](docs/Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) (optional capability)
 
 ## Current Milestones
 

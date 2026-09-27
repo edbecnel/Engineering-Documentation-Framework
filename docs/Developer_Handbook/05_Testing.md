@@ -67,7 +67,9 @@ This document defines the project's testing strategy, expectations, and conventi
 
 **When:** UX validation, complex visual flows, one-off release verification.
 
-**Document:** Record steps in PR test plan; add automated coverage when paths stabilize.
+**Document (non-governed work):** Record steps in the PR test plan; add automated coverage when paths stabilize.
+
+**Governed human manual QA:** When an EDF-governed work item, gate, tranche, review, or acceptance decision **requires** human-executed manual verification, use a [Manual Verification Record (MVR)](../Specifications/MVR-0001-Manual-Verification-Records.md) under `docs/Verification/Records/`. Architecture documents, specifications, and implementation plans **must** link the MVR and **must not** host the canonical operator checklist. See [Verification](../Verification/README.md).
 
 ---
 
@@ -171,7 +173,7 @@ Prefer integration tests over heavy mocking when cost is acceptable.
 
 **Tools:** _[k6, locust, artillery, etc.]_
 
-**Documentation:** Store scenarios and results in `docs/Architecture/` or `docs/Deployment/`.
+**Documentation:** Store performance/load scenarios and results in `docs/Deployment/` or another project-appropriate operations domain. Do **not** use `docs/Architecture/` for governed human manual verification checklists — use an MVR when MVR-0001 applies.
 
 ---
 

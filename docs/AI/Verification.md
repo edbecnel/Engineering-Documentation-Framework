@@ -61,6 +61,17 @@ When AI influences architecture:
 - check long-term maintainability
 - confirm operational implications
 
+## Manual Verification Records (MVR)
+
+When [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md) applies, human-executed manual verification is recorded on a **Manual Verification Record (MVR)**. AI assistants **MUST NOT**:
+
+- set a required **Manual Verification Test (MVT)** **Result** to **Pass** based solely on implementation completion, automated test success, code or source inspection, model inference, expected behavior, or other non-human evidence
+- set **Human execution status** to **Complete** when required human execution has not successfully completed per MVR-0001
+
+AI assistants **MAY** draft or maintain MVR structure, formulate procedures and expected results, explain tests, surface pending tests, collect observations, record results **explicitly supplied by an authorized human**, and assist evidence reconciliation.
+
+The MVR **Execution record** is authoritative for governance; Markdown checkboxes are a usability aid and must stay consistent with **Result**.
+
 ## Git Verification
 
 Before committing AI-generated changes:

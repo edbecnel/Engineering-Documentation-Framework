@@ -23,6 +23,9 @@ This document defines domain terms and consistent terminology used across projec
 | **Governed Maintenance Fast Path (GMFP)** | An optional EDF workflow for bounded corrective maintenance with two human declared-architecture-authority gates (authorization; acceptance and publication) and an authorized execution interval (GMFP-2) that is not an approval gate. Framework rules: [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md). |
 | **Governed Maintenance Record (GMR)** | A concise Markdown record of one maintenance item under GMFP, stored under `docs/Program/Maintenance_Records/` as `GMR-NNNN-<short-title>.md`. Consolidates evidence; does not replace normative architecture. |
 | **Maintenance status** | Lifecycle of a GMR: `Proposed`, `Authorized`, `Implemented`, `Accepted`, `Published`, or `Escalated`. Independent of EGR Gate Status. |
+| **Manual Verification Record (MVR)** | Governed documentation that is the canonical executable human manual verification procedure and factual execution record when EDF-governed work requires human-executed manual verification. One MVR per obligation under `docs/Verification/Records/` as `MVR-NNNN-<short-title>.md`. Framework rules: [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md). |
+| **Manual Verification Test (MVT)** | A single human-executable test within an MVR, identified locally as `MVT-1`, `MVT-2`, … Global reference: `MVR-NNNN / MVT-n`. MVT **Result** is `Pending`, `Pass`, `Fail`, or `Blocked` only. |
+| **Human execution status** | Record-level MVR lifecycle for actual human verification execution: `Pending`, `In progress`, or `Complete` (successful required execution per MVR-0001). Not a waiver disposition. |
 | **Program gate** | A human checkpoint declared in a roadmap, charter, or release plan that bundles review of authoritative documents before unblocking defined work. Recorded as an EGR. Distinct from a Bootstrap Validation Gate. |
 | **Architecture Specification** | A normative document defining adoptable architecture, behavior, or conformance requirements. |
 | **Engineering Methodology** | The canonical, normative engineering knowledge corpus in `docs/` and governance — the sole authoritative source that interaction-layer artifacts and scripts execute but do not redefine. |
@@ -46,4 +49,5 @@ This document defines domain terms and consistent terminology used across projec
 - [docs/Specifications/](../Specifications/) — requirements that introduce domain terms
 - [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) — program gates and Governed Dependency Override
 - [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) — optional bounded maintenance workflow
+- [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md) — governed human manual verification records
 - [docs/User_Guides/](../User_Guides/) — end-user documentation using these terms

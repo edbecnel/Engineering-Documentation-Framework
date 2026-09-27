@@ -52,6 +52,7 @@ Define adoptable requirements for **Architectural Audit Records (AAR)** — gove
 13. An [Engineering Gate Review Record (EGR)](EGR-0001-Engineering-Gate-Review-Records.md) MAY require a **Complete** AAR before the gate is satisfied. Satisfying an EGR MUST NOT by itself close open findings or change remediation status in an AAR.
 14. An AAR SHOULD record whether in-scope implementation proceeded under an Active [Governed Dependency Override](EGR-0001-Engineering-Gate-Review-Records.md). A GDO MUST NOT by itself mark an AAR Complete or hide Gaps or Violations. If work that remained Open under a GDO later exposes conflicting requirements affecting implementation, the finding MUST be classified as Gap or Violation and the relevant GDO MUST be Reactivated. Unreconciled Active GDOs at a declared closeout SHOULD be noted in any AAR covering that increment; they do not automatically fail architectural completeness unless the audit charter treats the missing documentation as an implementation requirement.
 15. Projects SHOULD use [Architectural_Audit_Record_Template.md](../Templates/Architectural_Audit_Record_Template.md) or a project copy derived from it.
+16. When an audit charter requires human-executed manual verification, the project MUST link a [Manual Verification Record (MVR)](MVR-0001-Manual-Verification-Records.md). An AAR MUST NOT be marked **Complete** while a linked **required** MVR has unresolved required manual verification, except through explicit waiver on the governing record (for example the EGR or charter-defined acceptance authority) per applicable EDF governance. Waiver does not alter factual MVT **Result** on the MVR.
 
 ## Conformance
 
@@ -88,3 +89,4 @@ Discovery records (for example PCON-0000) are non-normative historical context. 
 - [Architecture Audits](../Architecture/Audits/README.md)
 - [Document Lifecycle](../Governance/Document_Lifecycle.md)
 - [EGR-0001](EGR-0001-Engineering-Gate-Review-Records.md)
+- [MVR-0001](MVR-0001-Manual-Verification-Records.md)

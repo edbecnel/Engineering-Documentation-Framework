@@ -63,6 +63,8 @@ Define adoptable requirements for **Engineering Gate Review Records (EGR)** — 
 22. If the authorized downstream activity has its own EGR, that EGR SHOULD reference the source GDO. A downstream EGR is **not** required merely because a GDO exists.
 23. A GDO MUST NOT automatically create an [Architectural Watch Item](../Architecture/Watch_Items/README.md). An AWI MAY be added only when the remaining work is new architectural uncertainty rather than unfinished on-roadmap obligation. Primary tracking remains the source EGR.
 24. A `Waived` closed outcome MUST identify the affected gate, rationale, owner, approval, review date, and whether the waiver is permanent or has a resolution plan (same evidence pattern as accepted exceptions). A `Superseded` closed outcome MUST link to the replacing accepted gate, artifact, or decision.
+25. When a gate definition requires human-executed manual verification, the project MUST link a [Manual Verification Record (MVR)](MVR-0001-Manual-Verification-Records.md) from the EGR or from an authoritative document under review. The EGR MUST NOT be marked `Satisfied` while a linked **required** MVR has unresolved required manual verification, except through an explicit `Waived` (or equivalent documented waiver of the verification obligation) on this EGR per §24. Waiver of the verification obligation is recorded on this governing record; it MUST NOT change factual MVT **Result** values on the MVR.
+26. A **Governed Dependency Override** MUST NOT substitute for human manual test execution required by a linked MVR.
 
 ## Conformance
 
@@ -105,6 +107,7 @@ Discovery records (for example PCON-0000) are non-normative context. An EGR MAY 
 
 - [ADR-0007](../Architecture/ADRs/ADR-0007-Engineering-Gate-Review-Records.md)
 - [AAR-0001](AAR-0001-Architectural-Audit-Records.md)
+- [MVR-0001](MVR-0001-Manual-Verification-Records.md)
 - [Program](../Program/README.md)
 - [Document Lifecycle](../Governance/Document_Lifecycle.md)
 - [Governance Overview](../Governance/Governance_Overview.md)

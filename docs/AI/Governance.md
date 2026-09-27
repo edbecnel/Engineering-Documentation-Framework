@@ -23,6 +23,8 @@ Human developers are responsible for:
 
 AI should propose, draft, analyze, and assist. It should not silently own decisions.
 
+For governed human manual verification, AI **must not** impersonate the human execution step. See [Verification.md](./Verification.md) (Manual Verification Records) and [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md).
+
 ## Documentation Synchronization
 
 When implementation changes affect documented behavior, update the relevant documentation.

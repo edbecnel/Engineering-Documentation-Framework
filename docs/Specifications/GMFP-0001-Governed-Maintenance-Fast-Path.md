@@ -117,6 +117,7 @@ GMFP is an **optional governed capability**. Projects MAY adopt it when they nee
 ### Human authority
 
 32. Only humans (or explicitly delegated decision makers named in project governance) may authorize GMFP-1, accept GMFP-3, or authorize publication. Automated tools MAY pre-fill GMR sections but MUST NOT change maintenance status to `Authorized`, `Accepted`, or `Published` without explicit human direction ([Change Management](../Governance/Change_Management.md)).
+33. When governed human-manual-verification is required for the maintenance item or its acceptance, the project MUST use a [Manual Verification Record (MVR)](MVR-0001-Manual-Verification-Records.md). GMFP-3 MUST NOT be represented as accepted while a linked **required** MVR has unresolved required manual verification, except through explicit waiver on the governing record per applicable EDF governance. GMR validation **pass** / **fail** entries MUST NOT imply human manual QA was executed unless the linked MVR execution record shows successful human execution per MVR-0001.
 
 ## Conformance
 
@@ -149,4 +150,5 @@ A pre-existing test-isolation defect reproduced on multiple baselines, traced to
 - [Documentation-First Development Policy](../Development/Documentation_First_Development_Policy.md)
 - [Governance Overview](../Governance/Governance_Overview.md)
 - [Glossary](../Reference/Glossary.md)
+- [MVR-0001](MVR-0001-Manual-Verification-Records.md)
 - [Program](../Program/README.md)

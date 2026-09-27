@@ -20,8 +20,11 @@ Copy from [Cross_Repo_Concern_Matrix_Template.md](../Templates/Cross_Repo_Concer
 | Requirements | `docs/Specifications/` | `docs/Specifications/` | | |
 | Design decisions | `docs/Architecture/ADRs/` | `docs/Architecture/ADRs/` | | |
 | Primary design artifacts | Source code (`src/`) | KiCad schematics (artifact) | | Artifacts ≠ docs |
-| Test procedures | `docs/Developer_Handbook/` | Governed docs + bench data (artifact) | | |
-| Validation evidence | CI logs, test reports | Measurement datasets (artifact) | | |
+| Governed human manual verification (MVR) | `docs/Verification/Records/` ([MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md)) | Same pattern when applicable | | Operator checklist + execution record |
+| Ordinary PR / developer manual checks | PR test plan, `docs/Developer_Handbook/05_Testing.md` | Project handbook | | Non-governed lightweight checks |
+| Bench / instrument test procedures | `docs/` (project-defined) | Governed docs + bench data (artifact) | | Electronics-style procedures |
+| Automated validation evidence | CI logs, test reports | Measurement datasets (artifact) | | |
+| Performance / load documentation | `docs/Deployment/` (typical) | Project-defined | | Not a substitute for MVR |
 | Authority / scope | `PROJECT_CHARTER.md` | `edf-project-context.yaml` | | |
 | Open questions | Watch Items | Watch Items | | |
 | Bootstrap report | `EDF_BOOTSTRAP_REPORT.md` | `EDF_BOOTSTRAP_REPORT.md` | | |

@@ -60,6 +60,18 @@ Normative specifications define adoptable architecture, methodology, protocol, o
 
 AARs MUST NOT substitute for [Self-Conformance Review](Self_Conformance_Review.md) or Framework Advisor reports under `reports/`.
 
+### Governed human manual verification
+
+**Manual Verification Records (MVR)** are the canonical executable human manual verification procedure and execution record when EDF-governed work requires human-executed manual verification.
+
+- **Location:** `docs/Verification/Records/`
+- **Document type:** Manual Verification Record
+- **Normative (instances):** No — instances record execution; framework rules are normative
+- **Framework specification:** [MVR-0001](../../../Specifications/MVR-0001-Manual-Verification-Records.md)
+- **Template:** [Manual Verification Record Template](../../../Templates/Manual_Verification_Record_Template.md)
+
+Planning artifacts link MVRs and do not host canonical operator checklists when MVR-0001 applies.
+
 ### Identifier namespaces
 
 Discovery record identifiers (e.g., `CRA-0000`) and specification identifiers (e.g., `CRA-0001`) use **separate series**. A discovery record is never promoted to a normative specification without an explicit architectural decision.

@@ -95,6 +95,16 @@ Describe environments, runtime topology, infrastructure, and deployment boundari
 
 Describe logs, metrics, traces, health checks, and alerting.
 
+## Governed manual verification (conditional)
+
+**Conditional**
+
+Required when this document or a linked governed tranche requires human-executed manual verification.
+
+- Declare the manual-QA obligation (what must be verified and why).
+- Link the canonical [Manual Verification Record (MVR)](../Specifications/MVR-0001-Manual-Verification-Records.md) under `docs/Verification/Records/`.
+- Do **not** embed the detailed operator checklist in this architecture document.
+
 ## Architecture Decisions
 
 **Required**

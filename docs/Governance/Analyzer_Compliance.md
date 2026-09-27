@@ -122,6 +122,8 @@ EGR Gate Status, Dependency Disposition, and Governed Dependency Override eviden
 
 Governed Maintenance Record (GMR) metadata and GMFP maintenance status are a **future** analyzer class. Until that class exists, GMFP conformance is specified in [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) and checked by human review.
 
+Manual Verification Record (MVR) metadata, human execution status, and MVT execution results are a **future** analyzer class. This tranche does **not** require the Framework Advisor to parse MVRs. Until that class exists, MVR conformance is specified in [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md) and checked by human review. Deterministic Markdown structure in MVR-0001 satisfies tooling interoperability at the document-contract level for this tranche.
+
 ## Related Implementation
 
 - [Project Analysis and Validation Tool](../Development/Project_Analysis_Validation_Tool.md)

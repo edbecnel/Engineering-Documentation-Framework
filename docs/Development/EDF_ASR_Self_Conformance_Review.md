@@ -165,9 +165,14 @@ This review satisfies the EDF portion of AWI-0003 promotion criterion 1 ("ASR bo
 - **Do not** remove Software Engineering profile paths without ADR and replacement strategy
 - **Do not** run ASR bootstrap procedure against EDF
 - **Do not** generate empty placeholder normative specifications or discovery records for conformance demonstration
+- **Do not** create a synthetic governed **Manual Verification Record** in `docs/Verification/Records/` for conformance demonstration (MVR-0001 / PA-MVR-12); use specification, template, and validation evidence instead
 - **Do not** author an Architectural Discovery Record unless historical analysis demonstrates genuine benefit
 - **Do not** rewrite historical ADRs or archive content to fit ASR numbering
 - **Do not** treat Validation Checklist as mandatory literal compliance for the framework source repository
+
+## I. MVR governance self-hosting evidence (2026-09-28)
+
+Manual Verification Records ([ADR-0010](../Architecture/ADRs/ADR-0010-Manual-Verification-Records.md), [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md)) add Core paths `docs/Verification/` and `docs/Verification/Records/` via `edf_profile` scripts. EDF self-conformance for this tranche relies on normative specification, template structure, navigation updates, and prescribed self-hosting validation — not a fake `MVR-NNNN` instance file. First real MVR adoption is expected downstream (TRV CC-4B).
 
 ## Engineering Principle
 

@@ -112,6 +112,8 @@ Describe data created, read, updated, deleted, retained, or migrated.
 - Integration testing:
 - End-to-end testing:
 - Manual verification:
+  - If an EDF-governed human-manual-verification obligation applies: declare it, link the canonical [MVR](../Specifications/MVR-0001-Manual-Verification-Records.md) under `docs/Verification/Records/`, and do **not** embed the operator checklist here.
+  - Otherwise: summarize or link PR test plan / handbook guidance.
 
 ## Rollout and Migration
 

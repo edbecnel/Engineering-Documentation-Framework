@@ -103,6 +103,10 @@ For **local environment setup, Git workflow, coding standards, testing, and rele
 
 Program-level engineering documentation: milestones, releases, **Engineering Gate Review Records (EGR)** under `docs/Program/Gate_Reviews/`, and optional **Governed Maintenance Records (GMR)** under `docs/Program/Maintenance_Records/`. See [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) and [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md).
 
+### Verification
+
+Human manual verification when EDF-governed work requires it: **Manual Verification Records (MVR)** under `docs/Verification/Records/`. Planning artifacts declare obligations and link MVRs; they do not host canonical operator checklists. See [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md) and [ADR-0010](ADRs/ADR-0010-Manual-Verification-Records.md).
+
 ### Developer Handbook
 
 Day-to-day project engineering for contributors: first-time setup, development environment, AI conventions, Git workflow, coding standards, testing, and developer-oriented deployment checklists.

@@ -4,6 +4,8 @@
 
 ### Added
 
+- [ADR-0010](docs/Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) and [MVR-0001](docs/Specifications/MVR-0001-Manual-Verification-Records.md) — Manual Verification Records for governed human manual QA
+- [Manual_Verification_Record_Template.md](docs/Templates/Manual_Verification_Record_Template.md), `docs/Verification/` and `docs/Verification/Records/` Core paths
 - [ADR-0009](docs/Architecture/ADRs/ADR-0009-Governed-Maintenance-Fast-Path.md) and [GMFP-0001](docs/Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) — optional Governed Maintenance Fast Path with two human governance gates and lightweight Governed Maintenance Records
 - [Governed_Maintenance_Record_Template.md](docs/Templates/Governed_Maintenance_Record_Template.md), `docs/Program/Maintenance_Records/` Core path
 - Governed Dependency Override (GDO) semantics on [EGR-0001](docs/Specifications/EGR-0001-Engineering-Gate-Review-Records.md) and [ADR-0007](docs/Architecture/ADRs/ADR-0007-Engineering-Gate-Review-Records.md) — leave a program gate Open while authorizing a precise Non-Blocking downstream activity

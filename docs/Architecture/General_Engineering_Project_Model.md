@@ -74,8 +74,8 @@ The following concepts apply across disciplines. A given project may use a subse
 
 | Concept | Description |
 |---|---|
-| **Test Procedures** | Repeatable steps to verify or validate behavior |
-| **Test Results / Observations** | Recorded outcomes of procedures or experiments |
+| **Test Procedures** | Repeatable steps to verify or validate behavior; for EDF-governed **human** manual verification, canonical storage is [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md) under `docs/Verification/Records/` |
+| **Test Results / Observations** | Recorded outcomes of procedures or experiments; governed human manual results are recorded on the same MVR (execution record section) |
 | **Risks / Issues / Failures** | Known or discovered problems requiring tracking |
 
 ### Change and history

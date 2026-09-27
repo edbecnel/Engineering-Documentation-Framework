@@ -79,6 +79,7 @@
 - [Document Metadata Standard](docs/Governance/Document_Metadata_Standard.md)
 - [Repository Workflow](docs/AI/Repository_Workflow.md)
 - [GMFP-0001 — Governed Maintenance Fast Path](docs/Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) (optional capability)
+- [MVR-0001 — Manual Verification Records](docs/Specifications/MVR-0001-Manual-Verification-Records.md) — governed human manual QA ([Verification](docs/Verification/README.md))
 
 ## Current Milestones
 

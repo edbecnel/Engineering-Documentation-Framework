@@ -17,7 +17,7 @@ Individual ADRs live under [docs/Architecture/ADRs/](docs/Architecture/ADRs/READ
 | [ADR-0007](docs/Architecture/ADRs/ADR-0007-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records (EGR) and Governed Dependency Override | Proposed | 2026-09-22 |
 | [ADR-0008](docs/Architecture/ADRs/ADR-0008-Architectural-Audit-Records.md) | Architectural Audit Records (AAR) | Proposed | 2026-09-17 |
 | [ADR-0009](docs/Architecture/ADRs/ADR-0009-Governed-Maintenance-Fast-Path.md) | Governed Maintenance Fast Path (GMFP) | Proposed | 2026-09-26 |
-| [ADR-0010](docs/Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) | Manual Verification Records (MVR) | Proposed | 2026-09-28 |
+| [ADR-0010](docs/Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) | Manual Verification Records (MVR) | Accepted | 2026-09-28 |
 
 ## Milestone ADRs
 

@@ -1,8 +1,8 @@
 # Manual Verification Records (MVR) — EDF Implementation Plan
 
-**Status:** Implemented locally (pending Project Architect review)  
+**Status:** Project Architect accepted and published (2026-09-28)  
 **Authorization:** Project Architect implementation authorization, 2026-09-28  
-**Push:** Not authorized until PA acceptance and publication authorization
+**Publication:** Pushed to `origin/main` (baseline commits `6032bf4`, `dce255f`, `7764e7b` plus publication closeout)
 
 ---
 
@@ -29,9 +29,9 @@
 | 4 | IA, glossary, indexes, bootstrap scripts, CHANGELOG, ASR Guidance, GEP pointer |
 | 5 | Self-hosting / conformance validation evidence |
 
-## STOP
+## Closeout
 
-After validation, STOP for Project Architect implementation review. Do not push. Do not start TRV migration or ProjectConcord adoption.
+MVR framework change **closed**. Downstream sequence: ProjectConcord MVR adoption, then TRV CC-4B MVR migration (separate handovers; not started from this repository).
 
 ## Plan history
 

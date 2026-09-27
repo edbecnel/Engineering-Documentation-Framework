@@ -30,6 +30,7 @@
 
 ### Changed
 
+- [ADR-0010](docs/Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) — **Accepted** (Project Architect, 2026-09-28); MVR baseline published to `origin/main`
 - [EGR-0001](docs/Specifications/EGR-0001-Engineering-Gate-Review-Records.md) v1.1 — Gate Status includes Waived and Superseded; independent Dependency Disposition; Authorized Downstream Scope is not limited to another EGR
 - [AAR-0001](docs/Specifications/AAR-0001-Architectural-Audit-Records.md) v1.1 — record Active GDOs in implementation-scope audits
 - [Documentation Information Architecture](docs/Architecture/Documentation_Information_Architecture.md) and [PROJECT_INDEX.md](PROJECT_INDEX.md) — Program domain indexed as EDF Core

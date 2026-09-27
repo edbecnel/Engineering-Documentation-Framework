@@ -172,7 +172,7 @@ This review satisfies the EDF portion of AWI-0003 promotion criterion 1 ("ASR bo
 
 ## I. MVR governance self-hosting evidence (2026-09-28)
 
-Manual Verification Records ([ADR-0010](../Architecture/ADRs/ADR-0010-Manual-Verification-Records.md), [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md)) add Core paths `docs/Verification/` and `docs/Verification/Records/` via `edf_profile` scripts. EDF self-conformance for this tranche relies on normative specification, template structure, navigation updates, and prescribed self-hosting validation — not a fake `MVR-NNNN` instance file. First real MVR adoption is expected downstream (TRV CC-4B).
+Manual Verification Records ([ADR-0010](../Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) **Accepted**, [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md)) add Core paths `docs/Verification/` and `docs/Verification/Records/` via `edf_profile` scripts. EDF self-conformance for this tranche relies on normative specification, template structure, navigation updates, and prescribed self-hosting validation — not a fake `MVR-NNNN` instance file. Project Architect accepted and published the MVR baseline to `origin/main` on 2026-09-28. First real MVR instance adoption is expected downstream (TRV CC-4B after ProjectConcord handover).
 
 ## Engineering Principle
 

@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| **Status** | Proposed |
+| **Status** | Accepted |
 | **Date** | 2026-09-28 |
 | **Decision Makers** | EDF maintainers |
 | **Related** | [MVR-0001](../../Specifications/MVR-0001-Manual-Verification-Records.md), [ADR-0006](ADR-0006-Engineering-Documentation-vs-Artifacts.md), [ADR Approval Workflow](ADR_Approval_Workflow.md) |

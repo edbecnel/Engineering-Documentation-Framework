@@ -55,7 +55,7 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 | [ADR-0007](ADRs/ADR-0007-Engineering-Gate-Review-Records.md) | Engineering Gate Review Records (EGR) and Governed Dependency Override | Proposed |
 | [ADR-0008](ADRs/ADR-0008-Architectural-Audit-Records.md) | Architectural Audit Records (AAR) | Proposed |
 | [ADR-0009](ADRs/ADR-0009-Governed-Maintenance-Fast-Path.md) | Governed Maintenance Fast Path (GMFP) | Proposed |
-| [ADR-0010](ADRs/ADR-0010-Manual-Verification-Records.md) | Manual Verification Records (MVR) | Proposed |
+| [ADR-0010](ADRs/ADR-0010-Manual-Verification-Records.md) | Manual Verification Records (MVR) | Accepted |
 
 Program gate reviews: [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md), [Program](../Program/README.md).
 

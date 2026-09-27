@@ -61,7 +61,11 @@ Use descriptive names such as:
 
 ## Current Tasks
 
-No active tasks are defined in the framework template.
+No active checklist tasks are defined in the framework template.
+
+### Governance implementation plans
+
+- [MVR implementation plan](MVR-implementation-plan.md) — Manual Verification Records; authoritative plan for [MVR-0001](../docs/Specifications/MVR-0001-Manual-Verification-Records.md)
 
 ## Parent
 

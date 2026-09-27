@@ -407,6 +407,8 @@ docs/
     Program/
         Gate_Reviews/
         Maintenance_Records/
+    Verification/
+        Records/
     Specifications/
     User_Guides/
     Reference/

@@ -85,6 +85,7 @@ _None anticipated._
 | `9ba130b` | docs(gmfp): record GMR-0002 commit reference and GMFP-2 STOP |
 | `ed30da6` | docs(gmfp): record GMR-0002 publication evidence |
 | `c21fdf0` | docs(gmfp): finalize GMR-0002 remote publication refs |
+| `d00040d` | docs(gmfp): align GMR-0002 publication refs with origin/main |
 
 ## Acceptance and publication gate (GMFP-3)
 
@@ -99,7 +100,7 @@ _None anticipated._
 | Field | Value |
 |---|---|
 | **Pushed** | 2026-09-28 |
-| **Remote refs** | `origin/main` @ `d00040d` |
+| **Remote refs** | `origin/main` @ `9ba130b` (normative implementation); closeout commits through `b8070c7` on `main` |
 | **Verification** | clean working tree; `local` == `origin/main`; ahead/behind 0/0 |
 
 ## Parent

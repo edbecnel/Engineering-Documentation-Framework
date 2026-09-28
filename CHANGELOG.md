@@ -31,6 +31,7 @@
 
 ### Changed
 
+- [DVW-0001](docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md) v1.1 — human-interactive vs automation-oriented placement guidance; prospective validity for v1.0-conformant DVWs ([GMR-0002](docs/Program/Maintenance_Records/GMR-0002-DVW-human-interactive-placement.md))
 - [MVR-0001](docs/Specifications/MVR-0001-Manual-Verification-Records.md) v1.1 — explicit automatable verification support versus human verification boundary; optional MVT preparation/support presentation; evidence provenance ([GMR-0001](docs/Program/Maintenance_Records/GMR-0001-MVR-verification-support-boundary.md))
 - [Manual_Verification_Record_Template.md](docs/Templates/Manual_Verification_Record_Template.md) — optional **Preparation / support (may be automated)** per MVT
 - [ADR-0010](docs/Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) — **Accepted** (Project Architect, 2026-09-28); MVR baseline published to `origin/main`

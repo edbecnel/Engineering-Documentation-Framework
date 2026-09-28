@@ -7,7 +7,7 @@
 | Field | Value |
 |---|---|
 | **Record ID** | GMR-0002 |
-| **Maintenance status** | Implemented |
+| **Maintenance status** | Published |
 | **Change class** | GMFP |
 | **Owner** | Engineering Documentation Framework |
 | **Baseline** | `main` @ `8e1884a5c1dac307d49c75ff21327db52b7a85bb` |
@@ -82,22 +82,23 @@ _None anticipated._
 | SHA | Message |
 |---|---|
 | `76fc7af` | Clarify DVW placement for human-interactive verification |
+| `9ba130b` | docs(gmfp): record GMR-0002 commit reference and GMFP-2 STOP |
 
 ## Acceptance and publication gate (GMFP-3)
 
 | Field | Value |
 |---|---|
-| **Authority** | |
-| **Date** | |
-| **Decision** | _Awaiting GMFP ACCEPTED — PUBLICATION AUTHORIZED_ |
+| **Authority** | Project Architect |
+| **Date** | 2026-09-28 |
+| **Decision** | GMFP ACCEPTED — PUBLICATION AUTHORIZED. GMFP-2 accepted. DVW-0001 lifecycle status remains **Proposed** (not promoted). |
 
 ## Publication evidence
 
 | Field | Value |
 |---|---|
-| **Pushed** | |
-| **Remote refs** | |
-| **Verification** | |
+| **Pushed** | 2026-09-28 |
+| **Remote refs** | `origin/main` @ `9ba130b` (implementation); closeout commit recorded below after publication evidence commit |
+| **Verification** | clean working tree; `local` == `origin/main`; ahead/behind 0/0 after closeout push |
 
 ## Parent
 

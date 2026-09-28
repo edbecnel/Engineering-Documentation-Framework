@@ -1,6 +1,6 @@
 # DVW Human-Interactive Path Ergonomics — Refinement Plan
 
-**Status:** GMFP-2 **COMPLETE** — **STOP before push** (await GMFP-3)  
+**Status:** **CLOSED** / Project Architect **ACCEPTED** / **PUBLISHED** (2026-09-28)  
 **Authorization:** Project Architect — PA PLAN ACCEPTED; GMFP eligibility affirmed; **GMFP IMPLEMENTATION AUTHORIZED**  
 **Governance record:** [GMR-0002](../docs/Program/Maintenance_Records/GMR-0002-DVW-human-interactive-placement.md)  
 **Baseline:** `main` @ `8e1884a5c1dac307d49c75ff21327db52b7a85bb`
@@ -36,11 +36,15 @@ Improve DVW **location guidance** for **human-interactive** verification when op
 | **Plan** | This file + PA plan acceptance | **PASSED** |
 | **GMFP-1** | GMR-0002 with **GMFP IMPLEMENTATION AUTHORIZED** | **PASSED** |
 | **GMFP-2** | DVW-0001 v1.1; companion sync; validation; local commit(s) | **COMPLETE** — STOP before push |
-| **GMFP-3** | PA **GMFP ACCEPTED — PUBLICATION AUTHORIZED**; push; GMR Published | Not started |
+| **GMFP-3** | PA **GMFP ACCEPTED — PUBLICATION AUTHORIZED**; push; GMR Published | **PASSED** |
+
+## Publication
+
+Implementation published to `origin/main` @ `9ba130b` (2026-09-28). GMR-0002 **Published**; closeout evidence on `main` per GMR publication record.
 
 ## STOP gates
 
-- **STOP (current):** After GMFP-2 local commit(s)—await GMFP-3 before push.
+- **STOP-3 (publication):** **PASSED** — refinement closed.
 - Do not alter, relocate, or invalidate the in-use ProjectConcord A1c DVW; do not require MVT rerun.
 
 ## Related documents

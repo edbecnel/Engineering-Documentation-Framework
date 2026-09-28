@@ -1,8 +1,8 @@
 # Disposable Verification Workspaces (DVW) — EDF Implementation Plan
 
-**Status:** Project Architect accepted and published (2026-09-28)  
+**Status:** Published 2026-09-28; STOP-3 PA closeout pending  
 **Authorization:** Stage 3 release/publication authorization, 2026-09-28  
-**Publication:** Pushed to `origin/main` (DVW Stage 1–3 baseline; see git log for publication commit SHA)
+**Publication:** Pushed to `origin/main` (`048cdc6bc9ee581bb60fea5e7d26f7de673e5569`)
 
 **Governance status (authoritative in-repository record):**
 
@@ -13,8 +13,8 @@
 | **STOP-1** — Stage 1 review | **PASSED** |
 | **Stage 2** — Companion Documentation | **ACCEPTED** |
 | **STOP-2** — Stage 2 review | **PASSED** |
-| **Stage 3** — Release / Publication | **ACCEPTED** / **PUBLISHED** |
-| **STOP-3** — Publication evidence | Recorded in publication commit and STOP-3 package |
+| **Stage 3** — Release / Publication | **PUBLISHED** (2026-09-28) |
+| **STOP-3** — Publication evidence | **PA closeout pending** (provenance correction applied; formal STOP-3 closure not yet issued) |
 | **STOP-4** — ProjectConcord reconciliation | **NOT AUTHORIZED** |
 
 ---
@@ -94,7 +94,7 @@ ProjectConcord A1c manual MVR remains **PAUSED** until STOP-4.
 
 ## Closeout
 
-DVW framework change **published** when Stage 3 validation succeeds, CHANGELOG records the release, and `origin/main` contains the publication commit. STOP-4 (ProjectConcord) is a **separate** authorization.
+Stage 1–3 framework artifacts were **published** to `origin/main` on 2026-09-28 (commit `048cdc6bc9ee581bb60fea5e7d26f7de673e5569`). Formal **STOP-3** Project Architect closure remains **pending**. STOP-4 (ProjectConcord) is a **separate** authorization and is **not** authorized.
 
 ## Plan history
 

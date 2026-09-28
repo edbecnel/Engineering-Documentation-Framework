@@ -7,7 +7,7 @@
 | Field | Value |
 |---|---|
 | **Record ID** | GMR-0001 |
-| **Maintenance status** | Implemented |
+| **Maintenance status** | Published |
 | **Change class** | GMFP |
 | **Owner** | Engineering Documentation Framework |
 | **Baseline** | `main` @ `73ed6f2566c12f1f24d4669e09cf15b380c0b45d` |
@@ -78,7 +78,7 @@ _None anticipated._
 
 | SHA | Message |
 |---|---|
-| _(pending GMFP-2 commit or PA-directed commit)_ | |
+| `323e8a3` | Clarify automated support for manual verification |
 
 ## Acceptance and publication gate (GMFP-3)
 
@@ -92,9 +92,9 @@ _None anticipated._
 
 | Field | Value |
 |---|---|
-| **Pushed** | _(recorded after successful push)_ |
-| **Remote refs** | |
-| **Verification** | |
+| **Pushed** | 2026-09-28 |
+| **Remote refs** | `origin/main` @ `323e8a3` |
+| **Verification** | clean working tree; `local` == `origin/main`; ahead/behind 0/0 |
 
 ## Parent
 

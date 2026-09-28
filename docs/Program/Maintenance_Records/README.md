@@ -14,7 +14,7 @@ Create new records with [Governed_Maintenance_Record_Template.md](../../Template
 
 | Record ID | Title | Status | Date closed |
 |---|---|---|---|
-| [GMR-0001](GMR-0001-MVR-verification-support-boundary.md) | MVR verification support versus human attestation boundary | Implemented | |
+| [GMR-0001](GMR-0001-MVR-verification-support-boundary.md) | MVR verification support versus human attestation boundary | Published | 2026-09-28 |
 
 ## Parent
 

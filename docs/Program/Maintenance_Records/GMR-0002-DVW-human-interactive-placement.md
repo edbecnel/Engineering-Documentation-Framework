@@ -81,7 +81,7 @@ _None anticipated._
 
 | SHA | Message |
 |---|---|
-| _pending_ | _GMFP-2 implementation commit_ |
+| `76fc7af` | Clarify DVW placement for human-interactive verification |
 
 ## Acceptance and publication gate (GMFP-3)
 

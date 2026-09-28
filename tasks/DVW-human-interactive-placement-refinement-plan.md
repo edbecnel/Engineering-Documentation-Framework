@@ -40,7 +40,7 @@ Improve DVW **location guidance** for **human-interactive** verification when op
 
 ## Publication
 
-Implementation published to `origin/main` @ `9ba130b` (2026-09-28). GMR-0002 **Published**; closeout evidence on `main` per GMR publication record.
+Implementation published to `origin/main` @ `9ba130b`; publication closeout `ed30da6` (2026-09-28). GMR-0002 **Published**.
 
 ## STOP gates
 

@@ -97,8 +97,8 @@ _None anticipated._
 | Field | Value |
 |---|---|
 | **Pushed** | 2026-09-28 |
-| **Remote refs** | `origin/main` @ `9ba130b` (implementation); closeout commit recorded below after publication evidence commit |
-| **Verification** | clean working tree; `local` == `origin/main`; ahead/behind 0/0 after closeout push |
+| **Remote refs** | `origin/main` @ `ed30da6` |
+| **Verification** | clean working tree; `local` == `origin/main`; ahead/behind 0/0 |
 
 ## Parent
 

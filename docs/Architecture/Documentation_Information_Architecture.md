@@ -107,6 +107,8 @@ Program-level engineering documentation: milestones, releases, **Engineering Gat
 
 Human manual verification when EDF-governed work requires it: **Manual Verification Records (MVR)** under `docs/Verification/Records/`. Planning artifacts declare obligations and link MVRs; they do not host canonical operator checklists. See [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md) and [ADR-0010](ADRs/ADR-0010-Manual-Verification-Records.md).
 
+**Disposable Verification Workspaces (DVW)** are filesystem subjects used during verification when procedures or tests need directories on disk. A DVW is **not** a `docs/` domain, canonical documentation directory, or in-repository operational store (contrast `reports/` tool output inside the adopting root). Resolved DVW paths may appear on an MVR as execution metadata. See [DVW-0001](../Specifications/DVW-0001-Disposable-Verification-Workspaces.md).
+
 ### Developer Handbook
 
 Day-to-day project engineering for contributors: first-time setup, development environment, AI conventions, Git workflow, coding standards, testing, and developer-oriented deployment checklists.

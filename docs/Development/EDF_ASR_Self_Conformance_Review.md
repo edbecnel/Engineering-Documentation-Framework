@@ -174,6 +174,10 @@ This review satisfies the EDF portion of AWI-0003 promotion criterion 1 ("ASR bo
 
 Manual Verification Records ([ADR-0010](../Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) **Accepted**, [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md)) add Core paths `docs/Verification/` and `docs/Verification/Records/` via `edf_profile` scripts. EDF self-conformance for this tranche relies on normative specification, template structure, navigation updates, and prescribed self-hosting validation — not a fake `MVR-NNNN` instance file. Project Architect accepted and published the MVR baseline to `origin/main` on 2026-09-28. First real MVR instance adoption is expected downstream (TRV CC-4B after ProjectConcord handover).
 
+## J. DVW governance self-hosting evidence (2026-09-28)
+
+Disposable Verification Workspaces ([DVW-0001](../Specifications/DVW-0001-Disposable-Verification-Workspaces.md)) add normative Core semantics for disposable filesystem verification subjects: semantics-first placement outside valuable adopting repositories, safety defaults for destructive or relocation-oriented work, and cleanup expectations — without mandating Core DVW directories, universal literal temp paths, Framework Advisor enforcement, or a DVW ADR. EDF self-conformance for this tranche relies on the normative specification, glossary, companion navigation and handbook guidance, optional MVR template metadata, and prescribed self-hosting validation — not synthetic globally governed DVW instance IDs. Individual DVW paths remain execution metadata when recorded on an MVR or test log. Project Architect accepted and published the DVW baseline on 2026-09-28 (see [DVW implementation plan](../../tasks/DVW-implementation-plan.md)). ProjectConcord reconciliation (STOP-4) remains downstream and **not** authorized by this publication.
+
 ## Engineering Principle
 
 EDF **should remain the primary reference implementation of its own methodology** — not a mechanically checklist-compliant clone of what it prescribes for greenfield ASR bootstraps.

@@ -76,6 +76,7 @@ The following concepts apply across disciplines. A given project may use a subse
 |---|---|
 | **Test Procedures** | Repeatable steps to verify or validate behavior; for EDF-governed **human** manual verification, canonical storage is [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md) under `docs/Verification/Records/` |
 | **Test Results / Observations** | Recorded outcomes of procedures or experiments; governed human manual results are recorded on the same MVR (execution record section) |
+| **Disposable verification workspace (DVW)** | Non-valuable filesystem subject used when verification requires directories on disk; distinct from MVR records, committed fixtures, and the adopting project root. See [DVW-0001](../Specifications/DVW-0001-Disposable-Verification-Workspaces.md) |
 | **Risks / Issues / Failures** | Known or discovered problems requiring tracking |
 
 ### Change and history

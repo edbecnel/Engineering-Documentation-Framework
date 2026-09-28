@@ -66,6 +66,7 @@ No active checklist tasks are defined in the framework template.
 ### Governance implementation plans
 
 - [MVR implementation plan](MVR-implementation-plan.md) — Manual Verification Records; authoritative plan for [MVR-0001](../docs/Specifications/MVR-0001-Manual-Verification-Records.md)
+- [DVW implementation plan](DVW-implementation-plan.md) — Disposable Verification Workspaces; authoritative plan for [DVW-0001](../docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md)
 
 ## Parent
 

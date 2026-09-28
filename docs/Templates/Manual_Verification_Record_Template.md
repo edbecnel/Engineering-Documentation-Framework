@@ -31,6 +31,18 @@ State **what** must be verified and **why** (acceptance criteria, gate condition
 | Environment or build | |
 | Out of scope (explicit) | |
 
+## Operator environment and test data (optional)
+
+_Complete when disposable filesystem subjects, fixtures, or environment reset are relevant to this MVR. **Omit this section** when verification does not require them. Placement, isolation, and cleanup semantics are defined in [DVW-0001](../Specifications/DVW-0001-Disposable-Verification-Workspaces.md); this section records execution metadata only._
+
+| Field | Value |
+|---|---|
+| Disposable filesystem subjects required? | Yes / No |
+| Resolved DVW path(s) used | _(concrete paths at execution time — not canonical engineering artifacts)_ |
+| Test data / fixture identification | _(committed fixture refs, seeds, or other inputs where applicable)_ |
+| Safety or reset prerequisites | _(scope limits, backup, isolation checks, or other safeguards)_ |
+| Cleanup expectation | _(for example operator SHOULD dispose DVW content after the session per DVW-0001)_ |
+
 ## Manual verification — human execution required
 
 _Executable operator checklist. Do not bury tests in narrative prose._
@@ -89,4 +101,5 @@ _Informational only. May reference a governing waiver (for example EGR gate waiv
 ## Related Documents
 
 - [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md)
+- [DVW-0001](../Specifications/DVW-0001-Disposable-Verification-Workspaces.md) — disposable filesystem subjects (optional metadata in this template)
 - [ADR-0010](../Architecture/ADRs/ADR-0010-Manual-Verification-Records.md)

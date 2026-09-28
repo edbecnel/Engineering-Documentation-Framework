@@ -160,4 +160,5 @@ Human manual verification is operational work. Burying checklists in architectur
 - [GMFP-0001](GMFP-0001-Governed-Maintenance-Fast-Path.md)
 - [ADR-0006](../Architecture/ADRs/ADR-0006-Engineering-Documentation-vs-Artifacts.md)
 - [AI Verification](../AI/Verification.md)
+- [DVW-0001](DVW-0001-Disposable-Verification-Workspaces.md) — disposable verification workspaces (filesystem subjects; optional execution metadata on an MVR)
 - [Glossary](../Reference/Glossary.md)

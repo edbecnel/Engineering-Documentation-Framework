@@ -72,6 +72,15 @@ AI assistants **MAY** draft or maintain MVR structure, formulate procedures and 
 
 The MVR **Execution record** is authoritative for governance; Markdown checkboxes are a usability aid and must stay consistent with **Result**.
 
+## Disposable verification workspaces (DVW)
+
+When drafting MVR procedures or operator instructions that require disposable filesystem subjects (open-folder tests, relocation simulation, mutation-safe stand-ins, and similar):
+
+- Follow [DVW-0001](../Specifications/DVW-0001-Disposable-Verification-Workspaces.md) for placement, safety, and cleanup semantics.
+- Use the optional **Operator environment and test data** section on the [MVR template](../Templates/Manual_Verification_Record_Template.md) to record whether DVWs are required and the **resolved paths used at execution** — not as canonical engineering artifacts.
+- **MUST NOT** invent machine-specific canonical temp paths (for example prescribing `~/tmp` or `./tmp` as EDF policy).
+- Do not duplicate DVW-0001 normative requirements in MVR prose; link the specification instead.
+
 ## Git Verification
 
 Before committing AI-generated changes:

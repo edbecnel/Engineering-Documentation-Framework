@@ -80,6 +80,7 @@
 - [Repository Workflow](docs/AI/Repository_Workflow.md)
 - [GMFP-0001 — Governed Maintenance Fast Path](docs/Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) (optional capability)
 - [MVR-0001 — Manual Verification Records](docs/Specifications/MVR-0001-Manual-Verification-Records.md) — governed human manual QA ([Verification](docs/Verification/README.md))
+- [DVW-0001 — Disposable Verification Workspaces](docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md) — disposable filesystem verification subjects ([implementation plan](tasks/DVW-implementation-plan.md))
 
 ## Current Milestones
 

@@ -8,6 +8,8 @@ This domain holds **Manual Verification Records (MVR)** — canonical executable
 
 Planning artifacts (specifications, architecture, implementation plans) declare **what** must be verified and link here. They do not replace MVRs as the operator checklist.
 
+**MVR** = governed verification **procedure and execution record**. **Disposable Verification Workspace (DVW)** = disposable **filesystem subject** used when verification requires directories on disk (default outside the adopting project root). DVW paths may appear on an MVR as execution metadata; they are not a substitute for MVR structure or execution truth. See [DVW-0001](../Specifications/DVW-0001-Disposable-Verification-Workspaces.md).
+
 ## What belongs here
 
 | Artifact | Location |
@@ -24,6 +26,7 @@ Planning artifacts (specifications, architecture, implementation plans) declare 
 ## Framework specification
 
 - [MVR-0001 — Manual Verification Records](../Specifications/MVR-0001-Manual-Verification-Records.md)
+- [DVW-0001 — Disposable Verification Workspaces](../Specifications/DVW-0001-Disposable-Verification-Workspaces.md)
 - [ADR-0010 — Manual Verification Records](../Architecture/ADRs/ADR-0010-Manual-Verification-Records.md)
 - [Manual Verification Record Template](../Templates/Manual_Verification_Record_Template.md)
 

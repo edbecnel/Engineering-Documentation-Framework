@@ -27,6 +27,7 @@
 - `docs/Architecture/Watch_Items/` added to EDF Core required directories
 - Capability-aware profile resolution in `edf_profile.sh` / `edf_profile.ps1`
 - Framework Advisor recommendations for `edf-project-context.yaml` and project extensions
+- [DVW-0001](docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md) — Disposable Verification Workspaces (semantics-first non-valuable filesystem verification subjects); [Glossary](docs/Reference/Glossary.md) entries; optional MVR **Operator environment and test data** section; companion updates to [05_Testing.md](docs/Developer_Handbook/05_Testing.md), [Verification](docs/Verification/README.md), [AI Verification](docs/AI/Verification.md), GEP/DIA cross-references; durable [DVW implementation plan](tasks/DVW-implementation-plan.md)
 
 ### Changed
 
@@ -39,6 +40,7 @@
 - [edf.bootstrap.v1.yaml](interaction/specs/edf.bootstrap.v1.yaml) v1.1.0 — inspect, context, capability phases; AI entry point binding
 - [Bootstrap Playbook](docs/AI/Bootstrap_Playbook.md) — references canonical entry point and inspect-first rules
 - [Profile-Aware Bootstrap](docs/Development/Profile_Aware_Bootstrap.md) — capability composition model
+- [MVR-0001](docs/Specifications/MVR-0001-Manual-Verification-Records.md) — Related Documents link to [DVW-0001](docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md) (navigation only)
 
 ### Added
 

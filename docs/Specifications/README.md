@@ -17,6 +17,7 @@ This directory captures **what the software must do** — functional requirement
 | [AAR-0001](AAR-0001-Architectural-Audit-Records.md) | Architectural Audit Records |
 | [GMFP-0001](GMFP-0001-Governed-Maintenance-Fast-Path.md) | Governed Maintenance Fast Path (optional capability) |
 | [MVR-0001](MVR-0001-Manual-Verification-Records.md) | Manual Verification Records (governed human manual QA) |
+| [DVW-0001](DVW-0001-Disposable-Verification-Workspaces.md) | Disposable Verification Workspaces (filesystem verification subjects) |
 
 ## Audience
 

@@ -36,7 +36,7 @@ Templates provide a consistent starting point. They are not rigid forms. Remove 
 | `Gate_Review_Record_Template.md` | Recording human approval for program gates ([EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md)) |
 | `Architectural_Audit_Record_Template.md` | Recording implementation conformance audits ([AAR-0001](../Specifications/AAR-0001-Architectural-Audit-Records.md)) |
 | `Governed_Maintenance_Record_Template.md` | Recording bounded maintenance under GMFP ([GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md)) |
-| `Manual_Verification_Record_Template.md` | Recording governed human manual verification ([MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md)) |
+| `Manual_Verification_Record_Template.md` | Recording governed human manual verification ([MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md)); optional **Operator environment and test data** for DVW paths and fixtures ([DVW-0001](../Specifications/DVW-0001-Disposable-Verification-Workspaces.md)) |
 | `Cross_Repo_Concern_Matrix_Template.md` | Mapping discipline-specific instances to shared EDF concerns |
 
 ## Required and Optional Sections

@@ -1,8 +1,8 @@
 # Disposable Verification Workspaces (DVW) — EDF Implementation Plan
 
-**Status:** Published 2026-09-28; STOP-3 PA closeout pending  
+**Status:** Stage 3 **CLOSED** / Project Architect **ACCEPTED** / **PUBLISHED** (2026-09-28)  
 **Authorization:** Stage 3 release/publication authorization, 2026-09-28  
-**Publication:** Pushed to `origin/main` (`048cdc6bc9ee581bb60fea5e7d26f7de673e5569`)
+**Publication:** Canonical baseline `048cdc6bc9ee581bb60fea5e7d26f7de673e5569`; provenance correction `8c60ad822bba26f4c3714c39a138c3d38821c194`
 
 **Governance status (authoritative in-repository record):**
 
@@ -13,9 +13,9 @@
 | **STOP-1** — Stage 1 review | **PASSED** |
 | **Stage 2** — Companion Documentation | **ACCEPTED** |
 | **STOP-2** — Stage 2 review | **PASSED** |
-| **Stage 3** — Release / Publication | **PUBLISHED** (2026-09-28) |
-| **STOP-3** — Publication evidence | **PA closeout pending** (provenance correction applied; formal STOP-3 closure not yet issued) |
-| **STOP-4** — ProjectConcord reconciliation | **NOT AUTHORIZED** |
+| **Stage 3** — Release / Publication | **CLOSED** / Project Architect **ACCEPTED** / **PUBLISHED** |
+| **STOP-3** — Publication evidence | **PASSED** / Project Architect **ACCEPTED** |
+| **STOP-4** — ProjectConcord reconciliation | **AUTHORIZED** (execution in ProjectConcord; not started from EDF) |
 
 ---
 
@@ -45,7 +45,7 @@
 1. **No ADR:** DVW semantics live in DVW-0001 and companion cross-references only.
 2. **MVR boundary:** Do not merge DVW normative requirements into MVR-0001; optional MVR template section for operator environment metadata only.
 3. **Framework Advisor:** Out of scope for DVW-0001 v1.
-4. **ProjectConcord:** Downstream reconciliation **after** EDF publication (STOP-4) — includes A1c `~/tmp` wording, GAP-046, ProjectConcord MVR template sync, A1c guided UI MVR execution; **paused** until authorized.
+4. **ProjectConcord:** Downstream reconciliation (STOP-4) — includes A1c `~/tmp` wording, GAP-046, ProjectConcord MVR template sync, A1c guided UI MVR execution; **STOP-4 authorized** for execution in ProjectConcord.
 
 ## Implementation stages
 
@@ -55,7 +55,7 @@
 | **1** | [DVW-0001](../docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md); Glossary entries (**Adopting Project Root**, **Disposable Verification Workspace (DVW)**) | STOP-1 |
 | **2** | Companion documentation: implementation plan in `tasks/`; MVR template optional section; MVR-0001 Related Documents link; [05_Testing.md](../docs/Developer_Handbook/05_Testing.md); Specifications / Verification README; minimal GEP and DIA cross-references; [AI Verification](../docs/AI/Verification.md); template/index updates as required by convention | STOP-2 |
 | **3** | Release validation, CHANGELOG closeout, publication to `origin/main`, self-hosting evidence | STOP-3 |
-| **4** | ProjectConcord adoption: replace ad hoc temp-path guidance with DVW-0001 semantics; MVR template parity; gap closure (e.g. GAP-046); governed manual verification execution where applicable | STOP-4 (not authorized) |
+| **4** | ProjectConcord adoption: replace ad hoc temp-path guidance with DVW-0001 semantics; MVR template parity; gap closure (e.g. GAP-046); governed manual verification execution where applicable | STOP-4 **AUTHORIZED** (ProjectConcord; not started from EDF) |
 
 ## Stage 2 companion scope (explicit)
 
@@ -81,20 +81,20 @@
 - CHANGELOG release closeout (Stage 3)
 - ProjectConcord repository changes
 
-## Downstream (ProjectConcord — STOP-4, not started)
+## Downstream (ProjectConcord — STOP-4 authorized)
 
-After EDF Stage 3 publication, authorized reconciliation may include:
+Authorized reconciliation in ProjectConcord may include:
 
 - Align ProjectConcord manual verification and handbook text with DVW-0001 (remove canonical `~/tmp` as EDF policy)
 - Synchronize ProjectConcord MVR template with EDF optional operator-environment section
 - Close tracking gaps (e.g. GAP-046) tied to disposable workspace governance
-- Execute paused A1c guided UI MVR and related commits **only** under STOP-4 authorization
+- Execute A1c guided UI MVR and related commits under STOP-4 in ProjectConcord
 
-ProjectConcord A1c manual MVR remains **PAUSED** until STOP-4.
+STOP-4 is **authorized**; execution is **not** started from this EDF repository.
 
 ## Closeout
 
-Stage 1–3 framework artifacts were **published** to `origin/main` on 2026-09-28 (commit `048cdc6bc9ee581bb60fea5e7d26f7de673e5569`). Formal **STOP-3** Project Architect closure remains **pending**. STOP-4 (ProjectConcord) is a **separate** authorization and is **not** authorized.
+DVW EDF framework change **closed**. Stage 1–3 baseline published 2026-09-28 (`048cdc6bc9ee581bb60fea5e7d26f7de673e5569`); provenance correction `8c60ad822bba26f4c3714c39a138c3d38821c194`; **STOP-3 PASSED** / Project Architect **accepted** publication. **STOP-4** authorized for ProjectConcord reconciliation (separate repository).
 
 ## Plan history
 

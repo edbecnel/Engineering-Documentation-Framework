@@ -10,7 +10,7 @@
 | **Normative** | Yes |
 | **Status** | Proposed |
 | **Specification ID** | MVR-0001 |
-| **Version** | 1.0 |
+| **Version** | 1.1 |
 | **Date** | 2026-09-28 |
 | **Owner** | Engineering Documentation Framework |
 | **Authoritative** | Yes |
@@ -83,8 +83,9 @@ Define adoptable requirements for **Manual Verification Records (MVR)** — gove
 15. For each **required** MVT, the MVR MUST visibly provide:
     - a Markdown checkbox (`- [ ]` default for not yet passed)
     - **MVT-n** and a short test name
-    - **Procedure** — concise human-executable steps
+    - **Human procedure** — concise human-executable steps (MAY be labeled **Procedure** when no separate preparation block is used)
     - **Expected result** — explicit pass condition
+    - optionally, **Preparation / support (optional; may be automated)** — deterministic setup steps that do not themselves constitute the required human observation, judgment, interaction, or attestation (omit when not applicable)
 16. Checkbox state is a **human-usability execution aid**. It is **not** an independent source of truth for governance.
 
 ### Execution record (authoritative)
@@ -98,31 +99,41 @@ Define adoptable requirements for **Manual Verification Records (MVR)** — gove
 ### Human authority
 
 22. Only authorized humans (or explicitly delegated testers named in project governance) MAY set MVT **Result** to **Pass**, **Fail**, or **Blocked**, and MAY set **Human execution status** to **Complete** when §12 criteria are met.
-23. Automated tools and AI assistants **MUST NOT** set a required MVT **Result** to **Pass** or **Human execution status** to **Complete** based solely on: implementation completion, automated test success, code or source inspection, model inference, expected behavior, or other non-human evidence.
-24. Automated tools and AI assistants **MAY**: draft or maintain MVR structure; formulate procedures and expected results; explain tests; surface pending tests; collect observations; record results **explicitly supplied by an authorized human**; assist evidence reconciliation. They **MUST NOT** impersonate the human execution step.
+23. Automated tools and AI assistants **MUST NOT** set a required MVT **Result** to **Pass** or **Human execution status** to **Complete** based solely on: implementation completion, automated test success, code or source inspection, model inference, expected behavior, successful automatable verification support, or other non-human evidence.
+
+### Verification support versus human verification
+
+24. Governed manual verification **MUST** treat **automatable verification support** as distinct from **human verification** when both apply. Automatable verification support includes, without limitation: environment preparation; building the application; creating disposable test data; creating, manipulating, or cleaning up a [Disposable Verification Workspace (DVW)](DVW-0001-Disposable-Verification-Workspaces.md) when permitted by the procedure; establishing preconditions via disposable filesystem subjects; deterministic evidence collection; and deterministic cleanup — when those activities do not themselves constitute the required human observation, judgment, interaction, or attestation.
+25. An MVR **MAY** document automatable support separately from human procedure steps for each MVT (for example **Preparation / support (optional; may be automated)** and **Human procedure**). When not applicable, the preparation block **MAY** be omitted.
+26. An **acting development AI** or other **automation agent** **MAY** perform automatable verification support when the governing MVR permits it. Such assistance **MUST NOT** substitute for a human-executed MVT step where the MVR requires human observation, judgment, interaction, or attestation.
+27. Evidence from automation agents and evidence from authorized human verifiers **MUST** remain **distinguishable** (for example in the execution record **Executor** field, evidence references, or explicit provenance notes). Automation-performed preparation or collected tool evidence **MUST NOT** be represented as human observation or attestation.
+
+### Automation assistance (non-impersonation)
+
+28. Automated tools and AI assistants **MAY**: draft or maintain MVR structure; formulate procedures, preparation steps, and expected results; perform automatable verification support per §24–26 when permitted by the MVR; explain tests; surface pending tests; collect deterministic observations or artifacts; record results **explicitly supplied by an authorized human**; assist evidence reconciliation. They **MUST NOT** impersonate the human execution step.
 
 ### Gate and acceptance integration
 
-25. A governing acceptance decision **MUST NOT** be represented as fully satisfied while a **linked required MVR** has unresolved required manual verification (for example **Human execution status** `Pending` or `In progress`, or any **required** MVT **Result** `Pending`, `Fail`, or unresolved **Blocked**), except through **explicit waiver** of the verification obligation on the **governing record** per applicable EDF governance.
-26. This requirement integrates with [EGR-0001](EGR-0001-Engineering-Gate-Review-Records.md) (gate satisfaction), [AAR-0001](AAR-0001-Architectural-Audit-Records.md) when the audit charter requires manual QA, [GMFP-0001](GMFP-0001-Governed-Maintenance-Fast-Path.md) (GMFP-3 acceptance), and project-declared architecture-authority or tranche acceptance. EDF MUST NOT introduce a second gate system for manual verification.
-27. A **Governed Dependency Override** MUST NOT substitute for human manual test execution.
-28. GMFP maintenance validation recorded on a GMR **MUST NOT** imply that a separate **required** governed human manual QA obligation was human-executed unless the linked MVR execution record shows successful human execution per §12.
+29. A governing acceptance decision **MUST NOT** be represented as fully satisfied while a **linked required MVR** has unresolved required manual verification (for example **Human execution status** `Pending` or `In progress`, or any **required** MVT **Result** `Pending`, `Fail`, or unresolved **Blocked**), except through **explicit waiver** of the verification obligation on the **governing record** per applicable EDF governance.
+30. This requirement integrates with [EGR-0001](EGR-0001-Engineering-Gate-Review-Records.md) (gate satisfaction), [AAR-0001](AAR-0001-Architectural-Audit-Records.md) when the audit charter requires manual QA, [GMFP-0001](GMFP-0001-Governed-Maintenance-Fast-Path.md) (GMFP-3 acceptance), and project-declared architecture-authority or tranche acceptance. EDF MUST NOT introduce a second gate system for manual verification.
+31. A **Governed Dependency Override** MUST NOT substitute for human manual test execution.
+32. GMFP maintenance validation recorded on a GMR **MUST NOT** imply that a separate **required** governed human manual QA obligation was human-executed unless the linked MVR execution record shows successful human execution per §12.
 
 ### Tooling interoperability
 
-29. The canonical MVR Markdown structure **MUST** make the following **deterministically identifiable** by conforming tooling **without** relying on interpretation of arbitrary narrative prose:
+33. The canonical MVR Markdown structure **MUST** make the following **deterministically identifiable** by conforming tooling **without** relying on interpretation of arbitrary narrative prose:
     - whether required manual verification applies (**Manual QA** metadata)
     - **Human execution status**
     - each **MVT ID** and its **Result**
     - evidence references
     - governing-work relationships (dedicated section and/or metadata links)
-30. This requirement is implementation-neutral. It does **not** require a ProjectConcord-specific parser, database schema, YAML, JSON, interaction specification, or UI in this tranche.
+34. This requirement is implementation-neutral. It does **not** require a ProjectConcord-specific parser, database schema, YAML, JSON, interaction specification, or UI in this tranche.
 
 ### Relationship to other artifacts
 
-31. Individual MVR instance files are **non-normative execution records** for a specific obligation; normative requirements remain in ADRs and `docs/Specifications/`. MVR files MUST NOT be placed in `docs/Specifications/`.
-32. An MVR MUST NOT substitute for an [ASR Self-Conformance Review](../Development/Repository_Bootstrap/Architecture_Specification_Repository/Self_Conformance_Review.md) or Framework Advisor reports under `reports/conformance/`. Cross-reference only.
-33. An MVR is complementary to an AAR: AAR assesses implementation conformance to requirements; MVR records human manual verification execution against declared verification obligations.
+35. Individual MVR instance files are **non-normative execution records** for a specific obligation; normative requirements remain in ADRs and `docs/Specifications/`. MVR files MUST NOT be placed in `docs/Specifications/`.
+36. An MVR MUST NOT substitute for an [ASR Self-Conformance Review](../Development/Repository_Bootstrap/Architecture_Specification_Repository/Self_Conformance_Review.md) or Framework Advisor reports under `reports/conformance/`. Cross-reference only.
+37. An MVR is complementary to an AAR: AAR assesses implementation conformance to requirements; MVR records human manual verification execution against declared verification obligations.
 
 ## Conformance
 

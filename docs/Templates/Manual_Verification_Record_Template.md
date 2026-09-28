@@ -49,21 +49,24 @@ _Executable operator checklist. Do not bury tests in narrative prose._
 
 - [ ] **MVT-1** — [Short test name]
 
-  **Procedure:**  
-  [What the human does — concise steps]
+  **Preparation / support (optional; may be automated):**  
+  _Omit when not needed. Deterministic setup (for example DVW creation, disposable directories, sentinel files, paths recorded for the human step)._
+
+  **Human procedure:**  
+  [What the authorized human does — concise steps]
 
   **Expected result:**  
   [Explicit pass condition]
 
 - [ ] **MVT-2** — [Short test name]
 
-  **Procedure:**  
-  [Steps]
+  **Human procedure:**  
+  [Steps — use a separate preparation block only when useful]
 
   **Expected result:**  
   [Pass condition]
 
-_Add one block per required MVT. Checkbox is a usability aid; the execution record below is authoritative._
+_Add one block per required MVT. Checkbox is a usability aid; the execution record below is authoritative. When automation performed preparation, record provenance in **Evidence** (for example executor or notes) so it is not confused with human attestation._
 
 ## Execution record
 

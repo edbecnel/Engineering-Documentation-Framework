@@ -31,6 +31,8 @@
 
 ### Changed
 
+- [MVR-0001](docs/Specifications/MVR-0001-Manual-Verification-Records.md) v1.1 — explicit automatable verification support versus human verification boundary; optional MVT preparation/support presentation; evidence provenance ([GMR-0001](docs/Program/Maintenance_Records/GMR-0001-MVR-verification-support-boundary.md))
+- [Manual_Verification_Record_Template.md](docs/Templates/Manual_Verification_Record_Template.md) — optional **Preparation / support (may be automated)** per MVT
 - [ADR-0010](docs/Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) — **Accepted** (Project Architect, 2026-09-28); MVR baseline published to `origin/main`
 - [EGR-0001](docs/Specifications/EGR-0001-Engineering-Gate-Review-Records.md) v1.1 — Gate Status includes Waived and Superseded; independent Dependency Disposition; Authorized Downstream Scope is not limited to another EGR
 - [AAR-0001](docs/Specifications/AAR-0001-Architectural-Audit-Records.md) v1.1 — record Active GDOs in implementation-scope audits

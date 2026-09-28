@@ -83,6 +83,8 @@ _None anticipated._
 |---|---|
 | `76fc7af` | Clarify DVW placement for human-interactive verification |
 | `9ba130b` | docs(gmfp): record GMR-0002 commit reference and GMFP-2 STOP |
+| `ed30da6` | docs(gmfp): record GMR-0002 publication evidence |
+| `c21fdf0` | docs(gmfp): finalize GMR-0002 remote publication refs |
 
 ## Acceptance and publication gate (GMFP-3)
 
@@ -97,7 +99,7 @@ _None anticipated._
 | Field | Value |
 |---|---|
 | **Pushed** | 2026-09-28 |
-| **Remote refs** | `origin/main` @ `ed30da6` |
+| **Remote refs** | `origin/main` @ `c21fdf0` |
 | **Verification** | clean working tree; `local` == `origin/main`; ahead/behind 0/0 |
 
 ## Parent

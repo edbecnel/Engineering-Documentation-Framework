@@ -68,6 +68,7 @@
 
 ## Key Authoritative References
 
+- [Glossary](docs/Reference/Glossary.md) — canonical EDF terminology and governance abbreviations
 - [First-Time Setup](docs/Developer_Handbook/00_First_Time_Setup.md)
 - [Development Environment](docs/Developer_Handbook/01_Development_Environment.md)
 - [Documentation Information Architecture](docs/Architecture/Documentation_Information_Architecture.md)

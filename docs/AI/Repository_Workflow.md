@@ -124,6 +124,14 @@ git push
 
 Projects that adopt [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) use two declared-architecture-authority gates (authorization; acceptance and publication). During the authorized execution interval (GMFP-2), the AI assistant may implement, validate, document, and commit locally without intermediate approval. Push remains subject to explicit publication authorization after acceptance. See [Governed_Maintenance_Record_Template.md](../Templates/Governed_Maintenance_Record_Template.md).
 
+## Orchestration checkpoints vs EDF governance gates
+
+Projects and teams often add extra STOP, review, or handover cycles because of **project policy**, **risk posture**, an **adopted workflow**, a **human/AI operating arrangement**, or **tooling and provider constraints**. Those checkpoints improve coordination; they are **not** EDF governance gates by default.
+
+A checkpoint becomes a **binding EDF governance requirement** only when applicable EDF or project-governed records require a specific human decision or evidence — for example an [Engineering Gate Review Record (EGR)](../Program/Gate_Reviews/README.md), unresolved [Manual Verification Record (MVR)](../Specifications/MVR-0001-Manual-Verification-Records.md) obligation, [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) authorization or acceptance, or [Change Management](../Governance/Change_Management.md) for significant documentation or architecture change.
+
+Ordinary implementation after applicable prerequisites are satisfied does **not** imply a universal EDF rule that every implementation step needs intermediate human approval. See [Program README](../Program/README.md) for how program gates, GDO, and GMFP relate.
+
 ## Repository Safety Rules
 
 Unless explicitly approved for a particular implementation, the AI assistant must not automatically:

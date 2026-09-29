@@ -36,7 +36,7 @@ This directory captures **what the software must do** — functional requirement
 | Acceptance criteria | Testable conditions for "done" |
 | RFCs | Proposals for significant product or technical direction |
 | Compliance requirements | Regulatory mappings |
-| Glossary | Domain terms and definitions |
+| Project glossary (product repos) | Domain terms for the product — often `Specifications/Glossary.md` in software-profile layouts |
 
 ## What does not belong here
 
@@ -102,12 +102,14 @@ Maintain a simple matrix linking specs to implementation:
 | **Implemented** | Shipped; spec kept for history |
 | **Deprecated** | Feature removed; move to [archive/](../../archive/) |
 
+> **EDF framework terminology:** The canonical glossary for this repository is [docs/Reference/Glossary.md](../Reference/Glossary.md), not under `docs/Specifications/`. The tree below illustrates a typical **software product** repository layout; ASR and EDF self-hosting projects use `docs/Reference/` for framework terms.
+
 ## Recommended organization (as project grows)
 
 ```
 Specifications/
 ├── README.md              # This file
-├── Glossary.md
+├── Glossary.md            # Product/domain glossary (software profile example — not EDF canonical glossary)
 ├── NFR.md                 # Non-functional requirements
 ├── templates/
 │   └── Feature_Spec_Template.md
@@ -134,6 +136,8 @@ Specifications/
 
 ## Related documents
 
+- [Glossary (EDF canonical)](../Reference/Glossary.md)
+- [Reference — terminology and identifiers](../Reference/README.md)
 - [PROJECT_CHARTER.md](../../PROJECT_CHARTER.md)
 - [docs/Developer_Handbook/05_Testing.md](../Developer_Handbook/05_Testing.md)
 - [docs/User_Guides/](../User_Guides/)

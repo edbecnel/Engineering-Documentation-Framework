@@ -31,6 +31,10 @@
 
 ### Changed
 
+- Option B governance clarification — [Program README](docs/Program/README.md) (EGR, GDO, GMFP/GMR, BVG); [AI Repository Workflow](docs/AI/Repository_Workflow.md) (orchestration vs EDF gates); no normative EGR/GMFP/MVR/AAR specification changes
+- [Glossary](docs/Reference/Glossary.md) — ADR, GEP, declared architecture authority, EGR/BVG/GMFP terminology; Owner **Engineering Documentation Framework**; [Reference README](docs/Reference/README.md) terminology pointers and Framework Advisor disambiguation (not a Glossary entry)
+- [PROJECT_INDEX.md](PROJECT_INDEX.md) and [Specifications README](docs/Specifications/README.md) — canonical glossary at `docs/Reference/Glossary.md`
+- [tasks/EDF-authority-terminology-clarification-plan.md](tasks/EDF-authority-terminology-clarification-plan.md) — governed closeout for authority/terminology tranche (implementation `db6c060ef5bcc6351e324d078dc5b4a6203d83f8`)
 - [DVW-0001](docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md) v1.1 — human-interactive vs automation-oriented placement guidance; prospective validity for v1.0-conformant DVWs ([GMR-0002](docs/Program/Maintenance_Records/GMR-0002-DVW-human-interactive-placement.md))
 - [MVR-0001](docs/Specifications/MVR-0001-Manual-Verification-Records.md) v1.1 — explicit automatable verification support versus human verification boundary; optional MVT preparation/support presentation; evidence provenance ([GMR-0001](docs/Program/Maintenance_Records/GMR-0001-MVR-verification-support-boundary.md))
 - [Manual_Verification_Record_Template.md](docs/Templates/Manual_Verification_Record_Template.md) — optional **Preparation / support (may be automated)** per MVT

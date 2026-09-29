@@ -3,8 +3,8 @@
 **Status:** **CLOSED** / Project Architect **ACCEPTED** / **PUBLISHED** (2026-09-29)  
 **Authorization:** PA STOP-0 through STOP-3; Stage 4 publication authorization (2026-09-29)  
 **Implementation commit:** `db6c060ef5bcc6351e324d078dc5b4a6203d83f8`  
-**Stage 4 closeout commit:** `d15b7d0971aee2e6966d0c1b2d8e8906e88b080c`  
-**Publication:** `origin/main` _(recorded after successful push)_
+**Stage 4 closeout commit:** `15abe43fc15306aaf79d084339d08887a47c2b4c`  
+**Publication:** `origin/main` at `15abe43fc15306aaf79d084339d08887a47c2b4c` (2026-09-29)
 
 **Downstream:** ProjectConcord A2 was **NOT AUTHORIZED** during this EDF tranche. Upstream publication does not by itself lift the A2 block — separate PA disposition required.
 
@@ -21,7 +21,8 @@
 | **Implementation commit** | `db6c060ef5bcc6351e324d078dc5b4a6203d83f8` |
 | **Stage 3 self-hosting validation** | **PASS** (`reports/self-hosting/framework-advisor-20260929-091359.txt`) |
 | **Stage 4** — CHANGELOG + plan closeout + push | **AUTHORIZED** (STOP-4) |
-| **STOP-4** — Publication evidence | **PASSED** _(after push verification)_ |
+| **Stage 4 closeout commit** | `15abe43fc15306aaf79d084339d08887a47c2b4c` |
+| **STOP-4** — Publication evidence | **PASSED** / `origin/main` (2026-09-29) |
 
 ---
 
@@ -67,7 +68,7 @@ Execute one **small, controlled documentation tranche** that makes existing EDF 
 - **2026-09-29:** Created — Option B + acronym inventory.
 - **2026-09-29:** STOP-0 PASSED (binding amendments).
 - **2026-09-29:** STOP-1 / STOP-2 / STOP-3 PASSED; implementation `db6c060ef5bcc6351e324d078dc5b4a6203d83f8`.
-- **2026-09-29:** Stage 4 closeout commit `d15b7d0971aee2e6966d0c1b2d8e8906e88b080c`; final self-hosting PASS (`framework-advisor-20260929-091654.txt`).
+- **2026-09-29:** Stage 4 closeout commit `15abe43fc15306aaf79d084339d08887a47c2b4c`; published to `origin/main`.
 
 ---
 

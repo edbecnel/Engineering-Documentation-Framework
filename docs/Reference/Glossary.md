@@ -49,12 +49,51 @@ This glossary governs **EDF framework terminology**. EDF publishes **terminology
 | **Engineering Methodology** | `engineering-methodology` | The canonical, normative engineering knowledge corpus in `docs/` and governance — the sole authoritative source that interaction-layer artifacts and scripts execute but do not redefine. |
 | **Repository Bootstrap** | `repository-bootstrap` | EDF guidance for initializing repositories with specialized engineering contexts; procedures are invoked intentionally by engineers. |
 | **Self-Conformance Review** | `self-conformance-review` | A structured architectural self-validation activity for existing repositories that already publish ASR guidance — distinct from bootstrap or migration. Determines alignment with published ASR guidance without forcing mechanical compliance. |
+| **Super Intelligence** | `super-intelligence` | EDF **Recommended** label for the governed concept `super-intelligence` — see [Terminology recommendation: super-intelligence](#terminology-recommendation-super-intelligence). **Artificial Intelligence** / **AI** are **not** global aliases of this concept; alias relationship applies only within that recommendation’s semantic scope. Distinct from **AI-assisted engineering** (`ai-assisted-engineering`). |
+| **AI-assisted engineering** | `ai-assisted-engineering` | Use of IDE-integrated assistants, models, and related tooling to support engineering work (for example under [docs/AI/](../AI/)). **Preferred** label for that channel in EDF handbook scope. The `docs/AI/` path is a stable **identifier** — not renamed by terminology recommendation. Distinct from `super-intelligence`. |
 | **adopter terminology enforcement** | `adopter-terminology-enforcement` | Optional mechanisms an adopting project uses to require compliance with its own **adopter terminology policy** (for example project linting, CI, or UI guidelines). Not mandatory EDF core. Framework rules: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md). |
 | **adopter terminology policy** | `adopter-terminology-policy` | Terminology requirements an adopting organization or adopting project makes mandatory through its own governance, optionally elevating an EDF **terminology recommendation**. Framework rules: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md). |
 | **terminology disposition** | `terminology-disposition` | Classification of a label’s role for a governed concept (for example Preferred, Recommended, Alias, Legacy, Deprecated, Historical, External). Framework rules: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md). |
 | **terminology governance** | `terminology-governance` | EDF rules for stable governed concepts, evolving labels and aliases, scoped equivalence, external terminology accuracy, historical preservation, and layered recommendation/policy/enforcement. Framework rules: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md). |
 | **terminology recommendation** | `terminology-recommendation` | Human-facing label EDF (or another publishing glossary) promotes for adopters using **Recommended** disposition; not an automatic EDF conformance requirement until elevated to **adopter terminology policy**. Framework rules: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md). |
 | **terminology scope** | `terminology-scope` | Declared context where a preferred term or alias applies (for example EDF canonical prose, public positioning, provider API). Framework rules: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md). |
+
+## Terminology recommendation: super-intelligence
+
+Glossary term reference: `super-intelligence`
+
+**Provenance:** EDF terminology policy recorded in this glossary (2026-10-01), under [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md) and [ADR-0011](../Architecture/ADRs/ADR-0011-Terminology-Governance.md). Does not authorize mass migration of living documentation; see **Effective transition** below.
+
+### Semantic scope
+
+EDF **recommends** **Super Intelligence (SI)** as the human-facing label when framework documentation refers to the **governed technology concept** that has often been described as **Artificial Intelligence (AI)** — machine-supported reasoning, generation, automation, and related computational capabilities in the engineering and systems context.
+
+**Semantic equivalence (TGR-0001):** **Overlapping** within the scope below only. EDF does **not** assert that **Super Intelligence** and **Artificial Intelligence** are universally or semantically identical in all technical, legal, literary, or provider contexts.
+
+**In scope for the recommendation:** new and maintained EDF **framework** prose (for example reference material, governance, architecture descriptions, and specifications) when authors intend this technology concept and are not quoting external sources.
+
+**Out of scope (continue using prior or context-accurate labels):**
+
+- **AI-assisted engineering** — use `ai-assisted-engineering` and [docs/AI/](../AI/) handbook terminology for the engineering-assistant channel.
+- **Identifiers** — paths (including `docs/AI/`), filenames, schema keys, API names, and code identifiers containing `ai` or `AI`.
+- **External terminology** — standards, providers, products, APIs, and quotations (retain accurate **Artificial Intelligence** / **AI** where defined externally).
+- **Historical records** — provenance-sensitive artifacts keep original wording; link via this term reference without rewriting.
+- **Narrow or distinct meanings** — where **AI** denotes a subset, product feature, or meaning not covered by this concept, do not substitute **SI**; split or separate concepts if needed per TGR-0001 §13.
+
+### Representations
+
+Representations apply to glossary term reference `super-intelligence` only. Outside the **Semantic scope** above, **Artificial Intelligence** and **AI** are **not** aliases of this concept.
+
+| Label | Disposition | Notes |
+|-------|-------------|--------|
+| Super Intelligence | **Recommended** | Governed concept: `super-intelligence` |
+| SI | **Abbreviation** | Abbreviation of **Super Intelligence** |
+| Artificial Intelligence | **Alias** (within semantic scope) | Discovery and in-scope framework prose when authors intend `super-intelligence`; **Historical** in provenance-sensitive cited records where applicable; **External** when quoting or mirroring external definitions where applicable |
+| AI | **Alias** (within semantic scope) | Abbreviation form within scope; **Historical** or **External** where those dispositions apply; not an alias of `super-intelligence` outside this scope (including **AI-assisted engineering** and identifier uses) |
+
+### Effective transition
+
+Living documentation **MAY** adopt **SI** opportunistically or in a later authorized tranche. This recommendation does **not** require adopters to use **SI** for EDF conformance (TGR-0001 §18). Adopters **MAY** elevate **SI** to **Preferred** through **adopter terminology policy**.
 
 ## Maintenance
 

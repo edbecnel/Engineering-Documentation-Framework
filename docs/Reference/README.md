@@ -10,7 +10,7 @@ authoritative documentation domain.
 
 ## Terminology and identifiers
 
-The canonical EDF glossary is [Glossary.md](Glossary.md). Start there for governance terms (for example **Engineering Gate Review Record (EGR)**, **Governed Dependency Override (GDO)**, **GMFP**, **MVR**, **AAR**, **BVG**). Terminology evolution rules: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md).
+The canonical EDF glossary is [Glossary.md](Glossary.md). Start there for governance terms (for example **Engineering Gate Review Record (EGR)**, **Governed Dependency Override (GDO)**, **GMFP**, **MVR**, **AAR**, **BVG**). Terminology evolution rules: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md). EDF **Recommended** technology label: **Super Intelligence (SI)** — see [Glossary — super-intelligence](Glossary.md#terminology-recommendation-super-intelligence) (`super-intelligence`).
 
 | Kind | Pattern / location | Notes |
 |------|-------------------|--------|

@@ -4,6 +4,7 @@
 
 ### Added
 
+- [ADR-0011](docs/Architecture/ADRs/ADR-0011-Terminology-Governance.md) (**Accepted**, 2026-10-01) and [TGR-0001](docs/Specifications/TGR-0001-Terminology-Governance.md) v1.1 (**Accepted**) — terminology governance: stable concept identity via glossary term references (separate from textual labels); **Recommended** disposition; adopter terminology policy and adopter terminology enforcement boundaries; historical/provenance preservation; identifier stability; external and contextual terminology handling
 - [ADR-0010](docs/Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) and [MVR-0001](docs/Specifications/MVR-0001-Manual-Verification-Records.md) — Manual Verification Records for governed human manual QA
 - [Manual_Verification_Record_Template.md](docs/Templates/Manual_Verification_Record_Template.md), `docs/Verification/` and `docs/Verification/Records/` Core paths
 - [ADR-0009](docs/Architecture/ADRs/ADR-0009-Governed-Maintenance-Fast-Path.md) and [GMFP-0001](docs/Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) — optional Governed Maintenance Fast Path with two human governance gates and lightweight Governed Maintenance Records
@@ -31,6 +32,7 @@
 
 ### Changed
 
+- [Glossary](docs/Reference/Glossary.md) — glossary term references; terminology governance, recommendation, policy, enforcement, disposition, and scope entries; navigation and governance cross-links for [TGR-0001](docs/Specifications/TGR-0001-Terminology-Governance.md)
 - Option B governance clarification — [Program README](docs/Program/README.md) (EGR, GDO, GMFP/GMR, BVG); [AI Repository Workflow](docs/AI/Repository_Workflow.md) (orchestration vs EDF gates); no normative EGR/GMFP/MVR/AAR specification changes
 - [Glossary](docs/Reference/Glossary.md) — ADR, GEP, declared architecture authority, EGR/BVG/GMFP terminology; Owner **Engineering Documentation Framework**; [Reference README](docs/Reference/README.md) terminology pointers and Framework Advisor disambiguation (not a Glossary entry)
 - [PROJECT_INDEX.md](PROJECT_INDEX.md) and [Specifications README](docs/Specifications/README.md) — canonical glossary at `docs/Reference/Glossary.md`

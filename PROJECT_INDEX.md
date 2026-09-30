@@ -68,7 +68,7 @@
 
 ## Key Authoritative References
 
-- [Glossary](docs/Reference/Glossary.md) — canonical EDF terminology and governance abbreviations
+- [Glossary](docs/Reference/Glossary.md) — canonical EDF terminology (glossary term references; [TGR-0001](docs/Specifications/TGR-0001-Terminology-Governance.md))
 - [First-Time Setup](docs/Developer_Handbook/00_First_Time_Setup.md)
 - [Development Environment](docs/Developer_Handbook/01_Development_Environment.md)
 - [Documentation Information Architecture](docs/Architecture/Documentation_Information_Architecture.md)
@@ -82,6 +82,7 @@
 - [GMFP-0001 — Governed Maintenance Fast Path](docs/Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md) (optional capability)
 - [MVR-0001 — Manual Verification Records](docs/Specifications/MVR-0001-Manual-Verification-Records.md) — governed human manual QA ([Verification](docs/Verification/README.md))
 - [DVW-0001 — Disposable Verification Workspaces](docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md) — disposable filesystem verification subjects ([implementation plan](tasks/DVW-implementation-plan.md))
+- [TGR-0001 — Terminology Governance](docs/Specifications/TGR-0001-Terminology-Governance.md) — [ADR-0011](docs/Architecture/ADRs/ADR-0011-Terminology-Governance.md) (Accepted)
 
 ## Current Milestones
 

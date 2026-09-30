@@ -56,6 +56,9 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 | [ADR-0008](ADRs/ADR-0008-Architectural-Audit-Records.md) | Architectural Audit Records (AAR) | Proposed |
 | [ADR-0009](ADRs/ADR-0009-Governed-Maintenance-Fast-Path.md) | Governed Maintenance Fast Path (GMFP) | Proposed |
 | [ADR-0010](ADRs/ADR-0010-Manual-Verification-Records.md) | Manual Verification Records (MVR) | Accepted |
+| [ADR-0011](ADRs/ADR-0011-Terminology-Governance.md) | Terminology governance | Accepted |
+
+Terminology governance: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md), [Glossary](../Reference/Glossary.md).
 
 Program gate reviews: [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md), [Program](../Program/README.md).
 

@@ -133,4 +133,5 @@ Projects may later choose stricter enforcement in CI or release workflows.
 - [Documentation Information Architecture](../Architecture/Documentation_Information_Architecture.md)
 - [EGR-0001](../Specifications/EGR-0001-Engineering-Gate-Review-Records.md)
 - [GMFP-0001](../Specifications/GMFP-0001-Governed-Maintenance-Fast-Path.md)
+- [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md)
 - [Engineering Development Policy](../Development/Engineering_Development_Policy.md)

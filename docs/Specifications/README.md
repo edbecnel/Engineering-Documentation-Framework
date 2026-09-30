@@ -18,6 +18,7 @@ This directory captures **what the software must do** — functional requirement
 | [GMFP-0001](GMFP-0001-Governed-Maintenance-Fast-Path.md) | Governed Maintenance Fast Path (optional capability) |
 | [MVR-0001](MVR-0001-Manual-Verification-Records.md) | Manual Verification Records (governed human manual QA) |
 | [DVW-0001](DVW-0001-Disposable-Verification-Workspaces.md) | Disposable Verification Workspaces (filesystem verification subjects) |
+| [TGR-0001](TGR-0001-Terminology-Governance.md) | Terminology governance (glossary term references, aliases, historical preservation) |
 
 ## Audience
 

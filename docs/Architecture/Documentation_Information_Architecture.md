@@ -143,7 +143,7 @@ End-user manuals, walkthroughs, tutorials, and troubleshooting material.
 
 ### Reference
 
-Glossaries, standards, terminology, conventions, and external references.
+Glossaries, standards, terminology, conventions, and external references. EDF framework terminology evolution: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md) and [Glossary](../Reference/Glossary.md).
 
 ### Templates
 

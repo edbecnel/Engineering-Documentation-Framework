@@ -23,6 +23,8 @@ Prerequisites: clone this repository locally, run `chmod +x scripts/*.sh` (Unix)
 
 The Engineering Documentation Framework provides a consistent, scalable structure for capturing requirements, architecture, governance, AI engineering guidance, and discipline-specific deliverables.
 
+EDF is an integrated framework for **documented, governed engineering practices** — not documentation structure alone. See [Governance Overview — EDF Scope](docs/Governance/Governance_Overview.md#edf-scope).
+
 **EDF Core** is domain-independent: navigation, governance, specifications, architecture, reference, and the AI handbook apply to any engineering project.
 
 **Domain Profiles** extend Core with discipline-specific structure. EDF now models extensions as **composable capabilities** (discipline, activity, repository role) per [ADR-0005 — Project Classification and Capabilities](./docs/Architecture/ADRs/ADR-0005-Project-Classification-and-Capabilities.md). See the [capability registry](./capabilities/index.yaml).

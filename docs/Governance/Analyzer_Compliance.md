@@ -124,6 +124,26 @@ Governed Maintenance Record (GMR) metadata and GMFP maintenance status are a **f
 
 Manual Verification Record (MVR) metadata, human execution status, and MVT execution results are a **future** analyzer class. This tranche does **not** require the Framework Advisor to parse MVRs. Until that class exists, MVR conformance is specified in [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md) and checked by human review. Deterministic Markdown structure in MVR-0001 satisfies tooling interoperability at the document-contract level for this tranche.
 
+## Future Checks — Logical Domain Classification
+
+The following checks are **not** implemented in the Framework Advisor as of this document revision. They are documented for future advisory validation only.
+
+**Syntactic (objective):**
+
+- unknown logical domain identifier (not `DA`, `EG`, `AE`, or `EPI`)
+- missing **Primary Logical Domain** on a document class that requires it, when metadata is present or required
+- invalid **Related Logical Domains** identifier
+- missing required row in [Logical Domain Classification Index](../Architecture/Logical_Domain_Classification_Index.md) for a document in a required class
+- mismatch between document domain metadata and the classification index for the same path
+- reference to a nonexistent document path in the classification index
+
+**Judgment (human review):**
+
+- whether the chosen primary logical domain is architecturally correct for the document's subject matter
+- whether classification conflicts are resolved with adequate authority
+
+The analyzer MUST NOT silently overwrite domain metadata or the classification index to resolve mismatches.
+
 ## Related Implementation
 
 - [Project Analysis and Validation Tool](../Development/Project_Analysis_Validation_Tool.md)

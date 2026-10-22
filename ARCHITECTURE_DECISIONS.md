@@ -19,6 +19,7 @@ Individual ADRs live under [docs/Architecture/ADRs/](docs/Architecture/ADRs/READ
 | [ADR-0009](docs/Architecture/ADRs/ADR-0009-Governed-Maintenance-Fast-Path.md) | Governed Maintenance Fast Path (GMFP) | Proposed | 2026-09-26 |
 | [ADR-0010](docs/Architecture/ADRs/ADR-0010-Manual-Verification-Records.md) | Manual Verification Records (MVR) | Accepted | 2026-09-28 |
 | [ADR-0011](docs/Architecture/ADRs/ADR-0011-Terminology-Governance.md) | Terminology governance — glossary term references and TGR-0001 | Accepted | 2026-10-01 |
+| [ADR-0012](docs/Architecture/ADRs/ADR-0012-Logical-Architectural-Domains.md) | Logical architectural domains (DA, EG, AE, EPI) and DEC-A-DOMAIN-CLASSIFICATION | Accepted | 2026-10-22 |
 
 ## Milestone ADRs
 

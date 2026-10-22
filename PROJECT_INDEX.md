@@ -72,6 +72,7 @@
 - [First-Time Setup](docs/Developer_Handbook/00_First_Time_Setup.md)
 - [Development Environment](docs/Developer_Handbook/01_Development_Environment.md)
 - [Documentation Information Architecture](docs/Architecture/Documentation_Information_Architecture.md)
+- [Logical Domain Classification Index](docs/Architecture/Logical_Domain_Classification_Index.md)
 - [Framework Generation Principles](docs/Architecture/Framework_Generation_Principles.md)
 - [Engineering Development Policy](docs/Development/Engineering_Development_Policy.md)
 - [EDF Development Workflow](docs/Development/EDF_Development_Workflow.md)

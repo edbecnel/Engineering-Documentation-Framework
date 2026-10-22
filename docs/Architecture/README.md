@@ -9,6 +9,7 @@ This domain contains the authoritative architectural description of the project 
 ## Canonical Documents
 
 - [Documentation Information Architecture](Documentation_Information_Architecture.md)
+- [Logical Domain Classification Index](Logical_Domain_Classification_Index.md)
 - [General Engineering Project Model](General_Engineering_Project_Model.md)
 - [CRA, CKES, and EDF Boundaries](CRA_CKES_EDF_Boundaries.md)
 - [Framework Generation Principles](Framework_Generation_Principles.md)
@@ -57,6 +58,7 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 | [ADR-0009](ADRs/ADR-0009-Governed-Maintenance-Fast-Path.md) | Governed Maintenance Fast Path (GMFP) | Proposed |
 | [ADR-0010](ADRs/ADR-0010-Manual-Verification-Records.md) | Manual Verification Records (MVR) | Accepted |
 | [ADR-0011](ADRs/ADR-0011-Terminology-Governance.md) | Terminology governance | Accepted |
+| [ADR-0012](ADRs/ADR-0012-Logical-Architectural-Domains.md) | Logical architectural domains (DEC-A-DOMAIN-CLASSIFICATION) | Accepted |
 
 Terminology governance: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md), [Glossary](../Reference/Glossary.md).
 

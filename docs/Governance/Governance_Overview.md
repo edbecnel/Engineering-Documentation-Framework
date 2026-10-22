@@ -5,7 +5,7 @@
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** EDF and adopting projects
-> **Last Reviewed:** 2026-09-22
+> **Last Reviewed:** 2026-10-22
 
 ## Applicability
 
@@ -24,6 +24,16 @@ reviewable, current, and aligned with the project it describes.
 
 Governance complements the documentation information architecture by defining how
 documents are managed throughout their lifecycle.
+
+## EDF Scope
+
+The Engineering Documentation Framework is an **integrated framework for documented, governed engineering practices**.
+
+EDF defines how engineering knowledge is organized (**documentation architecture**), how engineering decisions and controls are applied (**engineering governance**), how verification and evidence are recorded (**assurance and evidence**), and how governed engineering work and interactions may be coordinated (**engineering practice and interaction**), including optional logical engineering roles and interaction contracts.
+
+EDF is **not** a general project-management framework, an organizational administration system, an AI orchestration platform, or a mandatory Project Architect / Engineering Agent organizational model.
+
+Discipline-specific repository layouts are provided through **EDF Core**, optional **Domain Profiles**, and composable **capabilities** — not through the four [logical architectural domains](../Architecture/Documentation_Information_Architecture.md#logical-architectural-domains) (DA, EG, AE, EPI), which classify responsibilities within EDF itself.
 
 ## Governance Layers
 

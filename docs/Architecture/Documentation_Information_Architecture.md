@@ -29,6 +29,81 @@ Documentation should be:
 - maintained
 - intentionally organized
 
+## Logical Architectural Domains
+
+EDF organizes **architectural responsibility** into four logical domains. These describe **what subject matter a document or requirement set is about**. They do **not** define repository folders, engineering disciplines, or EDF Domain Profiles.
+
+Formal decision: [ADR-0012 — Logical Architectural Domains](ADRs/ADR-0012-Logical-Architectural-Domains.md) (**DEC-A-DOMAIN-CLASSIFICATION**).
+
+### Distinction from other EDF uses of "domain"
+
+| Concept | Governs |
+|---|---|
+| **Logical architectural domain (DA, EG, AE, EPI)** | Responsibility and subject-matter ownership within EDF |
+| **Documentation domain** | Physical organization under `docs/` and related paths (see [Documentation Domains](#documentation-domains)) |
+| **EDF Core** | Requirements applicable across adopting disciplines |
+| **Domain Profile or capability** | Discipline-specific or optional extensions per [ADR-0005](ADRs/ADR-0005-Project-Classification-and-Capabilities.md) |
+| **Normative authority** | Approval and effectiveness under applicable governance (not determined by folder or logical domain alone) |
+
+A document's logical domain classification does **not** state whether the document applies only to software projects or to another discipline.
+
+### Independent attributes
+
+The following MUST NOT be conflated:
+
+1. **Logical domain** — primary architectural responsibility for the document's subject matter.
+2. **Physical placement** — where the document belongs under this Information Architecture.
+3. **Normative authority** — whether requirements are approved and effective (see [Document Lifecycle](../Governance/Document_Lifecycle.md) and [ADR Approval Workflow](ADRs/ADR_Approval_Workflow.md)).
+
+Logical domain classification does not establish normative authority, approval status, specification maturity, adoption, or document lifecycle state. Placement in a folder does not assign logical domain ownership.
+
+One directory MAY contain documents with different primary logical domains. A document MAY list related logical domains while retaining exactly one primary logical domain.
+
+### Registry
+
+| ID | Name | Purpose | Primary ownership of future normative requirements |
+|---|---|---|---|
+| **DA** | Documentation Architecture | Information architecture, templates, metadata, lifecycle, navigation, ownership, preservation | DA policies and templates |
+| **EG** | Engineering Governance | Authority, authorization, gates, change management, exceptions, mandatory controls | EG specifications and governance policies |
+| **AE** | Assurance and Evidence | Verification, attestation, audit records, provenance, preservation, acceptance evidence | AE specifications and verification domain |
+| **EPI** | Engineering Practice and Interaction | Governed processes, workflow profiles, logical roles, interaction and handover contracts, STOP communications | EPI specifications and authoritative practice handbooks |
+
+**Identifier note:** Logical domain **EG** (Engineering Governance) is not the same artifact type as an **Engineering Gate Review Record (EGR)**. See [Logical Domain Classification Index](Logical_Domain_Classification_Index.md).
+
+#### DA — Documentation Architecture
+
+**Responsibilities:** documentation information architecture, document structures, templates, metadata, document lifecycle, navigation, indexing, documentation ownership and preservation.
+
+**Exclusions:** engineering gate rules, verification law, PA/EA interaction contracts (owned by EG, AE, or EPI as applicable).
+
+#### EG — Engineering Governance
+
+**Responsibilities:** engineering authority, authorization, engineering gates, change management, governance exceptions, mandatory controls and compliance requirements.
+
+**Exclusions:** tool-specific operations, transport protocols, orchestration persistence.
+
+#### AE — Assurance and Evidence
+
+**Responsibilities:** verification, human attestation, audit records, provenance, evidence preservation, acceptance evidence.
+
+**Exclusions:** PA/EA message formats; program gate definitions (see EG).
+
+#### EPI — Engineering Practice and Interaction
+
+**Responsibilities:** governed engineering processes, standard and accelerated workflow profiles, optional logical engineering roles, interaction and handover contracts, session continuity, STOP and escalation communications.
+
+**Exclusions:** redefining EGR, MVR, or GMFP normative rules (reference EG and AE).
+
+### Dependencies between logical domains
+
+- DA supports all domains (structure and metadata).
+- EG and AE constrain EPI (gates, verification, evidence).
+- EPI references EG and AE; it does not replace them.
+
+### Classification
+
+Applicable documents declare **Primary Logical Domain** and optional **Related Logical Domains** per [Document Metadata Standard](../Governance/Document_Metadata_Standard.md). Authoritative classifications during migration: [Logical Domain Classification Index](Logical_Domain_Classification_Index.md).
+
 ## Primary Entry Points
 
 ### `README.md`
@@ -54,6 +129,8 @@ The local adoption guide created by the canonical bootstrap scripts in an adopti
 It identifies `docs/` as the canonical documentation root and explains the documentation domains.
 
 ## Documentation Domains
+
+**Documentation domains** define **physical** repository organization, navigation, and default placement rules. They are not interchangeable with [logical architectural domains](#logical-architectural-domains).
 
 ### Core
 
@@ -468,6 +545,8 @@ When the framework grows, do not merely append content. Improve the architecture
 
 ## Related Documents
 
+- [Logical Domain Classification Index](Logical_Domain_Classification_Index.md)
+- [ADR-0012 — Logical Architectural Domains](ADRs/ADR-0012-Logical-Architectural-Domains.md)
 - [Project Index](../../PROJECT_INDEX.md)
 - [Program](../Program/README.md)
 - [Engineering Development Policy](../Development/Engineering_Development_Policy.md)

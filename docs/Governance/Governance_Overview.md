@@ -54,6 +54,8 @@ self-hosting, versioning, and releases.
 
 See [EDF Governance](EDF_Governance.md) for the framework-specific extension.
 
+Framework normative specification effectiveness (P2) is defined in [Document Lifecycle — Framework normative specifications](Document_Lifecycle.md#framework-normative-specifications), with architectural direction in [ADR-0013](../Architecture/ADRs/ADR-0013-Framework-Normative-Specification-Effectiveness.md).
+
 ## Governance Principles
 
 1. Every authoritative document has a clearly identified owner.

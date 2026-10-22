@@ -144,6 +144,26 @@ The following checks are **not** implemented in the Framework Advisor as of this
 
 The analyzer MUST NOT silently overwrite domain metadata or the classification index to resolve mismatches.
 
+## Future Checks — Normative Specification Effectiveness
+
+The following checks are **not** implemented in the Framework Advisor as of this document revision. They are documented for future advisory validation only.
+
+**Syntactic (objective):**
+
+- missing **Normative Approval Reference** on a framework specification that claims normative effectiveness after the P2 policy effective date
+- missing **Approved Git Revision** when normative approval metadata is present
+- **Normative Approval Reference** does not resolve to an ADR with **Accepted** status
+- **Approved Git Revision** is not a valid commit in repository history
+- mismatch between specification metadata and the cited ADR normative approval subsection (Specification ID, Version, path, or SHA)
+
+**Judgment (human review):**
+
+- whether a change is editorial versus material
+- whether historical specifications have sufficient approval evidence without P2 metadata fields
+- whether effective scope and adopter activation are satisfied
+
+The analyzer MUST NOT infer or fabricate approval evidence.
+
 ## Related Implementation
 
 - [Project Analysis and Validation Tool](../Development/Project_Analysis_Validation_Tool.md)

@@ -14,6 +14,13 @@
 | **Date** | YYYY-MM-DD |
 | **Owner** | [Name or role] |
 | **Authoritative** | Yes |
+| **Normative Approval Reference** | _[Relative link to Accepted ADR — required after P2-effective normative approval]_ |
+| **Approved Git Revision** | _[40-character Git commit SHA — freeze revision]_ |
+| **Normative Effective Scope** | _[Scope string]_ |
+| **Normative Effective Date** | YYYY-MM-DD |
+| **Optional Capability** | Yes / No _(when applicable)_ |
+
+See [Document Lifecycle — Framework normative specifications](../Governance/Document_Lifecycle.md#framework-normative-specifications) and [Document Metadata Standard](../Governance/Document_Metadata_Standard.md).
 
 ## Purpose
 

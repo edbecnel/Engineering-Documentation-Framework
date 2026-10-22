@@ -5,7 +5,7 @@
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Governed Markdown documents
-> **Last Reviewed:** 2026-07-10
+> **Last Reviewed:** 2026-10-22
 
 ## Purpose
 
@@ -154,6 +154,34 @@ When document metadata includes logical domain fields, it MUST agree with the [L
 ### Non-effects
 
 Logical domain fields do **not** confer approval, normative effectiveness, specification maturity, adoption, or lifecycle state. They do not replace physical placement rules in the Information Architecture.
+
+## Framework specification metadata (normative effectiveness)
+
+Framework specifications under `docs/Specifications/` use a **specification metadata** table (see [Architecture Specification Template](../Templates/Architecture_Specification_Template.md)). Normative effectiveness rules are defined in [Document Lifecycle — Framework normative specifications](Document_Lifecycle.md#framework-normative-specifications).
+
+Retain existing fields: **Specification ID**, **Version**, **Normative**, **Authoritative**, and **Status** (`Proposed` / `Accepted`). Do not introduce new Status values in this tranche.
+
+### P2 traceability fields
+
+These fields support traceability to normative approval evidence. They do **not** by themselves confer approval or effectiveness.
+
+| Field | Purpose |
+|-------|---------|
+| **Normative Approval Reference** | Relative link to the canonical approval record (typically an Accepted ADR) |
+| **Approved Git Revision** | Full Git commit SHA identifying the approved specification content at the canonical path |
+| **Normative Effective Scope** | Where approved requirements apply |
+| **Normative Effective Date** | ISO date when effectiveness begins (or cross-reference to activation condition in the approval record) |
+| **Optional Capability** | `Yes` / `No` when the specification is an optional EDF capability (for example GMFP) |
+
+### Requirements by situation
+
+| Situation | Fields |
+|-----------|--------|
+| New normative approval on or after the P2 policy effective date (see [ADR-0013](../Architecture/ADRs/ADR-0013-Framework-Normative-Specification-Effectiveness.md)) | **Normative Approval Reference**, **Approved Git Revision**, **Normative Effective Scope**, and **Normative Effective Date** are **required** once the approval record is Accepted and the specification is updated to point to it |
+| Historical specifications before P2 effective date | Fields **not** required retroactively; subject to evidence review per Document Lifecycle |
+| Editorial metadata-only updates after approval | May update pointers only when approval record changes; **Approved Git Revision** unchanged if normative content unchanged |
+
+Do not add unverified approval references to existing specifications during policy adoption. Content-digest fields are not used in this tranche.
 
 ## Machine-Readable Future
 

@@ -20,6 +20,8 @@ This directory captures **what the software must do** — functional requirement
 | [DVW-0001](DVW-0001-Disposable-Verification-Workspaces.md) | Disposable Verification Workspaces (filesystem verification subjects) |
 | [TGR-0001](TGR-0001-Terminology-Governance.md) | Terminology governance (glossary term references, aliases, historical preservation) |
 
+Normative effectiveness for these specifications is governed by [Document Lifecycle — Framework normative specifications](../Governance/Document_Lifecycle.md#framework-normative-specifications) (P2). Specification metadata **Status** (`Proposed` / `Accepted`) is not sole proof that requirements are normatively effective; effectiveness requires traceable approval of an identified **Approved Git Revision** for a defined scope. Framework approval and optional capability adoption (for example GMFP) are separate.
+
 ## Audience
 
 - Product owners and business analysts

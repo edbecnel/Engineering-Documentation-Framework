@@ -5,7 +5,7 @@
 > **Status:** Canonical
 > **Owner:** Engineering Documentation Framework
 > **Applies To:** Architecture Decision Records in EDF and adopting projects
-> **Last Reviewed:** 2026-09-12
+> **Last Reviewed:** 2026-10-22
 > **Review Frequency:** On Change
 > **Authoritative:** Yes
 
@@ -109,6 +109,34 @@ When review is complete and decision makers approve:
 7. **Version control** — Commit ADR, index, and related updates in one logical change when practical.
 
 EDF does not require a specific pull-request template for ADR approval. Projects may use PR review as the approval record.
+
+## Normative specification approval (framework)
+
+When an **Accepted** ADR approves normative content of an EDF framework specification under [Document Lifecycle — Framework normative specifications](../../Governance/Document_Lifecycle.md#framework-normative-specifications), the approval MUST be explicit and MUST distinguish **architectural direction** from **approval of a particular specification revision**.
+
+Include a named subsection (for example `## Normative specification approval`) in the ADR **Decision** when the ADR is the normative approval instrument. That subsection MUST identify:
+
+1. Specification ID
+2. Specification Version
+3. Canonical specification path (repository path to the specification file)
+4. **Approved Git Revision** — full commit SHA of the candidate freeze revision containing the approved content (not a later commit unless only non-normative metadata changed and the SHA still pins normative content)
+5. Approving authority (Project Owner or explicitly delegated role named in the record)
+6. Explicit approval decision for the stated scope
+7. Approval date (ISO date)
+8. Effective scope
+9. Effective date or activation condition
+
+Follow the immutable revision sequence in Document Lifecycle: freeze commit → capture SHA → accept ADR citing that SHA → publish specification metadata (**Normative Approval Reference**, **Approved Git Revision**, effective scope and date) without changing approved normative requirement text.
+
+An **Accepted** ADR does **not** automatically approve subsequent edits to a linked specification. Material changes require a new freeze SHA and new normative approval.
+
+Accepting an ADR that approves a specification does not by itself update the specification metadata table; update the specification in the same governed change set when practical per the approval checklist below.
+
+When accepting such an ADR, extend the approval checklist with:
+
+- Verify **Approved Git Revision** exists in repository history and matches approved content at the canonical path.
+- Verify the specification contains a resolvable **Normative Approval Reference** to this ADR (or follow-up commit scheduled in the same PR).
+- Do not treat specification **Status: Accepted** as a substitute for normative approval metadata.
 
 ## Other status transitions
 

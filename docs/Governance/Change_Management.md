@@ -56,6 +56,8 @@ Changes that establish or reverse architectural direction should be recorded in
 To move an ADR from **Proposed** to **Accepted**, follow
 [ADR Approval Workflow](../Architecture/ADRs/ADR_Approval_Workflow.md).
 
+Material changes to normative framework specifications under `docs/Specifications/` require normative approval per [Document Lifecycle — Framework normative specifications](Document_Lifecycle.md#framework-normative-specifications). Emergency documentation correction in this policy does not introduce a separate emergency or provisional framework normative-approval mechanism.
+
 ## Non-Destructive Rule
 
 Automated tools must not:

@@ -90,7 +90,7 @@ One directory MAY contain documents with different primary logical domains. A do
 
 #### EPI — Engineering Practice and Interaction
 
-**Responsibilities:** governed engineering processes, standard and accelerated workflow profiles, optional logical engineering roles, interaction and handover contracts, session continuity, STOP and escalation communications.
+**Responsibilities:** governed engineering processes, standard and accelerated workflow profiles, optional logical engineering roles, interaction and handover contracts, session continuity, STOP and escalation communications. Normative AI session handover message headers: [HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md).
 
 **Exclusions:** redefining EGR, MVR, or GMFP normative rules (reference EG and AE).
 

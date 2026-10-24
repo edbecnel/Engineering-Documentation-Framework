@@ -24,6 +24,14 @@ Before asking AI to perform engineering work, identify:
 - expected output format
 - whether the work is planning, editing, implementation, review, or troubleshooting
 
+## Session handover continuity (HND-0001)
+
+When continuing work from a prior AI session handover:
+
+- paste or reference the full [HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md) header (through §1) or cite the prior **Handover UUID**
+- confirm **PA Chat State**, **EA Chat State**, **EA Execution Mode**, and **Authorization** before implementation
+- treat §1 constraints as binding over informal summary prose in the handover body
+
 ## Repository Entry Points
 
 When starting a new AI session, useful entry points include:
@@ -87,6 +95,8 @@ Provide:
 
 ## Related Documents
 
+- [AI_Handover_Message_Template.md](../Templates/AI_Handover_Message_Template.md)
+- [HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md)
 - [Prompting_Guide.md](./Prompting_Guide.md)
 - [AI_Decision_Matrix.md](./AI_Decision_Matrix.md)
 - [Verification.md](./Verification.md)

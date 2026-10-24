@@ -25,7 +25,8 @@ Templates provide a consistent starting point. They are not rigid forms. Remove 
 | `Project_Charter_Template.md` | Defining project mission, scope, goals, and constraints |
 | `Project_Index_Template.md` | Creating the primary documentation hub for humans and AI assistants |
 | `Project_README_Template.md` | Creating the public-facing project overview |
-| `Handover_Template.md` | Transferring work between people, teams, AI sessions, or tools |
+| `Handover_Template.md` | Transferring work between people, teams, AI sessions, or tools (persisted repo document) |
+| `AI_Handover_Message_Template.md` | Copy-paste AI session handover message header ([HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md)) between chats or logical roles |
 | `Release_Notes_Template.md` | Documenting a software or framework release |
 | `ADOPTION_STATUS_Template.md` | Tracking EDF bootstrap or migration progress in adopting projects |
 | `Architectural_Discovery_Record_Template.md` | Recording non-normative historical architectural discovery (e.g., CRA-0000) |

@@ -66,6 +66,7 @@ No active checklist tasks are defined in the framework template.
 ### Governance implementation plans
 
 - [EDF authority, terminology, and navigation clarification plan](EDF-authority-terminology-clarification-plan.md) — Option B governance boundaries + glossary/navigation (STOP-1 pending)
+- [HND implementation plan](HND-implementation-plan.md) — AI session handover messages; authoritative plan for [HND-0001](../docs/Specifications/HND-0001-AI-Session-Handover-Messages.md)
 - [MVR implementation plan](MVR-implementation-plan.md) — Manual Verification Records; authoritative plan for [MVR-0001](../docs/Specifications/MVR-0001-Manual-Verification-Records.md)
 - [DVW implementation plan](DVW-implementation-plan.md) — Disposable Verification Workspaces; authoritative plan for [DVW-0001](../docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md)
 - [DVW human-interactive placement refinement plan](DVW-human-interactive-placement-refinement-plan.md) — bounded [GMR-0002](../docs/Program/Maintenance_Records/GMR-0002-DVW-human-interactive-placement.md) placement ergonomics (DVW-0001 v1.1)

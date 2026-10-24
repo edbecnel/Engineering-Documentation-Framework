@@ -86,4 +86,5 @@ Project-specific structure not covered by EDF Core or capabilities:
 
 - [EDF AI Bootstrap Entry](../AI/EDF_AI_Bootstrap_Entry.md)
 - [Universal Bootstrap Specification](../AI/Universal_Bootstrap_Specification.md)
-- [Handover Template](Handover_Template.md) — for workstream handover between people or sessions
+- [AI Handover Message Template](AI_Handover_Message_Template.md) — governed chat handover header ([HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md))
+- [Handover Template](Handover_Template.md) — persisted workstream handover in the repository

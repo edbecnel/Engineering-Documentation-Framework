@@ -72,6 +72,7 @@ The Engineering Documentation Framework maintainers update this index when:
 | `docs/Specifications/AAR-0001-Architectural-Audit-Records.md` | AE | EG |
 | `docs/Specifications/TGR-0001-Terminology-Governance.md` | EG | DA |
 | `docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md` | AE | EPI |
+| `docs/Specifications/HND-0001-AI-Session-Handover-Messages.md` | EPI | DA, EG |
 | `docs/Specifications/README.md` | DA | EG |
 
 ## Canonical governance policies
@@ -121,6 +122,7 @@ The Engineering Documentation Framework maintainers update this index when:
 | Document path | Primary | Related |
 |---|---|---|
 | `docs/Templates/Handover_Template.md` | EPI | DA |
+| `docs/Templates/AI_Handover_Message_Template.md` | EPI | DA |
 
 ## Interaction execution layer (non-normative methodology)
 

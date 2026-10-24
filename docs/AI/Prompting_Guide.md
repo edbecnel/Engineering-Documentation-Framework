@@ -65,6 +65,16 @@ Useful pattern:
 Refactor this document into smaller files. Do not lose information. If content is removed, explain why and where the remaining authoritative version lives.
 ```
 
+## AI session handover messages (HND-0001)
+
+When an assistant **emits** a session handover (for example PA → EA), require output that matches [HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md) before any §2+ body content. See [AI_Handover_Message_Template.md](../Templates/AI_Handover_Message_Template.md).
+
+Useful pattern:
+
+```text
+Produce a session handover message. Use the HND-0001 header through §1 Session and Execution Control (new Handover UUID). EA Execution Mode PLAN. Authorization: read-only planning only. Then add §2 Current Status and §3 Next Actions.
+```
+
 ## Use Documentation Domains
 
 When asking AI to create or move documentation, reference the framework domains:

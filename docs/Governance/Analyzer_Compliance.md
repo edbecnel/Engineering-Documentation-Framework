@@ -124,7 +124,7 @@ Governed Maintenance Record (GMR) metadata and GMFP maintenance status are a **f
 
 Manual Verification Record (MVR) metadata, human execution status, and MVT execution results are a **future** analyzer class. This tranche does **not** require the Framework Advisor to parse MVRs. Until that class exists, MVR conformance is specified in [MVR-0001](../Specifications/MVR-0001-Manual-Verification-Records.md) and checked by human review. Deterministic Markdown structure in MVR-0001 satisfies tooling interoperability at the document-contract level for this tranche.
 
-AI session handover message headers ([HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md)) are a **future** analyzer class. This tranche does **not** require the Framework Advisor to validate Handover UUID presence or §1 field order in chat or committed handover files. Until that class exists, HND conformance is specified in HND-0001 and checked by human review.
+AI session handover message headers ([HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md)) are a **future** analyzer class. This tranche does **not** require the Framework Advisor to validate Handover UUID presence or §1 field order in chat or committed handover files. Until that class exists, HND conformance is specified in HND-0001 and checked by human review. When implemented, §1 validation **must** count the seven required labels in order and **ignore** intervening blank lines (see HND-0001 §10); a blank line after **Authorization** before role-attribution lines **must** be treated as conformant.
 
 ## Future Checks — Logical Domain Classification
 

@@ -113,11 +113,13 @@ Define adoptable requirements for **AI session handover messages** — interacti
    | 6 | `Project Architect` | Declared architecture authority or PA actor label |
    | 7 | `Engineering Agent` | EA actor label |
 
-10. When the title line uses `PA → EA HANDOVER`, the §1 field labels in §9 **MUST** be used as written. For other `{SourceRole} → {TargetRole}` pairs, projects **MUST** either use the same §1 labels when their workflow profile maps to PA/EA semantics, or document equivalent field labels in project governance (**role profile extensions**).
+10. §1 conformance is determined by the **presence, order, and values** of the seven labels in §9, not by the total line count of the section. Blank lines **MAY** appear between labeled lines; the canonical example uses one blank line immediately after **Authorization** before the three role-attribution lines. Blank lines **MUST NOT** be treated as additional fields. Automated validators **MUST** ignore blank lines when verifying §1 label presence and order.
+
+11. When the title line uses `PA → EA HANDOVER`, the §1 field labels in §9 **MUST** be used as written. For other `{SourceRole} → {TargetRole}` pairs, projects **MUST** either use the same §1 labels when their workflow profile maps to PA/EA semantics, or document equivalent field labels in project governance (**role profile extensions**).
 
 ### Chat state enumeration
 
-11. Values for `PA Chat State` and `EA Chat State` **MUST** be uppercase ASCII tokens. HND-0001 defines at minimum:
+12. Values for `PA Chat State` and `EA Chat State` **MUST** be uppercase ASCII tokens. HND-0001 defines at minimum:
 
     | Value | Meaning |
     |-------|---------|
@@ -125,44 +127,44 @@ Define adoptable requirements for **AI session handover messages** — interacti
     | `NEW` | Receiving session should treat the handover as bootstrap for a fresh thread |
     | `STOP` | Target session must not proceed autonomously; await human direction |
 
-12. Projects **MAY** define additional chat-state tokens in project governance. Receiving agents that encounter an unrecognized chat-state value **MUST** treat it as `STOP`.
+13. Projects **MAY** define additional chat-state tokens in project governance. Receiving agents that encounter an unrecognized chat-state value **MUST** treat it as `STOP`.
 
 ### EA execution mode enumeration
 
-13. `EA Execution Mode` **MUST** be an uppercase ASCII token. HND-0001 defines at minimum:
+14. `EA Execution Mode` **MUST** be an uppercase ASCII token. HND-0001 defines at minimum:
 
     | Value | Meaning |
     |-------|---------|
     | `PLAN` | Planning, analysis, architecture, or investigation — no implementation or repository mutation unless **Authorization** explicitly permits |
     | `AGENT` | Implementation-style Engineering Agent work — still bound by **Authorization**, engineering governance, and assurance rules; mode alone does not satisfy gates or authorize publication |
 
-14. **EA Execution Mode** does not grant program-gate satisfaction, implementation authorization, or publication rights without applicable EG, AE, and project rules.
+15. **EA Execution Mode** does not grant program-gate satisfaction, implementation authorization, or publication rights without applicable EG, AE, and project rules.
 
 ### Authorization binding
 
-15. Receiving agents **MUST** treat **Authorization** and **EA Execution Mode** in §1 as binding execution constraints.
+16. Receiving agents **MUST** treat **Authorization** and **EA Execution Mode** in §1 as binding execution constraints.
 
-16. When §1 constraints conflict with informal prose in the handover body, §1 **MUST** prevail unless a human explicitly overrides in the new session.
+17. When §1 constraints conflict with informal prose in the handover body, §1 **MUST** prevail unless a human explicitly overrides in the new session.
 
-17. Role attribution lines (`Product Owner`, `Project Architect`, `Engineering Agent`) are routing and attribution metadata. They are **not** proof of human attestation; [MVR-0001](MVR-0001-Manual-Verification-Records.md) and other AE rules apply separately when human verification is required.
+18. Role attribution lines (`Product Owner`, `Project Architect`, `Engineering Agent`) are routing and attribution metadata. They are **not** proof of human attestation; [MVR-0001](MVR-0001-Manual-Verification-Records.md) and other AE rules apply separately when human verification is required.
 
 ### Identifier separation
 
-18. **Handover UUID**, **Handover ID**, and specification identifier **HND-0001** **MUST** remain separate namespaces.
+19. **Handover UUID**, **Handover ID**, and specification identifier **HND-0001** **MUST** remain separate namespaces.
 
-19. **Handover UUID** and **Handover ID** **MUST NOT** be conflated with **Record ID** namespaces such as `MVR-NNNN`, `GMR-NNNN`, EGR program-gate filenames, BVG aliases, AAR instance ids, or normative specification ids in `docs/Specifications/`.
+20. **Handover UUID** and **Handover ID** **MUST NOT** be conflated with **Record ID** namespaces such as `MVR-NNNN`, `GMR-NNNN`, EGR program-gate filenames, BVG aliases, AAR instance ids, or normative specification ids in `docs/Specifications/`.
 
 ### Persisted handover documents
 
-20. When a handover is saved as a governed Markdown document in the repository, the document **SHOULD** embed layers **A–C** verbatim at the top under a `Session handover header (HND-0001)` section per [Handover_Template.md](../Templates/Handover_Template.md).
+21. When a handover is saved as a governed Markdown document in the repository, the document **SHOULD** embed layers **A–C** verbatim at the top under a `Session handover header (HND-0001)` section per [Handover_Template.md](../Templates/Handover_Template.md).
 
-21. Persisted handover documents **MUST NOT** replace EGR, MVR, GMR, or other canonical governed record types; they summarize transfer state and pointers.
+22. Persisted handover documents **MUST NOT** replace EGR, MVR, GMR, or other canonical governed record types; they summarize transfer state and pointers.
 
 ### Receiving sessions
 
-22. When continuing work from a prior handover, the receiving human or assistant **SHOULD** cite the prior **Handover UUID** in the new session bootstrap context.
+23. When continuing work from a prior handover, the receiving human or assistant **SHOULD** cite the prior **Handover UUID** in the new session bootstrap context.
 
-23. Receiving agents **MUST** read and obey layer **C** before acting on body content.
+24. Receiving agents **MUST** read and obey layer **C** before acting on body content.
 
 ## Canonical example (non-normative illustration)
 

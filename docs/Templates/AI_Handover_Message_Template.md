@@ -30,6 +30,8 @@ Copy-paste structure for an **AI session handover message** governed by [HND-000
 **Chat state** tokens (minimum): `CONTINUE`, `NEW`, `STOP`.  
 **EA Execution Mode** tokens (minimum): `PLAN`, `AGENT`.
 
+§1 allows optional blank lines between labeled lines (not extra fields). The example below uses one blank line after **Authorization** before the role-attribution lines, per [HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md) §10.
+
 ## Canonical example (replace placeholders)
 
 ```text

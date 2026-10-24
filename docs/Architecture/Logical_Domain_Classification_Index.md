@@ -146,6 +146,7 @@ The Engineering Documentation Framework maintainers update this index when:
 | `docs/Architecture/ADRs/ADR-0010-Manual-Verification-Records.md` | AE | EG |
 | `docs/Architecture/ADRs/ADR-0011-Terminology-Governance.md` | EG | DA |
 | `docs/Architecture/ADRs/ADR-0012-Logical-Architectural-Domains.md` | DA | EG, EPI |
+| `docs/Architecture/ADRs/ADR-0014-AI-Session-Handover-Messages.md` | EPI | DA, EG |
 
 ## Exempt classes (no index row required)
 

@@ -8,7 +8,7 @@
 |---|---|
 | **Document Type** | Architecture Specification |
 | **Normative** | Yes |
-| **Status** | Proposed |
+| **Status** | Accepted |
 | **Specification ID** | HND-0001 |
 | **Version** | 1.0 |
 | **Date** | 2026-10-24 |
@@ -16,6 +16,10 @@
 | **Authoritative** | Yes |
 | **Primary Logical Domain** | EPI |
 | **Related Logical Domains** | DA, EG |
+| **Normative Approval Reference** | [ADR-0014](../Architecture/ADRs/ADR-0014-AI-Session-Handover-Messages.md) |
+| **Approved Git Revision** | `f33e01e9134c964efc21c6231771dac811e30d04` |
+| **Normative Effective Scope** | EDF framework self-hosting; adoptable EDF Core for projects that declare AI session handover workflows |
+| **Normative Effective Date** | 2026-10-24 |
 
 ## Purpose
 
@@ -205,4 +209,5 @@ Optional relay or desktop tooling (for example governed exchange renderers) **ma
 - [MVR-0001](MVR-0001-Manual-Verification-Records.md)
 - [Repository Workflow](../AI/Repository_Workflow.md)
 - [Glossary](../Reference/Glossary.md)
+- [ADR-0014](../Architecture/ADRs/ADR-0014-AI-Session-Handover-Messages.md)
 - [HND implementation plan](../../tasks/HND-implementation-plan.md)

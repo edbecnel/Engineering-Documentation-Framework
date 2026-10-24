@@ -176,7 +176,7 @@ Manual Verification Records ([ADR-0010](../Architecture/ADRs/ADR-0010-Manual-Ver
 
 ## J. HND governance self-hosting evidence (2026-10-24)
 
-AI session handover messages ([HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md)) define interaction-layer header requirements (Handover UUID, identity block, §1 Session and Execution Control) without mandating PA/EA adoption for all EDF users. EDF self-conformance for this tranche relies on the normative specification, [AI_Handover_Message_Template.md](../Templates/AI_Handover_Message_Template.md), glossary entries, navigation and AI handbook cross-references, and prescribed validation — not synthetic handover message instances or Framework Advisor parsing. Normative effectiveness follows [Document Lifecycle](../Governance/Document_Lifecycle.md#framework-normative-specifications) when HND-0001 is accepted and published.
+AI session handover messages ([HND-0001](../Specifications/HND-0001-AI-Session-Handover-Messages.md) **Accepted**, [ADR-0014](../Architecture/ADRs/ADR-0014-AI-Session-Handover-Messages.md) **Accepted**, 2026-10-24) define interaction-layer header requirements (Handover UUID, identity block, §1 Session and Execution Control) without mandating PA/EA adoption for all EDF users. EDF self-conformance for this tranche relies on the normative specification, [AI_Handover_Message_Template.md](../Templates/AI_Handover_Message_Template.md), glossary entries, navigation and AI handbook cross-references, and prescribed validation — not synthetic handover message instances or Framework Advisor parsing. **Approved Git Revision** `f33e01e9134c964efc21c6231771dac811e30d04` per ADR-0014 normative specification approval.
 
 ## K. DVW governance self-hosting evidence (2026-09-28)
 

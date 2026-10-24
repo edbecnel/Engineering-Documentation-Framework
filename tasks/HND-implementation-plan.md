@@ -1,6 +1,6 @@
 # AI Session Handover Messages (HND) — EDF Implementation Plan
 
-**Status:** Documentation complete in EDF repository (STOP-1/STOP-2 deliverables; STOP-3 publication and P2 acceptance pending Project Architect)  
+**Status:** Project Owner accepted HND-0001 v1.0 (2026-10-24) — [ADR-0014](../docs/Architecture/ADRs/ADR-0014-AI-Session-Handover-Messages.md); **STOP-3** normative approval recorded; publication commit pending push after acceptance change set  
 **Authorization:** Plan `HND-0001 — Comprehensive AI session handover message header`  
 **Binding scope:** [HND-0001](../docs/Specifications/HND-0001-AI-Session-Handover-Messages.md)
 

@@ -8,7 +8,7 @@
 |---|---|
 | **Document Type** | Architecture Specification |
 | **Normative** | Yes |
-| **Status** | Proposed |
+| **Status** | Accepted |
 | **Specification ID** | EVI-0001 |
 | **Version** | 1.0 |
 | **Date** | 2026-10-28 |
@@ -16,6 +16,10 @@
 | **Authoritative** | Yes |
 | **Primary Logical Domain** | AE |
 | **Related Logical Domains** | EG, EPI |
+| **Normative Approval Reference** | [ADR-0015](../Architecture/ADRs/ADR-0015-Engineering-Verification-Integrity.md) |
+| **Approved Git Revision** | `eeac032fed499ec40e7ace6b707303a73aade1ff` |
+| **Normative Effective Scope** | EDF Core; prospectively applicable to EDF-governed engineering work |
+| **Normative Effective Date** | 2026-10-28 |
 
 ## Purpose
 
@@ -50,7 +54,7 @@ The level of detail is proportional to risk. Specialized records remain authorit
 
 ## Adoption and compatibility
 
-This specification is **Proposed** until approved under [Document Lifecycle](../Governance/Document_Lifecycle.md) and applicable normative approval rules. It applies prospectively to newly governed work after effectiveness; prior closed records are not reopened solely because of adoption. No global lifecycle state machine or mandatory ECR file location is created.
+Normative approval is recorded in [ADR-0015](../Architecture/ADRs/ADR-0015-Engineering-Verification-Integrity.md) per [Document Lifecycle](../Governance/Document_Lifecycle.md). Requirements apply **prospectively** to newly governed work on or after the **Normative Effective Date**; prior closed records are not reopened solely because of adoption. No global lifecycle state machine or mandatory ECR file location is created.
 
 ## Parent
 
@@ -58,7 +62,7 @@ This specification is **Proposed** until approved under [Document Lifecycle](../
 
 ## Related Documents
 
-- [ADR-0015](../Architecture/ADRs/ADR-0015-Engineering-Verification-Integrity.md) (Proposed architectural direction)
+- [ADR-0015](../Architecture/ADRs/ADR-0015-Engineering-Verification-Integrity.md)
 - [Engineering_Completion_Report_Template.md](../Templates/Engineering_Completion_Report_Template.md) (optional short form)
 - [MVR-0001](MVR-0001-Manual-Verification-Records.md)
 - [EGR-0001](EGR-0001-Engineering-Gate-Review-Records.md)

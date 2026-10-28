@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| **Status** | Proposed |
-| **Date** | 2026-10-22 |
+| **Status** | Accepted |
+| **Date** | 2026-10-28 |
 | **Decision Makers** | Project Owner |
 | **Related** | [Document Lifecycle](../../Governance/Document_Lifecycle.md), [Document Metadata Standard](../../Governance/Document_Metadata_Standard.md), [ADR Approval Workflow](ADR_Approval_Workflow.md), [ADR-0001](ADR-0001-Domain-Profiles.md), [ADR-0005](ADR-0005-Project-Classification-and-Capabilities.md), [ADR-0010](ADR-0010-Manual-Verification-Records.md), [ADR-0012](ADR-0012-Logical-Architectural-Domains.md), [EGR-0001](../../Specifications/EGR-0001-Engineering-Gate-Review-Records.md) |
 
@@ -63,9 +63,15 @@ The normative policy text lives in [Document Lifecycle — Framework normative s
 
 ## 10. Policy effective date
 
-**Pending acceptance.** When this ADR is **Accepted**, the **policy effective date** is the **Date** field on this ADR at acceptance (ISO date), unless the Decision explicitly states a later effective date. Until this ADR is **Accepted**, P2 requirements in Document Lifecycle are policy text **pending formal effectiveness**; repository publication alone does not activate P2.
+**Policy effective date:** **2026-10-28** (this ADR **Accepted** date).
 
-This ADR does **not** approve any framework specification revision by itself. Acceptance establishes the **policy** only.
+P2 requirements in [Document Lifecycle — Framework normative specifications](../../Governance/Document_Lifecycle.md#framework-normative-specifications) are **normatively effective** for new framework normative approvals on or after that date, subject to the approval record requirements in that policy.
+
+**Approval authority:** Project Owner.
+
+**Authorization evidence:** Project Owner formal adoption authorization, handover UUID `b7e42a91-6c35-4d80-9f21-a53e07c816bd` (EVI-0001 adoption tranche).
+
+This ADR does **not** approve any framework specification revision by itself. Acceptance establishes the **P2 policy** only.
 
 ---
 
@@ -109,7 +115,7 @@ This ADR does **not** approve any framework specification revision by itself. Ac
 
 - Additional metadata and freeze-commit discipline for new normative approvals.
 - Evidence review tranches required for historical specifications (separate authorized work).
-- Policy remains **pending** until this ADR is **Accepted**.
+- Additional metadata discipline for new normative approvals on or after the policy effective date.
 
 ### Follow-up (not in this ADR acceptance)
 

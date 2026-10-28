@@ -61,6 +61,7 @@ Framework ADRs are indexed in [ADRs/README.md](ADRs/README.md) and summarized in
 | [ADR-0012](ADRs/ADR-0012-Logical-Architectural-Domains.md) | Logical architectural domains (DEC-A-DOMAIN-CLASSIFICATION) | Accepted |
 | [ADR-0013](ADRs/ADR-0013-Framework-Normative-Specification-Effectiveness.md) | Framework normative specification effectiveness (P2) | Proposed |
 | [ADR-0014](ADRs/ADR-0014-AI-Session-Handover-Messages.md) | AI Session Handover Messages (HND-0001) | Accepted |
+| [ADR-0015](ADRs/ADR-0015-Engineering-Verification-Integrity.md) | Engineering Verification Integrity (EVI-0001) | Proposed |
 
 Terminology governance: [TGR-0001](../Specifications/TGR-0001-Terminology-Governance.md), [Glossary](../Reference/Glossary.md).
 

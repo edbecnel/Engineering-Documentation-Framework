@@ -20,6 +20,7 @@ This directory captures **what the software must do** — functional requirement
 | [DVW-0001](DVW-0001-Disposable-Verification-Workspaces.md) | Disposable Verification Workspaces (filesystem verification subjects) |
 | [TGR-0001](TGR-0001-Terminology-Governance.md) | Terminology governance (glossary term references, aliases, historical preservation) |
 | [HND-0001](HND-0001-AI-Session-Handover-Messages.md) | AI session handover messages (header, Handover UUID, session and execution control) |
+| [EVI-0001](EVI-0001-Engineering-Verification-Integrity.md) | Engineering Verification Integrity (completion claims, evidence, acceptance; optional ECR) |
 
 Normative effectiveness for these specifications is governed by [Document Lifecycle — Framework normative specifications](../Governance/Document_Lifecycle.md#framework-normative-specifications) (P2). Specification metadata **Status** (`Proposed` / `Accepted`) is not sole proof that requirements are normatively effective; effectiveness requires traceable approval of an identified **Approved Git Revision** for a defined scope. Framework approval and optional capability adoption (for example GMFP) are separate.
 

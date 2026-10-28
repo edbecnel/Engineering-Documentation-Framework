@@ -73,6 +73,7 @@ The Engineering Documentation Framework maintainers update this index when:
 | `docs/Specifications/TGR-0001-Terminology-Governance.md` | EG | DA |
 | `docs/Specifications/DVW-0001-Disposable-Verification-Workspaces.md` | AE | EPI |
 | `docs/Specifications/HND-0001-AI-Session-Handover-Messages.md` | EPI | DA, EG |
+| `docs/Specifications/EVI-0001-Engineering-Verification-Integrity.md` | AE | EG, EPI |
 | `docs/Specifications/README.md` | DA | EG |
 
 ## Canonical governance policies

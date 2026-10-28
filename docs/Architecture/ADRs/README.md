@@ -26,6 +26,7 @@ To propose, review, and approve ADRs (including updating **Proposed** → **Acce
 | [ADR-0012](ADR-0012-Logical-Architectural-Domains.md) | Logical architectural domains (DA, EG, AE, EPI) and DEC-A-DOMAIN-CLASSIFICATION | Accepted | 2026-10-22 |
 | [ADR-0013](ADR-0013-Framework-Normative-Specification-Effectiveness.md) | Framework normative specification effectiveness (P2, DEC-NEP-01–08) | Proposed | 2026-10-22 |
 | [ADR-0014](ADR-0014-AI-Session-Handover-Messages.md) | AI Session Handover Messages (HND-0001) | Accepted | 2026-10-24 |
+| [ADR-0015](ADR-0015-Engineering-Verification-Integrity.md) | Engineering Verification Integrity (EVI-0001) | Proposed | 2026-10-28 |
 
 Milestone ADRs (framework development history) remain indexed in [ARCHITECTURE_DECISIONS.md](../../../ARCHITECTURE_DECISIONS.md).
 
